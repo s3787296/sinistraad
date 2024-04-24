@@ -1,3 +1,3 @@
-public class location {
+public class Location {
     
 }

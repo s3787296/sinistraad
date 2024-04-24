@@ -1,3 +1,3 @@
-public class object {
+public class Object {
     
 }
