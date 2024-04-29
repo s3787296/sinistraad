@@ -1,6 +1,7 @@
 public class Map {
    
     public static void theTown(){
+       //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
         System.out.println("Map of the Great forest and Caslte Sinistraad:"+
         "\n|------------------------|-----------------------|-----------------------------------------------------------------------|"+
         "\n|     The Armoury                                |                                                   The Counts Chamber  |"+
