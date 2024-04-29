@@ -3,14 +3,14 @@ public abstract class Character {
     
     //attributes for all character
     public String name;
-    public int maxhp, hp, xp;
+    public int maxHp, hp, xp;
 
     //constructor for character
-    public Character(String name, int maxhp, int xp){
+    public Character(String name, int maxHp, int xp){
         this.name = name;
-        this.maxhp = maxhp;
+        this.maxHp = maxHp;
         this.xp = xp;
-        this.hp = maxhp;
+        this.hp = maxHp;
     }
 
     //methods for all characters
