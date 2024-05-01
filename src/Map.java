@@ -6,7 +6,7 @@ public class map {//
         System.out.println("Map of Duskwood Forest"+
         "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
         "\n|    Castle Armoury                              |                         [The Counts Chambers] |    The Throne Room    |"+
-        "\n|    <YOU ARE HERE>                             |                                                                       |"+
+        "\n|    <YOU ARE HERE>                              |                                                                       |"+
         "\n|                                               [X]                                                                      |"+
         "\n|                                                |                                                                       |"+
         "\n|                                                |                                                                       |"+
