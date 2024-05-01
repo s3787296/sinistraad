@@ -1,6 +1,4 @@
-
-  
-public class map {//    
+public class Map {//    
     public static void A1Map(){
         //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
         System.out.println("Map of Duskwood Forest"+
