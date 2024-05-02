@@ -16,7 +16,7 @@ public class Combat {
             Game.printHeading(enemy.name + "\nHP: " + enemy.curHp + "/" + enemy.maxHp);
             Game.printHeading(Game.player.name + "\nHP: " + Game.player.curHp + "/" + Game.player.maxHp);
             Game.printSeperator(20);
-            System.out.println("[1] Attack\n[2] Dodge\n[3] Item");
+            System.out.println("[1] Attack\n[2] Item\n[3] Flee");
             int input = Game.readInt();
             // reacting to player input
             if (input == 1) {
@@ -25,20 +25,11 @@ public class Combat {
                 int dmgTaken;
                 // player damage dealt calculation
                 dmgDealt = Game.player.attack() - enemy.defence();
-                if (Game.player.attack() >= enemy.defence()) {
-                    dmgDealt = Game.player.attack() *2 - enemy.defence();
-                }else{
-                    dmgDealt = Game.player.attack() * Game.player.attack() / enemy.defence();
-                }
                 if (dmgDealt < 0) {
                     dmgDealt = 0;
                 }
                 // player dmg taken calculation
-                if (enemy.attack() >= Game.player.defence()) {
-                    dmgTaken = enemy.attack() * 2 - Game.player.defence();
-                } else {
-                    dmgTaken = enemy.attack() * enemy.attack() / Game.player.defence();
-                }
+                dmgTaken = enemy.attack() - Game.player.defence();
                 if (dmgTaken < 0) {
                     dmgTaken = 0;
                 }
@@ -70,7 +61,8 @@ public class Combat {
 
                     if (addRest) {
                         Game.player.rests++;
-                        System.out.println("You fought well and earned an additional rest.\nRests available: ["+ Game.player.rests + "]!");
+                        System.out.println("You fought well and earned an additional rest.\nRests available: ["
+                                + Game.player.rests + "]!");
                     }
                     if (goldEarnt > 0) {
                         Game.player.gold += goldEarnt;
@@ -80,8 +72,6 @@ public class Combat {
                     break;
                 }
             } else if (input == 2) {
-                // dodge
-            } else if (input == 3) {
                 // use potion
                 Game.clearConsole();
                 if (Game.player.potions > 0 && Game.player.curHp < Game.player.maxHp) {
@@ -92,7 +82,8 @@ public class Combat {
                     input = Game.readInt();
                     if (input == 1) {
                         // player takes potion
-                        System.out.println("You used a potion and restored " + (Game.player.maxHp - Game.player.curHp)+ " health.");
+                        System.out.println("You used a potion and restored " + (Game.player.maxHp - Game.player.curHp)
+                                + " health.");
                         Game.player.curHp = Game.player.maxHp;
                         Game.continueKey();
                     } else if (input == 2) {
@@ -103,6 +94,23 @@ public class Combat {
                     // player unable to use a potion
                     Game.printHeading("You can't do that right now.");
                     Game.continueKey();
+                }
+            } else if (input == 3) {
+                // flee
+                Game.clearConsole();
+                // 50% chance to escape
+                if (Math.random() * 10 + 1 <= 5.0) {
+                    Game.printHeading("You managed to escape from the " + enemy.name + "!");
+                    Game.continueKey();
+                    break;
+                } else {
+                    int failedEscape = enemy.attack() - Game.player.defence();
+                    Game.printHeading("You failed to escape and took " + failedEscape + " damage.");
+                    Game.continueKey();
+                    // checking if failed escape dmg kills player
+                    if (Game.player.curHp <= 0) {
+                        Game.playerDied();
+                    }
                 }
             }
         }
