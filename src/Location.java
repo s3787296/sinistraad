@@ -1,25 +1,26 @@
 public class Location {
     // Variable to store player location. Starting location is defined.
-    public String playerLocation = "A1";
+    public static String playerLocation = "A1";
 
-    // Navigation method for player movement around map
-    public void navigation() {
+    // travel method for player movement around map
+    public static void travel() {
         // Compass direction variables for readability
         int north = 1;
         int east = 2;
         int south = 3;
         int west = 4;
-      
         // Boolean variable to ensure do while loop runs until the chosen location is
         // valid
         Boolean validLocation = false;
         do {
+            Game.clearConsole();
             System.out.println("Which direction do you want to travel?");
             System.out.println("[1] North");
             System.out.println("[2] East");
             System.out.println("[3] South");
             System.out.println("[4] West");
-            // User has four choices, call the read input function. TODO: 4 player options here
+            // User has four choices, call the read input function. TODO: 4 player options
+            // here
             int direction = Game.readInt();
             // Switch case checking whether player location is valid
             switch (playerLocation) {
@@ -274,7 +275,7 @@ public class Location {
                     }
             }
         } while (validLocation != true);
-        
+
         // Print location once valid. TODO: This is just for testing purposes.
         if (validLocation == true) {
             System.out.println("Your location is: " + playerLocation);
@@ -285,7 +286,7 @@ public class Location {
     // TODO: encounters method
     public void encounters() {
         // playerlocation variable at top of doc
-        // Create ArrayList to store envounters
+        // Create ArrayList to store encounters
         // ArrayList<String> encounters = new ArrayList<String>();
         // TODO: Confirm types of encounters
     }
