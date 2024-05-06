@@ -1,4 +1,4 @@
-public class Story {
+public class Dialogue {
         public static String A1Text(){
         return"";
  
