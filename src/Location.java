@@ -1,6 +1,6 @@
 public class Location {
     // Variable to store player location. Starting location is defined.
-    public static String playerLocation = "A1";
+    public String playerLocation = "A1";
 
     // travel method for player movement around map
     public static void travel() {
@@ -31,7 +31,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "B1":
                     if (direction == east) {
                         playerLocation = "C1";
@@ -45,7 +45,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "C1":
                     if (direction == east) {
                         playerLocation = "D1";
@@ -56,7 +56,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "D1":
                     if (direction == east) {
                         playerLocation = "E1";
@@ -67,7 +67,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "E1":
                     if (direction == west) {
                         playerLocation = "D1";
@@ -75,7 +75,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "A2":
                     if (direction == east) {
                         playerLocation = "B2";
@@ -86,7 +86,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "B2":
                     if (direction == north) {
                         playerLocation = "B1";
@@ -100,7 +100,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "C2":
                     if (direction == south) {
                         playerLocation = "C3";
@@ -108,7 +108,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "D2":
                     if (direction == south) {
                         playerLocation = "D3";
@@ -116,7 +116,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                     // CASE: E2 (NOT ALLOWED)
                 case "A3":
                     if (direction == north) {
@@ -128,7 +128,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "B3":
                     if (direction == north) {
                         playerLocation = "B2";
@@ -136,7 +136,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "C3":
                     if (direction == north) {
                         playerLocation = "C2";
@@ -147,7 +147,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "D3":
                     if (direction == north) {
                         playerLocation = "D2";
@@ -161,7 +161,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "E3":
                     if (direction == south) {
                         playerLocation = "E4";
@@ -169,7 +169,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "A4":
                     if (direction == north) {
                         playerLocation = "A3";
@@ -180,7 +180,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "B4":
                     if (direction == east) {
                         playerLocation = "C4";
@@ -194,7 +194,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "C4":
                     if (direction == east) {
                         playerLocation = "D4";
@@ -205,7 +205,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "D4":
                     if (direction == north) {
                         playerLocation = "D3";
@@ -222,7 +222,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "E4":
                     if (direction == north) {
                         playerLocation = "E3";
@@ -236,7 +236,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                     // A5: NOT ALLOWED SO NOT INCLUDED
                 case "B5":
                     if (direction == north) {
@@ -248,7 +248,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "C5":
                     if (direction == west) {
                         playerLocation = "B5";
@@ -256,7 +256,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "D5":
                     if (direction == north) {
                         playerLocation = "D4";
@@ -264,7 +264,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
                 case "E5":
                     if (direction == north) {
                         playerLocation = "E4";
@@ -272,7 +272,7 @@ public class Location {
                     } else {
                         System.out.println("Not allowed. Select another option.");
                         Game.continueKey();
-                    }
+                    } break;
             }
         } while (validLocation != true);
 
@@ -281,13 +281,5 @@ public class Location {
             System.out.println("Your location is: " + playerLocation);
             Game.continueKey();
         }
-    }
-
-    // TODO: encounters method
-    public void encounters() {
-        // playerlocation variable at top of doc
-        // Create ArrayList to store encounters
-        // ArrayList<String> encounters = new ArrayList<String>();
-        // TODO: Confirm types of encounters
     }
 }
