@@ -188,7 +188,9 @@ public class Story {
       }
       public static String BadEndingText(){
          return "You swing wildly at the count, as you try to vanquish the foe, but one wrong step has his claws slash at your chest, spilling too much blood for a mere mortal. Despite all your efforts, you lost. You collapse face down on the floor of the counts room as he laughs maniacally. “ your pathetic town will be overran by years end, humans will always be weak.”";
+      }
+   }
          
 
 
-}
+
