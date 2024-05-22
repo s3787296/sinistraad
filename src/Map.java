@@ -1,16 +1,4 @@
 public class Map {
-    // TODO: We should probably add some variables in here re the mapArrays.
-    // mapArray method holds arrays containing each map column
-    // noMap is a placeholder, called when player does not have access to the map
-    public static String mapArray() {
-        // TODO: This section doesn't seem quite right. We need a return function of String type if it's a String method.
-        String[] A = {"noMap", "A1", "A2", "A3", "A4", "A5"};
-        String[] B = {"noMap", "B1", "B2", "B3", "B4", "B5"};
-        String[] C = {"noMap", "C1", "B2", "B3", "B4", "B5"};
-        String[] D = {"noMap", "D1", "D2", "D3", "D4", "D5"};
-        String[] E = {"noMap", "E1", "E2", "E3", "E4", "E5"};
-        return mapArray();
-    }
     public static void A1Map(){
         //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
         System.out.println("Map of Duskwood Forest"+
