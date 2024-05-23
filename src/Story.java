@@ -1,7 +1,8 @@
 public class Story {
-    // Pulls all the other things.
-        // E.g. Method: A1Story (Dialogue)
+        // Method: A1Name
+        // Method: A1Dialogue
         // Method: A1Map
         // Method: A1Encounters
-        // Method: AvailableDirections
+        // Method: A1Directions
+        // Method: A1Items
 }
