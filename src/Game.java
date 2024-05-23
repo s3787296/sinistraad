@@ -1,27 +1,33 @@
-import java.util.Scanner;
-
 public class Game {
-    static Scanner scanner = new Scanner(System.in);
-    static Player player;
+    
+    public static Player player;
     public static boolean isRunning;
 
     // method to start the game
     public static void startGame() {
-        String name;
-        Boolean nameSet = false;
         // printing game title
         printGameTitle();
         // getting player name
+        playerNameSet();
+        // start main game loop
+        gameMenu();
+    }
+
+    // method to get player name 
+    public static void playerNameSet(){
+        String name;
+        Boolean nameSet = false;
+        // loop to get player name
         do {
-            clearConsole();
-            printHeading("What's your name?");
-            name = scanner.next();
+            Misc.clearConsole();
+            Misc.printHeading("What's your name?");
+            name = Misc.scanner.next();
             // confirming player choice
             do {
-                clearConsole();
-                printHeading("Your name is " + name + ".\nIs that correct?");
+                Misc.clearConsole();
+                Misc.printHeading("Your name is " + name + ".\nIs that correct?");
                 System.out.println("[1] Yes!\n[2] No, let me change it.");
-                int input = readInt();
+                int input = Misc.readInt();
                 if (input == 1) {
                     nameSet = true;
                     break;
@@ -33,71 +39,69 @@ public class Game {
         } while (!nameSet);
         // create new player object with input name
         player = new Player(name);
-        // setting isRunning to true so the game loop can begin
+        // setting isRunning to false to move to game menu
         isRunning = false;
-        // start main game loop
-        gameMenu();
     }
 
-    // creating a random battle
+    // method to create a random battle
     public static void enemyBattle() {
-        Game.clearConsole();
-        Game.printHeading("You're attacked by an evil creature. You'll have to fight it!");
-        Game.continueKey();
+        Misc.clearConsole();
+        Misc.printHeading("\nYou're attacked by an evil creature. You'll have to fight it!");
+        Misc.continueKey();
         // creating new enemy with random name
-        Combat.battle(
-                new Enemy(Combat.enemies[(int) (Math.random() * Combat.enemies.length)], player.xp));
+        Combat.battle(new Enemy(Combat.enemies[(int) (Math.random() * Combat.enemies.length)], player.getXp()));
     }
 
+    // method to create a boss battle
     public static void bossBattle() {
         // Combat.battle(new Boss)
     }
 
     public static void takeRest() {
         do {
-            clearConsole();
-            printHeading("Do you want to take a rest? (You have " + Game.player.rests + " rest(s) left.)");
+            Misc.clearConsole();
+            Misc.printHeading("Do you want to take a rest? (You have " + Game.player.getRests() + " rest(s) left.)");
             System.out.println("[1] Yes\n[2] No, not now.");
-            int input = readInt();
+            int input = Misc.readInt();
             if (input == 1) {
                 // player takes rest
-                clearConsole();
-                if (Game.player.curHp < Game.player.maxHp) {
-                    int hpRestored = ((Game.player.maxHp - Game.player.curHp) / 2);
-                    System.out.println("You took a rest and restored " + hpRestored + " health.");
-                    Game.player.curHp += hpRestored;
-                    System.out.println("You're now at " + Game.player.curHp + "/" + Game.player.maxHp + " health.");
-                    Game.player.rests--;
-                    continueKey();
+                Misc.clearConsole();
+                if (Game.player.getCurHp() < Game.player.getMaxHp()) {
+                    int hpRestored = ((Game.player.getMaxHp() - Game.player.getCurHp()) / 2);
+                    System.out.println("\nYou took a rest and restored " + hpRestored + " health.");
+                    Game.player.setCurHp(Game.player.getCurHp()+ hpRestored);
+                    System.out.println("You're now at " + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + " health.");
+                    Game.player.setRests(Game.player.getRests() - 1);
+                    Misc.continueKey();
                     break;
                 } else {
                     System.out.println("You're at full health. You don't need to rest right now.");
-                    continueKey();
+                    Misc.continueKey();
                     break;
                 }
             } else if (input == 2) {
-                System.out.println("You decide not to take a rest right now. ");
-                continueKey();
+                System.out.println("\nYou decide not to take a rest right now. ");
+                Misc.continueKey();
                 break;
             }
-        } while (Game.player.rests > 0);
+        } while (Game.player.getRests() > 0);
     }
 
     // print title screen
     public static void printGameTitle() {
-        clearConsole();
-        printSeperator(40);
-        printHeading("SINISTRAAD, A TEXT BASED RPG\nDESIGNED BY JUDE, AMELIA & MAX");
-        printSeperator(40);
-        continueKey();
+        Misc.clearConsole();
+        Misc.printSeperator(40);
+        Misc.printHeading("SINISTRAAD, A TEXT BASED RPG\nDESIGNED BY JUDE, AMELIA & MAX");
+        Misc.printSeperator(40);
+        Misc.continueKey();
     }
 
     // printing the main menu
     public static void printGameMenu() {
-        clearConsole();
-        printHeading("GAME MENU");
+        Misc.clearConsole();
+        Misc.printHeading("GAME MENU");
         System.out.println("Choose an Option:");
-        printSeperator(30);
+        Misc.printSeperator(30);
         System.out.println("[1] Continue Game");
         System.out.println("[2] Game Info");
         System.out.println("[3] Exit Game");
@@ -105,14 +109,14 @@ public class Game {
 
     // printing the ingame player menu
     public static void printPlayerMenu() {
-        clearConsole();
-        printHeading("PLAYER MENU");
+        Misc.clearConsole();
+        Misc.printHeading("PLAYER MENU");
         System.out.println("Choose an Option:");
-        printSeperator(30);
-        System.out.println("[1] Interact");
+        Misc.printSeperator(30);
+        System.out.println("[1] Explore");
         System.out.println("[2] Travel");
-        System.out.println("[3] Player");
-        System.out.println("[4] Bag");
+        System.out.println("[3] Inventory");
+        System.out.println("[4] Player");
         System.out.println("[5] Rest");
         System.out.println("[6] Quit");
     }
@@ -128,41 +132,32 @@ public class Game {
     }
 
     // printing character sheet info
-    public static void printPlayerInfo() {
-        clearConsole();
-        printHeading("PLAYER INFO:");
-        System.out.println("NAME: " + player.name + "\tHP: " + player.curHp + "/" + player.maxHp);
-        printSeperator(30);
-        System.out.println("XP: " + player.xp + "\tGold: " + player.gold);
-        printSeperator(25);
-        System.out.println("Potions: " + player.potions + "\tRests: " + player.rests);
-        printSeperator(25);
-        // printing affinity traits
-        if (player.numAtkUpgrades > 0) {
-            System.out.println("Offense Tree: " + player.atkUpgrades[player.numAtkUpgrades]);
-            printSeperator(25);
-        }
-        if (player.numDefUpgrades > 0) {
-            System.out.println("Defense Tree: " + player.defUpgrades[player.numDefUpgrades]);
-            printSeperator(25);
-        }
-        continueKey();
+    public static void playerInfo() {
+        Misc.clearConsole();
+        Misc.printHeading("PLAYER INFO:");
+        System.out.println("NAME: " + player.getName() + "\tHP: " + player.getCurHp() + "/" + player.getMaxHp());
+        Misc.printSeperator(30);
+        System.out.println("XP: " + player.getXp() + "\tGold: " + player.getGold());
+        Misc.printSeperator(25);
+        System.out.println("Potions: " + player.getPotions() + "\tRests: " + player.getPotions());
+        Misc.printSeperator(25);
+        Misc.continueKey();
     }
 
     // method called when player dies
     public static void playerDied() {
-        clearConsole();
-        printHeading("You Died...");
-        printHeading("You earned " + player.xp + " XP on your Adventure.");
-        continueKey();
+        Misc.clearConsole();
+        Misc.printHeading("You Died...");
+        Misc.printHeading("You earned " + player.getXp() + " XP on your Adventure.");
+        Misc.continueKey();
         gameQuit();
     }
 
     // game quit and close method
     public static void gameQuit() {
-        clearConsole();
+        Misc.clearConsole();
         System.out.println("Thank you for playing!");
-        continueKey();
+        Misc.continueKey();
         System.exit(0);
     }
 
@@ -170,7 +165,7 @@ public class Game {
     public static void gameMenu() {
         while (!isRunning) {
             printGameMenu();
-            int input = readInt();
+            int input = Misc.readInt();
             switch (input) {
                 case 1:
                     continueGame();
@@ -189,19 +184,19 @@ public class Game {
     public static void playerMenu() {
         while (isRunning) {
             printPlayerMenu();
-            int input = readInt();
+            int input = Misc.readInt();
             switch (input) {
                 case 1:
                     enemyBattle();
                     break;
                 case 2:
-                    Location.travel();
+                    Direction.travel();
                     break;
                 case 3:
-                    printPlayerInfo();
+                    inventoryMenu();
                     break;
                 case 4:
-                    // bag();
+                    playerInfo();
                     break;
                 case 5:
                     takeRest();
@@ -213,42 +208,33 @@ public class Game {
             }
         }
     }
+    
+    public static void printInventoryMenu(){
+        Misc.clearConsole();
+        Misc.printHeading("Player Inventory");
+        System.out.println("Select option:");
+        System.out.println("[1] View Items");
+        System.out.println("[2] ");
+        System.out.println("[3] Exit");
+    }
 
-    // method to get only integer user input
-    public static int readInt() {
-        int readInput;
-        try {
-            readInput = Integer.parseInt(scanner.next());
-        } catch (Exception e) {
-            readInput = -1;
+    public static void inventoryMenu(){
+        boolean viewInventory = true;
+        while (viewInventory) {
+            printInventoryMenu();
+            int input = Misc.readInt();
+            switch (input) {
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    playerMenu();
+                    viewInventory = false;
+                    break;
+            }
         }
-        return readInput;
-    }
-
-    // method to print a seperator with length n
-    public static void printSeperator(int n) {
-        for (int i = 0; i < n; i++) {
-            System.out.print("-");
-        }
-        System.out.println();
-    }
-
-    // method to pause for user input
-    public static void continueKey() {
-        System.out.println("Enter c to continue");
-        scanner.next();
-    }
-
-    // method to print a heading
-    public static void printHeading(String title) {
-        printSeperator(30);
-        System.out.println(title);
-        printSeperator(30);
-    }
-
-    // method to clear the console
-    public static void clearConsole() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
     }
 }
