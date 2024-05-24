@@ -57,7 +57,7 @@ public class Item {
         Misc.printHeading(getName());
         System.out.println("Type: "+getType());
         System.out.println("Desc: "+getDesc());
-        System.out.println("Buff: "+getBuff());
+        System.out.println("Buff: "+getBuff());;
         return "";
     }
 }
