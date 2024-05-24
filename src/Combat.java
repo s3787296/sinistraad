@@ -17,14 +17,14 @@ public class Combat {
 
     // main battle method
     public static void battle(Enemy enemy) {
-        // battle heading and options
-        printBattle(enemy);
         // turn tracker variable
         int turn = 1;
         // main battle loop
         while (true) {
+            // battle heading and options
+            printBattle(enemy);
+            // getting and reacting to player input
             int input = Misc.readInt();
-            // reacting to player input
             if (input == 1) {
                 // attack
                 int dmgDealt;

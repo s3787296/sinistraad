@@ -104,7 +104,7 @@ public class Game {
         Misc.printSeperator(30);
         System.out.println("[1] Continue Game");
         System.out.println("[2] Game Info");
-        System.out.println("[3] Exit Game");
+        System.out.println("[3] Quit Game");
     }
 
     // printing the ingame player menu
@@ -118,7 +118,7 @@ public class Game {
         System.out.println("[3] Inventory");
         System.out.println("[4] Player");
         System.out.println("[5] Rest");
-        System.out.println("[6] Quit");
+        System.out.println("[6] Exit");
     }
 
     // transition method from game menu to player menu
@@ -135,12 +135,13 @@ public class Game {
     public static void playerInfo() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER INFO:");
-        System.out.println("NAME: " + player.getName() + "\tHP: " + player.getCurHp() + "/" + player.getMaxHp());
+        System.out.println("Name: " + player.getName() + "\tHP: " + player.getCurHp() + "/" + player.getMaxHp());
         Misc.printSeperator(30);
         System.out.println("XP: " + player.getXp() + "\tGold: " + player.getGold());
         Misc.printSeperator(25);
         System.out.println("Potions: " + player.getPotions() + "\tRests: " + player.getPotions());
         Misc.printSeperator(25);
+        System.out.println("Weapon Damage: "+player.getWeaponAtk() + "\tArmour Defence: "+player.getArmourDef());
         Misc.continueKey();
     }
 
@@ -211,28 +212,26 @@ public class Game {
     
     public static void printInventoryMenu(){
         Misc.clearConsole();
-        Misc.printHeading("Player Inventory");
+        Misc.printHeading("Inventory Menu");
         System.out.println("Select option:");
         System.out.println("[1] View Items");
-        System.out.println("[2] ");
+        System.out.println("[2] Add Item"); // testing purposes
         System.out.println("[3] Exit");
     }
 
     public static void inventoryMenu(){
-        boolean viewInventory = true;
-        while (viewInventory) {
+        while (true) {
             printInventoryMenu();
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    
+                    Inventory.printInventory();
                     break;
                 case 2:
-                    
+                    ItemList.herosSword();
                     break;
                 case 3:
                     playerMenu();
-                    viewInventory = false;
                     break;
             }
         }

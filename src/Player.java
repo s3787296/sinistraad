@@ -8,7 +8,39 @@ public class Player {
     private int gold, rests, potions;
     
     // player weapon, armour and buff bonuses
-    public static int weaponAtk, armourDef, bonusAtk, bonusDef;
+    private int weaponAtk, armourDef, bonusAtk, bonusDef;
+
+    public int getWeaponAtk() {
+        return this.weaponAtk;
+    }
+
+    public void setWeaponAtk(int weaponAtk) {
+        this.weaponAtk = weaponAtk;
+    }
+
+    public int getArmourDef() {
+        return this.armourDef;
+    }
+
+    public void setArmourDef(int armourDef) {
+        this.armourDef = armourDef;
+    }
+
+    public int getBonusAtk() {
+        return this.bonusAtk;
+    }
+
+    public void setBonusAtk(int bonusAtk) {
+        this.bonusAtk = bonusAtk;
+    }
+
+    public int getBonusDef() {
+        return this.bonusDef;
+    }
+
+    public void setBonusDef(int bonusDef) {
+        this.bonusDef = bonusDef;
+    }
 
     // getter method for name variable
     public String getName() {

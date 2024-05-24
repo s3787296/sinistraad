@@ -4,6 +4,18 @@ import java.util.Scanner;
 public class Misc {
     static Scanner scanner = new Scanner(System.in);
 
+
+    // method to check if the players inventory contains input item
+    public static boolean containsItem(String item) {
+        boolean contains = false;
+        for (int i = 0; i < Inventory.playerItemList.size(); i++) {
+            if (item.equalsIgnoreCase(Inventory.playerItemList.get(i).getName())) {
+                contains = true;
+            }
+        }
+        return contains;
+    }
+
     // method to get only integer user input
     public static int readInt() {
         int readInput;
@@ -25,7 +37,7 @@ public class Misc {
 
     // method to pause for user input
     public static void continueKey() {
-        System.out.println("Enter c to continue");
+        System.out.println("\nEnter c to continue");
         scanner.next();
     }
 
