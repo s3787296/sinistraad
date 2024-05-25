@@ -3,9 +3,6 @@ public class Combat {
     // random encounters
     public static String[] encounters = { "Battle", "Battle", "Battle", "Rest" };
 
-    // enemy names
-    public static String[] enemies = { "Enemy1", "Enemy2", "Enemy3", "Enemy4" };
-
     // print battle heading and options
     public static void printBattle(Enemy enemy) {
         Misc.clearConsole();
@@ -16,7 +13,9 @@ public class Combat {
     }
 
     // main battle method
-    public static void battle(Enemy enemy) {
+    public static boolean battle (Enemy enemy) {
+        // return variable for post battle use
+        boolean victory = false;
         // turn tracker variable
         int turn = 1;
         // main battle loop
@@ -53,6 +52,7 @@ public class Combat {
                 // check if player died
                 if (Game.player.getCurHp() <= 0) {
                     Game.playerDied(); // method to end the game
+                    victory = true;
                     break;
                 } else if (enemy.getCurHp() <= 0) {
                     // tell the player they won
@@ -64,17 +64,19 @@ public class Combat {
                     // random drops
                     boolean addRest = (Math.random() * 5 + 1 <= 2.25);
                     int goldEarnt = (int) (Math.random() * enemy.getXp());
-
+                    // if player earnt rest
                     if (addRest) {
                         Game.player.setRests(Game.player.getRests() + 1);
-                        System.out.println("You fought well and earned an additional rest.\nRests available: [" + Game.player.getRests() + "]!");
+                        System.out.println("You fought well and earned an additional rest.\nRests available: ["+ Game.player.getRests() + "]!");
                     }
+                    // if player earnt > 0 gold
                     if (goldEarnt > 0) {
                         Game.player.setGold(Game.player.getGold() + goldEarnt);
                         System.out.println(
                                 "You collect " + goldEarnt + " gold from the " + enemy.getName() + "'s corpse.");
                     }
                     Misc.continueKey();
+                    victory =  true;
                     break;
                 }
             } else if (input == 2) {
@@ -88,7 +90,7 @@ public class Combat {
                     input = Misc.readInt();
                     if (input == 1) {
                         // player takes potion
-                        System.out.println("You used a potion and restored " + (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
+                        System.out.println("You used a potion and restored "+ (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
                         Game.player.setCurHp(Game.player.getMaxHp());
                         Misc.continueKey();
                     } else if (input == 2) {
@@ -101,23 +103,27 @@ public class Combat {
                     Misc.continueKey();
                 }
             } else if (input == 3) {
-                // flee
+                // player chooses flee
                 Misc.clearConsole();
-                // 50% chance to escape
-                if (Math.random() * 10 + 1 <= 5.0) {
+                // if enemy is not a boss and player wins 50/50
+                if (!enemy.getType().equalsIgnoreCase("Boss") && Math.random() * 10 + 1 <= 5.0) {
                     Misc.printHeading("You managed to escape from the " + enemy.getName() + "!");
                     Misc.continueKey();
                     break;
                 } else {
-                    int failedEscape = enemy.combatAtk() - Game.player.combatDef();
+                    // if enemy is a boss or player loses 50/50
+                    int failedEscape = (int) (Math.random() * 10) + 1;
                     Misc.printHeading("You failed to escape and took " + failedEscape + " damage.");
                     Misc.continueKey();
+                    Game.player.setCurHp(Game.player.getCurHp() - failedEscape);
                     // checking if failed escape dmg kills player
                     if (Game.player.getCurHp() <= 0) {
                         Game.playerDied();
+                        break;
                     }
                 }
             }
         }
+        return victory;
     }
 }

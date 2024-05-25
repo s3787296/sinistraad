@@ -1,127 +1,158 @@
+import java.util.ArrayList;
+
 public class Player {
 
     // core player attributes
     private String name;
     private int maxHp, curHp, xp;
-
+    private Location currentLocation;
+    private ArrayList<Item> playerItems;
     // additional player attributes
     private int gold, rests, potions;
-    
     // player weapon, armour and buff bonuses
     private int weaponAtk, armourDef, bonusAtk, bonusDef;
 
+    // getter method for player items
+    public ArrayList<Item> getPlayerItems() {
+        return this.playerItems;
+    }
+
+    // setter method for player items
+    public void setPlayerItems(ArrayList<Item> playerItems) {
+        this.playerItems = playerItems;
+    }
+
+    // getter method for player current location
+    public Location getCurrentLocation() {
+        return this.currentLocation;
+    }
+
+    // setter method for player current location
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
+    // getter method for player weapon atk
     public int getWeaponAtk() {
         return this.weaponAtk;
     }
 
+    // setter method for player weapon atk
     public void setWeaponAtk(int weaponAtk) {
         this.weaponAtk = weaponAtk;
     }
 
+    // getter method for player armour def
     public int getArmourDef() {
         return this.armourDef;
     }
 
+    // setter method for player armour def
     public void setArmourDef(int armourDef) {
         this.armourDef = armourDef;
     }
 
+    // getter method for player bonus atk
     public int getBonusAtk() {
         return this.bonusAtk;
     }
 
+    // setter method for player bonus atk
     public void setBonusAtk(int bonusAtk) {
         this.bonusAtk = bonusAtk;
     }
 
+    // getter method for player bonus def
     public int getBonusDef() {
         return this.bonusDef;
     }
 
+    // setter method for player bonusdef
     public void setBonusDef(int bonusDef) {
         this.bonusDef = bonusDef;
     }
 
-    // getter method for name variable
+    // getter method for player name
     public String getName() {
         return this.name;
     }
-    // setter method for name variable
+    // setter method for player name
     public void setName(String name) {
         this.name = name;
     }
 
-    // getter method for max hp variable
+    // getter method for player max hp
     public int getMaxHp() {
         return this.maxHp;
     }
 
-    // setter method for max hp variable
+    // setter method for player max hp 
     public void setMaxHp(int maxHp) {
         this.maxHp = maxHp;
     }
 
-    // getter method for current hp variable
+    // getter method for player current hp 
     public int getCurHp() {
         return this.curHp;
     }
 
-    // setter method for name variable
+    // setter method for player current hp
     public void setCurHp(int curHp) {
         this.curHp = curHp;
     }
 
-    // getter method for xp variable
+    // getter method for player xp
     public int getXp() {
         return this.xp;
     }
 
-    // setter method for xp variable
+    // setter method for player xp
     public void setXp(int xp) {
         this.xp = xp;
     }
 
-    // getter method for gold variable
+    // getter method for player gold 
     public int getGold() {
         return this.gold;
     }
 
-    // setter method for gold variable
+    // setter method for player gold
     public void setGold(int gold) {
         this.gold = gold;
     }
 
-    // getter method for rests variable
+    // getter method for player rests
     public int getRests() {
         return this.rests;
     }
 
-    // setter method for name variable
+    // setter method for player rests
     public void setRests(int rests) {
         this.rests = rests;
     }
 
-    // getter method for potions variable
+    // getter method for player potions
     public int getPotions() {
         return this.potions;
     }
 
-    // setter method for potions variable
+    // setter method for player potions
     public void setPotions(int potions) {
         this.potions = potions;
     }
 
     // Player specific constructor
     public Player(String name) {
-        // setting intial player values
+        // setting intial core player attributes
         this.name = name;
         this.maxHp = 100;
         this.xp = 0;
         this.curHp = maxHp;
-        // settting additional player stats
+        // settting additional player attributes
         this.gold = 10;
         this.rests = 1;
         this.potions = 0;
+        playerItems = new ArrayList<Item>();
     }
 
     // player specific attack calculation
@@ -132,5 +163,13 @@ public class Player {
     // player specific defence calculation
     public int combatDef() {
         return (int) (((Math.random() * 10) + 1) + armourDef + bonusDef);
+    }
+
+    public void dropItem(String item){
+        // WIP TODO
+    }
+
+    public void pickupItem(String item){
+        // WIP TODO
     }
 }

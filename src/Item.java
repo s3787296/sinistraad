@@ -1,44 +1,44 @@
 public class Item {
 
-    //class attributes for item object
+    // attributes for item object
     private String name, type, desc, buff;
 
-    // getter method for name variable
+    // getter method for item name
     public String getName() {
         return this.name;
     }
 
-    // setter method for name variable
+    // setter method for item name
     public void setName(String name) {
         this.name = name;
     }
 
-    // getter method for type variable
+    // getter method for item type
     public String getType() {
         return this.type;
     }
 
-    // setter method for type variable
+    // setter method for item type
     public void setType(String type) {
         this.type = type;
     }
 
-    // getter method for description variable
+    // getter method for item description
     public String getDesc() {
         return this.desc;
     }
 
-    // setter method for description variable
+    // setter method for item description
     public void setDesc(String desc) {
         this.desc = desc;
     }
 
-    // getter method for buff variable
+    // getter method for item buff
     public String getBuff() {
         return this.buff;
     }
 
-    // setter method for buff variable
+    // setter method for item buff
     public void setBuff(String buff) {
         this.buff = buff;
     }
