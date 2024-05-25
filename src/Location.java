@@ -1,40 +1,59 @@
 import java.util.ArrayList;
 
 public class Location {
-    private String name;
-    private String description;
-    private ArrayList<Item> itemList;
+    
+    // core location attributes
+    private String name, desc, area;
 
+    // location specific arraylist
+    private ArrayList<Item> locationItems;
+
+    // getter method for location area
+    public String getArea() {
+        return this.area;
+    }
+
+    // setter method for location area
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    // getter method for location name
     public String getName() {
         return this.name;
     }
 
+    // setter method for location name
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getDescription() {
-        return this.description;
+    // getter method for location desc
+    public String getDesc() {
+        return this.desc;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    // setter method for location desc
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
+    // getter method for location arraylist
     public ArrayList<Item> getItemList() {
-        return this.itemList;
+        return this.locationItems;
     }
 
+    // setter method for location arraylist
     public void setItemList(ArrayList<Item> itemList) {
-        this.itemList = itemList;
+        this.locationItems = itemList;
     }
-    
 
-    public Location (String name, String description){
+    // constructor method for location object
+    public Location(String name, String area, String desc) {
         this.name = name;
-        this.description = description;
-        itemList = new ArrayList<Item>();
+        this.area = area;
+        this.desc = desc;
+        locationItems = new ArrayList<Item>();
     }
 
-    
 }

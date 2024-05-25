@@ -4,12 +4,11 @@ import java.util.Scanner;
 public class Misc {
     static Scanner scanner = new Scanner(System.in);
 
-
     // method to check if the players inventory contains input item
     public static boolean containsItem(String item) {
         boolean contains = false;
-        for (int i = 0; i < Inventory.playerItemList.size(); i++) {
-            if (item.equalsIgnoreCase(Inventory.playerItemList.get(i).getName())) {
+        for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
+            if (item.equalsIgnoreCase(Game.player.getPlayerItems().get(i).getName())) {
                 contains = true;
             }
         }

@@ -1,11 +1,16 @@
 public class Enemy {
 
-    // attributes for all characters
-    private String name;
-    private int maxHp, curHp, xp;
+    // core enemy attributes
+    private String name, type;
+    private int maxHp, curHp, xp, playerXp;
 
-    // variable to store players values
-    private int playerXp;
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     // getter method for name variable
     public String getName() {
@@ -58,9 +63,10 @@ public class Enemy {
     }
 
     // enemy specific constructor
-    public Enemy(String name, int playerXp) {
+    public Enemy(String name, String type, int playerXp) {
         // character constructor
         this.name = name;
+        this.type = type;
         this.maxHp = (int) (((Math.random() * 10) + 1) + (playerXp+playerXp/4));
         this.curHp = maxHp;
         this.xp = (int) (((Math.random() * 10) + 1) + (playerXp/4));

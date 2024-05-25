@@ -1,5 +1,5 @@
 public class Game {
-    
+
     public static Player player;
     public static boolean isRunning;
 
@@ -13,8 +13,8 @@ public class Game {
         gameMenu();
     }
 
-    // method to get player name 
-    public static void playerNameSet(){
+    // method to get player name
+    public static void playerNameSet() {
         String name;
         Boolean nameSet = false;
         // loop to get player name
@@ -48,8 +48,17 @@ public class Game {
         Misc.clearConsole();
         Misc.printHeading("\nYou're attacked by an evil creature. You'll have to fight it!");
         Misc.continueKey();
-        // creating new enemy with random name
-        Combat.battle(new Enemy(Combat.enemies[(int) (Math.random() * Combat.enemies.length)], player.getXp()));
+        // creating new enemy (testing purposes)
+        if (Combat.battle(EnemyList.feralDuskwolf()) == true) {
+            Misc.clearConsole();
+            System.out.println("You won!");
+            Misc.continueKey();
+        }
+        else{
+            Misc.clearConsole();
+            System.out.println("You suck!");
+            Misc.continueKey();
+        };
     }
 
     // method to create a boss battle
@@ -69,8 +78,9 @@ public class Game {
                 if (Game.player.getCurHp() < Game.player.getMaxHp()) {
                     int hpRestored = ((Game.player.getMaxHp() - Game.player.getCurHp()) / 2);
                     System.out.println("\nYou took a rest and restored " + hpRestored + " health.");
-                    Game.player.setCurHp(Game.player.getCurHp()+ hpRestored);
-                    System.out.println("You're now at " + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + " health.");
+                    Game.player.setCurHp(Game.player.getCurHp() + hpRestored);
+                    System.out.println(
+                            "You're now at " + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + " health.");
                     Game.player.setRests(Game.player.getRests() - 1);
                     Misc.continueKey();
                     break;
@@ -141,7 +151,7 @@ public class Game {
         Misc.printSeperator(25);
         System.out.println("Potions: " + player.getPotions() + "\tRests: " + player.getPotions());
         Misc.printSeperator(25);
-        System.out.println("Weapon Damage: "+player.getWeaponAtk() + "\tArmour Defence: "+player.getArmourDef());
+        System.out.println("Weapon Damage: " + player.getWeaponAtk() + "\tArmour Defence: " + player.getArmourDef());
         Misc.continueKey();
     }
 
@@ -209,8 +219,8 @@ public class Game {
             }
         }
     }
-    
-    public static void printInventoryMenu(){
+
+    public static void printInventoryMenu() {
         Misc.clearConsole();
         Misc.printHeading("Inventory Menu");
         System.out.println("Select option:");
@@ -219,13 +229,13 @@ public class Game {
         System.out.println("[3] Exit");
     }
 
-    public static void inventoryMenu(){
+    public static void inventoryMenu() {
         while (true) {
             printInventoryMenu();
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    Inventory.printInventory();
+                    printInventory();
                     break;
                 case 2:
                     ItemList.herosSword();
@@ -235,5 +245,19 @@ public class Game {
                     break;
             }
         }
+    }
+
+    // printing players inventory items
+    public static void printInventory() {
+        Misc.clearConsole();
+        Misc.printHeading("INVENTORY");
+        for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
+            Misc.printHeading("Item: " + (i + 1));
+            System.out.println("Name: " + Game.player.getPlayerItems().get(i).getName());
+            System.out.println("Type: " + Game.player.getPlayerItems().get(i).getType());
+            System.out.println("Desc: " + Game.player.getPlayerItems().get(i).getDesc());
+            System.out.println("Buff: " + Game.player.getPlayerItems().get(i).getBuff());
+        }
+        Misc.continueKey();
     }
 }
