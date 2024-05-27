@@ -79,7 +79,7 @@ public class LocationList {
         Location d1Location = new Location("D1", "CASTLE CHAMBERS", "D1 description");
         dList.add(d1Location);
         //
-        Location d2Location = new Location("D2", "MYSTIC", "D2 description");
+        Location d2Location = new Location("D2", "MYSTIC LAKE", "D2 description");
         dList.add(d2Location);
         //
         Location d3Location = new Location("D3", "DUSKWOOD FOREST", "D3 description");
