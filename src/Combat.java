@@ -3,116 +3,127 @@ public class Combat {
     // random encounters
     public static String[] encounters = { "Battle", "Battle", "Battle", "Rest" };
 
-    // enemy names
-    public static String[] enemies = { "Enemy1", "Enemy2", "Enemy3", "Enemy4" };
+    // print battle heading and options
+    public static void printBattle(Enemy enemy) {
+        Misc.clearConsole();
+        Misc.printHeading(enemy.getName() + "\nHP: " + enemy.getCurHp() + "/" + enemy.getMaxHp());
+        Misc.printHeading(Game.player.getName() + "\nHP: " + Game.player.getCurHp() + "/" + Game.player.getMaxHp());
+        Misc.printSeperator(20);
+        System.out.println("[1] Attack\n[2] Item\n[3] Flee");
+    }
 
     // main battle method
-    public static void battle(Enemy enemy) {
+    public static boolean battle (Enemy enemy) {
+        // return variable for post battle use
+        boolean victory = false;
         // turn tracker variable
         int turn = 1;
         // main battle loop
         while (true) {
-            Game.clearConsole();
-            Game.printHeading(enemy.name + "\nHP: " + enemy.curHp + "/" + enemy.maxHp);
-            Game.printHeading(Game.player.name + "\nHP: " + Game.player.curHp + "/" + Game.player.maxHp);
-            Game.printSeperator(20);
-            System.out.println("[1] Attack\n[2] Item\n[3] Flee");
-            int input = Game.readInt();
-            // reacting to player input
+            // battle heading and options
+            printBattle(enemy);
+            // getting and reacting to player input
+            int input = Misc.readInt();
             if (input == 1) {
                 // attack
                 int dmgDealt;
                 int dmgTaken;
                 // player damage dealt calculation
-                dmgDealt = Game.player.attack() - enemy.defence();
+                dmgDealt = Game.player.combatAtk() - enemy.combatDef();
                 if (dmgDealt < 0) {
                     dmgDealt = 0;
                 }
                 // player dmg taken calculation
-                dmgTaken = enemy.attack() - Game.player.defence();
+                dmgTaken = Game.player.combatDef() - enemy.combatAtk();
                 if (dmgTaken < 0) {
                     dmgTaken = 0;
                 }
                 // calc dmg to both parties
-                Game.player.curHp -= dmgTaken;
-                enemy.curHp -= dmgDealt;
+                Game.player.setCurHp(Game.player.getCurHp() - dmgTaken);
+                enemy.setCurHp(enemy.getCurHp() - dmgDealt);
                 // print the info of this turn
-                Game.clearConsole();
-                Game.printHeading("BATTLE");
-                Game.printHeading("Turn " + turn);
-                System.out.println("You dealt " + dmgDealt + " damage to the " + enemy.name + "!");
-                System.out.println("The " + enemy.name + " dealt " + dmgTaken + " damage to you!");
-                Game.continueKey();
+                Misc.clearConsole();
+                Misc.printHeading("BATTLE");
+                Misc.printHeading("Turn " + turn);
+                System.out.println("You dealt " + dmgDealt + " damage to the " + enemy.getName() + "!");
+                System.out.println("The " + enemy.getName() + " dealt " + dmgTaken + " damage to you!");
+                Misc.continueKey();
                 turn++;
                 // check if player died
-                if (Game.player.curHp <= 0) {
+                if (Game.player.getCurHp() <= 0) {
                     Game.playerDied(); // method to end the game
+                    victory = true;
                     break;
-                } else if (enemy.curHp <= 0) {
+                } else if (enemy.getCurHp() <= 0) {
                     // tell the player they won
-                    Game.clearConsole();
-                    Game.printHeading("You defeated the " + enemy.name + "!");
+                    Misc.clearConsole();
+                    Misc.printHeading("You defeated the " + enemy.getName() + "!");
                     // increase player xp
-                    System.out.println("You earned " + enemy.xp + "XP!");
-                    Game.player.xp += enemy.xp;
+                    System.out.println("You earned " + enemy.getXp() + "XP!");
+                    Game.player.setXp(Game.player.getXp() + enemy.getXp());
                     // random drops
                     boolean addRest = (Math.random() * 5 + 1 <= 2.25);
-                    int goldEarnt = (int) (Math.random() * enemy.xp);
-
+                    int goldEarnt = (int) (Math.random() * enemy.getXp());
+                    // if player earnt rest
                     if (addRest) {
-                        Game.player.rests++;
-                        System.out.println("You fought well and earned an additional rest.\nRests available: ["
-                                + Game.player.rests + "]!");
+                        Game.player.setRests(Game.player.getRests() + 1);
+                        System.out.println("You fought well and earned an additional rest.\nRests available: ["+ Game.player.getRests() + "]!");
                     }
+                    // if player earnt > 0 gold
                     if (goldEarnt > 0) {
-                        Game.player.gold += goldEarnt;
-                        System.out.println("You collect " + goldEarnt + " gold from the " + enemy.name + "'s corpse.");
+                        Game.player.setGold(Game.player.getGold() + goldEarnt);
+                        System.out.println(
+                                "You collect " + goldEarnt + " gold from the " + enemy.getName() + "'s corpse.");
                     }
-                    Game.continueKey();
+                    Misc.continueKey();
+                    victory =  true;
                     break;
                 }
             } else if (input == 2) {
                 // use potion
-                Game.clearConsole();
-                if (Game.player.potions > 0 && Game.player.curHp < Game.player.maxHp) {
+                Misc.clearConsole();
+                if (Game.player.getPotions() > 0 && Game.player.getCurHp() < Game.player.getMaxHp()) {
                     // player able to use a potion
-                    Game.printHeading("Do you want to use a potion? [" + Game.player.potions + "] left.");
+                    Misc.printHeading("Do you want to use a potion? [" + Game.player.getPotions() + "] left.");
                     // confirm player wants to use a potion
                     System.out.println("[1] Yes\n[2] No");
-                    input = Game.readInt();
+                    input = Misc.readInt();
                     if (input == 1) {
                         // player takes potion
-                        System.out.println("You used a potion and restored " + (Game.player.maxHp - Game.player.curHp)
-                                + " health.");
-                        Game.player.curHp = Game.player.maxHp;
-                        Game.continueKey();
+                        System.out.println("You used a potion and restored "+ (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
+                        Game.player.setCurHp(Game.player.getMaxHp());
+                        Misc.continueKey();
                     } else if (input == 2) {
                         System.out.println("You decided not to use a potion.");
-                        Game.continueKey();
+                        Misc.continueKey();
                     }
                 } else {
                     // player unable to use a potion
-                    Game.printHeading("You can't do that right now.");
-                    Game.continueKey();
+                    Misc.printHeading("You can't do that right now.");
+                    Misc.continueKey();
                 }
             } else if (input == 3) {
-                // flee
-                Game.clearConsole();
-                // 50% chance to escape
-                if (Math.random() * 10 + 1 <= 5.0) {
-                    Game.printHeading("You managed to escape from the " + enemy.name + "!");
-                    Game.continueKey();
+                // player chooses flee
+                Misc.clearConsole();
+                // if enemy is not a boss and player wins 50/50
+                if (!enemy.getType().equalsIgnoreCase("Boss") && Math.random() * 10 + 1 <= 5.0) {
+                    Misc.printHeading("You managed to escape from the " + enemy.getName() + "!");
+                    Misc.continueKey();
                     break;
                 } else {
-                    int failedEscape = enemy.attack() - Game.player.defence();
-                    Game.printHeading("You failed to escape and took " + failedEscape + " damage.");
-                    Game.continueKey();
+                    // if enemy is a boss or player loses 50/50
+                    int failedEscape = (int) (Math.random() * 10) + 1;
+                    Misc.printHeading("You failed to escape and took " + failedEscape + " damage.");
+                    Misc.continueKey();
+                    Game.player.setCurHp(Game.player.getCurHp() - failedEscape);
                     // checking if failed escape dmg kills player
-                    if (Game.player.curHp <= 0) {
+                    if (Game.player.getCurHp() <= 0) {
                         Game.playerDied();
+                        break;
                     }
                 }
             }
         }
+        return victory;
     }
 }

@@ -1,0 +1,213 @@
+public class Direction {
+
+    // Variable to store player location. Starting location is defined.
+    public static String playerLocation = "E5"; // @TODO: Update this to contain the variable stated in the player/game
+                                                // file?
+    // Method to print the travel menu
+
+    public static void printTravelMenu() {
+        Misc.clearConsole();
+        Misc.printHeading("Travel");
+        Misc.printSeperator(30);
+        System.out.println(Game.player.getCurrentLocation().getName());
+        System.out.println(Game.player.getCurrentLocation().getArea());
+        System.out.println(Game.player.getCurrentLocation().getDesc());
+        Misc.printSeperator(30);
+        System.out.println("Which direction do you want to travel?");
+        System.out.println("[1] North");
+        System.out.println("[2] East");
+        System.out.println("[3] South");
+        System.out.println("[4] West");
+        System.out.println("[5] Exit");
+    }
+
+    // method to print for invalid direction
+    public static void directionBlocked() {
+        System.out.println("\nYou can't go that way. Select another direction.");
+        Misc.continueKey();
+        ;
+    }
+
+    // method to print to set updated location
+    public static void setDirection(Location setLocation) {
+        Game.player.setCurrentLocation(setLocation);
+    }
+
+    // method to identify player current location
+    public static boolean checkDirection(Location checklocation) {
+        boolean validlocation = false;
+        if (Game.player.getCurrentLocation().equals(checklocation)) {
+            validlocation = true;
+        }
+        return validlocation;
+    }
+
+    // Travel method for player movement around map
+    public static void travel() {
+        do {
+            printTravelMenu();
+            int input = Misc.readInt();
+            switch (input) {
+                // Input = north
+                case 1:
+                    if (checkDirection(LocationList.bList.get(2))) {
+                        setDirection(LocationList.bList.get(1));
+                        break;
+                    } else if (checkDirection(LocationList.aList.get(3))) {
+                        setDirection(LocationList.aList.get(2));
+                        break;
+                    } else if (checkDirection(LocationList.bList.get(3))) {
+                        setDirection(LocationList.bList.get(2));
+                        break;
+                    } else if (checkDirection(LocationList.cList.get(3))) {
+                        setDirection(LocationList.cList.get(2));
+                        break;
+                    } else if (checkDirection(LocationList.dList.get(3))) {
+                        setDirection(LocationList.dList.get(2));
+                        break;
+                    } else if (checkDirection(LocationList.aList.get(4))) {
+                        setDirection(LocationList.aList.get(3));
+                        break;
+                    } else if (checkDirection(LocationList.dList.get(4))) {
+                        setDirection(LocationList.dList.get(3));
+                        break;
+                    } else if (checkDirection(LocationList.eList.get(4))) {
+                        setDirection(LocationList.eList.get(3));
+                        break;
+                    } else if (checkDirection(LocationList.bList.get(5))) {
+                        setDirection(LocationList.bList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.dList.get(5))) {
+                        setDirection(LocationList.dList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.eList.get(5))) {
+                        setDirection(LocationList.dList.get(4));
+                        break;
+                    } else {
+                        directionBlocked();
+                        break;
+                    }
+                    // Input = east
+                case 2:
+                    if (checkDirection(LocationList.aList.get(1))) {
+                        setDirection(LocationList.bList.get(1));
+                        break;
+                    } else if (checkDirection(LocationList.bList.get(1))) {
+                        setDirection(LocationList.cList.get(1));
+                        break;
+                    } else if (checkDirection(LocationList.cList.get(1))) {
+                        setDirection(LocationList.dList.get(1));
+                        break;
+                    } else if (checkDirection(LocationList.dList.get(1))) {
+                        setDirection(LocationList.eList.get(1));
+                        break;
+                    } else if (checkDirection(LocationList.aList.get(2))) {
+                        setDirection(LocationList.bList.get(2));
+                        break;
+                    } else if (checkDirection(LocationList.cList.get(3))) {
+                        setDirection(LocationList.dList.get(3));
+                        break;
+                    } else if (checkDirection(LocationList.aList.get(4))) {
+                        setDirection(LocationList.bList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.bList.get(4))) {
+                        setDirection(LocationList.cList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.cList.get(4))) {
+                        setDirection(LocationList.dList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.dList.get(4))) {
+                        setDirection(LocationList.eList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.bList.get(5))) {
+                        setDirection(LocationList.cList.get(5));
+                        break;
+                    } else {
+                        directionBlocked();
+                        break;
+                    }
+                    // Input = south
+                case 3:
+                    if (checkDirection(LocationList.bList.get(1))) {
+                        setDirection(LocationList.bList.get(2));
+                        break;
+                    } else if (checkDirection(LocationList.aList.get(2))) {
+                        setDirection(LocationList.aList.get(3));
+                        break;
+                    } else if (checkDirection(LocationList.bList.get(2))) {
+                        setDirection(LocationList.bList.get(3));
+                        break;
+                    } else if (checkDirection(LocationList.cList.get(2))) {
+                        setDirection(LocationList.cList.get(3));
+                        break;
+                    } else if (checkDirection(LocationList.dList.get(2))) {
+                        setDirection(LocationList.dList.get(3));
+                        break;
+                    } else if (checkDirection(LocationList.aList.get(3))) {
+                        setDirection(LocationList.aList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.dList.get(3))) {
+                        setDirection(LocationList.dList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.eList.get(3))) {
+                        setDirection(LocationList.eList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.bList.get(4))) {
+                        setDirection(LocationList.bList.get(5));
+                        break;
+                    } else if (checkDirection(LocationList.dList.get(4))) {
+                        setDirection(LocationList.dList.get(5));
+                        break;
+                    } else if (checkDirection(LocationList.eList.get(4))) {
+                        setDirection(LocationList.eList.get(5));
+                        break;
+                    } else {
+                        directionBlocked();
+                        break;
+                    }
+                case 4:
+                    // Input == west
+                    if (checkDirection(LocationList.bList.get(1))) {
+                        setDirection(LocationList.aList.get(1));
+                        break;
+                    } else if (checkDirection(LocationList.cList.get(1))) {
+                        setDirection(LocationList.bList.get(1));
+                        break;
+                    } else if (checkDirection(LocationList.dList.get(1))) {
+                        setDirection(LocationList.cList.get(1));
+                        break;
+                    } else if (checkDirection(LocationList.eList.get(1))) {
+                        setDirection(LocationList.dList.get(1));
+                        break;
+                    } else if (checkDirection(LocationList.bList.get(2))) {
+                        setDirection(LocationList.aList.get(2));
+                        break;
+                    } else if (checkDirection(LocationList.dList.get(3))) {
+                        setDirection(LocationList.cList.get(3));
+                        break;
+                    } else if (checkDirection(LocationList.bList.get(4))) {
+                        setDirection(LocationList.aList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.cList.get(4))) {
+                        setDirection(LocationList.bList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.dList.get(4))) {
+                        setDirection(LocationList.cList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.eList.get(4))) {
+                        setDirection(LocationList.dList.get(4));
+                        break;
+                    } else if (checkDirection(LocationList.cList.get(5))) {
+                        setDirection(LocationList.bList.get(5));
+                        break;
+                    } else {
+                        directionBlocked();
+                        break;
+                    }
+                case 5:
+                    Game.playerMenu();
+                    break;
+            }
+        } while (true);
+    }
+}

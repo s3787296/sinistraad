@@ -1,17 +1,5 @@
 public class Map {
-    // TODO: We should probably add some variables in here re the mapArrays.
-    // mapArray method holds arrays containing each map column
-    // noMap is a placeholder, called when player does not have access to the map
-    public static String mapArray() {
-        // TODO: This section doesn't seem quite right. We need a return function of String type if it's a String method.
-        String[] A = {"noMap", "A1", "A2", "A3", "A4", "A5"};
-        String[] B = {"noMap", "B1", "B2", "B3", "B4", "B5"};
-        String[] C = {"noMap", "C1", "B2", "B3", "B4", "B5"};
-        String[] D = {"noMap", "D1", "D2", "D3", "D4", "D5"};
-        String[] E = {"noMap", "E1", "E2", "E3", "E4", "E5"};
-        return mapArray();
-    }
-    public static void A1Map(){
+    public static void a1Map(){
         //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
         System.out.println("Map of Duskwood Forest"+
         "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -51,7 +39,7 @@ public class Map {
         "\n|////////////////////////|                                               |                       |                       |"+
         "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void A2Map(){
+public static void a2Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -91,7 +79,7 @@ public static void A2Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void A3Map(){
+public static void a3Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -131,7 +119,7 @@ public static void A3Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void A4Map(){
+public static void a4Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -171,7 +159,7 @@ public static void A4Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void A5Map(){
+public static void a5Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -211,7 +199,7 @@ public static void A5Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void B1Map(){
+public static void b1Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -251,7 +239,7 @@ public static void B1Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void B2Map(){
+public static void b2Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -291,7 +279,7 @@ public static void B2Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void B3Map(){
+public static void b3Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -331,7 +319,7 @@ public static void B3Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void B4Map(){
+public static void b4Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -371,7 +359,7 @@ public static void B4Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void B5Map(){
+public static void b5Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -411,7 +399,7 @@ public static void B5Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void C1Map(){
+public static void c1Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -451,7 +439,7 @@ public static void C1Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void C2Map(){
+public static void c2Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -491,7 +479,7 @@ public static void C2Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void C3Map(){
+public static void c3Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -531,7 +519,7 @@ public static void C3Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void C4Map(){
+public static void c4Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -571,7 +559,7 @@ public static void C4Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void C5Map(){
+public static void c5Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -611,7 +599,7 @@ public static void C5Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void D1Map(){
+public static void d1Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -651,7 +639,7 @@ public static void D1Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void D2Map(){
+public static void d2Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -691,7 +679,7 @@ public static void D2Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void D3Map(){
+public static void d3Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -731,7 +719,7 @@ public static void D3Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void D4Map(){
+public static void d4Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -771,7 +759,7 @@ public static void D4Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void D5Map(){
+public static void d5Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -811,7 +799,7 @@ public static void D5Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void E1Map(){
+public static void e1Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -851,7 +839,7 @@ public static void E1Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void E2Map(){
+public static void e2Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -891,7 +879,7 @@ public static void E2Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void E3Map(){
+public static void e3Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -931,7 +919,7 @@ public static void E3Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void E4Map(){
+public static void e4Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
@@ -971,7 +959,7 @@ public static void E4Map(){
     "\n|////////////////////////|                                               |                       |                       |"+
     "\n|------------------------|-----------------------|-----------------------|-----------------------|-----------------------|");
 }
-public static void E5Map(){
+public static void e5Map(){
     //code as a single print statement with place names and a version with the charachter in each location to be printed once in said location.
     System.out.println("Map of Duskwood Forest"+
     "\n|------------------------|-----------------------|-----------------------------------------------|-----------------------|"+
