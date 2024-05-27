@@ -74,6 +74,8 @@ public class LocationList {
         Location c5Location = new Location("C5", "DUSKWOOD DEN", "C5 description");
         cList.add(c5Location);
         //
+        dList.add(nullLocation);
+        //
         Location d1Location = new Location("D1", "CASTLE CHAMBERS", "D1 description");
         dList.add(d1Location);
         //
