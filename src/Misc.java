@@ -4,17 +4,6 @@ import java.util.Scanner;
 public class Misc {
     static Scanner scanner = new Scanner(System.in);
 
-    // method to check if the players inventory contains input item
-    public static boolean containsItem(String item) {
-        boolean contains = false;
-        for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
-            if (item.equalsIgnoreCase(Game.player.getPlayerItems().get(i).getName())) {
-                contains = true;
-            }
-        }
-        return contains;
-    }
-
     // method to get only integer user input
     public static int readInt() {
         int readInput;
@@ -40,10 +29,10 @@ public class Misc {
         scanner.next();
     }
 
-    // method to print a heading
-    public static void printHeading(String title) {
+    // method to print a title
+    public static void printHeading(String heading) {
         printSeperator(30);
-        System.out.println(title);
+        System.out.println(heading);
         printSeperator(30);
     }
 

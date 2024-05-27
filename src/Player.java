@@ -5,7 +5,7 @@ public class Player {
     // core player attributes
     private String name;
     private int maxHp, curHp, xp;
-    private Location currentLocation;
+    private Location currentLocation = LocationList.aList.get(5);
     private ArrayList<Item> playerItems;
     // additional player attributes
     private int gold, rests, potions;
@@ -165,11 +165,13 @@ public class Player {
         return (int) (((Math.random() * 10) + 1) + armourDef + bonusDef);
     }
 
-    public void dropItem(String item){
-        // WIP TODO
+    public void dropItem(Item item){
+        Game.player.currentLocation.getLocationItems().add(item);
+        Game.player.getPlayerItems().remove(item);
     }
 
-    public void pickupItem(String item){
-        // WIP TODO
+    public void pickupItem(Item item){
+        Game.player.getPlayerItems().add(item);
+        Game.player.currentLocation.getLocationItems().remove(item);
     }
 }

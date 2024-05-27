@@ -39,12 +39,12 @@ public class Location {
     }
 
     // getter method for location arraylist
-    public ArrayList<Item> getItemList() {
+    public ArrayList<Item> getLocationItems() {
         return this.locationItems;
     }
 
     // setter method for location arraylist
-    public void setItemList(ArrayList<Item> itemList) {
+    public void setLocationItems(ArrayList<Item> itemList) {
         this.locationItems = itemList;
     }
 
@@ -53,7 +53,18 @@ public class Location {
         this.name = name;
         this.area = area;
         this.desc = desc;
-        locationItems = new ArrayList<Item>();
+        this.locationItems = new ArrayList<Item>();
+    }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " name='" + getName() + "'" +
+            ", desc='" + getDesc() + "'" +
+            ", area='" + getArea() + "'" +
+            ", locationItems='" + getLocationItems() + "'" +
+            "}";
     }
 
 }

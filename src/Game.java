@@ -37,6 +37,8 @@ public class Game {
                 }
             } while (!nameSet);
         } while (!nameSet);
+        // creating map locations
+        LocationList.createLocations(); 
         // create new player object with input name
         player = new Player(name);
         // setting isRunning to false to move to game menu
@@ -79,8 +81,7 @@ public class Game {
                     int hpRestored = ((Game.player.getMaxHp() - Game.player.getCurHp()) / 2);
                     System.out.println("\nYou took a rest and restored " + hpRestored + " health.");
                     Game.player.setCurHp(Game.player.getCurHp() + hpRestored);
-                    System.out.println(
-                            "You're now at " + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + " health.");
+                    System.out.println("You're now at " + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + " health.");
                     Game.player.setRests(Game.player.getRests() - 1);
                     Misc.continueKey();
                     break;
@@ -112,7 +113,7 @@ public class Game {
         Misc.printHeading("GAME MENU");
         System.out.println("Choose an Option:");
         Misc.printSeperator(30);
-        System.out.println("[1] Continue Game");
+        System.out.println("[1] Play Game");
         System.out.println("[2] Game Info");
         System.out.println("[3] Quit Game");
     }
@@ -132,7 +133,7 @@ public class Game {
     }
 
     // transition method from game menu to player menu
-    public static void continueGame() {
+    public static void playGame() {
         isRunning = true;
         playerMenu();
     }
@@ -179,7 +180,7 @@ public class Game {
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    continueGame();
+                    playGame();
                     break;
                 case 2:
                     gameInfo();
@@ -227,6 +228,11 @@ public class Game {
         System.out.println("[1] View Items");
         System.out.println("[2] Add Item"); // testing purposes
         System.out.println("[3] Exit");
+        System.out.println("[4] Drop Item"); // testing purposes
+        System.out.println("[5] Pickup Item");
+        System.out.println("[6] View locationitems"); // testing purposes
+        System.out.println("[7] Location alist index 1 to string");
+        System.out.println("[8] Location elist index 0 to string");
     }
 
     public static void inventoryMenu() {
@@ -243,6 +249,27 @@ public class Game {
                 case 3:
                     playerMenu();
                     break;
+                case 4:
+                    player.dropItem(player.getPlayerItems().get(0));
+                    Misc.continueKey();
+                    break;
+                case 5:
+                    player.pickupItem(player.getCurrentLocation().getLocationItems().get(0));
+                    Misc.continueKey();
+                    break;
+                case 6:
+                    player.getCurrentLocation().getLocationItems().toString();
+                    Misc.continueKey();
+                    break;
+                case 7:
+                    LocationList.aList.get(1).getLocationItems().toString();
+                    Misc.continueKey();
+                    break;
+                case 8:
+                    LocationList.eList.get(0).getLocationItems().toString();
+                    Misc.continueKey();
+                    break;
+
             }
         }
     }
