@@ -81,7 +81,7 @@ public class Direction {
                         setDirection(LocationList.dList.get(4));
                         break;
                     } else if (checkDirection(LocationList.eList.get(5))) {
-                        setDirection(LocationList.dList.get(4));
+                        setDirection(LocationList.eList.get(4));
                         break;
                     } else {
                         directionBlocked();
