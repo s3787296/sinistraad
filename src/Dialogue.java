@@ -12,7 +12,13 @@ public class Dialogue {
    }
 
    public static String E3Text() {
-      return "You hesitantly inch through the Twisted Caverns, hearing the scuttling of many legs emanate from deeper in the tunnels. As you head deeper, the sickly green hue of glow worms dotting the cave roof illuminates your surroundings. As you descend even further, you hear an almost alien... Chittering sound? Creepy stuff. To exit the cave, you must head back the way you came. However, if you're brave enough, you can descend and face whatever lies ahead.";
+      String text = "You hesitantly inch through the Twisted Caverns, hearing the scuttling of many legs emanate from deeper in the tunnels. As you head deeper, the sickly green hue of glow worms dotting the cave roof illuminates your surroundings. As you descend even further, you hear an almost alien... Chittering sound? Creepy stuff. To exit the cave, you must head back the way you came. However, if you're brave enough, you can descend and face whatever lies ahead.";
+      for (int i = 0; i < Inventory.playerItemList.size(); i++) {
+         String item = Inventory.playerItemList.get(i).getName();
+         if (item == "Matriarch's Blood") {
+            text = "Insert text here - no need to go into the cavern again."; // TODO Add text here - no need to go into the cavern again.
+         }
+      } return text;
    }
 
    public static String BeforeArachnidText() {
