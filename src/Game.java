@@ -130,6 +130,7 @@ public class Game {
         System.out.println("[4] Player");
         System.out.println("[5] Rest");
         System.out.println("[6] Exit");
+        System.out.println("[7] View Maplists"); //testing
     }
 
     // transition method from game menu to player menu
@@ -216,6 +217,14 @@ public class Game {
                 case 6:
                     isRunning = false;
                     gameMenu();
+                    break;
+                case 7:
+                    System.out.println(LocationList.aList.toString());
+                    System.out.println(LocationList.bList.toString());
+                    System.out.println(LocationList.cList.toString());
+                    System.out.println(LocationList.dList.toString());
+                    System.out.println(LocationList.eList.toString());
+                    Misc.continueKey();
                     break;
             }
         }
