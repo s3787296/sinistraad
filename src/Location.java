@@ -59,12 +59,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return "{" +
-            " name='" + getName() + "'" +
-            ", desc='" + getDesc() + "'" +
-            ", area='" + getArea() + "'" +
-            ", locationItems='" + getLocationItems() + "'" +
-            "}";
+        return "\nname:" + getName() + "\nDesc: " + getDesc() + "\nArea: " + getArea() + "\nLocation Items: " + getLocationItems();
     }
 
 }
