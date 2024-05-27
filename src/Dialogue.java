@@ -214,4 +214,49 @@ public class Dialogue {
    public static String BadEndingText() {
       return "You swing wildly at the count, as you try to vanquish the foe, but one wrong step has his claws slash at your chest, spilling too much blood for a mere mortal. Despite all your efforts, you lost. You collapse face down on the floor of the counts room as he laughs maniacally. “ your pathetic town will be overran by years end, humans will always be weak.”";
    }
+
+   // string returns for the item descriptions 
+   public static String ForgeMasterGreatswordDescription() {
+      return "A light short sword that glows with the heat of the forge, only the hands of a master forger could even dream of such a weapon.";
+   }
+   public static String PlainGobletDescription() {
+      return " A large,  golden goblet, encrusted with perfectly cut jewels, enough riches for a family to feed themselves on for centuries, how did it get here?";
+   }
+   public static String HealingPotionDescription() {
+      return "A small round flask, filled with a bright red syrupy elixir, the crafting of a health potion is a closely guarded secret by the apothecary’s guild, who funds their research by selling such potent tinctures. ";
+   }
+   public static String MaidensBlessingDescription() {
+      return " Upon defeating the maiden of the lake, the fresh air of the clearing fills your lungs, and you feel your muscles revitalize, becoming tougher. (Defense up!)";
+   }
+
+   public static String GateKeyDescription() {
+      return " A large, rusty key, torn from the collar of the stoneskin gargoyle now slayed. The weight of the key reminds you of the weight of your journey still ahead.";
+   }
+
+   public static String ChamberKeyDescription() {
+      return "Matching the goblet you collected earlier, this dainty, golden key, engraved in a script you’ve never seen before, almost glows in your hands and sings with the resonance of the castles ancient halls. ";
+   }
+
+   public static String MatriarchsBloodDescription() {
+      return " The sickly green blood from this unholy arachnid stains your hands, you feel the blood absorb into your skin and seep into your blood, you feel the immense strength of a spider fuel your each and every movement ( Attack up!)";
+   }
+
+   public static String HeroesMapDescription() {
+      return "An aged scroll filled with the knowledge of many generations of adventurers. The map isn’t fully complete, maybe you could finish it on your journey! ";
+   }
+
+   public static String WolfhideArmourDescription() {
+      return "Crudely stripped wolfskin, tied around ones torso like a tunic, the dense matted fur and sinewy skin of the Duskwood cave werewolves makes excellent protection. ";
+   }
+
+   public static String HeroesSwordDescription() {
+      return "Your fathers sword, the sword he used to help defend the town from the attacks from the creatures that came from the forest, upon his passing, he left it to you to continue to defend the town. ";
+   }
+
+   public static String BlessedGobletDescription() {
+      return " The Gold encrusted goblet now glows mystically, the gems glowwing iridescent brilliance onto the walls and floor, holy water swills in the cup of the goblet.";
+   }
+
+
+
 }
