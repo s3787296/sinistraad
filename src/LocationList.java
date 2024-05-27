@@ -99,13 +99,13 @@ public class LocationList {
         Location e2Location = new Location("E2", "NOT ACCESSIBLE", "Something has gone wrong.");
         eList.add(e2Location);
         //
-        Location e3Location = new Location("E3", "TWISTED CAVE", "E3 description"); // E3Text, but TODO make another for once arachnid matriarch is defeated/you return.
+        Location e3Location = new Location("E3", "TWISTED CAVE", Dialogue.E3Text()); // E3Text, but TODO make another for once arachnid matriarch is defeated/you return.
         eList.add(e3Location);
         //
         Location e4Location = new Location("E4", "TILLED PLAINS", Dialogue.E4Text()); // Call FarmerText, if arachnid defeated, call FarmerReturnText
         eList.add(e4Location);
         //
-        Location e5Location = new Location("E5", "OLD TOWN", Dialogue.E5Text());
+        Location e5Location = new Location("E5", "OLD TOWN", Dialogue.E5Text()); // TODO Need to chance these to the story method once complete.
         eList.add(e5Location);
     }
 }
