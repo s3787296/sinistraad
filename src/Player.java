@@ -5,7 +5,7 @@ public class Player {
     // core player attributes
     private String name;
     private int maxHp, curHp, xp;
-    private Location currentLocation = LocationList.bList.get(2);
+    private Location currentLocation = LocationList.eList.get(5);
     private ArrayList<Item> playerItems;
     // additional player attributes
     private int gold, rests, potions;

@@ -121,6 +121,11 @@ public class Game {
     // printing the ingame player menu
     public static void printPlayerMenu() {
         Misc.clearConsole();
+        Misc.printSeperator(30);
+        System.out.println(Game.player.getCurrentLocation().getName());
+        System.out.println(Game.player.getCurrentLocation().getArea());
+        System.out.println(Game.player.getCurrentLocation().getDesc());
+        Misc.printSeperator(30);
         Misc.printHeading("PLAYER MENU");
         System.out.println("Choose an Option:");
         Misc.printSeperator(30);
