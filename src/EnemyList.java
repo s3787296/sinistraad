@@ -2,56 +2,67 @@ public class EnemyList {
 
     // creating new instance of enemy Feral Duskwolf
     public static Enemy feralDuskwolf() {
-        return new Enemy("Feral Duskwolf", "ENEMY", Game.player.getXp());
+        Enemy feralDuskwolf = new Enemy("Feral Duskwolf", "ENEMY", Game.player.getXp());
+        return feralDuskwolf;
     }
 
     // creating new instance of boss Alpha Duskwolf
     public static Enemy alphaDuskwolf() {
-        return new Enemy("Alpha Duskwolf", "BOSS", Game.player.getXp());
+        Enemy alphaDuskwolf = new Enemy("Alpha Duskwolf", "BOSS", Game.player.getXp());
+        return alphaDuskwolf;
     }
     
     // creating new instance of enemy Archnid Spawn
     public static Enemy arachnidSpawn() {
-        return new Enemy("Arachnid Spawn", "ENEMY", Game.player.getXp());
+        Enemy arachnidSpawn = new Enemy("Arachnid Spawn", "ENEMY", Game.player.getXp());
+        return arachnidSpawn;
     }
 
     // creating new instance of boss Arachnid Matriarch
     public static Enemy arachnidMatriarch() {
-        return new Enemy("Arachnid Matriarch", "BOSS", Game.player.getXp());
+        Enemy arachnidMatriarch = new Enemy("Arachnid Matriarch", "BOSS", Game.player.getXp());
+        return arachnidMatriarch;
     }
 
     // creating new instance of enemy lost spirit
     public static Enemy lostSpirit() {
-        return new Enemy("Lost Spirit", "ENEMY", Game.player.getXp());
+        Enemy lostSpirit = new Enemy("Lost Spirit", "ENEMY", Game.player.getXp());
+        return lostSpirit;
     }
 
     // creating new instance of boss Lost Maiden
     public static Enemy lostMaiden() {
-        return new Enemy("Arachnid Spawn", "BOSS", Game.player.getXp());
+        Enemy lostMaiden = new Enemy("Arachnid Spawn", "BOSS", Game.player.getXp());
+        return lostMaiden;
     }
 
     // creating new instance of enemy Animated Guard
     public static Enemy animatedGuard() {
-        return new Enemy("Animated Guard", "ENEMY", Game.player.getXp());
+        Enemy animatedGuard = new Enemy("Animated Guard", "ENEMY", Game.player.getXp());
+        return animatedGuard;
     }
 
     // creating new instance of boss Gatekeeper Syek
     public static Enemy gatekeeperSyek() {
-        return new Enemy("Gatekeeper Syek", "BOSS", Game.player.getXp());
+        Enemy gatekeeperSyek = new Enemy("Gatekeeper Syek", "BOSS", Game.player.getXp());
+        return gatekeeperSyek;
     }
 
     // creating new instance of enemy Stoneskin Gargoyle
     public static Enemy stoneskinGargoyle() {
-        return new Enemy("Stoneskin Gargoyle", "ENEMY", Game.player.getXp());
+        Enemy stoneskinGargoyle = new Enemy("Stoneskin Gargoyle", "ENEMY", Game.player.getXp());
+        return stoneskinGargoyle;
     }
 
     // creating new instance of boss Forgemaster Fuego
     public static Enemy forgemasterFuego() {
-        return new Enemy("Forgemaster Fuego", "BOSS", Game.player.getXp());
+        Enemy forgemasterFuego = new Enemy("Forgemaster Fuego", "BOSS", Game.player.getXp());
+        return forgemasterFuego;
     }
 
     // creating new instance of boss Lord Eripmav
     public static Enemy lordEripmav() {
-        return new Enemy("Lord Eripmav", "BOSS", Game.player.getXp());
+        Enemy lordEripmav = new Enemy("Lord Eripmav", "BOSS", Game.player.getXp());
+        return lordEripmav;
     }
 }
