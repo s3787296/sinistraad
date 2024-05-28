@@ -68,12 +68,20 @@ public class ItemList {
         return healingPotion;
     }
 
-    // method to create and return the plain goblet item
-    public static Item plainGoblet() {
-        Item plainGoblet = new Item("Plain Goblet", "Quest",
-                "A large golden goblet encrusted with perfectly cut jewels reminiscent of royalty.\nHow did it get here?",
+    // method to create and return the empty goblet item
+    public static Item emptyGoblet() {
+        Item emptyGoblet = new Item("Empty Goblet", "Quest",
+                "A golden Goblet encrusted with perfectly cut jewels reminiscent of royalty.\nHow did it get here?",
                 "?");
-        return plainGoblet;
+        return emptyGoblet;
+    }
+
+    // method to create and return the filled goblet item
+    public static Item filledGoblet() {
+        Item filledGoblet = new Item("Filled Goblet", "Quest",
+                "A golden Goblet encrusted with perfectly cut jewels reminiscent of royalty. It is filled with the tears of the Lost Maiden.\nHow did it get here?",
+                "?");
+        return filledGoblet;
     }
 
     // method to create and return the forgemaster's greatsword item
@@ -88,7 +96,7 @@ public class ItemList {
     // method to create and return the blessed goblet item
     public static Item blessedGoblet() {
         Item blessedGoblet = new Item("Blessed Goblet", "Quest",
-                "The golden goblet now feels slightly warm as its gems glow with iridescent brilliance.\nHoly water swills in the cup of the goblet.",
+                "The golden goblet now feels slightly warm as its gems glow with iridescent brilliance.\nHoly water swills inside.",
                 "?");
         return blessedGoblet;
     }

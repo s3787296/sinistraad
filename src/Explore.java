@@ -15,5 +15,14 @@ public class Explore {
             Misc.continueKey();
             Direction.travel();
         }
+        /* TODO: Update explore class to be better.
+         * If (playerlocation = x) 
+            print pre battle text
+            continue key
+            if combat.battle (enemy name = true)
+            print post battle text
+            continue key
+            travel
+         */
     }
 }
