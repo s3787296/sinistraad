@@ -44,37 +44,37 @@ public class Direction {
                 case 1:
                     if (checkDirection(LocationList.bList.get(2))) {
                         setDirection(LocationList.bList.get(1));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.aList.get(3))) {
                         setDirection(LocationList.aList.get(2));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.bList.get(3))) {
                         setDirection(LocationList.bList.get(2));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.cList.get(3))) {
                         setDirection(LocationList.cList.get(2));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.dList.get(3))) {
                         setDirection(LocationList.dList.get(2));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.aList.get(4))) {
                         setDirection(LocationList.aList.get(3));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.dList.get(4))) {
                         setDirection(LocationList.dList.get(3));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.eList.get(4))) {
                         setDirection(LocationList.eList.get(3));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.bList.get(5))) {
                         setDirection(LocationList.bList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.dList.get(5))) {
                         setDirection(LocationList.dList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.eList.get(5))) {
                         setDirection(LocationList.eList.get(4));
-                        break;
+                        return;
                     } else {
                         directionBlocked();
                         break;
@@ -83,37 +83,37 @@ public class Direction {
                 case 2:
                     if (checkDirection(LocationList.aList.get(1))) {
                         setDirection(LocationList.bList.get(1));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.bList.get(1))) {
                         setDirection(LocationList.cList.get(1));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.cList.get(1))) {
                         setDirection(LocationList.dList.get(1));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.dList.get(1))) {
                         setDirection(LocationList.eList.get(1));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.aList.get(2))) {
                         setDirection(LocationList.bList.get(2));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.cList.get(3))) {
                         setDirection(LocationList.dList.get(3));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.aList.get(4))) {
                         setDirection(LocationList.bList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.bList.get(4))) {
                         setDirection(LocationList.cList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.cList.get(4))) {
                         setDirection(LocationList.dList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.dList.get(4))) {
                         setDirection(LocationList.eList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.bList.get(5))) {
                         setDirection(LocationList.cList.get(5));
-                        break;
+                        return;
                     } else {
                         directionBlocked();
                         break;
@@ -122,37 +122,37 @@ public class Direction {
                 case 3:
                     if (checkDirection(LocationList.bList.get(1))) {
                         setDirection(LocationList.bList.get(2));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.aList.get(2))) {
                         setDirection(LocationList.aList.get(3));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.bList.get(2))) {
                         setDirection(LocationList.bList.get(3));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.cList.get(2))) {
                         setDirection(LocationList.cList.get(3));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.dList.get(2))) {
                         setDirection(LocationList.dList.get(3));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.aList.get(3))) {
                         setDirection(LocationList.aList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.dList.get(3))) {
                         setDirection(LocationList.dList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.eList.get(3))) {
                         setDirection(LocationList.eList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.bList.get(4))) {
                         setDirection(LocationList.bList.get(5));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.dList.get(4))) {
                         setDirection(LocationList.dList.get(5));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.eList.get(4))) {
                         setDirection(LocationList.eList.get(5));
-                        break;
+                        return;
                     } else {
                         directionBlocked();
                         break;
@@ -161,37 +161,37 @@ public class Direction {
                     // Input == west
                     if (checkDirection(LocationList.bList.get(1))) {
                         setDirection(LocationList.aList.get(1));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.cList.get(1))) {
                         setDirection(LocationList.bList.get(1));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.dList.get(1))) {
                         setDirection(LocationList.cList.get(1));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.eList.get(1))) {
                         setDirection(LocationList.dList.get(1));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.bList.get(2))) {
                         setDirection(LocationList.aList.get(2));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.dList.get(3))) {
                         setDirection(LocationList.cList.get(3));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.bList.get(4))) {
                         setDirection(LocationList.aList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.cList.get(4))) {
                         setDirection(LocationList.bList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.dList.get(4))) {
                         setDirection(LocationList.cList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.eList.get(4))) {
                         setDirection(LocationList.dList.get(4));
-                        break;
+                        return;
                     } else if (checkDirection(LocationList.cList.get(5))) {
                         setDirection(LocationList.bList.get(5));
-                        break;
+                        return;
                     } else {
                         directionBlocked();
                         break;
