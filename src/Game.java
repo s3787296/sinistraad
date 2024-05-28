@@ -37,10 +37,10 @@ public class Game {
                 }
             } while (!nameSet);
         } while (!nameSet);
-        // creating map location objects
-        LocationList.createLocations();
         // create new player object with name input
         player = new Player(name);
+        // creating the rest of the map location objects
+        LocationList.createLocations();
     }
 
     public static void printRestMenu() {
@@ -104,12 +104,13 @@ public class Game {
     
     // transition method to start the game
     public static void gameStart() {
+        player.setCurrentLocation(LocationList.eList.get(5));
         isRunning = true;
         playerOptions();
     }
 
     public static void gameInfo() {
-        // about game info stuff
+        // TODO about game info stuff
     }
 
     // printing the ingame player menu
@@ -183,7 +184,7 @@ public class Game {
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    Combat.battle(EnemyList.gatekeeperSyek());
+                    Combat.battle(EnemyList.gatekeeperSyek()); // TODO Need to not fight the gatekeeper all the time
                     break;
                 case 2:
                     Direction.travel();
@@ -285,7 +286,6 @@ public class Game {
     // printing general location info
     public static void printLocationInfo() {
         Misc.printSeperator(30);
-        System.out.println(Game.player.getCurrentLocation().getName());
         System.out.println(Game.player.getCurrentLocation().getArea());
         System.out.println(Game.player.getCurrentLocation().getDesc());
         Misc.printSeperator(30);
