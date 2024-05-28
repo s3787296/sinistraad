@@ -2,6 +2,9 @@ public class Direction {
 
     // Method to print the travel menu
     public static void printTravelMenu() {
+        Misc.clearConsole();
+        Game.printLocationInfo();
+        Misc.printHeading("TRAVEL");
         System.out.println("Which direction do you want to travel?");
         System.out.println("[1] North");
         System.out.println("[2] East");

@@ -3,7 +3,11 @@ import java.util.ArrayList;
 public class Location {
     
     // core location attributes
-    private String name, desc, area;
+    private String name, story, area;
+
+    private Item item;
+
+    private Enemy enemy;
 
     // location specific arraylist
     private ArrayList<Item> locationItems;
@@ -28,14 +32,28 @@ public class Location {
         this.name = name;
     }
 
-    // getter method for location desc
-    public String getDesc() {
-        return this.desc;
+    public String getStory() {
+        return this.story;
     }
 
-    // setter method for location desc
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setStory(String story) {
+        this.story = story;
+    }
+    
+    public Enemy getEnemy() {
+        return this.enemy;
+    }
+
+    public void setEnemy(Enemy enemy) {
+        this.enemy = enemy;
+    }
+
+    public Item getItem() {
+        return this.item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     // getter method for location arraylist
@@ -48,18 +66,32 @@ public class Location {
         this.locationItems = itemList;
     }
 
-    // constructor method for location object
-    public Location(String name, String area, String desc) {
+    // secondary constructor method for location object
+    public Location(String name, String area, String story) {
         this.name = name;
         this.area = area;
-        this.desc = desc;
+        this.story = story;
         this.locationItems = new ArrayList<Item>();
     }
 
-    // location tostring method
-    @Override
-    public String toString() {
-        return "\nname:" + getName() + "\nDesc: " + getDesc() + "\nArea: " + getArea() + "\nLocation Items: " + getLocationItems();
+    // primary constructor method for location object
+    public Location(String name, String area, String story, Enemy enemy) {
+        this.name = name;
+        this.area = area;
+        this.story = story;
+        this.enemy = enemy;
+        this.locationItems = new ArrayList<Item>();
     }
 
+    // primary constructor method for location object
+    public Location(String name, String area, String story, Enemy enemy, Item item) {
+        this.name = name;
+        this.area = area;
+        this.story = story;
+        this.enemy = enemy;
+        this.item = item;
+        this.locationItems = new ArrayList<Item>();
+    }
 }
+
+    

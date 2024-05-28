@@ -33,7 +33,6 @@ public class Story {
          description = description + farmerReturnStory();
       } else {
          description = description + farmerStory();
-         Misc.continueKey();
          if (!Misc.containsItem("Hero's Sword")) {
             Game.player.getPlayerItems().add(ItemList.herosSword()); 
             // TODO Add pickup basic sword text. Remraf gives it to you. Or move this to E5?

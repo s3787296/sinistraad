@@ -1,7 +1,7 @@
 public class Combat {
 
     // print battle heading and options
-    public static void printBattle(Enemy enemy) {
+    private static void printBattle(Enemy enemy) {
         Misc.clearConsole();
         Misc.printHeading(enemy.getType() + ": " + enemy.getName() + "\nHP: " + enemy.getCurHp() + "/"
                 + enemy.getMaxHp() + "\nATK: " + enemy.combatAtk() + "\nDEF: " + enemy.combatDef());
@@ -15,13 +15,11 @@ public class Combat {
     public static boolean battle(Enemy enemy) {
         // return variable for post battle use
         boolean victory = false;
-        // turn tracker variable
-        int turn = 1;
         // main battle loop
         while (true) {
             // battle heading and options
             printBattle(enemy);
-            // getting and reacting to player input
+            // getting player input
             int input = Misc.readInt();
             if (input == 1) {
                 // attack
@@ -43,42 +41,39 @@ public class Combat {
                 // print the info of this turn
                 Misc.clearConsole();
                 Misc.printHeading("BATTLE");
-                Misc.printHeading("Turn " + turn);
                 System.out.println("You dealt " + dmgDealt + " damage to the " + enemy.getName() + "!");
                 System.out.println("The " + enemy.getName() + " dealt " + dmgTaken + " damage to you!");
                 Misc.continueKey();
-                turn++;
-                // check if player died
-                if (Game.player.getCurHp() <= 0) {
-                    Game.playerDied(); // method to end the game
-                    victory = true;
-                    break;
-                } else if (enemy.getCurHp() <= 0) {
-                    // tell the player they won
-                    Misc.clearConsole();
-                    Misc.printHeading("You defeated the " + enemy.getName() + "!");
-                    // increase player xp
-                    System.out.println("You earned " + enemy.getXp() + "XP!");
-                    Game.player.setXp(Game.player.getXp() + enemy.getXp());
-                    // random drops
-                    boolean addRest = (Math.random() * 5 + 1 <= 2.25);
-                    int goldEarnt = (int) (Math.random() * enemy.getXp());
-                    // if player earnt rest
-                    if (addRest) {
-                        Game.player.setRests(Game.player.getRests() + 1);
-                        System.out.println("You fought well and earned an additional rest.\nRests available: ["
-                                + Game.player.getRests() + "]!");
-                    }
-                    // if player earnt > 0 gold
-                    if (goldEarnt > 0) {
-                        Game.player.setGold(Game.player.getGold() + goldEarnt);
-                        System.out.println(
-                                "You collect " + goldEarnt + " gold from the " + enemy.getName() + "'s corpse.");
-                    }
-                    Misc.continueKey();
-                    victory = true;
-                    break;
+            }
+            // check if player died
+            if (Game.player.getCurHp() <= 0) {
+                Game.playerDied();
+                victory = true;
+                break;
+            } else if (enemy.getCurHp() <= 0) {
+                // tell the player they won
+                Misc.clearConsole();
+                Misc.printHeading("You defeated the " + enemy.getName() + "!");
+                System.out.println("You earned " + enemy.getXp() + "XP!");
+                Game.player.setXp(Game.player.getXp() + enemy.getXp());
+                // random drops
+                boolean addRest = (Math.random() * 5 + 1 <= 2.25);
+                int goldEarnt = (int) (Math.random() * enemy.getXp());
+                // if player earnt rest
+                if (addRest) {
+                    Game.player.setRests(Game.player.getRests() + 1);
+                    System.out.println("You fought well and earned an additional rest.\nRests available: ["
+                            + Game.player.getRests() + "]!");
                 }
+                // if player earnt > 0 gold
+                if (goldEarnt > 0) {
+                    Game.player.setGold(Game.player.getGold() + goldEarnt);
+                    System.out.println(
+                            "You collect " + goldEarnt + " gold from the " + enemy.getName() + "'s corpse.");
+                }
+                Misc.continueKey();
+                victory = true;
+                break;
             } else if (input == 2) {
                 // use potion
                 Misc.clearConsole();
@@ -89,17 +84,17 @@ public class Combat {
                     // confirm player wants to use a potion
                     System.out.println("[1] Yes\n[2] No");
                     input = Misc.readInt();
-                    if (input == 1) {
-                        // player takes potion
-                        System.out.println("You used a potion and restored "
-                                + (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
-                        Game.player.setCurHp(Game.player.getMaxHp());
-                        Game.player.getPlayerPotions().remove(Game.player.getPlayerPotions().get(0));
-                        Misc.continueKey();
-                    } else if (input == 2) {
-                        System.out.println("You decided not to use a potion.");
-                        Misc.continueKey();
-                    }
+                }
+                if (input == 1) {
+                    // player takes potion
+                    System.out.println("You used a potion and restored "
+                            + (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
+                    Game.player.setCurHp(Game.player.getMaxHp());
+                    Game.player.getPlayerPotions().remove(Game.player.getPlayerPotions().get(0));
+                    Misc.continueKey();
+                } else if (input == 2) {
+                    System.out.println("You decided not to use a potion.");
+                    Misc.continueKey();
                 } else {
                     // player unable to use a potion
                     Misc.printHeading("You can't do that right now.");
@@ -128,6 +123,5 @@ public class Combat {
             }
         }
         return victory;
-
     }
 }

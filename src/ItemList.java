@@ -79,7 +79,7 @@ public class ItemList {
     // method to create and return the filled goblet item
     public static Item filledGoblet() {
         Item filledGoblet = new Item("Filled Goblet", "Quest",
-                "A golden Goblet encrusted with perfectly cut jewels reminiscent of royalty. It is filled with the tears of the Lost Maiden.\nHow did it get here?",
+                "A golden Goblet encrusted with perfectly cut jewels reminiscent of royalty. It is filled with the tears of the Lost Maiden.",
                 "?");
         return filledGoblet;
     }

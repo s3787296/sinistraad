@@ -39,8 +39,6 @@ public class Game {
         } while (!nameSet);
         // create new player object with name input
         player = new Player(name);
-        // creating the rest of the map location objects
-        LocationList.createLocations();
     }
 
     public static void printRestMenu() {
@@ -104,6 +102,8 @@ public class Game {
     
     // transition method to start the game
     public static void gameStart() {
+        // creating map location objects
+        LocationList.createLocations();
         player.setCurrentLocation(LocationList.eList.get(5));
         isRunning = true;
         playerOptions();
@@ -119,11 +119,11 @@ public class Game {
         printLocationInfo();
         Misc.printHeading("PLAYER MENU");
         System.out.println("Choose an Option:");
-        System.out.println("[1] Interact");
-        System.out.println("[2] Travel");
-        System.out.println("[3] Player");
-        System.out.println("[4] Bag");
-        System.out.println("[5] Rest");
+        System.out.println("[1] Explore");
+        System.out.println("[2] Player");
+        System.out.println("[3] Bag");
+        System.out.println("[4] Rest");
+        System.out.println("[5] Help");
         System.out.println("[6] Exit");
     }
 
@@ -177,27 +177,26 @@ public class Game {
         }
     }
 
-    // player menu loop
+    // player menu loopc
     public static void playerOptions() {
         while (isRunning) {
             printPlayerMenu();
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    Combat.battle(EnemyList.gatekeeperSyek()); // TODO Need to not fight the gatekeeper all the time
+                    Explore.explore(); // TODO Need to not fight the gatekeeper all the time
                     break;
                 case 2:
-                    Direction.travel();
-                    break;
-                case 3:
                     playerInfo();
                     break;
-                case 4:
+                case 3:
                     bagOptions();
                     break;
-                case 5:
+                case 4:
                     restOptions();
                     break;
+                case 5:
+                    // gameHelp();
                 case 6:
                     gameOptions();
                     break;
@@ -287,7 +286,7 @@ public class Game {
     public static void printLocationInfo() {
         Misc.printSeperator(30);
         System.out.println(Game.player.getCurrentLocation().getArea());
-        System.out.println(Game.player.getCurrentLocation().getDesc());
+        System.out.println(Game.player.getCurrentLocation().getStory());
         Misc.printSeperator(30);
     }
 }
