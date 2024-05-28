@@ -45,7 +45,6 @@ public class Game {
 
     public static void printRestMenu() {
         Misc.clearConsole();
-        printLocationInfo();
         Misc.printHeading("PLAYER RESTS");
         System.out.println("Do you want to take a rest? (You have " + Game.player.getRests() + " rest(s) left.)");
         System.out.println("[1] Yes\n[2] No, not now.");
@@ -130,7 +129,6 @@ public class Game {
     // printing character sheet info
     public static void playerInfo() {
         Misc.clearConsole();
-        printLocationInfo();
         Misc.printHeading("PLAYER INFO");
         System.out.println("Name: " + player.getName() + "\tHP: " + player.getCurHp() + "/" + player.getMaxHp());
         Misc.printSeperator(30);
@@ -208,7 +206,6 @@ public class Game {
 
     public static void printBagMenu() {
         Misc.clearConsole();
-        printLocationInfo();
         Misc.printHeading("PLAYER BAG");
         System.out.println("Select option:");
         System.out.println("[1] View Items");

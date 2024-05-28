@@ -3,8 +3,9 @@ public class Combat {
     // print battle heading and options
     public static void printBattle(Enemy enemy) {
         Misc.clearConsole();
-        Misc.printHeading(enemy.getName() + "\nHP: " + enemy.getCurHp() + "/" + enemy.getMaxHp());
-        Misc.printHeading(Game.player.getName() + "\nHP: " + Game.player.getCurHp() + "/" + Game.player.getMaxHp());
+        Misc.printHeading("BATTLE");
+        Misc.printHeading(enemy.getType()+": "+enemy.getName() + "\nHP: " + enemy.getCurHp() + "/" + enemy.getMaxHp()+"\nATK: "+enemy.combatAtk()+"\nDEF: "+enemy.combatDef());
+        Misc.printHeading("PLAYER: "+Game.player.getName() + "\nHP: " + Game.player.getCurHp() + "/" + Game.player.getMaxHp()+"\nATK: "+Game.player.combatAtk()+"\nDEF: "+Game.player.combatDef());
         Misc.printSeperator(20);
         System.out.println("[1] Attack\n[2] Item\n[3] Flee");
     }
