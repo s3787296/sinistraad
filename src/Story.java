@@ -10,6 +10,10 @@ public class Story {
       return "\n\nOld Remraf: Child! I heard word of your plan to journey onward amd finally slay that evil spirit cursing our land, but I fear you are not yet ready for such a journey! You will need a map to find your way through the forest to the castle! I happen to have one, but to get it you’ll have to prove yourself! Say... What if you go to the Twisted Caverns up north, and slay the Arachnid Queen? That will prove that you're ready for such an adventure!";
    }
 
+   public static String farmerReturnStory() {
+      return "\n\nOlf Remraf: Ahoy, child! I can see by your bloody blade that you have defeated that nasty creature that’s been killing our beautiful cows and webbing up the crops! You’ve done the town a great service, and I can see that you truly are ready to conquer the forest and slay that evil Count! Take this map so that you may not get lost in the Duskwood Forest. Be careful - some people say that those who go into the forest come back... Different.";
+   }
+
    public static String e4Story() {
       description = "Trudging through the tall grass of the field, you see the entrance to the Duskwood Forest, beyond which lies the grounds of Castle Sinistraad. As you head towards the mouth of the forest you are hailed by Old Remraf, the eccentric farmer who owns the lands surrounding the town. To the west is the forest lining, the Old Town is back down south, and to the north is the Twisted Caverns.";
       if (Misc.containsItem("Matriarch's Blood")) {
@@ -28,7 +32,7 @@ public class Story {
       if (!Misc.containsItem("Matriarch's Blood")) {
          return "You hesitantly inch through the Twisted Caverns, hearing the scuttling of many legs emanate from deeper in the tunnels. As you head deeper, the sickly green hue of glow worms dotting the cave roof illuminates your surroundings. As you descend even further, you hear an almost alien... Chittering sound? Creepy stuff. To exit the cave, you must head back the way you came. However, if you're brave enough, you can descend and face whatever lies ahead.";
       } else
-         return "Insert text here - no need to go into the cavern again."; // TODO - E3 second text
+         return "After your encounter with the Matriarch, you'd rather not face any more spiders.";
    }
 
    public static String beforeArachnidStory() {
@@ -37,10 +41,6 @@ public class Story {
 
    public static String afterArachnidStory() {
       return "At last, the Arachnid Matriarch lays defeated before you, oozing a sticky blue fluid from the many wounds you inflicted. You now understand the weight of the journey that lies ahead. You must now return to Old Remraf, and get his blessings for the journey ahead. The map he mentioned wouldn't hurt to have either.";
-   }
-
-   public static String farmerReturnStory() {
-      return "\n\nOlf Remraf: Ahoy, child! I can see by your bloody blade that you have defeated that nasty creature that’s been killing our beautiful cows and webbing up the crops! You’ve done the town a great service, and I can see that you truly are ready to conquer the forest and slay that evil Count! Take this map so that you may not get lost in the Duskwood Forest. Be careful - some people say that those who go into the forest come back... Different.";
    }
 
    public static String d4Story() {
