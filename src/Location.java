@@ -56,7 +56,7 @@ public class Location {
         this.locationItems = new ArrayList<Item>();
     }
 
-
+    // location tostring method
     @Override
     public String toString() {
         return "\nname:" + getName() + "\nDesc: " + getDesc() + "\nArea: " + getArea() + "\nLocation Items: " + getLocationItems();

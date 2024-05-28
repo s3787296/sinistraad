@@ -134,7 +134,7 @@ public class Game {
         Misc.printSeperator(30);
         System.out.println("XP: " + player.getXp() + "\tGold: " + player.getGold());
         Misc.printSeperator(25);
-        System.out.println("Potions: " + player.getPotions() + "\tRests: " + player.getPotions());
+        System.out.println("Potions: " + player.getPlayerPotions().size() + "\tRests: " + player.getRests());
         Misc.printSeperator(25);
         System.out.println("Weapon Damage: " + player.getWeaponAtk() + "\tArmour Defence: " + player.getArmourDef());
         Misc.continueKey();
@@ -213,11 +213,14 @@ public class Game {
         System.out.println("[3] Drop Item"); // testing purposes
         System.out.println("[4] Pickup Item");
         System.out.println("[5] Location Items"); // testing purposes
-        System.out.println("[6] Exit");
+        System.out.println("[6] View Potions");
+        System.out.println("[7] Add Potion");
+        System.out.println("[8] Exit");
     }
 
     public static void bagOptions() {
-        while (true) {
+        boolean viewbag = true;
+        while (viewbag) {
             printBagMenu();
             int input = Misc.readInt();
             switch (input) {
@@ -225,7 +228,7 @@ public class Game {
                     printPlayerItems();
                     break;
                 case 2:
-                    Game.player.getPlayerItems().add(ItemList.herosSword());
+                    player.getPlayerItems().add(ItemList.herosSword());
                     break;
                 case 3:
                     player.dropItem(player.getPlayerItems().get(0));
@@ -238,6 +241,12 @@ public class Game {
                     Misc.continueKey();
                     break;
                 case 6:
+                    printPlayerPotions();
+                    break;
+                case 7:
+                    player.getPlayerPotions().add(ItemList.healingPotion());
+                    break;
+                case 8:
                     playerOptions();
                     break;
 
@@ -245,16 +254,30 @@ public class Game {
         }
     }
 
-    // printing players inventory items
+    // printing players items
     public static void printPlayerItems() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER ITEMS");
-        for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
+        for (int i = 0; i < player.getPlayerItems().size(); i++) {
             Misc.printHeading("Item: " + (i + 1));
-            System.out.println("Name: " + Game.player.getPlayerItems().get(i).getName());
-            System.out.println("Type: " + Game.player.getPlayerItems().get(i).getType());
-            System.out.println("Desc: " + Game.player.getPlayerItems().get(i).getDesc());
-            System.out.println("Buff: " + Game.player.getPlayerItems().get(i).getBuff());
+            System.out.println("Name: " + player.getPlayerItems().get(i).getName());
+            System.out.println("Type: " + player.getPlayerItems().get(i).getType());
+            System.out.println("Desc: " + player.getPlayerItems().get(i).getDesc());
+            System.out.println("Buff: " + player.getPlayerItems().get(i).getBuff());
+        }
+        Misc.continueKey();
+    }
+
+    // printing players potions
+    public static void printPlayerPotions() {
+        Misc.clearConsole();
+        Misc.printHeading("PLAYER POTIONS");
+        for (int i = 0; i < Game.player.getPlayerPotions().size(); i++) {
+            Misc.printHeading("Item: " + (i + 1));
+            System.out.println("Name: " + player.getPlayerPotions().get(i).getName());
+            System.out.println("Type: " + player.getPlayerPotions().get(i).getType());
+            System.out.println("Desc: " + player.getPlayerPotions().get(i).getDesc());
+            System.out.println("Buff: " + player.getPlayerPotions().get(i).getBuff());
         }
         Misc.continueKey();
     }

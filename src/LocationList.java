@@ -85,7 +85,7 @@ public class LocationList {
         Location d3Location = new Location("D3", "DUSKWOOD FOREST", "D3 description");
         dList.add(d3Location);
         //
-        Location d4Location = new Location("D4", "DUSKWOOD FOREST", Story.D5Story());
+        Location d4Location = new Location("D4", "DUSKWOOD FOREST", Story.D4Story());
         dList.add(d4Location);
         //
         Location d5Location = new Location("D5", "DUSKWOOD FOREST", "D5 description");
