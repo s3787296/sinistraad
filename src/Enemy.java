@@ -67,9 +67,9 @@ public class Enemy {
         // character constructor
         this.name = name;
         this.type = type;
-        this.maxHp = (int) (((Math.random() * 10) + 1) + (playerXp+playerXp/4));
+        this.maxHp = (int) (((Math.random() * 10) + 1) + (playerXp/10)+5);
         this.curHp = maxHp;
-        this.xp = (int) (((Math.random() * 10) + 1) + (playerXp/4));
+        this.xp = (int) (((Math.random() * 10) + 1) + (maxHp/10));
         this.playerXp = playerXp;
     }
 
