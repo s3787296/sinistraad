@@ -3,10 +3,9 @@ public class Combat {
     // print battle heading and options
     public static void printBattle(Enemy enemy) {
         Misc.clearConsole();
-        Misc.printHeading("BATTLE");
         Misc.printHeading(enemy.getType()+": "+enemy.getName() + "\nHP: " + enemy.getCurHp() + "/" + enemy.getMaxHp()+"\nATK: "+enemy.combatAtk()+"\nDEF: "+enemy.combatDef());
         Misc.printHeading("PLAYER: "+Game.player.getName() + "\nHP: " + Game.player.getCurHp() + "/" + Game.player.getMaxHp()+"\nATK: "+Game.player.combatAtk()+"\nDEF: "+Game.player.combatDef());
-        Misc.printSeperator(20);
+        Misc.printHeading("BATTLE");
         System.out.println("[1] Attack\n[2] Item\n[3] Flee");
     }
 
@@ -80,9 +79,9 @@ public class Combat {
             } else if (input == 2) {
                 // use potion
                 Misc.clearConsole();
-                if (Game.player.getPotions() > 0 && Game.player.getCurHp() < Game.player.getMaxHp()) {
+                if (Game.player.getPlayerPotions().size() > 0 && Game.player.getCurHp() < Game.player.getMaxHp()) {
                     // player able to use a potion
-                    Misc.printHeading("Do you want to use a potion? [" + Game.player.getPotions() + "] left.");
+                    Misc.printHeading("Do you want to use a potion? [" + Game.player.getPlayerPotions().size() + "] left.");
                     // confirm player wants to use a potion
                     System.out.println("[1] Yes\n[2] No");
                     input = Misc.readInt();
@@ -90,6 +89,7 @@ public class Combat {
                         // player takes potion
                         System.out.println("You used a potion and restored "+ (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
                         Game.player.setCurHp(Game.player.getMaxHp());
+                        Game.player.getPlayerPotions().remove(Game.player.getPlayerPotions().get(0));
                         Misc.continueKey();
                     } else if (input == 2) {
                         System.out.println("You decided not to use a potion.");
@@ -102,8 +102,8 @@ public class Combat {
                 }
             } else if (input == 3) {
                 // player chooses flee
-                Misc.clearConsole();
                 // if enemy is not a boss and player wins 50/50
+                Misc.clearConsole();
                 if (!enemy.getType().equalsIgnoreCase("Boss") && Math.random() * 10 + 1 <= 5.0) {
                     Misc.printHeading("You managed to escape from the " + enemy.getName() + "!");
                     Misc.continueKey();
@@ -123,5 +123,7 @@ public class Combat {
             }
         }
         return victory;
+
+        
     }
 }

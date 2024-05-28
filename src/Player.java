@@ -7,12 +7,22 @@ public class Player {
     private int maxHp, curHp, xp;
     private Location currentLocation = LocationList.eList.get(5);
     private ArrayList<Item> playerItems;
-
+    private ArrayList<Item> playerPotions;
     // additional player attributes
-    private int gold, rests, potions;
+    private int gold, rests;
     
     // player weapon, armour and buff bonuses
     private int weaponAtk, armourDef, bonusAtk, bonusDef;
+    
+    // getter method for player potions
+    public ArrayList<Item> getPlayerPotions() {
+        return this.playerPotions;
+    }
+
+    // setter method for player potions
+    public void setPlayerPotions(ArrayList<Item> playerPotions) {
+        this.playerPotions = playerPotions;
+    }
 
     // getter method for player items
     public ArrayList<Item> getPlayerItems() {
@@ -133,16 +143,6 @@ public class Player {
         this.rests = rests;
     }
 
-    // getter method for player potions
-    public int getPotions() {
-        return this.potions;
-    }
-
-    // setter method for player potions
-    public void setPotions(int potions) {
-        this.potions = potions;
-    }
-
     // Player specific constructor
     public Player(String name) {
         // setting intial core player attributes
@@ -153,8 +153,8 @@ public class Player {
         // settting additional player attributes
         this.gold = 10;
         this.rests = 1;
-        this.potions = 0;
         playerItems = new ArrayList<Item>();
+        playerPotions = new ArrayList<Item>();
     }
 
     // player specific attack calculation
@@ -167,11 +167,13 @@ public class Player {
         return (int) (((Math.random() * 10) + 1) + armourDef + bonusDef);
     }
 
+    // player specific drop method to remove items from play bag and add to currentlocation
     public void dropItem(Item item){
         Game.player.currentLocation.getLocationItems().add(item);
         Game.player.getPlayerItems().remove(item);
     }
 
+    // player specific pickup method to add items to bag from currentlocation
     public void pickupItem(Item item){
         Game.player.getPlayerItems().add(item);
         Game.player.currentLocation.getLocationItems().remove(item);

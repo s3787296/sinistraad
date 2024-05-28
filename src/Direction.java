@@ -197,7 +197,7 @@ public class Direction {
                         break;
                     }
                 case 5:
-                    Game.gameOptions();
+                    Game.playerOptions();
                     break;
             }
         }
