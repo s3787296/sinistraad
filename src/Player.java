@@ -7,8 +7,10 @@ public class Player {
     private int maxHp, curHp, xp;
     private Location currentLocation = LocationList.eList.get(5);
     private ArrayList<Item> playerItems;
+
     // additional player attributes
     private int gold, rests, potions;
+    
     // player weapon, armour and buff bonuses
     private int weaponAtk, armourDef, bonusAtk, bonusDef;
 
