@@ -4,13 +4,13 @@ public class Game {
     public static boolean isRunning;
 
     // method to start the game
-    public static void startGame() {
-        // printing game title
+    public static void newGame() {
+        // printing game title screen
         printGameTitle();
-        // getting player name
+        // getting player name input
         playerNameSet();
-        // start main game loop
-        gameMenu();
+        // move to game options menu
+        gameOptions();
     }
 
     // method to get player name
@@ -37,65 +37,51 @@ public class Game {
                 }
             } while (!nameSet);
         } while (!nameSet);
-        // creating map locations
-        LocationList.createLocations(); 
-        // create new player object with input name
+        // creating map location objects
+        LocationList.createLocations();
+        // create new player object with name input
         player = new Player(name);
-        // setting isRunning to false to move to game menu
-        isRunning = false;
     }
 
-    // method to create a random battle
-    public static void enemyBattle() {
+    public static void printRestMenu() {
         Misc.clearConsole();
-        Misc.printHeading("\nYou're attacked by an evil creature. You'll have to fight it!");
-        Misc.continueKey();
-        // creating new enemy (testing purposes)
-        if (Combat.battle(EnemyList.feralDuskwolf()) == true) {
-            Misc.clearConsole();
-            System.out.println("You won!");
-            Misc.continueKey();
-        }
-        else{
-            Misc.clearConsole();
-            System.out.println("You suck!");
-            Misc.continueKey();
-        };
+        printLocationInfo();
+        Misc.printHeading("PLAYER RESTS");
+        System.out.println("Do you want to take a rest? (You have " + Game.player.getRests() + " rest(s) left.)");
+        System.out.println("[1] Yes\n[2] No, not now.");
     }
 
-    // method to create a boss battle
-    public static void bossBattle() {
-        // Combat.battle(new Boss)
-    }
-
-    public static void takeRest() {
-        do {
-            Misc.clearConsole();
-            Misc.printHeading("Do you want to take a rest? (You have " + Game.player.getRests() + " rest(s) left.)");
-            System.out.println("[1] Yes\n[2] No, not now.");
-            int input = Misc.readInt();
-            if (input == 1) {
-                // player takes rest
-                Misc.clearConsole();
-                if (Game.player.getCurHp() < Game.player.getMaxHp()) {
-                    int hpRestored = ((Game.player.getMaxHp() - Game.player.getCurHp()) / 2);
-                    System.out.println("\nYou took a rest and restored " + hpRestored + " health.");
-                    Game.player.setCurHp(Game.player.getCurHp() + hpRestored);
-                    System.out.println("You're now at " + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + " health.");
-                    Game.player.setRests(Game.player.getRests() - 1);
-                    Misc.continueKey();
-                    break;
-                } else {
-                    System.out.println("You're at full health. You don't need to rest right now.");
-                    Misc.continueKey();
+    public static void restOptions() {
+        while (true) {
+            if (Game.player.getRests() > 0) {
+                printRestMenu();
+                int input = Misc.readInt();
+                if (input == 1) {
+                    // player takes rest
+                    if (Game.player.getCurHp() < Game.player.getMaxHp()) {
+                        Misc.clearConsole();
+                        int hpRestored = ((Game.player.getMaxHp() - Game.player.getCurHp()) / 2);
+                        System.out.println("\nYou took a rest and restored " + hpRestored + " health.");
+                        Game.player.setCurHp(Game.player.getCurHp() + hpRestored);
+                        System.out.println("You're now at " + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + " health.");
+                        Game.player.setRests(Game.player.getRests() - 1);
+                        Misc.continueKey();
+                        break;
+                    } else {
+                        System.out.println("\nYou're at full health. You don't need to rest right now.");
+                        Misc.continueKey();
+                        break;
+                    }
+                } else if (input == 2) {
                     break;
                 }
-            } else if (input == 2) {
-                System.out.println("\nYou decide not to take a rest right now. ");
+            } else {
+                Misc.clearConsole();
+                printLocationInfo();
+                System.out.println("\nYou cannot do that right now.");
                 Misc.continueKey();
-                break;
             }
-        } while (Game.player.getRests() > 0);
+        }
     }
 
     // print title screen
@@ -107,51 +93,45 @@ public class Game {
         Misc.continueKey();
     }
 
-    // printing the main menu
+    // printing the game menu
     public static void printGameMenu() {
         Misc.clearConsole();
         Misc.printHeading("GAME MENU");
         System.out.println("Choose an Option:");
-        Misc.printSeperator(30);
-        System.out.println("[1] Play Game");
+        System.out.println("[1] Start Game");
         System.out.println("[2] Game Info");
         System.out.println("[3] Quit Game");
     }
-
-    // printing the ingame player menu
-    public static void printPlayerMenu() {
-        Misc.clearConsole();
-        Misc.printSeperator(30);
-        System.out.println(Game.player.getCurrentLocation().getName());
-        System.out.println(Game.player.getCurrentLocation().getArea());
-        System.out.println(Game.player.getCurrentLocation().getDesc());
-        Misc.printSeperator(30);
-        Misc.printHeading("PLAYER MENU");
-        System.out.println("Choose an Option:");
-        Misc.printSeperator(30);
-        System.out.println("[1] Explore");
-        System.out.println("[2] Travel");
-        System.out.println("[3] Inventory");
-        System.out.println("[4] Player");
-        System.out.println("[5] Rest");
-        System.out.println("[6] Exit");
-        System.out.println("[7] View Maplists"); //testing
-    }
-
-    // transition method from game menu to player menu
-    public static void playGame() {
+    
+    // transition method to start the game
+    public static void gameStart() {
         isRunning = true;
-        playerMenu();
+        playerOptions();
     }
 
     public static void gameInfo() {
         // about game info stuff
     }
 
+    // printing the ingame player menu
+    public static void printPlayerMenu() {
+        Misc.clearConsole();
+        printLocationInfo();
+        Misc.printHeading("PLAYER MENU");
+        System.out.println("Choose an Option:");
+        System.out.println("[1] Interact");
+        System.out.println("[2] Travel");
+        System.out.println("[3] Player");
+        System.out.println("[4] Bag");
+        System.out.println("[5] Rest");
+        System.out.println("[6] Exit");
+    }
+
     // printing character sheet info
     public static void playerInfo() {
         Misc.clearConsole();
-        Misc.printHeading("PLAYER INFO:");
+        printLocationInfo();
+        Misc.printHeading("PLAYER INFO");
         System.out.println("Name: " + player.getName() + "\tHP: " + player.getCurHp() + "/" + player.getMaxHp());
         Misc.printSeperator(30);
         System.out.println("XP: " + player.getXp() + "\tGold: " + player.getGold());
@@ -174,19 +154,19 @@ public class Game {
     // game quit and close method
     public static void gameQuit() {
         Misc.clearConsole();
-        System.out.println("Thank you for playing!");
+        System.out.println("\nThank you for playing!");
         Misc.continueKey();
         System.exit(0);
     }
 
-    // main game menu loop
-    public static void gameMenu() {
-        while (!isRunning) {
+    // game menu loop
+    public static void gameOptions() {
+        while (true) {
             printGameMenu();
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    playGame();
+                    gameStart();
                     break;
                 case 2:
                     gameInfo();
@@ -198,90 +178,70 @@ public class Game {
         }
     }
 
-    // main player menu loop
-    public static void playerMenu() {
+    // player menu loop
+    public static void playerOptions() {
         while (isRunning) {
             printPlayerMenu();
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    enemyBattle();
+                    Combat.battle(EnemyList.gatekeeperSyek());
                     break;
                 case 2:
                     Direction.travel();
                     break;
                 case 3:
-                    inventoryMenu();
-                    break;
-                case 4:
                     playerInfo();
                     break;
+                case 4:
+                    bagOptions();
+                    break;
                 case 5:
-                    takeRest();
+                    restOptions();
                     break;
                 case 6:
-                    isRunning = false;
-                    gameMenu();
-                    break;
-                case 7:
-                    System.out.println(LocationList.aList.toString());
-                    System.out.println(LocationList.bList.toString());
-                    System.out.println(LocationList.cList.toString());
-                    System.out.println(LocationList.dList.toString());
-                    System.out.println(LocationList.eList.toString());
-                    Misc.continueKey();
+                    gameOptions();
                     break;
             }
         }
     }
 
-    public static void printInventoryMenu() {
+    public static void printBagMenu() {
         Misc.clearConsole();
-        Misc.printHeading("Inventory Menu");
+        printLocationInfo();
+        Misc.printHeading("PLAYER BAG");
         System.out.println("Select option:");
         System.out.println("[1] View Items");
         System.out.println("[2] Add Item"); // testing purposes
-        System.out.println("[3] Exit");
-        System.out.println("[4] Drop Item"); // testing purposes
-        System.out.println("[5] Pickup Item");
-        System.out.println("[6] View locationitems"); // testing purposes
-        System.out.println("[7] Location alist index 1 to string");
-        System.out.println("[8] Location elist index 0 to string");
+        System.out.println("[3] Drop Item"); // testing purposes
+        System.out.println("[4] Pickup Item");
+        System.out.println("[5] Location Items"); // testing purposes
+        System.out.println("[6] Exit");
     }
 
-    public static void inventoryMenu() {
+    public static void bagOptions() {
         while (true) {
-            printInventoryMenu();
+            printBagMenu();
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    printInventory();
+                    printPlayerItems();
                     break;
                 case 2:
-                    ItemList.herosSword();
+                    Game.player.getPlayerItems().add(ItemList.herosSword());
                     break;
                 case 3:
-                    playerMenu();
+                    player.dropItem(player.getPlayerItems().get(0));
                     break;
                 case 4:
-                    player.dropItem(player.getPlayerItems().get(0));
-                    Misc.continueKey();
+                    player.pickupItem(player.getCurrentLocation().getLocationItems().get(0));
                     break;
                 case 5:
-                    player.pickupItem(player.getCurrentLocation().getLocationItems().get(0));
-                    Misc.continueKey();
-                    break;
-                case 6:
                     player.getCurrentLocation().getLocationItems().toString();
                     Misc.continueKey();
                     break;
-                case 7:
-                    LocationList.aList.get(1).getLocationItems().toString();
-                    Misc.continueKey();
-                    break;
-                case 8:
-                    LocationList.eList.get(0).getLocationItems().toString();
-                    Misc.continueKey();
+                case 6:
+                    playerOptions();
                     break;
 
             }
@@ -289,9 +249,9 @@ public class Game {
     }
 
     // printing players inventory items
-    public static void printInventory() {
+    public static void printPlayerItems() {
         Misc.clearConsole();
-        Misc.printHeading("INVENTORY");
+        Misc.printHeading("PLAYER ITEMS");
         for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
             Misc.printHeading("Item: " + (i + 1));
             System.out.println("Name: " + Game.player.getPlayerItems().get(i).getName());
@@ -300,5 +260,14 @@ public class Game {
             System.out.println("Buff: " + Game.player.getPlayerItems().get(i).getBuff());
         }
         Misc.continueKey();
+    }
+
+    // printing general location info
+    public static void printLocationInfo() {
+        Misc.printSeperator(30);
+        System.out.println(Game.player.getCurrentLocation().getName());
+        System.out.println(Game.player.getCurrentLocation().getArea());
+        System.out.println(Game.player.getCurrentLocation().getDesc());
+        Misc.printSeperator(30);
     }
 }

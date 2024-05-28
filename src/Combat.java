@@ -1,8 +1,5 @@
 public class Combat {
-
-    // random encounters
-    public static String[] encounters = { "Battle", "Battle", "Battle", "Rest" };
-
+    
     // print battle heading and options
     public static void printBattle(Enemy enemy) {
         Misc.clearConsole();

@@ -4,6 +4,17 @@ import java.util.Scanner;
 public class Misc {
     static Scanner scanner = new Scanner(System.in);
 
+    // method to check if player bag contains item via name input
+    public static boolean containsItem(String string){
+        boolean contains = false;
+        for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
+            if (Game.player.getPlayerItems().get(i).getName().equalsIgnoreCase(string)) {
+                contains = true;
+            }
+        }
+        return contains;
+    }
+
     // method to get only integer user input
     public static int readInt() {
         int readInput;

@@ -1,18 +1,10 @@
 public class Direction {
 
-    // Variable to store player location. Starting location is defined.
-    public static String playerLocation = "E5"; // @TODO: Update this to contain the variable stated in the player/game
-                                                // file?
     // Method to print the travel menu
-
     public static void printTravelMenu() {
         Misc.clearConsole();
-        Misc.printHeading("Travel");
-        Misc.printSeperator(30);
-        System.out.println(Game.player.getCurrentLocation().getName());
-        System.out.println(Game.player.getCurrentLocation().getArea());
-        System.out.println(Game.player.getCurrentLocation().getDesc());
-        Misc.printSeperator(30);
+        Game.printLocationInfo();
+        Misc.printHeading("TRAVEL");
         System.out.println("Which direction do you want to travel?");
         System.out.println("[1] North");
         System.out.println("[2] East");
@@ -22,19 +14,19 @@ public class Direction {
     }
 
     // method to print for invalid direction
-    public static void directionBlocked() {
+    private static void directionBlocked() {
         System.out.println("\nYou can't go that way. Select another direction.");
         Misc.continueKey();
         ;
     }
 
     // method to print to set updated location
-    public static void setDirection(Location setLocation) {
+    private static void setDirection(Location setLocation) {
         Game.player.setCurrentLocation(setLocation);
     }
 
     // method to identify player current location
-    public static boolean checkDirection(Location checklocation) {
+    private static boolean checkDirection(Location checklocation) {
         boolean validlocation = false;
         if (Game.player.getCurrentLocation().equals(checklocation)) {
             validlocation = true;
@@ -44,7 +36,7 @@ public class Direction {
 
     // Travel method for player movement around map
     public static void travel() {
-        do {
+        while (true) {
             printTravelMenu();
             int input = Misc.readInt();
             switch (input) {
@@ -205,9 +197,9 @@ public class Direction {
                         break;
                     }
                 case 5:
-                    Game.playerMenu();
+                    Game.gameOptions();
                     break;
             }
-        } while (true);
+        }
     }
 }
