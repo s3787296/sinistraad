@@ -60,9 +60,9 @@ public class EnemyList {
         return forgemasterFuego;
     }
 
-    // creating new instance of boss Lord Eripmav
-    public static Enemy lordEripmav() {
-        Enemy lordEripmav = new Enemy("Lord Eripmav", "BOSS", Game.player.getXp());
-        return lordEripmav;
+    // creating new instance of boss Count Eripmav
+    public static Enemy countEripmav() {
+        Enemy countEripmav = new Enemy("Count Eripmav", "BOSS", Game.player.getXp());
+        return countEripmav;
     }
 }

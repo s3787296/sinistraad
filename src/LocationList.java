@@ -93,7 +93,7 @@ public class LocationList {
         //
         eList.add(nullLocation);
         //
-        Location e1Location = new Location("E1", "THRONE ROOM", Story.e1Story(), EnemyList.lordEripmav());
+        Location e1Location = new Location("E1", "THRONE ROOM", Story.e1Story(), EnemyList.countEripmav());
         eList.add(e1Location);
         //
         Location e2Location = new Location("E2", "NOT ACCESSIBLE", "Something has gone wrong.");
