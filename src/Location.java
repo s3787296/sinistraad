@@ -6,6 +6,7 @@ public class Location {
     private String name;
     private String story;
     private String area;
+    private String map;
     private Item item;
     private Enemy enemy;
 
@@ -52,11 +53,22 @@ public class Location {
         this.enemy = enemy;
     }
 
+    // Getter method for locations map
+    public String getMap() {
+        return this.map;
+    }
+
+    // Setter method for locations map
+    public void setMap(String map) {
+        this.map = map;
+    }
+
     // Getter method for location items 
     public Item getItem() {
         return this.item;
     }
 
+    // Setter method for location items
     public void setItem(Item item) {
         this.item = item;
     }
@@ -72,38 +84,21 @@ public class Location {
     }
 
     // Constructor for location object with no item or enemy
-    public Location(String name, String area, String story) {
+    public Location(String name, String map, String area, String story) {
         this.name = name;
+        this.map = map;
         this.area = area;
         this.story = story;
         this.locationItems = new ArrayList<Item>();
     }
 
     // Constructor for location object with no item
-    public Location(String name, String area, String story, Enemy enemy) {
+    public Location(String name, String map, String area, String story, Enemy enemy) {
         this.name = name;
+        this.map = map;
         this.area = area;
         this.story = story;
         this.enemy = enemy;
-        this.locationItems = new ArrayList<Item>();
-    }
-
-    // Constructor for location object with no enemy // TODO check if still needed
-    public Location(String name, String area, String story, Item item) {
-        this.name = name;
-        this.area = area;
-        this.story = story;
-        this.item = item;
-        this.locationItems = new ArrayList<Item>();
-    }
-
-    // Constructor for location object with enemy and item // TODO check if still needed
-    public Location(String name, String area, String story, Enemy enemy, Item item) {
-        this.name = name;
-        this.area = area;
-        this.story = story;
-        this.enemy = enemy;
-        this.item = item;
         this.locationItems = new ArrayList<Item>();
     }
 }

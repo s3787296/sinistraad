@@ -2,14 +2,14 @@ public class Story {
 
    // This class contains methods to return the descriptions for each location.
    // Some methods contain logic to determine whether items need to be added to a
-   // player's inventory after defeating a boss.
+   // player's bag after defeating a boss.
 
    public static String e5Story() {
-      return "You stand in the barren town square of your village. It's no longer the same joy-filled place where you and your closest friends grew up, surrounded by family who loved you."
+      return "You stand in the barren town square of your village."
+            + "\n" +
+            "It's no longer the same joy-filled place where you and your closest friends grew up, surrounded by family who loved you."
             + "\n" +
             "His reign of terror over the land ends with you, as you set out on your journey to Castle Sinistraad to finally slay whatever evil lurks inside.";
-      // TODO You inherited this sword from your father. It's a comfort to you, it
-      // protected him from many things, and it shall protect you as well.
    }
 
    public static String e4Story() {
@@ -25,7 +25,9 @@ public class Story {
             + "\n" +
             "You will need a map to find your way through the forest to the castle! I happen to have one, but to get it you'll have to prove yourself!"
             + "\n" +
-            "Say... What if you go to the Twisted Caverns up north, and slay the Arachnid Queen? That will prove that you're ready for such an adventure!";
+            "Say... What if you go to the Twisted Caverns up north, and slay the Arachnid Matriarch? That will prove that you're ready for such an adventure!"
+            + "\n" +
+            "\nOh, before you go - I've got an old sword laying around which you're welcome to have - you won't be able to fight the Arachnid Matriarch without one!";
    }
 
    public static String farmerReturnStory() {
@@ -122,7 +124,7 @@ public class Story {
             "You could also turn east and go even deeper into the forest.";
    }
 
-   public static String c2Story() { // TODO Story edits from here.
+   public static String c2Story() {
       return "As you emerge from the darkness of the forest, you feel the warmth of the sun on your skin and look around the clearing."
             + "\n" +
             "It's a dead end, but it's still full of life - a wrinkled figure draped in all manner of fabrics wanders around the clearing, humming to themself. They glance over at you through their goggles, excitement gleaming in their bug-like eyes."
@@ -130,7 +132,6 @@ public class Story {
             "You have no clue how long they've been posted at this spot, but you feel like they could probably use a chat.";
    }
 
-   // TODO Check this vs. apothecary in Encounters class
    public static String nostramusStartStory() {
       return "As you step closer, he smiles at you, and it seems genuine. You feel like you're meeting an old friend."
             + "\n" +
@@ -175,33 +176,32 @@ public class Story {
             "You could probably get a sneak attack in if you really needed to fall these beasts, or escape the way you came.";
    }
 
-   // TODO Werewolves Text for Explore.explore() here & below
    public static String beforeWerewolvesStory() {
-      return "You as you step closer to the werewolves turned backs, the rib of a small creature cracks loudly under your foot, and the wolves immediately stop what they were focusing on to turn to the fresh meat they see you as.";
+      return "As you step closer to the werewolves turned backs, the rib of a small creature cracks loudly under your foot. You cringe at the sound, and at the predicament you've ended up in.."
+      + "\n" +
+      "The cave full of werewolves immediately stop what they were focusing on, turning towards their new target. The wolf who seems to be the Alpha steps forward, growling at you.";
    }
 
    public static String afterWerewolvesStory() {
-
-      return "As your sword plunges into the last werewolves neck and the life fades from its wild eyes, you stand covered in blood, huffing to catch your breath."
+      return "As your sword plunges into the Alpha Werewolf's neck and the life fades from its wild eyes, you stand covered in blood, panting to catch your breath."
             + "\n" +
-            "You cant believe you won. You realise that the werewolves tough hides might be perfect as armour, despite being gross."
+            "You can't believe you won. You realise that the werewolf's tough hide might be perfect as armour, despite being gross."
             + "\n" +
-            "You carefully peel the skin off the werewolves body, it looks so much more human without the fur, but you cant think about that."
+            "You carefully peel the hide off the werewolf's body. It looks so much more human without the fur, but you don't want to think about that."
             + "\n" +
             "After scraping the fat from the skin, you trim and loosely stitch the hide into a chest piece. This'll do.";
    }
 
    public static String a4Story() {
-      return "Walking further again through the forest's winding paths, the path appears to neaten up to the west, becoming almost trimmed and maintained. You must be approaching the castle.";
+      return "Walking further along the forest's winding paths, the path appears to neaten up to the west, slowly becoming well-maintained. You must be approaching the castle.";
    }
 
    public static String a3Story() {
       return "Before you realise you're facing the entrance to the castle courtyard, a neat dirt path lined by tombstones crowded together, each significantly older than the last."
             + "\n" +
-            "Perched upon the entrance of the Castle sits a gargoyle statue, unmoving. You see a large, rusty key fastened to a collar on the statues neck. It looks like the key to the castle door will be a little more difficult to acquire.";
+            "Perched upon the entrance of the Castle sits a gargoyle statue, unmoving. You see a large, rusty key fastened to a collar on the statue's neck. It looks like the key to the castle door will be a little more difficult to acquire.";
    }
 
-   // Text for Explore.explore() here & below
    public static String beforeGatekeeperSyek() {
       return "You slip your boots between the cracks in the large granite bricks at the castle's entrance, steadily scaling the castle exterior to reach the key."
             + "\n" +
@@ -223,9 +223,9 @@ public class Story {
    public static String a2Story() {
       return "With a loud clunk the key turns the century old mechanism in the door, and the door grinds against the floor as it pushes open."
             + "\n" +
-            "The insides are pristine, floors swept and the candle holders stocked and lit."
+            "The insides are pristine, floors swept and the candle holders stocked and lit. It's particularly warm for inside a castle."
             + "\n" +
-            "A sing-song hum and the clanking of a hammer echo throughout the hall. The intricate pattern of the marble floor winds deeper into the castle.";
+            "The intricate pattern of the marble floor winds deeper into the castle.";
    }
 
    public static String b2Story() {
@@ -244,18 +244,18 @@ public class Story {
             "The room seems to have been abandoned, why would the Count not want wine? There appears to be nothing of interest in this neglected part of the castle.";
    }
 
-   public static String b1Story() { // TODO Key for doorway into cathedral.
-      return "Stepping further into the castle, you reach the end of a hallway, to the left is a large door with golden and bejewelled handles."
+   public static String b1Story() {
+      return "Stepping further into the castle, you reach the end of a hallway, to the east is a large door with golden and bejewelled handles."
             + "\n" +
-            "Trying to open it, it doesn't budge, the keyhole almost stares at you, teasing you for even trying without a key."
+            "It's locked. You need a key that will fit in this keyhole."
             + "\n" +
-            "The key that opened the entrance door would never fit. To the west you hear the pleasant humming and clanking with the hammer.";
+            "To the west, you feel a sweltering heat.";
    }
 
    public static String a1Story() {
       return "You hesitantly push open the door to get blasted by sweltering heat, an enclosed forge room, with a stockpile of coal, hardwood, and various metals and ores fill the corners."
             + "\n" +
-            "A grizzled old man with leathery ashen skin hammers at a red hot sword absentmindedly. A golden key matching the aesthetics of the door dangles from a keyring on his apron.";
+            "A grizzled old man with leathery ashen skin hammers at a red-hot sword methodically, humming quietly. A golden key matching the aesthetics of the door dangles from a keyring on his apron.";
    }
 
    public static String beforeFuegoStory() {
@@ -269,17 +269,15 @@ public class Story {
    public static String afterFuegoStory() {
       return "You manage to get the upper hand and plunge your sword through the chest of the Forgemaster, his last strained breath seeps out of his body as he falls back into the pile of coals."
             + "\n" +
-            "You pluck the key off his person and stash it on you. The sword that would normally have dropped back to normal temperature somehow still glows red hot and smolders on the floor."
+            "You pluck the key off his person and stash it on you. The sword that would normally have dropped back to normal temperature somehow still glows red-hot, smoldering on the floor."
             + "\n" +
-            "Hesitantly you pick up the sword, the handle is surprisingly cool to the touch while the blade just radiates intense heat."
+            "Hesitantly, you pick up the sword - the handle is surprisingly cool to the touch while the blade radiates intense heat."
             + "\n" +
             "You find a similar looking scabbard on the ground and find it perfectly blocks the heat while covering the blade."
             + "\n" +
-            "The sword feels almost weightless to wield, quite the upgrade.";
+            "The sword feels almost weightless to wield. What an upgrade.";
    }
 
-   // Cathedral. TODO Add text for player not having key
-   // TODO Altar text here & below
    public static String c1Story() {
       return "You slip the golden key into the slot, and hear the intricate mechanism in the gilded door whirr, then click."
             + "\n" +

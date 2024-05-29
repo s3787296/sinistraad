@@ -46,6 +46,7 @@ public class Direction {
                         setDirection(LocationList.bList.get(1));
                         return;
                     } else if (checkDirection(LocationList.aList.get(3))) {
+                        // If player's bag contains Gate Key item, they can head north into the castle
                         if (Misc.containsItem("Gate Key")) {
                             setDirection(LocationList.aList.get(2));
                             return;
@@ -88,8 +89,10 @@ public class Direction {
                     if (checkDirection(LocationList.aList.get(1))) {
                         setDirection(LocationList.bList.get(1));
                         return;
+                        
                     } else if (checkDirection(LocationList.bList.get(1))) {
-                        if (Misc.containsItem("Chamber Key")) {
+                        // If player's bag contains Cathedral Key item, they can head east into the Cathedral
+                        if (Misc.containsItem("Cathedral Key")) {
                             setDirection(LocationList.cList.get(1));
                             return;
                         } else {
@@ -196,6 +199,7 @@ public class Direction {
                         setDirection(LocationList.cList.get(4));
                         return;
                     } else if (checkDirection(LocationList.eList.get(4))) {
+                        // If player's bag contains Hero's Map, they can head west into the forest
                         if (Misc.containsItem("Hero's Map")) {
                             setDirection(LocationList.dList.get(4));
                             return;

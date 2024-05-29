@@ -3,7 +3,7 @@ public class ItemList {
     // Method to create and return the Hero's Sword item
     public static Item herosSword() {
         Item herosSword = new Item("Hero's Sword", "Weapon",
-                "Your fathers sword, the sword he used to help defend the town from the attacks from the creatures that came from the forest, upon his passing, he left it to you to continue to defend the town.",
+                "Old Remraf had this sword laying around. It's worn with age, and feels good in your hand.",
                 "+10 Attack");
         Game.player.setWeaponAtk(10);
         return herosSword;
@@ -36,11 +36,11 @@ public class ItemList {
     }
 
     // Method to create and return the Chamber Key item
-    public static Item chamberKey() {
-        Item chamberKey = new Item("Chamber Key", "Quest",
-                "A dainty golden key that matches the goblet you collected earlier.\nIts engraved with a script you’ve never seen before and has an odd resonance of the castles ancient halls.",
-                "Chamber Access");
-        return chamberKey;
+    public static Item cathedralKey() {
+        Item cathedralKey = new Item("Cathedral Key", "Quest",
+                "A dainty golden key that matches the goblet you collected earlier.\nIts engraved with a script you’ve never seen before and has an odd resonance of the castle's ancient halls.",
+                "Cathedral Access");
+        return cathedralKey;
     }
 
     // Method to create and return the Gate Key item
