@@ -45,7 +45,7 @@ public class Enemy {
     public String getAfter() {
         return this.after;
     }
-    
+
     // Setter method for getting post-combat text
     public void setAfter(String after) {
         this.after = after;
@@ -105,9 +105,9 @@ public class Enemy {
     public Enemy(String name, String type, int level) {
         this.name = name;
         this.type = type;
-        this.maxHp = (int) (((Math.random() * 10) + 1) + (level/10) +5);
+        this.maxHp = (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
         this.curHp = maxHp;
-        this.xp = (int) (((Math.random() * 10) + 1) + (maxHp/10));
+        this.xp = (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
         this.level = level;
     }
 
@@ -115,9 +115,9 @@ public class Enemy {
     public Enemy(String name, String type, int level, String before, String after, Item item) {
         this.name = name;
         this.type = type;
-        this.maxHp = (int) (((Math.random() * 10) + 1) + (level/10) + 5);
+        this.maxHp = (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
         this.curHp = maxHp;
-        this.xp = (int) (((Math.random() * 10) + 1) + (maxHp/10));
+        this.xp = (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
         this.level = level;
         this.before = before;
         this.after = after;
@@ -126,11 +126,11 @@ public class Enemy {
 
     // Enemy attack calculation
     public int combatAtk() {
-        return (int) (((Math.random() * 10) + 1) + (level/4));
+        return (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
     }
 
     // Enemy defense calculation
     public int combatDef() {
-        return (int) (((Math.random() * 10) + 1) + (level/4));
+        return (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
     }
 }

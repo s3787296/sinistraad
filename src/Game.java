@@ -125,9 +125,9 @@ public class Game {
         System.out.println("Choose an Option:");
         System.out.println("[1] Explore");
         System.out.println("[2] Player");
-        System.out.println("[3] Bag");
-        System.out.println("[4] Rest");
-        System.out.println("[5] Help");
+        System.out.println("[3] Map");
+        System.out.println("[4] Bag");
+        System.out.println("[5] Rest");
         System.out.println("[6] Exit");
         // TODO Add Map Option
     }
@@ -197,21 +197,19 @@ public class Game {
                     playerInfo();
                     break;
                 case 3:
-                    // [3] Bag
+                    // [3] Map
+                case 4:
+                    // [4] Bag
                     bagOptions();
                     break;
-                case 4:
-                    // [4] Rest
+                case 5:
+                    // [5] Rest
                     restOptions();
                     break;
-                case 5:
-                    // [5] Help
-                    // TODO gameHelp();
                 case 6:
                     // [6] Exit
                     gameOptions();
                     break;
-                // TODO case 7 / move options around to display map
             }
         }
     }
@@ -222,16 +220,14 @@ public class Game {
         Misc.printHeading("PLAYER BAG");
         System.out.println("Select option:");
         System.out.println("[1] View Items");
-        System.out.println("[2] Add Item"); // TODO testing purposes
-        System.out.println("[3] Drop Item"); // TODO testing purposes
-        System.out.println("[4] Pickup Item");
-        System.out.println("[5] Location Items"); // TODO testing purposes
-        System.out.println("[6] View Potions");
-        System.out.println("[7] Add Potion");
-        System.out.println("[8] Exit");
+        System.out.println("[2] Drop Item"); 
+        System.out.println("[3] Pickup Item");
+        System.out.println("[4] Location items"); 
+        System.out.println("[5] View Potions");
+        System.out.println("[6] Exit");
     }
 
-    // Bag menu loop
+    // Method to display bag menu loop
     public static void bagOptions() {
         boolean viewbag = true;
         while (viewbag) {
@@ -243,35 +239,26 @@ public class Game {
                     printPlayerItems();
                     break;
                 case 2:
-                    // [2] Add Item
-                    player.getPlayerItems().add(ItemList.herosSword()); // TODO We should remove this line, also check how many times the hero's sword is added throughout the classes
-                    break;
-                case 3:
-                    // [3] Drop Item
+                    // [2] Drop Item
                     player.dropItem(player.getPlayerItems().get(0)); // TODO Testing purposes
                     break;
-                case 4:
-                    // [4] Pickup Item
+                case 3:
+                    // [3] Pickup Item
                     player.pickupItem(player.getCurrentLocation().getLocationItems().get(0));
                     break;
-                case 5:
-                    // [5] Location Items
+                case 4:
+                    // [4] Location Items
                     player.getCurrentLocation().getLocationItems().toString(); // TODO Testing purposes
                     Misc.continueKey();
                     break;
-                case 6:
-                    // [6] View Potions
+                case 5:
+                    // [5] View Potions
                     printPlayerPotions();
                     break;
-                case 7:
-                    // [7] Add Potion
-                    player.getPlayerPotions().add(ItemList.healingPotion());
-                    break;
-                case 8:
-                    // [8] Exit
+                case 6:
+                    // [6] Exit
                     playerOptions();
                     break;
-
             }
         }
     }
@@ -290,7 +277,7 @@ public class Game {
         Misc.continueKey();
     }
 
-    // [6] View potions in bag
+    // [5] View potions in bag
     public static void printPlayerPotions() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER POTIONS");
