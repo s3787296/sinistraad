@@ -11,7 +11,7 @@ public class Story {
    private static String description;
 
    public static String e5Story() {
-      if (!Misc.containsItem(ItemList.herosSword())) {
+      if (!(Misc.containsItem(ItemList.herosSword()))) { // TODO Fix this logic.
          Game.player.getPlayerItems().add(ItemList.herosSword());
       }
       return "You stand at the entrance to the town, your town, where you grew up with your friends and family, all terrorized by the Count and his thralls."
@@ -24,7 +24,7 @@ public class Story {
             + "\n" +
             "You will need a map to find your way through the forest to the castle! I happen to have one, but to get it you'll have to prove yourself!"
             + "\n" +
-            "Say... What if you go to the Twisted Caverns up north, and slay the Arachnid Queen? That will prove that you're ready for such an adventure!”";
+            "Say... What if you go to the Twisted Caverns up north, and slay the Arachnid Queen? That will prove that you're ready for such an adventure!";
    }
 
    public static String farmerReturnStory() {
@@ -32,7 +32,7 @@ public class Story {
             + "\n" +
             "You've done the town a great service, and I can see that you truly are ready to conquer the forest and slay that evil Count!"
             + "\n" +
-            "Take this map so that you may not get lost in the Duskwood Forest. Be careful - some people say that those who go into the forest come back... Different.”";
+            "Take this map so that you may not get lost in the Duskwood Forest. Be careful - I've seen many a traveller enter, but none return...";
    }
 
    public static String e4Story() {
@@ -100,6 +100,9 @@ public class Story {
       if (Misc.containsItem(ItemList.maidensBlessing())) {
          description = description
                + "\n\nYou can see the Lost Maiden drifting over her body, once filled with life. You can walk over to her, or go back south into the forest.";
+               if (Misc.containsItem(ItemList.emptyGoblet())) {
+
+               }
       } else {
          description = description
                + "\n\nYou scan the shore of the lake and - what's that?\nIt looks like a body?\nSurely not... You take another look and to your disgust, your analysis was sound."
@@ -150,7 +153,7 @@ public class Story {
    public static String nostramusStartStory() {
       return "As you step closer, you see the obscured head of the figure turn quickly to face you before the figure jumps up in excitement."
             + "\n" +
-            "NOSTRAMUS: “Aha! Yes! Finally, another human! Its been so long! Quick, child, take a look at my wares! Anything a young adventurer will need to survive the forest!”"
+            "NOSTRAMUS: Aha! Yes! Finally, another human! Its been so long! Quick, child, take a look at my wares! Anything a young adventurer will need to survive the forest!"
             + "\n" +
             "They open their cloak open to reveal various potions and a glowing gold goblet encrusted in jewels and inscribed in some script lost to time.";
    }
@@ -275,7 +278,7 @@ public class Story {
             + "\n" +
             "he looks up bored at the door to see you left it open, muttering “what the..” as his eyes dart around the room to land on you, the intruder."
             + "\n" +
-            "Forgemaster Fuego: “Hey, wh- You aren't supposed to be here!” he shouts before raising the red hot sword to your face.";
+            "Forgemaster Fuego: Hey, wh- You aren't supposed to be here! he shouts before raising the red hot sword to your face.";
    }
 
    public static String afterFuegoStory() {
@@ -290,7 +293,7 @@ public class Story {
             "The sword feels almost weightless to wield, quite the upgrade.";
    }
 
-   // Cathedral. TODO Add text for player not having key
+   // Cathedral.
    // TODO Altar text here & below
    public static String c1Story() {
       return "You slip the golden key into the slot, and hear the intricate mechanism in the gilded door whirr, then click."
@@ -327,12 +330,12 @@ public class Story {
 
    public static String beforeEripmavStory() {
       return "The count raises his eyes from the tomb to meet your gaze, his cat like eyes pierce your soul." + "\n" +
-            "COUNT ERIPMAV: “Finally! Someone else has come to meet their death. I could use another feed...”" + "\n" +
-            "He scoffs as he rises to his feet and pats dust off his suit. You finally have your chance. Better not blow it.";
+            "COUNT ERIPMAV: Finally! Someone else has come to meet their death. I could use another feed..." + "\n" +
+            "The Count scoffs as he rises to his feet, patting the dust off his suit. You finally have your chance. Better not blow it.";
    }
 
    public static String goodEndingStory() {
-      return "The clashing of claws and teeth on metal finally ends as you deliver the killing bow, as you strike the count across the chest, and he falls to the ground pathetically. “you really are stronger than I remember humans to be, I wont let this be my end!” the count hisses before evaporating into a cloud of smoke. You wildly slash at the cloud but your strikes just pass through the smoke, before it rises up and out of the fireplace chimney. You beat him for today. Who knows how long you’ve defeated him for.\r\n"
+      return "The clashing of claws and teeth on metal finally ends as you deliver the killing bow, as you strike the count across the chest, and he falls to the ground pathetically. you really are stronger than I remember humans to be, I wont let this be my end! the count hisses before evaporating into a cloud of smoke. You wildly slash at the cloud but your strikes just pass through the smoke, before it rises up and out of the fireplace chimney. You beat him for today. Who knows how long you’ve defeated him for.\r\n"
             + //
             "Great Ending\r\n";
    }
@@ -340,13 +343,13 @@ public class Story {
    public static String greatEndingStory() {
       return "The clashing of claws and teeth on metal finally ends as you deliver the killing blow, as you strike the count across the chest he falls to the ground pathetically."
             + "\n" +
-            "COUNT ERIPMAV: “You really are stronger than I remember humans to be, I wont let this be my end!”" + "\n" +
+            "COUNT ERIPMAV: You really are stronger than I remember humans to be, I wont let this be my end!" + "\n" +
             "The count hisses, turning into a cloud of smoke. The goblet of holy water in your pocket almost sings to you, and you quickly pull out the goblet and flick it towards the cloud of smoke."
             + "\n" +
             "The droplets of holy water force the Count out of his smoke form and he slumps to the ground screeching and writhing."
             + "\n" +
             "The spots of holy water you continue to flick on him burning holes through his clothes and skin." + "\n" +
-            "COUNT ERIPMAV: “NO! THIS CANT BE! I CANT DIE LIKE THIS” he shouts as you hold the goblet upside down over his melting body, the last drop of holy water falls on his head and the body of the count turns to ash on the ground."
+            "COUNT ERIPMAV: NO! THIS CANT BE! I CANT DIE LIKE THIS he shouts as you hold the goblet upside down over his melting body, the last drop of holy water falls on his head and the body of the count turns to ash on the ground."
             + "\n" +
             "Dead. You did it! You finally beat the count for good!";
    }
@@ -356,6 +359,6 @@ public class Story {
             + "\n" +
             "Despite all your efforts, you lost. You collapse face down on the floor of the counts room as he laughs maniacally."
             + "\n" +
-            "COUNT ERIPMAV: “Your pathetic town will be gone by years end, humans will always be weak.”";
+            "COUNT ERIPMAV: Your pathetic town will be gone by years end, humans will always be weak.";
    }
 }

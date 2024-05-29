@@ -62,7 +62,8 @@ public class Game {
                         int hpRestored = ((Game.player.getMaxHp() - Game.player.getCurHp()) / 2);
                         System.out.println("\nYou took a rest and restored " + hpRestored + " health.");
                         Game.player.setCurHp(Game.player.getCurHp() + hpRestored);
-                        System.out.println("You're now at " + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + " health.");
+                        System.out.println(
+                                "You're now at " + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + " health.");
                         Game.player.setRests(Game.player.getRests() - 1);
                         Misc.continueKey();
                         break;
@@ -101,7 +102,7 @@ public class Game {
         System.out.println("[2] Game Info");
         System.out.println("[3] Quit Game");
     }
-    
+
     // transition method to start the game
     public static void gameStart() {
         // creating map location objects
@@ -112,7 +113,12 @@ public class Game {
     }
 
     public static void gameInfo() {
-        // TODO about game info stuff
+        // TODO Populate gameInfo method
+        // Add helpful instruction for user
+        // Provide instructions on how to play your game here including how to navigate
+        // your world, how to achieve the win condition and the details of any optional
+        // endings. Also include here any specific details on how to use your player’s
+        // inventory or how to interact with NPC’s etc.
     }
 
     // printing the ingame player menu

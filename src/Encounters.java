@@ -42,8 +42,8 @@ public class Encounters {
         boolean purchase = true;
         while (purchase) {
             Misc.clearConsole();
-            Misc.printHeading("APOCATHARY NOSTRAMUS");
-            Misc.printHeading("Well hello there traveller, welcome to my store of assorted...goods..hehe..");
+            Misc.printHeading("APOTHECARY");
+            Misc.printHeading("NOSTRAMUS: Well hello there, weary traveller... Welcome to my store of assorted...goods..hehe..");
             System.out.println("See anything you like?");
             System.out.println("[1] Healing Potion" + "\n[2] Empty Goblet" + "\n[3] Exit");
             int input = Misc.readInt();
@@ -67,4 +67,5 @@ public class Encounters {
         }
     }
     // TODO Non-boss item drop encounter: Cathedral for holy water
+    // TODO Figure out where the sword sits and why you can spawn a whole lot of them.
 }
