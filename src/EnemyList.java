@@ -8,7 +8,7 @@ public class EnemyList {
 
     // creating new instance of boss Alpha Duskwolf
     public static Enemy alphaDuskwolf() {
-        Enemy alphaDuskwolf = new Enemy("Alpha Duskwolf", "BOSS", Game.player.getXp());
+        Enemy alphaDuskwolf = new Enemy("Alpha Duskwolf", "BOSS", Game.player.getXp(), Story.beforeWerewolvesStory(), Story.afterWerewolvesStory(), ItemList.wolfhideArmour());
         return alphaDuskwolf;
     }
     
@@ -20,7 +20,7 @@ public class EnemyList {
 
     // creating new instance of boss Arachnid Matriarch
     public static Enemy arachnidMatriarch() {
-        Enemy arachnidMatriarch = new Enemy("Arachnid Matriarch", "BOSS", Game.player.getXp());
+        Enemy arachnidMatriarch = new Enemy("Arachnid Matriarch", "BOSS", Game.player.getXp(), Story.beforeArachnidStory(), Story.afterArachnidStory(), ItemList.matriarchsBlood());
         return arachnidMatriarch;
     }
 
@@ -32,7 +32,7 @@ public class EnemyList {
 
     // creating new instance of boss Lost Maiden
     public static Enemy lostMaiden() {
-        Enemy lostMaiden = new Enemy("Arachnid Spawn", "BOSS", Game.player.getXp());
+        Enemy lostMaiden = new Enemy("Arachnid Spawn", "BOSS", Game.player.getXp(), Story.beforeMaidenStory(), Story.afterMaidenStory(), ItemList.maidensBlessing());
         return lostMaiden;
     }
 
@@ -44,7 +44,7 @@ public class EnemyList {
 
     // creating new instance of boss Gatekeeper Syek
     public static Enemy gatekeeperSyek() {
-        Enemy gatekeeperSyek = new Enemy("Gatekeeper Syek", "BOSS", Game.player.getXp());
+        Enemy gatekeeperSyek = new Enemy("Gatekeeper Syek", "BOSS", Game.player.getXp(), Story.beforeGatekeeperSyek(), Story.afterGatekeeperSyek(), ItemList.gateKey());
         return gatekeeperSyek;
     }
 
@@ -56,13 +56,13 @@ public class EnemyList {
 
     // creating new instance of boss Forgemaster Fuego
     public static Enemy forgemasterFuego() {
-        Enemy forgemasterFuego = new Enemy("Forgemaster Fuego", "BOSS", Game.player.getXp());
+        Enemy forgemasterFuego = new Enemy("Forgemaster Fuego", "BOSS", Game.player.getXp(), Story.beforeFuegoStory(), Story.afterFuegoStory(), ItemList.forgemastersGreatsword());
         return forgemasterFuego;
     }
 
     // creating new instance of boss Count Eripmav
     public static Enemy countEripmav() {
-        Enemy countEripmav = new Enemy("Count Eripmav", "BOSS", Game.player.getXp());
+        Enemy countEripmav = new Enemy("Count Eripmav", "BOSS", Game.player.getXp(), Story.beforeEripmavStory(),null, null);
         return countEripmav;
     }
 }

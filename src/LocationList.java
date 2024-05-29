@@ -25,13 +25,13 @@ public class LocationList {
         //
         aList.add(nullLocation);
         //
-        Location a1Location = new Location("A1", "CASTLE ARMOURY", Story.a1Story(), EnemyList.forgemasterFuego(), ItemList.forgemastersGreatsword());
+        Location a1Location = new Location("A1", "CASTLE ARMOURY", Story.a1Story(), EnemyList.forgemasterFuego());
         aList.add(a1Location);
         //
         Location a2Location = new Location("A2", "CASTLE INTERIOR", Story.a2Story(), EnemyList.stoneskinGargoyle());
         aList.add(a2Location);
         //
-        Location a3Location = new Location("A3", "CASTLE COURTYARD", Story.a3Story(), EnemyList.gatekeeperSyek(), ItemList.gateKey());
+        Location a3Location = new Location("A3", "CASTLE COURTYARD", Story.a3Story(), EnemyList.gatekeeperSyek());
         aList.add(a3Location);
         //
         Location a4Location = new Location("A4", "DUSKWOOD FOREST", Story.a4Story(), EnemyList.feralDuskwolf());
@@ -62,7 +62,7 @@ public class LocationList {
         Location c1Location = new Location("C1", "CASTLE CATHEDRAL", Story.c1Story(), EnemyList.animatedGuard());
         cList.add(c1Location);
         //
-        Location c2Location = new Location("C2", "DUSKWOOD CLEARING", Story.c2Story());
+        Location c2Location = new Location("C2", "DUSKWOOD CLEARING", Story.c2Story(), null, null);
         cList.add(c2Location);
         //
         Location c3Location = new Location("C3", "DUSKWOOD FOREST", Story.c3Story(), EnemyList.arachnidSpawn());
@@ -71,7 +71,7 @@ public class LocationList {
         Location c4Location = new Location("C4", "DUSKWOOD FOREST", Story.c4Story(), EnemyList.feralDuskwolf());
         cList.add(c4Location);
         //
-        Location c5Location = new Location("C5", "DUSKWOOD DEN", Story.c5Story(), EnemyList.alphaDuskwolf(), ItemList.wolfhideArmour());
+        Location c5Location = new Location("C5", "DUSKWOOD DEN", Story.c5Story(), EnemyList.alphaDuskwolf());
         cList.add(c5Location);
         //
         dList.add(nullLocation);
@@ -79,7 +79,7 @@ public class LocationList {
         Location d1Location = new Location("D1", "CASTLE CHAMBERS", Story.d1Story(), EnemyList.animatedGuard());
         dList.add(d1Location);
         //
-        Location d2Location = new Location("D2", "MYSTIC LAKE", Story.d2Story(), EnemyList.lostMaiden(), ItemList.maidensBlessing());
+        Location d2Location = new Location("D2", "MYSTIC LAKE", Story.d2Story(), null, null);
         dList.add(d2Location);
         //
         Location d3Location = new Location("D3", "DUSKWOOD FOREST", Story.d3Story(), EnemyList.arachnidSpawn());
@@ -99,13 +99,13 @@ public class LocationList {
         Location e2Location = new Location("E2", "NOT ACCESSIBLE", "Something has gone wrong.");
         eList.add(e2Location);
         //
-        Location e3Location = new Location("E3", "TWISTED CAVE", Story.e3Story(), EnemyList.arachnidMatriarch(), ItemList.matriarchsBlood());
+        Location e3Location = new Location("E3", "TWISTED CAVE", Story.e3Story(), EnemyList.arachnidMatriarch());
         eList.add(e3Location);
         //
-        Location e4Location = new Location("E4", "TILLED PLAINS", Story.e4Story());
+        Location e4Location = new Location("E4", "TILLED PLAINS", Story.e4Story(), null, null);
         eList.add(e4Location);
         //
-        Location e5Location = new Location("E5", "OLD TOWN", Story.e5Story());
+        Location e5Location = new Location("E5", "OLD TOWN", Story.e5Story(), null, ItemList.herosSword());
         eList.add(e5Location);
     }
 }

@@ -10,9 +10,6 @@ public class Story {
    // before it is returned
 
    public static String e5Story() {
-      if (!Game.player.getPlayerItems().contains(ItemList.herosSword())) {
-         Game.player.getPlayerItems().add(ItemList.herosSword());
-      }
       return "You stand at the entrance to the town, your town, where you grew up with your friends and family, all terrorized by the Count and his thralls."
             + "\n" +
             "His reign of terror over the land ends with you, as you set out on your journey to Castle Sinistraad to finally slay whatever evil lurks inside.";
@@ -27,9 +24,6 @@ public class Story {
    }
 
    public static String farmerReturnStory() {
-      if (!Game.player.getPlayerItems().contains(ItemList.herosMap())) {
-         Game.player.getPlayerItems().add(ItemList.herosMap());
-      }
       return "OLD REMRAF: Ahoy, child! I can see by your bloody blade that you have defeated that nasty creature that's been killing our beautiful cows and webbing up the crops!"
             + "\n" +
             "You've done the town a great service, and I can see that you truly are ready to conquer the forest and slay that evil Count!"
@@ -68,9 +62,6 @@ public class Story {
    }
 
    public static String afterArachnidStory() {
-      if (!Game.player.getPlayerItems().contains(ItemList.matriarchsBlood())) {
-         Game.player.getPlayerItems().add(ItemList.matriarchsBlood());
-      }
       return "At last, the Arachnid Matriarch lays defeated before you, oozing a sticky blue fluid from the many wounds you inflicted. You now understand the weight of the journey that lies ahead."
             + "\n" +
             "You must now return to Old Remraf, and get his blessings for the journey ahead. The map he mentioned wouldn't hurt to have either.";
@@ -121,10 +112,6 @@ public class Story {
       // "The waterlogged corpse is splayed out on the shoreline, reaching towards the
       // forest. You could investigate the mysterious corpse, or go back south into
       // the forest.";
-
-      if (!Game.player.getPlayerItems().contains(ItemList.maidensBlessing())) {
-         Game.player.getPlayerItems().add(ItemList.maidensBlessing());
-      }
       return "After a long battle, you fall to your knees, exhausted. As the sliced corpse lays before you, a ghostly spirit rises from it, moping back to the lake's waterline."
             + "\n" +
             "It - no, she - slumps down, and you watch as she begins to sob. The glowing tears pour down her face through her hands and into the lake.";
@@ -135,12 +122,6 @@ public class Story {
    }
 
    public static String tearsSucceedStory() {
-      if (Game.player.getPlayerItems().contains(ItemList.maidensBlessing())) {
-         if (Game.player.getPlayerItems().contains(ItemList.emptyGoblet())) {
-            Game.player.getPlayerItems().remove(ItemList.emptyGoblet());
-            Game.player.getPlayerItems().add(ItemList.filledGoblet());
-         }
-      }
       return "You hesitantly reach the ornate goblet out into the transparent form of the Lost Maiden, intercepting her steady flow of mystical tears, filling the goblet to the brim.";
    }
 
@@ -169,9 +150,6 @@ public class Story {
    }
 
    public static String nostramusGobletStory() {
-      if (!Game.player.getPlayerItems().contains(ItemList.emptyGoblet())) {
-         Game.player.getPlayerItems().add(ItemList.emptyGoblet());
-      }
       return "After hesitantly handing the money off for the goblet, the man in the clearing shoves the goblet into your hands quickly."
             + "\n" +
             "The goblet feels dense and almost commands attention when in view. You quickly stuff it into your bag, you could probably use it to hold drinks or other liquids.";
@@ -220,9 +198,6 @@ public class Story {
    }
 
    public static String wolfArmourStory() {
-      if (!Game.player.getPlayerItems().contains(ItemList.wolfhideArmour())) {
-         Game.player.getPlayerItems().add(ItemList.wolfhideArmour());
-      }
       return "You carefully peel the skin off the werewolves body, it looks so much more human without the fur, but you cant think about that."
             + "\n" +
             "After quickly scraping the fat from the skin, you trim and loosely stitch the hide into a chest piece, this would be decent protection from claws and teeth. ";
@@ -248,9 +223,6 @@ public class Story {
    }
 
    public static String afterGatekeeperSyek() {
-      if (!Game.player.getPlayerItems().contains(ItemList.gateKey())) {
-         Game.player.getPlayerItems().add(ItemList.gateKey());
-      }
       return "As you finally defeat the StoneSkin Gargoyle, your sword managing to slip between the large granite plates protecting the most of the gargoyles body and cut at the ancient flesh underneath."
             + "\n" +
             "The gargoyle slumps over and you manage to pull the large rusty key off its neck.";
@@ -301,9 +273,6 @@ public class Story {
    }
 
    public static String afterFuegoStory() {
-      if (!Game.player.getPlayerItems().contains(ItemList.forgemastersGreatsword())) {
-         Game.player.getPlayerItems().add(ItemList.forgemastersGreatsword());
-      }
       return "You manage to get the upper hand and plunge your sword through the chest of the Forgemaster, his last strained breath seeps out of his body as he falls back into the pile of coals."
             + "\n" +
             "You pluck the key off his person and stash it on you. The sword that would normally have dropped back to normal temperature somehow still glows red hot and smolders on the floor."

@@ -186,7 +186,7 @@ public class Game {
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    Explore.explore();
+                    Explore.exploreLocation();
                     break;
                 case 2:
                     playerInfo();

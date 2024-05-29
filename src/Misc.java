@@ -4,6 +4,16 @@ import java.util.Scanner;
 public class Misc {
     static Scanner scanner = new Scanner(System.in);
 
+    public static boolean containsItem(String string){
+        boolean found = false;
+        for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
+            if (Game.player.getPlayerItems().get(i).getName().equalsIgnoreCase(string)) {
+                found = true;
+            }
+        }
+        return found;
+    }
+
     // method to get only integer user input
     public static int readInt() {
         int readInput;

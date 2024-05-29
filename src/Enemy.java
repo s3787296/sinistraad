@@ -1,8 +1,17 @@
 public class Enemy {
 
     // core enemy attributes
-    private String name, type;
+    private String name, type, before, after;
     private int maxHp, curHp, xp, level;
+    private Item item;
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getType() {
         return this.type;
@@ -12,42 +21,42 @@ public class Enemy {
         this.type = type;
     }
 
-    // getter method for name variable
-    public String getName() {
-        return this.name;
+    public String getBefore() {
+        return this.before;
     }
 
-    // setter method for name variable
-    public void setName(String name) {
-        this.name = name;
+    public void setBefore(String before) {
+        this.before = before;
     }
 
-    // getter method for max hp variable
+    public String getAfter() {
+        return this.after;
+    }
+
+    public void setAfter(String after) {
+        this.after = after;
+    }
+
     public int getMaxHp() {
         return this.maxHp;
     }
 
-    // setter method for max hp variable
     public void setMaxHp(int maxHp) {
         this.maxHp = maxHp;
     }
 
-    // getter method for current hp variable
     public int getCurHp() {
         return this.curHp;
     }
 
-    // setter method for current hp variable
     public void setCurHp(int curHp) {
         this.curHp = curHp;
     }
 
-    // getter method for xp variable
     public int getXp() {
         return this.xp;
     }
 
-    // setter method for xp variable
     public void setXp(int xp) {
         this.xp = xp;
     }
@@ -60,6 +69,14 @@ public class Enemy {
         this.level = level;
     }
 
+    public Item getItem() {
+        return this.item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+    
 
     // primary enemy constructor
     public Enemy(String name, String type, int level) {
@@ -69,6 +86,19 @@ public class Enemy {
         this.curHp = maxHp;
         this.xp = (int) (((Math.random() * 10) + 1) + (maxHp/10));
         this.level = level;
+    }
+
+    // primary enemy constructor
+    public Enemy(String name, String type, int level, String before, String after, Item item) {
+        this.name = name;
+        this.type = type;
+        this.maxHp = (int) (((Math.random() * 10) + 1) + (level/10)+5);
+        this.curHp = maxHp;
+        this.xp = (int) (((Math.random() * 10) + 1) + (maxHp/10));
+        this.level = level;
+        this.before = before;
+        this.after = after;
+        this.item = item;
     }
 
     // Enemy attack calculation

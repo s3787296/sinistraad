@@ -11,10 +11,11 @@ public class Encounters {
     }
 
     private static void farmerEncounter(){
-        if (!Game.player.getPlayerItems().contains(LocationList.eList.get(3).getItem())) {
-            System.out.println(Story.farmerStory());
-         } else {
+        if (Misc.containsItem("Matriarch's Blood")) {
             System.out.println(Story.farmerReturnStory());
+            Game.player.getPlayerItems().add(ItemList.herosMap());
+         } else {
+            System.out.println(Story.farmerStory());
          }
     }
 

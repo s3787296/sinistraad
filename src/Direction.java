@@ -187,8 +187,14 @@ public class Direction {
                         setDirection(LocationList.cList.get(4));
                         return;
                     } else if (checkDirection(LocationList.eList.get(4))) {
-                        setDirection(LocationList.dList.get(4));
-                        return;
+                        if (Misc.containsItem("Hero's Map")) {
+                            setDirection(LocationList.dList.get(4));
+                            return;
+                        }
+                        else{
+                            directionBlocked();
+                            return;
+                        } 
                     } else if (checkDirection(LocationList.cList.get(5))) {
                         setDirection(LocationList.bList.get(5));
                         return;
