@@ -1,10 +1,23 @@
 import java.util.Scanner;
 
-// class for misc helper methods
+// Class for misc helper methods
 public class Misc {
+    
+    // Declaring new instance of scanner
     static Scanner scanner = new Scanner(System.in);
 
-    // method to get only integer user input
+    // Method to see whether the player bag contains an item
+    public static boolean containsItem(String string) {
+        boolean found = false;
+        for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
+            if (Game.player.getPlayerItems().get(i).getName().equalsIgnoreCase(string)) {
+                found = true;
+            }
+        }
+        return found;
+    }
+
+    // Method to get only integer user input
     public static int readInt() {
         int readInput;
         try {
@@ -15,7 +28,7 @@ public class Misc {
         return readInput;
     }
 
-    // method to print a seperator with length n
+    // Method to print a seperator with length n
     public static void printSeperator(int n) {
         for (int i = 0; i < n; i++) {
             System.out.print("-");
@@ -23,20 +36,20 @@ public class Misc {
         System.out.println();
     }
 
-    // method to pause for user input
+    // Method to pause for user input
     public static void continueKey() {
         System.out.println("\nEnter c to continue");
         scanner.next();
     }
 
-    // method to print a title
+    // Method to print a title
     public static void printHeading(String heading) {
         printSeperator(30);
         System.out.println(heading);
         printSeperator(30);
     }
 
-    // method to clear the console
+    // Method to clear the console
     public static void clearConsole() {
         System.out.print("\033[H\033[2J");
         System.out.flush();

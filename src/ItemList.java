@@ -1,15 +1,15 @@
 public class ItemList {
 
-    // method to create and return the hero's sword item
+    // Method to create and return the Hero's Sword item
     public static Item herosSword() {
         Item herosSword = new Item("Hero's Sword", "Weapon",
-                "Your fathers sword, the sword he used to help defend the town from the attacks from the creatures that came from the forest, upon his passing, he left it to you to continue to defend the town. \"",
+                "Your fathers sword, the sword he used to help defend the town from the attacks from the creatures that came from the forest, upon his passing, he left it to you to continue to defend the town.",
                 "+10 Attack");
         Game.player.setWeaponAtk(10);
         return herosSword;
     }
 
-    // method to create and return the wolfhide armour item
+    // Method to create and return the Wolfhide Armour item
     public static Item wolfhideArmour() {
         Item wolfhideArmour = new Item("Wolfhide Armour", "Armour",
                 "Crudely stripped wolfskin tied around ones torso like a tunic.\nThe dense matted fur and sinewy skin of the Duskwood werewolf makes for excellent protection.",
@@ -18,7 +18,7 @@ public class ItemList {
         return wolfhideArmour;
     }
 
-    // method to create and return the hero's map item
+    // Method to create and return the Hero's Map item
     public static Item herosMap() {
         Item herosMap = new Item("Hero's Map", "Quest",
                 "An aged scroll filled with the knowledge of many generations of adventurers.\nThe map isn’t fully complete, maybe you could finish it on your journey!",
@@ -26,16 +26,16 @@ public class ItemList {
         return herosMap;
     }
 
-    // method to create and return the matriarch's blood item
+    // Method to create and return the Matriarch's Blood item
     public static Item matriarchsBlood() {
         Item matriarchsBlood = new Item("Matriarch's Blood", "Bonus",
-                "The sickly green blood from this unholy arachnid stains your hands.\nYou you feel the immense strength of a spider fuel your each and every movement ( Attack up!)",
+                "The sickly green blood from this unholy arachnid stains your hands.\nYou you feel the immense strength of a spider fuel your each and every movement.",
                 "+10 Attack");
         Game.player.setBonusAtk(10);
         return matriarchsBlood;
     }
 
-    // method to create and return the chamber key item
+    // Method to create and return the Chamber Key item
     public static Item chamberKey() {
         Item chamberKey = new Item("Chamber Key", "Quest",
                 "A dainty golden key that matches the goblet you collected earlier.\nIts engraved with a script you’ve never seen before and has an odd resonance of the castles ancient halls.",
@@ -43,18 +43,18 @@ public class ItemList {
         return chamberKey;
     }
 
-    // method to create and return the gate key item
+    // Method to create and return the Gate Key item
     public static Item gateKey() {
         Item gateKey = new Item("Gate Key", "Quest",
-                "A large, rusty key, torn from the collar of the stoneskin gargoyle now slayed.\nThe weight of the key reminds you of the weight of your journey still ahead.",
-                "Gate Access");
+                "A large, rusty key, given to you by Gatekeeper Syek.\nThe weight of the key reminds you of the weight of your journey still ahead.",
+                "Castle Entrance Access");
         return gateKey;
     }
 
     // method to create and return the maiden's blessing item
     public static Item maidensBlessing() {
         Item maidensBlessing = new Item("Maiden's Blessing", "Bonus",
-                "Upon defeating the maiden of the lake the fresh air of the clearing fills your lungs.\nYou you feel your muscles revitalize, becoming tougher. (Defense up!)",
+                "Upon defeating the Lost Maiden, the fresh air of the clearing fills your lungs.\nYou you feel your muscles revitalize, becoming stronger.",
                 "+10 Defence");
         Game.player.setBonusDef(10);
         return maidensBlessing;
@@ -63,7 +63,7 @@ public class ItemList {
     // method to create and return the healing potion item
     public static Item healingPotion() {
         Item healingPotion = new Item("Healing Potion", "Consumable",
-                "A small round flask filled with a bright red syrupy elixir.\nThe crafting of a health potion is a closely guarded secret by the apothecary’s guild,\nwho funds their research by selling such potent tinctures.",
+                "A small round flask filled with a bright red, syrupy elixir.\nThe crafting of a health potion is a closely guarded secret by the apothecary’s guild,\nwho fund their research by selling such potent tinctures.",
                 "Full Heal");
         return healingPotion;
     }
@@ -71,7 +71,7 @@ public class ItemList {
     // method to create and return the empty goblet item
     public static Item emptyGoblet() {
         Item emptyGoblet = new Item("Empty Goblet", "Quest",
-                "A golden Goblet encrusted with perfectly cut jewels reminiscent of royalty.\nHow did it get here?",
+                "A golden goblet encrusted with perfectly cut jewels, reminiscent of royalty.\nHow did it get here?",
                 "?");
         return emptyGoblet;
     }
@@ -100,5 +100,4 @@ public class ItemList {
                 "?");
         return blessedGoblet;
     }
-
 }

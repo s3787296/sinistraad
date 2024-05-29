@@ -13,19 +13,19 @@ public class Direction {
         System.out.println("[5] Exit");
     }
 
-    // method to print for invalid direction
+    // Method to print for invalid direction
     private static void directionBlocked() {
         System.out.println("\nYou can't go that way. Select another direction.");
         Misc.continueKey();
         ;
     }
 
-    // method to print to set updated location
+    // Method to print to set updated location
     private static void setDirection(Location setLocation) {
         Game.player.setCurrentLocation(setLocation);
     }
 
-    // method to identify player current location
+    // Method to identify player's current location
     private static boolean checkDirection(Location checklocation) {
         boolean validlocation = false;
         if (Game.player.getCurrentLocation().equals(checklocation)) {
@@ -40,7 +40,7 @@ public class Direction {
             printTravelMenu();
             int input = Misc.readInt();
             switch (input) {
-                // Input = north
+                // Input == North
                 case 1:
                     if (checkDirection(LocationList.bList.get(2))) {
                         setDirection(LocationList.bList.get(1));
@@ -79,7 +79,7 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
-                    // Input = east
+                    // Input == East
                 case 2:
                     if (checkDirection(LocationList.aList.get(1))) {
                         setDirection(LocationList.bList.get(1));
@@ -118,7 +118,7 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
-                    // Input = south
+                    // Input == South
                 case 3:
                     if (checkDirection(LocationList.bList.get(1))) {
                         setDirection(LocationList.bList.get(2));
@@ -158,7 +158,7 @@ public class Direction {
                         break;
                     }
                 case 4:
-                    // Input == west
+                    // Input == West
                     if (checkDirection(LocationList.bList.get(1))) {
                         setDirection(LocationList.aList.get(1));
                         return;
@@ -187,8 +187,13 @@ public class Direction {
                         setDirection(LocationList.cList.get(4));
                         return;
                     } else if (checkDirection(LocationList.eList.get(4))) {
-                        setDirection(LocationList.dList.get(4));
-                        return;
+                        if (Misc.containsItem("Hero's Map")) {
+                            setDirection(LocationList.dList.get(4));
+                            return;
+                        } else {
+                            directionBlocked();
+                            return;
+                        } 
                     } else if (checkDirection(LocationList.cList.get(5))) {
                         setDirection(LocationList.bList.get(5));
                         return;
@@ -196,6 +201,7 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
+                // Send player back to player menu
                 case 5:
                     Game.playerOptions();
                     break;
