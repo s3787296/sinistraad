@@ -1,28 +1,29 @@
 public class Game {
 
+    // Declaring class variables
     public static Player player;
     public static boolean isRunning;
 
-    // method to start the game
+    // Method to start the game
     public static void newGame() {
-        // printing game title screen
+        // Print game title screen
         printGameTitle();
-        // getting player name input
+        // Call method to get & set player name
         playerNameSet();
-        // move to game options menu
+        // Move to game options menu
         gameOptions();
     }
 
-    // method to get player name
+    // Method to get player name
     public static void playerNameSet() {
         String name;
         Boolean nameSet = false;
-        // loop to get player name
+        // Loop to get player name
         do {
             Misc.clearConsole();
             Misc.printHeading("What's your name?");
             name = Misc.scanner.next();
-            // confirming player choice
+            // Confirming player choice
             do {
                 Misc.clearConsole();
                 Misc.printHeading("Your name is " + name + ".\nIs that correct?");
@@ -37,11 +38,11 @@ public class Game {
                 }
             } while (!nameSet);
         } while (!nameSet);
-        // create new player object with name input
+        // Create new player object with name input
         player = new Player(name);
     }
 
-    // print rest menu
+    // Print rest menu
     public static void printRestMenu() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER RESTS");
@@ -49,14 +50,14 @@ public class Game {
         System.out.println("[1] Yes\n[2] No, not now.");
     }
 
-    // rest options loop
+    // Rest options loop
     public static void restOptions() {
         while (true) {
             if (Game.player.getRests() > 0) {
                 printRestMenu();
                 int input = Misc.readInt();
                 if (input == 1) {
-                    // player takes rest
+                    // Player takes rest
                     if (Game.player.getCurHp() < Game.player.getMaxHp()) {
                         Misc.clearConsole();
                         int hpRestored = ((Game.player.getMaxHp() - Game.player.getCurHp()) / 2);
@@ -83,7 +84,8 @@ public class Game {
         }
     }
 
-    // print title screen
+    // Print title screen
+    // TODO Can we get a nicer one? Perhaps with ASCII Art for the word sinistraad?
     public static void printGameTitle() {
         Misc.clearConsole();
         Misc.printSeperator(40);
@@ -92,7 +94,7 @@ public class Game {
         Misc.continueKey();
     }
 
-    // printing the game menu
+    // Printing the game menu
     public static void printGameMenu() {
         Misc.clearConsole();
         Misc.printHeading("GAME MENU");
@@ -102,9 +104,9 @@ public class Game {
         System.out.println("[3] Quit Game");
     }
     
-    // transition method to start the game
+    // Transition method to start the game
     public static void gameStart() {
-        // creating map location objects
+        // Creating map location objects
         LocationList.createLocations();
         player.setCurrentLocation(LocationList.eList.get(5));
         isRunning = true;
@@ -115,7 +117,7 @@ public class Game {
         // TODO about game info stuff
     }
 
-    // printing the ingame player menu
+    // Printing the ingame player menu
     public static void printPlayerMenu() {
         Misc.clearConsole();
         printLocationInfo();
@@ -127,9 +129,10 @@ public class Game {
         System.out.println("[4] Rest");
         System.out.println("[5] Help");
         System.out.println("[6] Exit");
+        // TODO Add Map Option
     }
 
-    // printing character sheet info
+    // Printing character sheet info
     public static void playerInfo() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER INFO");
@@ -143,7 +146,7 @@ public class Game {
         Misc.continueKey();
     }
 
-    // method called when player dies
+    // Method called when player dies
     public static void playerDied() {
         Misc.clearConsole();
         Misc.printHeading("You Died...");
@@ -152,7 +155,7 @@ public class Game {
         gameQuit();
     }
 
-    // game quit and close method
+    // Game quit and close method
     public static void gameQuit() {
         Misc.clearConsole();
         System.out.println("\nThank you for playing!");
@@ -160,7 +163,7 @@ public class Game {
         System.exit(0);
     }
 
-    // game menu loop
+    // Game menu loop
     public static void gameOptions() {
         while (true) {
             printGameMenu();
@@ -179,47 +182,56 @@ public class Game {
         }
     }
 
-    // player menu loop
+    // Player menu loop
     public static void playerOptions() {
         while (isRunning) {
             printPlayerMenu();
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    Explore.explore();
+                    // [1] Explore
+                    Explore.exploreLocation();
                     break;
                 case 2:
+                    // [2] Player
                     playerInfo();
                     break;
                 case 3:
+                    // [3] Bag
                     bagOptions();
                     break;
                 case 4:
+                    // [4] Rest
                     restOptions();
                     break;
                 case 5:
-                    // gameHelp();
+                    // [5] Help
+                    // TODO gameHelp();
                 case 6:
+                    // [6] Exit
                     gameOptions();
                     break;
+                // TODO case 7 / move options around to display map
             }
         }
     }
 
+    // Method to print the player's bag menu
     public static void printBagMenu() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER BAG");
         System.out.println("Select option:");
         System.out.println("[1] View Items");
-        System.out.println("[2] Add Item"); // testing purposes
-        System.out.println("[3] Drop Item"); // testing purposes
+        System.out.println("[2] Add Item"); // TODO testing purposes
+        System.out.println("[3] Drop Item"); // TODO testing purposes
         System.out.println("[4] Pickup Item");
-        System.out.println("[5] Location Items"); // testing purposes
+        System.out.println("[5] Location Items"); // TODO testing purposes
         System.out.println("[6] View Potions");
         System.out.println("[7] Add Potion");
         System.out.println("[8] Exit");
     }
 
+    // Bag menu loop
     public static void bagOptions() {
         boolean viewbag = true;
         while (viewbag) {
@@ -227,28 +239,36 @@ public class Game {
             int input = Misc.readInt();
             switch (input) {
                 case 1:
+                    // [1] View Items
                     printPlayerItems();
                     break;
                 case 2:
-                    player.getPlayerItems().add(ItemList.herosSword());
+                    // [2] Add Item
+                    player.getPlayerItems().add(ItemList.herosSword()); // TODO We should remove this line, also check how many times the hero's sword is added throughout the classes
                     break;
                 case 3:
-                    player.dropItem(player.getPlayerItems().get(0));
+                    // [3] Drop Item
+                    player.dropItem(player.getPlayerItems().get(0)); // TODO Testing purposes
                     break;
                 case 4:
+                    // [4] Pickup Item
                     player.pickupItem(player.getCurrentLocation().getLocationItems().get(0));
                     break;
                 case 5:
-                    player.getCurrentLocation().getLocationItems().toString();
+                    // [5] Location Items
+                    player.getCurrentLocation().getLocationItems().toString(); // TODO Testing purposes
                     Misc.continueKey();
                     break;
                 case 6:
+                    // [6] View Potions
                     printPlayerPotions();
                     break;
                 case 7:
+                    // [7] Add Potion
                     player.getPlayerPotions().add(ItemList.healingPotion());
                     break;
                 case 8:
+                    // [8] Exit
                     playerOptions();
                     break;
 
@@ -256,7 +276,7 @@ public class Game {
         }
     }
 
-    // printing players items
+    // [1] View items in bag
     public static void printPlayerItems() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER ITEMS");
@@ -270,7 +290,7 @@ public class Game {
         Misc.continueKey();
     }
 
-    // printing players potions
+    // [6] View potions in bag
     public static void printPlayerPotions() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER POTIONS");
@@ -284,7 +304,7 @@ public class Game {
         Misc.continueKey();
     }
 
-    // printing general location info
+    // Printing general location info
     public static void printLocationInfo() {
         Misc.printSeperator(30);
         System.out.println(Game.player.getCurrentLocation().getArea());

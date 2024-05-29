@@ -1,37 +1,40 @@
 import java.util.ArrayList;
 
-// class to house location lists which contain location objects
+// Class to house location lists which contain location objects
 public class LocationList {
 
-    // arraylist to store location objects a1...a5 at corresponding index
+    // Arraylist to store location objects a1...a5 at corresponding index
     public static ArrayList<Location> aList = new ArrayList<Location>();
 
-    // arraylist to store location objects b1...b5 at corresponding index
+    // Arraylist to store location objects b1...b5 at corresponding index
     public static ArrayList<Location> bList = new ArrayList<Location>();
 
-    // arraylist to store location objects c1...c5 at corresponding index
+    // Arraylist to store location objects c1...c5 at corresponding index
     public static ArrayList<Location> cList = new ArrayList<Location>();
 
-    // arraylist to store location objects c1...c5 at corresponding index
+    // Arraylist to store location objects c1...c5 at corresponding index
     public static ArrayList<Location> dList = new ArrayList<Location>();
 
-    // arraylist to store location objects e1...e5 at corresponding index
+    // Arraylist to store location objects e1...e5 at corresponding index
     public static ArrayList<Location> eList = new ArrayList<Location>();
 
-    // method to generate location objects, and store in corresponding arraylist
+    // Method to generate location objects, and store in corresponding arraylist
     public static void createLocations() {
-        // creating and setting location objects at corresponding index value
+        // Creating and setting location objects at corresponding index value
+        // nullLocation is used as a placeholder for index 0 in each ArrayList - makes
+        // the other ArrayLists easier to work with
         Location nullLocation = new Location("NULL", "NULL", "NULL");
         //
+        // Column A
         aList.add(nullLocation);
         //
-        Location a1Location = new Location("A1", "CASTLE ARMOURY", Story.a1Story(), EnemyList.forgemasterFuego(), ItemList.forgemastersGreatsword());
+        Location a1Location = new Location("A1", "CASTLE ARMOURY", Story.a1Story(), EnemyList.forgemasterFuego());
         aList.add(a1Location);
         //
         Location a2Location = new Location("A2", "CASTLE INTERIOR", Story.a2Story(), EnemyList.stoneskinGargoyle());
         aList.add(a2Location);
         //
-        Location a3Location = new Location("A3", "CASTLE COURTYARD", Story.a3Story(), EnemyList.gatekeeperSyek(), ItemList.gateKey());
+        Location a3Location = new Location("A3", "CASTLE COURTYARD", Story.a3Story(), EnemyList.gatekeeperSyek());
         aList.add(a3Location);
         //
         Location a4Location = new Location("A4", "DUSKWOOD FOREST", Story.a4Story(), EnemyList.feralDuskwolf());
@@ -40,6 +43,7 @@ public class LocationList {
         Location a5Location = new Location("A5", "NOT ACCESSIBLE", "Something has gone wrong.");
         aList.add(a5Location);
         //
+        // Column B
         bList.add(nullLocation);
         //
         Location b1Location = new Location("B1", "CASTLE INTERIOR", Story.b1Story(), EnemyList.stoneskinGargoyle());
@@ -57,6 +61,7 @@ public class LocationList {
         Location b5Location = new Location("B5", "DUSKWOOD FOREST", Story.b5Story(), EnemyList.feralDuskwolf());
         bList.add(b5Location);
         //
+        // Column C
         cList.add(nullLocation);
         //
         Location c1Location = new Location("C1", "CASTLE CATHEDRAL", Story.c1Story(), EnemyList.animatedGuard());
@@ -71,15 +76,16 @@ public class LocationList {
         Location c4Location = new Location("C4", "DUSKWOOD FOREST", Story.c4Story(), EnemyList.feralDuskwolf());
         cList.add(c4Location);
         //
-        Location c5Location = new Location("C5", "DUSKWOOD DEN", Story.c5Story(), EnemyList.alphaDuskwolf(), ItemList.wolfhideArmour());
+        Location c5Location = new Location("C5", "DUSKWOOD DEN", Story.c5Story(), EnemyList.alphaDuskwolf());
         cList.add(c5Location);
         //
+        // Column D
         dList.add(nullLocation);
         //
         Location d1Location = new Location("D1", "CASTLE CHAMBERS", Story.d1Story(), EnemyList.animatedGuard());
         dList.add(d1Location);
         //
-        Location d2Location = new Location("D2", "MYSTIC LAKE", Story.d2Story(), EnemyList.lostMaiden(), ItemList.maidensBlessing());
+        Location d2Location = new Location("D2", "MYSTIC LAKE", Story.d2Story(), EnemyList.lostMaiden());
         dList.add(d2Location);
         //
         Location d3Location = new Location("D3", "DUSKWOOD FOREST", Story.d3Story(), EnemyList.arachnidSpawn());
@@ -91,6 +97,7 @@ public class LocationList {
         Location d5Location = new Location("D5", "DUSKWOOD FOREST", Story.d5Story(), EnemyList.arachnidSpawn());
         dList.add(d5Location);
         //
+        // Column E
         eList.add(nullLocation);
         //
         Location e1Location = new Location("E1", "THRONE ROOM", Story.e1Story(), EnemyList.countEripmav());
@@ -99,7 +106,7 @@ public class LocationList {
         Location e2Location = new Location("E2", "NOT ACCESSIBLE", "Something has gone wrong.");
         eList.add(e2Location);
         //
-        Location e3Location = new Location("E3", "TWISTED CAVE", Story.e3Story(), EnemyList.arachnidMatriarch(), ItemList.matriarchsBlood());
+        Location e3Location = new Location("E3", "TWISTED CAVE", Story.e3Story(), EnemyList.arachnidMatriarch());
         eList.add(e3Location);
         //
         Location e4Location = new Location("E4", "TILLED PLAINS", Story.e4Story());
