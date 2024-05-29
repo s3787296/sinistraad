@@ -101,4 +101,23 @@ public class Location {
         this.enemy = enemy;
         this.locationItems = new ArrayList<Item>();
     }
+
+    // Constructor for location object with no enemy // TODO check if still needed
+    public Location(String name, String area, String story, Item item) {
+        this.name = name;
+        this.area = area;
+        this.story = story;
+        this.item = item;
+        this.locationItems = new ArrayList<Item>();
+    }
+
+    // Constructor for location object with enemy and item // TODO check if still needed
+    public Location(String name, String area, String story, Enemy enemy, Item item) {
+        this.name = name;
+        this.area = area;
+        this.story = story;
+        this.enemy = enemy;
+        this.item = item;
+        this.locationItems = new ArrayList<Item>();
+    }
 }
