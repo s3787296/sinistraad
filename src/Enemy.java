@@ -2,7 +2,7 @@ public class Enemy {
 
     // core enemy attributes
     private String name, type;
-    private int maxHp, curHp, xp, playerXp;
+    private int maxHp, curHp, xp, level;
 
     public String getType() {
         return this.type;
@@ -52,35 +52,33 @@ public class Enemy {
         this.xp = xp;
     }
 
-    // getter method for player xp variable
-    public int getPlayerXp() {
-        return this.playerXp;
+    public int getLevel() {
+        return this.level;
     }
 
-    // setter method for player xp variable
-    public void setPlayerXp(int playerXp) {
-        this.playerXp = playerXp;
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     // enemy specific constructor
-    public Enemy(String name, String type, int playerXp) {
+    public Enemy(String name, String type, int level) {
         // character constructor
         this.name = name;
         this.type = type;
-        this.maxHp = (int) (((Math.random() * 10) + 1) + (playerXp/10)+5);
+        this.maxHp = (int) (((Math.random() * 10) + 1) + (level/10)+5);
         this.curHp = maxHp;
         this.xp = (int) (((Math.random() * 10) + 1) + (maxHp/10));
-        this.playerXp = playerXp;
+        this.level = level;
     }
 
     // Enemy specific attack calculation
     public int combatAtk() {
-        return (int) (((Math.random() * 10) + 1) + (playerXp/4));
+        return (int) (((Math.random() * 10) + 1) + (level/4));
     }
 
     // Enemy specific defence calculation
     public int combatDef() {
-        return (int) (((Math.random() * 10) + 1) + (playerXp/4));
+        return (int) (((Math.random() * 10) + 1) + (level/4));
     }
 
 }

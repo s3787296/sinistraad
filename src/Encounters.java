@@ -1,10 +1,21 @@
 public class Encounters {
-    // list of non combat player encounters
 
+    // list of non combat player encounters
     public static void playerEncounters(Location location){
         if (location.equals(LocationList.cList.get(2))) {
             apothacaryEncounter();
         }
+        else if (location.equals(LocationList.eList.get(4))) {
+            farmerEncounter();
+        }
+    }
+
+    private static void farmerEncounter(){
+        if (!Game.player.getPlayerItems().contains(LocationList.eList.get(3).getItem())) {
+            System.out.println(Story.farmerStory());
+         } else {
+            System.out.println(Story.farmerReturnStory());
+         }
     }
 
 
