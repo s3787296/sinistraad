@@ -60,9 +60,9 @@ public class Enemy {
         this.level = level;
     }
 
-    // enemy specific constructor
+
+    // primary enemy constructor
     public Enemy(String name, String type, int level) {
-        // character constructor
         this.name = name;
         this.type = type;
         this.maxHp = (int) (((Math.random() * 10) + 1) + (level/10)+5);
@@ -71,12 +71,12 @@ public class Enemy {
         this.level = level;
     }
 
-    // Enemy specific attack calculation
+    // Enemy attack calculation
     public int combatAtk() {
         return (int) (((Math.random() * 10) + 1) + (level/4));
     }
 
-    // Enemy specific defence calculation
+    // Enemy defence calculation
     public int combatDef() {
         return (int) (((Math.random() * 10) + 1) + (level/4));
     }

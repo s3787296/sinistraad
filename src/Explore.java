@@ -19,9 +19,7 @@ public class Explore {
                     System.out.println(before);
                 }
                 Misc.continueKey();
-                if (Combat.battle(Game.player.getCurrentLocation().getEnemy())) {
-                    Game.player.getPlayerItems().add(Game.player.getCurrentLocation().getItem());
-                }
+                Combat.battle(Game.player.getCurrentLocation().getEnemy());
                 Misc.clearConsole();
                 Game.printLocationInfo();
                 if (after != null) {
@@ -54,7 +52,7 @@ public class Explore {
         // a2
         combatLocation(LocationList.aList.get(2), null, null);
         // a3 - Stoneskin Gargoyle/Gatekeeper Syed
-        combatLocation(LocationList.aList.get(3), Story.beforeGargoyleStory(), Story.afterGargoyleStory());
+        combatLocation(LocationList.aList.get(3), Story.beforeGatekeeperSyek(), Story.afterGatekeeperSyek());
         // a4
         combatLocation(LocationList.aList.get(4), null, null);
         // a5 - Location unaccessible
@@ -81,7 +79,7 @@ public class Explore {
         combatLocation(LocationList.cList.get(5), Story.beforeWerewolvesStory(), Story.afterWerewolvesStory()); // TODO Add wolf armour drop pickup.
         // d1
         combatLocation(LocationList.dList.get(1), null, null);
-        // d2 - Lost Maiden, // TODO potentially the 2x other lost spirits?
+        // d2 - Lost Maiden
         combatLocation(LocationList.dList.get(2), Story.beforeMaidenStory(), Story.afterMaidenStory());
         // d3
         combatLocation(LocationList.dList.get(3), null, null);
