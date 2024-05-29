@@ -5,10 +5,10 @@ public class Misc {
     static Scanner scanner = new Scanner(System.in);
 
     // method to check if player bag contains item via name input
-    public static boolean containsItem(String string){
+    public static boolean containsItem(Item item){
         boolean contains = false;
         for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
-            if (Game.player.getPlayerItems().get(i).getName().equalsIgnoreCase(string)) {
+            if (Game.player.getPlayerItems().get(i).equals(item)) {
                 contains = true;
             }
         }

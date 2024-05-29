@@ -41,6 +41,7 @@ public class Game {
         player = new Player(name);
     }
 
+    // print rest menu
     public static void printRestMenu() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER RESTS");
@@ -48,6 +49,7 @@ public class Game {
         System.out.println("[1] Yes\n[2] No, not now.");
     }
 
+    // rest options loop
     public static void restOptions() {
         while (true) {
             if (Game.player.getRests() > 0) {
@@ -177,14 +179,14 @@ public class Game {
         }
     }
 
-    // player menu loopc
+    // player menu loop
     public static void playerOptions() {
         while (isRunning) {
             printPlayerMenu();
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    Explore.explore(); // TODO Need to not fight the gatekeeper all the time
+                    Explore.explore();
                     break;
                 case 2:
                     playerInfo();
