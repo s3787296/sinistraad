@@ -31,7 +31,7 @@ public class Combat {
                     dmgDealt = 0;
                 }
                 // Player dmg taken calculation
-                dmgTaken = Game.player.combatDef() - enemy.combatAtk();
+                dmgTaken = enemy.combatAtk() - Game.player.combatDef();
                 if (dmgTaken < 0) {
                     dmgTaken = 0;
                 }

@@ -46,8 +46,13 @@ public class Direction {
                         setDirection(LocationList.bList.get(1));
                         return;
                     } else if (checkDirection(LocationList.aList.get(3))) {
-                        setDirection(LocationList.aList.get(2));
-                        return;
+                        if (Misc.containsItem("Gate Key")) {
+                            setDirection(LocationList.aList.get(2));
+                            return;
+                        } else {
+                            directionBlocked();
+                            return;
+                        }
                     } else if (checkDirection(LocationList.bList.get(3))) {
                         setDirection(LocationList.bList.get(2));
                         return;
@@ -59,7 +64,6 @@ public class Direction {
                         return;
                     } else if (checkDirection(LocationList.aList.get(4))) {
                         setDirection(LocationList.aList.get(3));
-                        return;
                     } else if (checkDirection(LocationList.dList.get(4))) {
                         setDirection(LocationList.dList.get(3));
                         return;
@@ -85,8 +89,13 @@ public class Direction {
                         setDirection(LocationList.bList.get(1));
                         return;
                     } else if (checkDirection(LocationList.bList.get(1))) {
-                        setDirection(LocationList.cList.get(1));
-                        return;
+                        if (Misc.containsItem("Chamber Key")) {
+                            setDirection(LocationList.cList.get(1));
+                            return;
+                        } else {
+                            directionBlocked();
+                            return;
+                        }
                     } else if (checkDirection(LocationList.cList.get(1))) {
                         setDirection(LocationList.dList.get(1));
                         return;
@@ -193,7 +202,7 @@ public class Direction {
                         } else {
                             directionBlocked();
                             return;
-                        } 
+                        }
                     } else if (checkDirection(LocationList.cList.get(5))) {
                         setDirection(LocationList.bList.get(5));
                         return;
@@ -201,7 +210,7 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
-                // Send player back to player menu
+                    // Send player back to player menu
                 case 5:
                     Game.playerOptions();
                     break;

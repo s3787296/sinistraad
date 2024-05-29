@@ -1,16 +1,15 @@
 public class Story {
-   
+
    // This class contains methods to return the descriptions for each location.
-   // Some methods contain logic to determine whether items need to be added to a player's inventory after defeating a boss.
+   // Some methods contain logic to determine whether items need to be added to a
+   // player's inventory after defeating a boss.
 
    public static String e5Story() {
-      if (!Game.player.getPlayerItems().contains(ItemList.herosSword())) {
-         Game.player.getPlayerItems().add(ItemList.herosSword());
-      }
       return "You stand in the barren town square of your village. It's no longer the same joy-filled place where you and your closest friends grew up, surrounded by family who loved you."
             + "\n" +
             "His reign of terror over the land ends with you, as you set out on your journey to Castle Sinistraad to finally slay whatever evil lurks inside.";
-            // TODO You inherited this sword from your father. It's a comfort to you, it protected him from many things, and it shall protect you as well.
+      // TODO You inherited this sword from your father. It's a comfort to you, it
+      // protected him from many things, and it shall protect you as well.
    }
 
    public static String e4Story() {
@@ -30,15 +29,12 @@ public class Story {
    }
 
    public static String farmerReturnStory() {
-      if (!Game.player.getPlayerItems().contains(ItemList.herosMap())) {
-         Game.player.getPlayerItems().add(ItemList.herosMap());
-      }
       return "OLD REMRAF: Ahoy, child! I can see by your bloody blade that you have defeated that nasty creature that's been killing our beautiful cows and webbing up the crops!"
             + "\n" +
             "You've done the town a great service, and I can see that you truly are ready to conquer the forest and slay that evil Count!"
             + "\n" +
             "I'm giving you this map so that you may not get lost in the Duskwood Forest."
-            + "\n" + 
+            + "\n" +
             "Take this map so that you may not get lost in the Duskwood Forest. Be careful - I've seen many a traveller enter, but none return...";
    }
 
@@ -61,9 +57,6 @@ public class Story {
    }
 
    public static String afterArachnidStory() {
-      if (!Game.player.getPlayerItems().contains(ItemList.matriarchsBlood())) {
-         Game.player.getPlayerItems().add(ItemList.matriarchsBlood());
-      }
       return "At last, the Arachnid Matriarch lays defeated before you, oozing a sticky blue fluid from the many wounds you inflicted. You now understand the weight of the journey that lies ahead."
             + "\n" +
             "You must now return to Old Remraf, and get his blessings for the journey ahead. The map he mentioned wouldn't hurt to have either.";
@@ -92,7 +85,8 @@ public class Story {
    }
 
    public static String d2Story() {
-      return "Breaching into a clearing, the shore gives way to an enormous, quiet lake. It is unnaturally quiet - there is no birdsong or the chirp of insects." + "\n" +
+      return "Breaching into a clearing, the shore gives way to an enormous, quiet lake. It is unnaturally quiet - there is no birdsong or the chirp of insects."
+            + "\n" +
             "The clear blue water glimmers, enticing you to take a dip, but your driven nature and fear of the unknown outweighs the almost gravitational pull of the blue depths. ";
    }
 
@@ -107,26 +101,16 @@ public class Story {
    }
 
    public static String afterMaidenStory() {
-      if (!Game.player.getPlayerItems().contains(ItemList.maidensBlessing())) {
-         Game.player.getPlayerItems().add(ItemList.maidensBlessing());
-      }
       return "After a long battle, you fall to your knees, exhausted. As the sliced corpse lays before you, a ghostly spirit rises from it, moping back to the lake's waterline."
             + "\n" +
             "It - no, she - slumps down, and you watch as she begins to sob. The glowing tears pour down her face through her hands and into the lake.";
    }
 
    public static String tearsFailStory() {
-      if (!Game.player.getPlayerItems().contains(ItemList.emptyGoblet())){
-      } return "As the tears continue to flow and glimmer as they fall into the lake, you wish you could take some with you.";
+      return "As the tears continue to flow and glimmer as they fall into the lake, you wish you could take some with you.";
    }
 
    public static String tearsSucceedStory() {
-      if (Game.player.getPlayerItems().contains(ItemList.maidensBlessing())) {
-         if (Game.player.getPlayerItems().contains(ItemList.emptyGoblet())) {
-            Game.player.getPlayerItems().remove(ItemList.emptyGoblet());
-            Game.player.getPlayerItems().add(ItemList.filledGoblet());
-         }
-      }
       return "You hesitantly reach the ornate goblet out into the transparent form of the Lost Maiden, intercepting her steady flow of mystical tears, filling the goblet to the brim.";
    }
 
@@ -154,11 +138,6 @@ public class Story {
    }
 
    public static String nostramusGobletStory() {
-      if ((!Game.player.getPlayerItems().contains(ItemList.emptyGoblet()))
-         && (!Game.player.getPlayerItems().contains(ItemList.filledGoblet()))
-         && (!Game.player.getPlayerItems().contains(ItemList.blessedGoblet()))) {
-            Game.player.getPlayerItems().add(ItemList.emptyGoblet());
-         }
       return "After handing your money over, Nostramus hands you the goblet."
             + "\n" +
             "The goblet feels dense and almost commands attention when in view. You quickly stuff it into your bag, you could probably use it to hold drinks or other liquids.";
@@ -202,9 +181,7 @@ public class Story {
    }
 
    public static String afterWerewolvesStory() {
-      if (!Game.player.getPlayerItems().contains(ItemList.wolfhideArmour())) {
-         Game.player.getPlayerItems().add(ItemList.wolfhideArmour());
-      }
+
       return "As your sword plunges into the last werewolves neck and the life fades from its wild eyes, you stand covered in blood, huffing to catch your breath."
             + "\n" +
             "You cant believe you won. You realise that the werewolves tough hides might be perfect as armour, despite being gross."
@@ -226,7 +203,8 @@ public class Story {
 
    // Text for Explore.explore() here & below
    public static String beforeGatekeeperSyek() {
-      return "You slip your boots between the cracks in the large granite bricks at the castle's entrance, steadily scaling the castle exterior to reach the key." + "\n" + 
+      return "You slip your boots between the cracks in the large granite bricks at the castle's entrance, steadily scaling the castle exterior to reach the key."
+            + "\n" +
             "As you're busy trying to pry the key off the statue's neck, hanging onto the ledge for balance, a loud yell startles you and causes you to lose your balance. You fall to the ground, the wind knocked from your chest."
             + "\n" +
             "GATEKEEPER SYEK: Oi! That ain't the real key, you know? That's a decoy, and it's done its job. Now it's time for me to do mine - strangers aren't allowed in the castle."
@@ -235,11 +213,10 @@ public class Story {
    }
 
    public static String afterGatekeeperSyek() {
-      if (!Game.player.getPlayerItems().contains(ItemList.gateKey())) {
-         Game.player.getPlayerItems().add(ItemList.gateKey());
-      }
-      return "The gatekeeper falls to the floor, exhausted. His makeshift armour is falling apart from the cuts your sword has made, and his body is covered in his own sweat, blood, and tears." + "\n" +
-            "GATEKEEPER SYEK: I beg of you, please don't kill me. I'll give you the key - please, just let me leave with my life." + "\n" + 
+      return "The gatekeeper falls to the floor, exhausted. His makeshift armour is falling apart from the cuts your sword has made, and his body is covered in his own sweat, blood, and tears."
+            + "\n" +
+            "GATEKEEPER SYEK: I beg of you, please don't kill me. I'll give you the key - please, just let me leave with my life."
+            + "\n" +
             "You decide to show him mercy - there's no reason to kill for pleasure, after all.";
    }
 
@@ -290,9 +267,6 @@ public class Story {
    }
 
    public static String afterFuegoStory() {
-      if (!Game.player.getPlayerItems().contains(ItemList.forgemastersGreatsword())) {
-         Game.player.getPlayerItems().add(ItemList.forgemastersGreatsword());
-      }
       return "You manage to get the upper hand and plunge your sword through the chest of the Forgemaster, his last strained breath seeps out of his body as he falls back into the pile of coals."
             + "\n" +
             "You pluck the key off his person and stash it on you. The sword that would normally have dropped back to normal temperature somehow still glows red hot and smolders on the floor."
@@ -314,7 +288,7 @@ public class Story {
             "You realise that you entered some kind of prayer room, with an altar across from two small rows of pews, all built out of expensive materials."
             + "\n" +
             "The pedestal almost glows on its own, the intricate patterns warping the light of the candles in the room.";
-}
+   }
 
    public static String altarSuccessStory() {
       return "Walking up to the altar, you're reminded of the patterns on the goblet you bought."
