@@ -2,7 +2,7 @@ public class EnemyList {
 
     // creating new instance of enemy Feral Duskwolf
     public static Enemy feralDuskwolf() {
-        Enemy feralDuskwolf = new Enemy("Feral Duskwolf", "ENEMY", Game.player.getXp());
+        Enemy feralDuskwolf = new Enemy("Feral Duskwolf", "ENEMY", 10);
         return feralDuskwolf;
     }
 
@@ -14,7 +14,7 @@ public class EnemyList {
     
     // creating new instance of enemy Archnid Spawn
     public static Enemy arachnidSpawn() {
-        Enemy arachnidSpawn = new Enemy("Arachnid Spawn", "ENEMY", Game.player.getXp());
+        Enemy arachnidSpawn = new Enemy("Arachnid Spawn", "ENEMY", 10);
         return arachnidSpawn;
     }
 
@@ -26,7 +26,7 @@ public class EnemyList {
 
     // creating new instance of enemy lost spirit
     public static Enemy lostSpirit() {
-        Enemy lostSpirit = new Enemy("Lost Spirit", "ENEMY", Game.player.getXp());
+        Enemy lostSpirit = new Enemy("Lost Spirit", "ENEMY", 10);
         return lostSpirit;
     }
 
@@ -38,7 +38,7 @@ public class EnemyList {
 
     // creating new instance of enemy Animated Guard
     public static Enemy animatedGuard() {
-        Enemy animatedGuard = new Enemy("Animated Guard", "ENEMY", Game.player.getXp());
+        Enemy animatedGuard = new Enemy("Animated Guard", "ENEMY", 10);
         return animatedGuard;
     }
 
@@ -50,7 +50,7 @@ public class EnemyList {
 
     // creating new instance of enemy Stoneskin Gargoyle
     public static Enemy stoneskinGargoyle() {
-        Enemy stoneskinGargoyle = new Enemy("Stoneskin Gargoyle", "ENEMY", Game.player.getXp());
+        Enemy stoneskinGargoyle = new Enemy("Stoneskin Gargoyle", "ENEMY", 10);
         return stoneskinGargoyle;
     }
 

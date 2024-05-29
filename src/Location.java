@@ -4,9 +4,7 @@ public class Location {
     
     // core location attributes
     private String name, story, area;
-
     private Item item;
-
     private Enemy enemy;
 
     // location specific arraylist
@@ -66,7 +64,7 @@ public class Location {
         this.locationItems = itemList;
     }
 
-    // secondary constructor method for location object
+    // constructor for location object with no item or enemy
     public Location(String name, String area, String story) {
         this.name = name;
         this.area = area;
@@ -74,7 +72,7 @@ public class Location {
         this.locationItems = new ArrayList<Item>();
     }
 
-    // primary constructor method for location object
+    // constructor for location object with no item
     public Location(String name, String area, String story, Enemy enemy) {
         this.name = name;
         this.area = area;
@@ -83,7 +81,16 @@ public class Location {
         this.locationItems = new ArrayList<Item>();
     }
 
-    // primary constructor method for location object
+    // constructor for location object with no enemy
+    public Location(String name, String area, String story, Item item) {
+        this.name = name;
+        this.area = area;
+        this.story = story;
+        this.item = item;
+        this.locationItems = new ArrayList<Item>();
+    }
+
+    // constructor for location object with enemy and item
     public Location(String name, String area, String story, Enemy enemy, Item item) {
         this.name = name;
         this.area = area;
