@@ -49,15 +49,15 @@ public class Explore {
     // before, and post fight text in after
     public static void explore() {
         Misc.clearConsole();
-        // a1
-        combatLocation(LocationList.aList.get(1), null, null);
+        // a1 - Forgemaster Fuego
+        combatLocation(LocationList.aList.get(1), Story.beforeFuegoStory(), Story.afterFuegoStory());
         // a2
         combatLocation(LocationList.aList.get(2), null, null);
-        // a3
-        combatLocation(LocationList.aList.get(3), null, null);
+        // a3 - Stoneskin Gargoyle/Gatekeeper Syed
+        combatLocation(LocationList.aList.get(3), Story.beforeGargoyleStory(), Story.afterGargoyleStory());
         // a4
         combatLocation(LocationList.aList.get(4), null, null);
-        // a5
+        // a5 - Location unaccessible
         combatLocation(LocationList.aList.get(5), null, null);
         // b1
         combatLocation(LocationList.bList.get(1), null, null);
@@ -69,35 +69,35 @@ public class Explore {
         combatLocation(LocationList.bList.get(4), null, null);
         // b5
         combatLocation(LocationList.bList.get(5), null, null);
-        // c1
+        // c1 - Cathedral, no combat.
         combatLocation(LocationList.cList.get(1), null, null);
-        // c2
+        // c2 - Nostramus/Apothecary in the Duskwood Clearing
         encounterLocation(LocationList.cList.get(2));
         // c3
         combatLocation(LocationList.cList.get(3), null, null);
         // c4
         combatLocation(LocationList.cList.get(4), null, null);
-        // c5
-        combatLocation(LocationList.cList.get(5), null, null);
+        // c5 - Alpha Duskwolf
+        combatLocation(LocationList.cList.get(5), Story.beforeWerewolvesStory(), Story.afterWerewolvesStory()); // TODO Add wolf armour drop pickup.
         // d1
         combatLocation(LocationList.dList.get(1), null, null);
-        // d2
-        combatLocation(LocationList.dList.get(2), null, null);
+        // d2 - Lost Maiden, // TODO potentially the 2x other lost spirits?
+        combatLocation(LocationList.dList.get(2), Story.beforeMaidenStory(), Story.afterMaidenStory());
         // d3
         combatLocation(LocationList.dList.get(3), null, null);
         // d4
         combatLocation(LocationList.dList.get(4), null, null);
         // d5
         combatLocation(LocationList.dList.get(5), null, null);
-        // e1
-        combatLocation(LocationList.eList.get(1), null, null);
-        // e2
+        // e1 - Count Eripmav
+        combatLocation(LocationList.eList.get(1), Story.beforeEripmavStory(), null); // TODO After Eripmav Story in Story Class - combine & depending on logic return.
+        // e2 - Location unaccesisble
         combatLocation(LocationList.eList.get(2), null, null);
-        // e3
+        // e3 - Arachnid Matriarch // TODO & 2x other spiders??
         combatLocation(LocationList.eList.get(3), Story.beforeArachnidStory(), Story.afterArachnidStory());
-        // e4
+        // e4 - No combat, Encounter with Old Remraf
         encounterLocation(LocationList.eList.get(4));
-        // e5
+        // e5 - No combat. // TODO Check this bit for E5 encounters again.
         encounterLocation(LocationList.eList.get(5));
     }
 }

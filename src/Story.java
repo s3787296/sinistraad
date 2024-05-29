@@ -5,7 +5,7 @@ public class Story {
     * should be returned, based on whether the player has certian objects in their
     * inventory (i.e. whether they have completed certain tasks)
     */
-    
+
    // Create class variable description to be used as a temp value and modified
    // before it is returned
    private static String description;
@@ -146,7 +146,7 @@ public class Story {
             "You have no clue how long they've been posted at this spot, but you should probably investigate.";
    }
 
-   // TODO Nostramus Text for Explore.explore() here & below
+   // TODO Check this vs. apothecary in Encounters class
    public static String nostramusStartStory() {
       return "As you step closer, you see the obscured head of the figure turn quickly to face you before the figure jumps up in excitement."
             + "\n" +
@@ -256,7 +256,7 @@ public class Story {
             "The room seems to have been abandoned, why would the Count not want wine? There appears to be nothing of interest in this neglected part of the castle.";
    }
 
-   public static String b1Story() {
+   public static String b1Story() { // TODO Key for doorway into cathedral.
       return "Stepping further into the castle, you reach the end of a hallway, to the left is a large door with golden and bejewelled handles."
             + "\n" +
             "Trying to open it, it doesn't budge, the keyhole almost stares at you, teasing you for even trying without a key."
@@ -281,11 +281,9 @@ public class Story {
    public static String afterFuegoStory() {
       return "You manage to get the upper hand and plunge your sword through the chest of the Forgemaster, his last strained breath seeps out of his body as he falls back into the pile of coals."
             + "\n" +
-            "You pluck the key off his person and stash it on you. The sword that would normally have dropped back to normal temperature somehow still glows red hot and smolders on the floor.";
-   }
-
-   public static String pickupSwordStory() {
-      return "Hesitantly you pick up the sword, the handle is surprisingly cool to the touch while the blade just radiates intense heat."
+            "You pluck the key off his person and stash it on you. The sword that would normally have dropped back to normal temperature somehow still glows red hot and smolders on the floor."
+            + "\n" +
+            "Hesitantly you pick up the sword, the handle is surprisingly cool to the touch while the blade just radiates intense heat."
             + "\n" +
             "You find a similar looking scabbard on the ground and find it perfectly blocks the heat while covering the blade."
             + "\n" +
