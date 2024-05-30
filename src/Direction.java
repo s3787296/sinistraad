@@ -46,14 +46,8 @@ public class Direction {
                         setDirection(LocationList.bList.get(1));
                         return;
                     } else if (checkDirection(LocationList.aList.get(3))) {
-                        // If player's bag contains Gate Key item, they can head north into the castle
-                        if (Misc.containsItem("Gate Key")) {
-                            setDirection(LocationList.aList.get(2));
-                            return;
-                        } else {
-                            directionBlocked();
-                            return;
-                        }
+                        setDirection(LocationList.aList.get(2));
+                        return;
                     } else if (checkDirection(LocationList.bList.get(3))) {
                         setDirection(LocationList.bList.get(2));
                         return;
@@ -64,7 +58,13 @@ public class Direction {
                         setDirection(LocationList.dList.get(2));
                         return;
                     } else if (checkDirection(LocationList.aList.get(4))) {
-                        setDirection(LocationList.aList.get(3));
+                        if (Misc.containsItem("Gate Key")) {
+                            setDirection(LocationList.aList.get(3));
+                            return;
+                        } else {
+                            directionBlocked();
+                            return;
+                        }
                     } else if (checkDirection(LocationList.dList.get(4))) {
                         setDirection(LocationList.dList.get(3));
                         return;
@@ -84,15 +84,13 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
-                    // Input == East
+                // Input == East
                 case 2:
                     if (checkDirection(LocationList.aList.get(1))) {
                         setDirection(LocationList.bList.get(1));
                         return;
-                        
                     } else if (checkDirection(LocationList.bList.get(1))) {
-                        // If player's bag contains Cathedral Key item, they can head east into the Cathedral
-                        if (Misc.containsItem("Cathedral Key")) {
+                        if (Misc.containsItem("Chamber Key")) {
                             setDirection(LocationList.cList.get(1));
                             return;
                         } else {
@@ -130,7 +128,7 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
-                    // Input == South
+                // Input == South
                 case 3:
                     if (checkDirection(LocationList.bList.get(1))) {
                         setDirection(LocationList.bList.get(2));
@@ -169,8 +167,8 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
+                // Input == West
                 case 4:
-                    // Input == West
                     if (checkDirection(LocationList.bList.get(1))) {
                         setDirection(LocationList.aList.get(1));
                         return;
@@ -199,7 +197,6 @@ public class Direction {
                         setDirection(LocationList.cList.get(4));
                         return;
                     } else if (checkDirection(LocationList.eList.get(4))) {
-                        // If player's bag contains Hero's Map, they can head west into the forest
                         if (Misc.containsItem("Hero's Map")) {
                             setDirection(LocationList.dList.get(4));
                             return;
@@ -214,7 +211,7 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
-                    // Send player back to player menu
+                // Send player back to player menu
                 case 5:
                     Game.playerOptions();
                     break;

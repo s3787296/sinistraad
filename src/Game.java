@@ -26,11 +26,7 @@ public class Game {
             // Confirming player choice
             do {
                 Misc.clearConsole();
-                Misc.printHeading("Your name is " + name + ".\n");
-                Misc.sleep(600);
-                Misc.clearConsole();
                 Misc.printHeading("Your name is " + name + ".\nIs that correct?");
-                Misc.sleep(400);
                 System.out.println("[1] Yes!\n[2] No, let me change it.");
                 int input = Misc.readInt();
                 if (input == 1) {
@@ -89,9 +85,12 @@ public class Game {
     }
 
     // Print title screen
+    // TODO Can we get a nicer one? Perhaps with ASCII Art for the word sinistraad?
     public static void printGameTitle() {
         Misc.clearConsole();
-        Misc.titleArt();
+        Misc.printSeperator(40);
+        Misc.printHeading("SINISTRAAD, A TEXT BASED RPG\nDESIGNED BY JUDE, AMELIA & MAX");
+        Misc.printSeperator(40);
         Misc.continueKey();
     }
 
@@ -115,7 +114,7 @@ public class Game {
     }
 
     public static void gameInfo() {
-        // TODO about game info stuff (Amelia)
+        // TODO about game info stuff
     }
 
     // Printing the ingame player menu
@@ -130,6 +129,7 @@ public class Game {
         System.out.println("[4] Bag");
         System.out.println("[5] Rest");
         System.out.println("[6] Exit");
+        // TODO Add Map Option
     }
 
     // Printing character sheet info
@@ -198,9 +198,6 @@ public class Game {
                     break;
                 case 3:
                     // [3] Map
-                    System.out.println(Game.player.getCurrentLocation().getMap());
-                    Misc.continueKey();
-                    break;
                 case 4:
                     // [4] Bag
                     bagOptions();
@@ -236,7 +233,6 @@ public class Game {
         while (viewbag) {
             printBagMenu();
             int input = Misc.readInt();
-            Misc.continueKey();
             switch (input) {
                 case 1:
                     // [1] View Items
@@ -244,7 +240,7 @@ public class Game {
                     break;
                 case 2:
                     // [2] Drop Item
-                    player.dropItem(player.getPlayerItems().get(0));
+                    player.dropItem(player.getPlayerItems().get(0)); // TODO Testing purposes
                     break;
                 case 3:
                     // [3] Pickup Item
@@ -252,7 +248,7 @@ public class Game {
                     break;
                 case 4:
                     // [4] Location Items
-                    player.getCurrentLocation().getLocationItems().toString();
+                    player.getCurrentLocation().getLocationItems().toString(); // TODO Testing purposes
                     Misc.continueKey();
                     break;
                 case 5:
@@ -297,8 +293,9 @@ public class Game {
 
     // Printing general location info
     public static void printLocationInfo() {
-        Misc.printSeperator(100);
+        Misc.printSeperator(30);
         System.out.println(Game.player.getCurrentLocation().getArea());
         System.out.println(Game.player.getCurrentLocation().getStory());
+        Misc.printSeperator(30);
     }
 }

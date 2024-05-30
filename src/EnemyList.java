@@ -67,8 +67,8 @@ public class EnemyList {
 
     // Creating new instance of boss Count Eripmav
     public static Enemy countEripmav() {
-        Enemy countEripmav = new Enemy("Count Eripmav", "BOSS", Game.player.getXp(), Story.beforeEripmavStory(), 
-                Story.goodEndingStory(), ItemList.eripmavDefeated()); // ENDING FOR NOW
+        Enemy countEripmav = new Enemy("Count Eripmav", "BOSS", Game.player.getXp(), Story.beforeEripmavStory(), null,
+                null);
         return countEripmav;
     }
 }
