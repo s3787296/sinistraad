@@ -39,14 +39,19 @@ public class Encounters {
             if (Game.player.getGold() >= gold) {
                 // If player has exactly or more than the amount of gold the item costs, add the healing potion to their bag
                 System.out.println("\nA most splendid choice, dear friend. Do stop by again, won't you?");
-                Game.player.getPlayerPotions().add(item);
+                if (item == ItemList.emptyGoblet()) {
+                    // Add Empty Goblet to player inventory
+                    Game.player.getPlayerItems().add(item);
+                } else if (item == ItemList.healingPotion()) {
+                    // Add Healing Potion to player potion list
+                    Game.player.getPlayerPotions().add(item);
+                }
                 // Take the appropriate amount of gold from player's gold
                 Game.player.setGold(Game.player.getGold() - gold);
                 Misc.continueKey();
             } else {
                 // Print failure message
-                System.out.println(
-                        "\nOh, how unfortunate - it seems you do not have the coin to match... Perhaps another time.");
+                System.out.println("\nOh, how unfortunate - it seems you do not have the coin to match... Perhaps another time.");
                 Misc.continueKey();
             }
         } else if (option == 2) {
@@ -62,8 +67,8 @@ public class Encounters {
             Story.nostramusStartStory();
             Misc.continueKey();
             Misc.clearConsole();
-            Misc.printHeading("APOTHECARY");
-            System.out.println("NOSTRAMUS: Well hello there, weary traveller! Welcome to my apothecary. We aim to heal all things - well, all things except a broken heart. There are some things a potion just can't fix.");
+            Misc.printHeading("APOTHECARY"); // TODO Add to the location story? Well hello there, weary traveller! We aim to heal all things - well, all things except a broken heart. There are some things a potion just can't fix.
+            System.out.println("NOSTRAMUS: Welcome to my apothecary.");
             System.out.println("See anything you like?");
             // If player has any of the Goblet items, display the following menu
             if (Misc.containsItem("Empty Goblet") || Misc.containsItem("Filled Goblet") || Misc.containsItem("Blessed Goblet")) {
@@ -96,7 +101,7 @@ public class Encounters {
                     System.out.println( "\nOh, this old thing? Well... I suppose I could give it to you - for a price.\nI think 30g is fair.");
                     System.out.println("[1] Accept" + "\n[2] Decline");
                     apothecaryPurchase(30, ItemList.emptyGoblet()); 
-                    Story.nostramusGobletStory();
+                    System.out.println(Story.nostramusGobletStory());
                 }
                 if (input == 3) {
                     // Menu option selected: [3] Exit
@@ -150,6 +155,18 @@ public class Encounters {
     }
 
     private static void eripmavEncounter() {
-        // TODO Eripmav Encounter
+        // TODO Fix the logic here.
+        if (Misc.containsItem("Count Eripmav Defeated")) {
+            if (Misc.containsItem("Blessed Goblet")) {
+                Story.greatEndingStory();
+            } else {
+                Story.goodEndingStory();
+            }
+        } else {
+            Story.badEndingStory(); // TODO Fix this logic - if playerlocation is E1, call the story right before they receive the "You've died" message.
+        }
+        
+        
+        
     }
 }
