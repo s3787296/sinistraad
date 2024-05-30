@@ -18,7 +18,10 @@ public class ItemList {
         return herosSword;
     }
 
-    // Method to create and return the Wolfhide Armour item
+    /**
+     * Method to create and return the Wolfhide Armour item
+     * @return
+     */
     public static Item wolfhideArmour() {
         Item wolfhideArmour = new Item("Wolfhide Armour", "Armour",
                 "Crudely stripped wolfskin tied around ones torso like a tunic.\nThe dense matted fur and sinewy skin of the Duskwood werewolf makes for excellent protection.",
@@ -27,15 +30,21 @@ public class ItemList {
         return wolfhideArmour;
     }
 
-    // Method to create and return the Hero's Map item
+    /**
+     * Method to create and return the Hero's Map item
+     * @return
+     */
     public static Item herosMap() {
         Item herosMap = new Item("Hero's Map", "Quest",
-                "An aged scroll filled with the knowledge of many generations of adventurers.\nThe map isn't fully complete, maybe you could finish it on your journey!",
+                "An aged scroll filled with the knowledge of many generations of adventurers.\nIt will help you find your way.",
                 "Forest Access");
         return herosMap;
     }
 
-    // Method to create and return the Matriarch's Blood item
+    /**
+     * Method to create and return the Matriarch's Blood item
+     * @return
+     */
     public static Item matriarchsBlood() {
         Item matriarchsBlood = new Item("Matriarch's Blood", "Bonus",
                 "The sickly green blood from this unholy arachnid stains your hands.\nYou you feel the immense strength of a spider fuel your each and every movement.",
@@ -44,7 +53,10 @@ public class ItemList {
         return matriarchsBlood;
     }
 
-    // Method to create and return the Chamber Key item
+    /**
+     * Method to create and return the Chamber Key item
+     * @return
+     */
     public static Item cathedralKey() {
         Item cathedralKey = new Item("Cathedral Key", "Quest",
                 "A dainty golden key that matches the goblet you collected earlier.\nIts engraved with a script you've never seen before and has an odd resonance of the castle's ancient halls.",
@@ -52,7 +64,10 @@ public class ItemList {
         return cathedralKey;
     }
 
-    // Method to create and return the Gate Key item
+    /**
+     * Method to create and return the Gate Key item
+     * @return
+     */
     public static Item gateKey() {
         Item gateKey = new Item("Gate Key", "Quest",
                 "A large, rusty key, given to you by Gatekeeper Syek.\nThe weight of the key reminds you of the weight of your journey still ahead.",

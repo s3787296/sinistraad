@@ -70,7 +70,7 @@ public class LocationList {
         Location c2Location = new Location("C2", Map.c2Map(), "DUSKWOOD CLEARING", Story.c2Story());
         cList.add(c2Location);
         //
-        Location c3Location = new Location("C3", Map.c3Map(), "DUSKWOOD FOREST", Story.c3Story(), EnemyList.arachnidSpawn());
+        Location c3Location = new Location("C3", Map.c3Map(), "DUSKWOOD FOREST", Story.c3Story(), EnemyList.lostSpirit());
         cList.add(c3Location);
         //
         Location c4Location = new Location("C4", Map.c4Map(), "DUSKWOOD FOREST", Story.c4Story(), EnemyList.feralDuskwolf());
@@ -88,7 +88,7 @@ public class LocationList {
         Location d2Location = new Location("D2", Map.d2Map(), "MYSTIC LAKE", Story.d2Story(), EnemyList.lostMaiden());
         dList.add(d2Location);
         //
-        Location d3Location = new Location("D3", Map.d3Map(), "DUSKWOOD FOREST", Story.d3Story(), EnemyList.arachnidSpawn());
+        Location d3Location = new Location("D3", Map.d3Map(), "DUSKWOOD FOREST", Story.d3Story(), EnemyList.lostSpirit());
         dList.add(d3Location);
         //
         Location d4Location = new Location("D4", Map.d4Map(), "DUSKWOOD FOREST", Story.d4Story(), EnemyList.arachnidSpawn());
