@@ -110,6 +110,7 @@ public class Game {
         // Creating map location objects
         LocationList.createLocations();
         player.setCurrentLocation(LocationList.eList.get(5));
+        player.neuter();
         isRunning = true;
         playerOptions();
     }
@@ -236,7 +237,6 @@ public class Game {
         while (viewbag) {
             printBagMenu();
             int input = Misc.readInt();
-            Misc.continueKey();
             switch (input) {
                 case 1:
                     // [1] View Items

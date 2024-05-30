@@ -29,6 +29,10 @@ public class Encounters {
         // If bag doesn't contain Matriarch's Blood, call relevant story method
          } else if (!Misc.containsItem("Matriarch's Blood")) {
             Misc.printHeading(Story.farmerStory());
+            // if player bag does not contain heros sword, add heros sword
+            if (!Misc.containsItem("Hero's Sword")) {
+                Game.player.getPlayerItems().add(ItemList.herosSword());
+            }
          }
     }
 

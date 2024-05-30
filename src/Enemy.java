@@ -102,22 +102,22 @@ public class Enemy {
     }
 
     // Primary enemy constructor (Type: Enemy)
-    public Enemy(String name, String type, int level) {
+    public Enemy(String name, String type, int maxHp, int level) {
         this.name = name;
         this.type = type;
-        this.maxHp = (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
+        this.maxHp = maxHp;
         this.curHp = maxHp;
-        this.xp = (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
+        this.xp = (int) (((Math.random() * 5) + 1) + (level / 10));
         this.level = level;
     }
 
     // Secondary enemy constructor (Type: Boss)
-    public Enemy(String name, String type, int level, String before, String after, Item item) {
+    public Enemy(String name, String type, int maxHp, int level, String before, String after, Item item) {
         this.name = name;
         this.type = type;
-        this.maxHp = (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
+        this.maxHp = maxHp;
         this.curHp = maxHp;
-        this.xp = (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
+        this.xp = (int) (((Math.random() * 5) + 1) + (level / 10));
         this.level = level;
         this.before = before;
         this.after = after;
@@ -126,11 +126,11 @@ public class Enemy {
 
     // Enemy attack calculation
     public int combatAtk() {
-        return (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
+        return (int) (((Math.random() * 5) + 1) + (level/4));
     }
 
     // Enemy defense calculation
     public int combatDef() {
-        return (int) (((Math.random() * 10) + 1) + (level / 4) + 5);
+        return (int) (((Math.random() * 5) + 1) + (level/4));
     }
 }
