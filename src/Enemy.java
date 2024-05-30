@@ -126,11 +126,11 @@ public class Enemy {
 
     // Enemy attack calculation
     public int combatAtk() {
-        return (int) (((Math.random() * 5) + 1) + (level/4));
+        return (int) (((Math.random() * 5) + 1) + (level / 10) + (maxHp / 10));
     }
 
     // Enemy defense calculation
     public int combatDef() {
-        return (int) (((Math.random() * 5) + 1) + (level/4));
+        return (int) (((Math.random() * 5) + 1) + (level / 10) + (maxHp / 10));
     }
 }

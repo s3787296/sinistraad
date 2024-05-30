@@ -21,7 +21,7 @@ public class ItemList {
     // Method to create and return the Hero's Map item
     public static Item herosMap() {
         Item herosMap = new Item("Hero's Map", "Quest",
-                "An aged scroll filled with the knowledge of many generations of adventurers.\nThe map isn’t fully complete, maybe you could finish it on your journey!",
+                "An aged scroll filled with the knowledge of many generations of adventurers.\nThe map isn't fully complete, maybe you could finish it on your journey!",
                 "Forest Access");
         return herosMap;
     }
@@ -38,7 +38,7 @@ public class ItemList {
     // Method to create and return the Chamber Key item
     public static Item cathedralKey() {
         Item cathedralKey = new Item("Cathedral Key", "Quest",
-                "A dainty golden key that matches the goblet you collected earlier.\nIts engraved with a script you’ve never seen before and has an odd resonance of the castle's ancient halls.",
+                "A dainty golden key that matches the goblet you collected earlier.\nIts engraved with a script you've never seen before and has an odd resonance of the castle's ancient halls.",
                 "Cathedral Access");
         return cathedralKey;
     }
@@ -63,7 +63,7 @@ public class ItemList {
     // Method to create and return the healing potion item
     public static Item healingPotion() {
         Item healingPotion = new Item("Healing Potion", "Consumable",
-                "A small round flask filled with a bright red, syrupy elixir.\nThe crafting of a health potion is a closely guarded secret by the apothecary’s guild,\nwho fund their research by selling such potent tinctures.",
+                "A small round flask filled with a bright red, syrupy elixir.\nThe crafting of a health potion is a closely guarded secret by the apothecary's guild,\nwho fund their research by selling such potent tinctures.",
                 "Full Heal");
         return healingPotion;
     }
