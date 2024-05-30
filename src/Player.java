@@ -289,7 +289,7 @@ public class Player {
      * @return
      */
     public int combatAtk() {
-        return (int) (((Math.random() * 10) + 1) + weaponAtk + bonusAtk);
+        return (int) ((Math.random() * 5) + weaponAtk + bonusAtk);
     }
 
     /**
@@ -297,7 +297,7 @@ public class Player {
      * @return
      */
     public int combatDef() {
-        return (int) (((Math.random() * 10) + 1) + armourDef + bonusDef);
+        return (int) ((Math.random() * 5) + armourDef + bonusDef);
     }
 
     /**
