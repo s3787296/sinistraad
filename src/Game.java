@@ -1,5 +1,7 @@
 /**
- * Game class contains all methods related to the main game cycle. // TODO More info
+ * Game class contains all methods related to the main game cycle. // TODO More
+ * info
+ * 
  * @author Max
  * @author Jude
  * @author Amelia
@@ -26,9 +28,10 @@ public class Game {
 
     /**
      * Method to get and confirm player name and create new player.
-     * @param   name        Plauer name
-     * @param   nameSet     Whether player has confirmed their name
-     * @param   player      New instance of Player(name)
+     * 
+     * @param name    Plauer name
+     * @param nameSet Whether player has confirmed their name
+     * @param player  New instance of Player(name)
      */
     public static void playerNameSet() {
         String name;
@@ -128,7 +131,7 @@ public class Game {
         System.out.println("[2] Game Info");
         System.out.println("[3] Quit Game");
     }
-    
+
     /**
      * Transition method to start the game and create objects of the map locations.
      */
@@ -136,6 +139,7 @@ public class Game {
         LocationList.createLocations();
         player.setCurrentLocation(LocationList.eList.get(5));
         player.neuter();
+        player.getPlayerItems().add(ItemList.herosGarb());
         isRunning = true;
         playerOptions();
     }
@@ -285,7 +289,8 @@ public class Game {
 
     /**
      * Method to display bag menu loop.
-     * @param   viewBag       While player is viewing their bag
+     * 
+     * @param viewBag While player is viewing their bag
      */
     public static void bagOptions() {
         boolean viewBag = true;
@@ -299,11 +304,11 @@ public class Game {
                     break;
                 case 2:
                     // [2] Drop Item
-                    player.dropItem(player.getPlayerItems().get(0));
+                    playerDropItem();
                     break;
                 case 3:
                     // [3] Pickup Item
-                    player.pickupItem(player.getCurrentLocation().getLocationItems().get(0));
+                    playerPickupItem();
                     break;
                 case 4:
                     // [4] Location Items
@@ -323,10 +328,37 @@ public class Game {
     }
 
     /**
+     * Player pickup item hander method
+     */
+    public static void playerPickupItem() {
+        if (player.getCurrentLocation().getLocationItems().size() > 0) {
+            Item pickupItem = player.getCurrentLocation().getLocationItems().get(0);
+            player.pickupItem(pickupItem);
+            System.out.println("\nYou picked up the " + pickupItem.getName() + ".");
+        } else {
+            System.out.println("\nNo items in this location available to pickup.");
+        }
+        Misc.continueKey();
+    }
+
+    /**
+     * Player drop item hander method
+     */
+    public static void playerDropItem() {
+        if (player.getPlayerItems().size() > 0) {
+            Item dropItem = player.getPlayerItems().get(0);
+            player.dropItem(dropItem);
+            System.out.println("\nYou dropped the " + dropItem.getName() + ".");
+        } else {
+            System.out.println("\nNo items available to drop.");
+        }
+        Misc.continueKey();
+    }
+
+    /**
      * View items in bag
      */
     public static void printPlayerItems() {
-        Misc.clearConsole();
         Misc.printHeading("PLAYER ITEMS");
         for (int i = 0; i < player.getPlayerItems().size(); i++) {
             Misc.printHeading("Item: " + (i + 1));

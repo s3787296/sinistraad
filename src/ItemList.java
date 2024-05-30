@@ -18,6 +18,19 @@ public class ItemList {
         return herosSword;
     }
 
+     /**
+     * Method to create and return the Hero's Garb item
+     * @return
+     */
+    public static Item herosGarb() {
+        Item herosGarb = new Item("Hero's Garb", "Armour",
+                "Practical and tactical, the garments of a true hero.",
+                "+10 Armour");
+        Game.player.setArmourDef(10);
+        return herosGarb;
+    }
+
+
     /**
      * Method to create and return the Wolfhide Armour item
      * @return
