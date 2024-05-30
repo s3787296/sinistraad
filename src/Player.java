@@ -151,6 +151,14 @@ public class Player {
         this.rests = rests;
     }
 
+    // method to reset player bonuses
+    public void neuter() {
+        weaponAtk = 0;
+        armourDef = 0;
+        bonusAtk = 0;
+        bonusDef = 0;
+    }
+
     // Player-specific constructor
     public Player(String name) {
         // Setting intial core player attributes
