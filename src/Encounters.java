@@ -70,7 +70,8 @@ public class Encounters {
                 Misc.continueKey();
                 // If player does not have enough gold, print failure message
             } else {
-                System.out.println("\nOh, how unfortunate - it seems you do not have the coin to match... Perhaps another time.");
+                System.out.println(
+                        "\nOh, how unfortunate - it seems you do not have the coin to match... Perhaps another time.");
                 Misc.continueKey();
                 return;
             }
@@ -78,7 +79,7 @@ public class Encounters {
         } else if (option == 2) {
             System.out.println("\nOh... Very well... Make sure to stop by again!");
             Misc.continueKey();
-            
+
         }
     }
 
@@ -96,13 +97,16 @@ public class Encounters {
             Misc.printHeading("APOTHECARY");
             System.out.println("NOSTRAMUS: Welcome to my apothecary.");
             System.out.println("See anything you like?");
-            if (Misc.containsItem("Empty Goblet") || Misc.containsItem("Filled Goblet")|| Misc.containsItem("Blessed Goblet")) {
+            if (Misc.containsItem("Empty Goblet") || Misc.containsItem("Filled Goblet")
+                    || Misc.containsItem("Blessed Goblet")) {
                 System.out.println("[1] Healing Potion" + "\n[2] Exit");
                 int input = Misc.readInt();
                 if (input == 1) {
                     Item item = ItemList.healingPotion();
                     int price = 10;
-                    System.out.println("\nAh yes, these are my specialty and a favourite of travellers such as yourself.\nThat'll be "+price+"g.");
+                    System.out.println(
+                            "\nAh yes, these are my specialty and a favourite of travellers such as yourself.\nThat'll be "
+                                    + price + "g.");
                     System.out.println("[1] Accept" + "\n[2] Decline");
                     apothecaryPurchase(price, item);
                 }
@@ -110,7 +114,8 @@ public class Encounters {
                     purchase = false;
                     break;
                 }
-            } else if (!Misc.containsItem("Empty Goblet") || Misc.containsItem("Filled Goblet")|| Misc.containsItem("Blessed Goblet")) {
+            } else if (!Misc.containsItem("Empty Goblet") || Misc.containsItem("Filled Goblet")
+                    || Misc.containsItem("Blessed Goblet")) {
                 // If the player doesn't have any goblets, display the following menu
                 System.out.println("[1] Healing Potion" + "\n[2] Empty Goblet" + "\n[3] Exit");
                 int input = Misc.readInt();
@@ -118,7 +123,9 @@ public class Encounters {
                 if (input == 1) {
                     Item item = ItemList.healingPotion();
                     int price = 20;
-                    System.out.println("\nAh yes, these are my specialty and a favourite of travellers such as yourself.\nThat'll be "+price+"g.");
+                    System.out.println(
+                            "\nAh yes, these are my specialty and a favourite of travellers such as yourself.\nThat'll be "
+                                    + price + "g.");
                     System.out.println("[1] Accept" + "\n[2] Decline");
                     apothecaryPurchase(price, item);
                 }
@@ -126,7 +133,9 @@ public class Encounters {
                 if (input == 2) {
                     Item item = ItemList.emptyGoblet();
                     int price = 20;
-                    System.out.println("\nOh, this old thing? Well... I suppose I could give it to you - for a price.\nI think "+price+"g is fair.");
+                    System.out.println(
+                            "\nOh, this old thing? Well... I suppose I could give it to you - for a price.\nI think "
+                                    + price + "g is fair.");
                     System.out.println("[1] Accept" + "\n[2] Decline");
                     apothecaryPurchase(price, item);
                 }
@@ -135,7 +144,7 @@ public class Encounters {
                     purchase = false;
                     break;
                 }
-            } 
+            }
         }
     }
 
@@ -149,9 +158,10 @@ public class Encounters {
             Misc.printHeading(Story.tearsSucceedStory());
             Misc.continueKey();
             // Remove the Empty Goblet from player's bag and add a Filled Goblet
-            Game.player.getPlayerItems().remove(ItemList.emptyGoblet());
+            int goblet = Misc.indexItem("Empty Goblet");
+            Game.player.getPlayerItems().remove(goblet);
             Game.player.getPlayerItems().add(ItemList.filledGoblet());
-        } else {
+        } else if (!Misc.containsItem("Empty Goblet")) {
             // If player bag does not contain Empty Goblet item, call appropriate story
             // method
             Misc.printHeading(Story.tearsFailStory());
@@ -168,7 +178,8 @@ public class Encounters {
         // player bag
         if (Misc.containsItem("Forgemaster's Greatsword")) {
             Game.player.getPlayerItems().add(ItemList.cathedralKey());
-            System.out.println("You take the key from Forgemaster Fuego's belt.\n You can now unlock the door to the Cathedral.");
+            System.out.println(
+                    "You take the key from Forgemaster Fuego's belt.\n You can now unlock the door to the Cathedral.");
             Misc.continueKey();
         }
     }

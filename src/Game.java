@@ -122,7 +122,7 @@ public class Game {
      */
     public static void printGameTitle() {
         Misc.clearConsole();
-        // Misc.titleArt();
+        Misc.titleArt();
         Misc.continueKey();
     }
 
@@ -290,11 +290,11 @@ public class Game {
         Misc.clearConsole();
         Misc.printHeading("PLAYER BAG");
         System.out.println("Select option:");
-        System.out.println("[1] View Items");
-        System.out.println("[2] Drop Item");
-        System.out.println("[3] Pickup Item");
-        System.out.println("[4] Location items");
-        System.out.println("[5] View Potions");
+        System.out.println("[1] View Potions");
+        System.out.println("[2] Use Potion");
+        System.out.println("[3] View Items");
+        System.out.println("[4] Drop Item");
+        System.out.println("[5] Pickup Item");
         System.out.println("[6] Exit");
     }
 
@@ -310,25 +310,24 @@ public class Game {
             int input = Misc.readInt();
             switch (input) {
                 case 1:
-                    // [1] View Items
-                    printPlayerItems();
+                    // [1] View Potions
+                    printPlayerPotions();
                     break;
                 case 2:
-                    // [2] Drop Item
-                    playerDropItem();
+                    // [2] Use Potions
+                    playerUsePotion();
                     break;
                 case 3:
-                    // [3] Pickup Item
-                    playerPickupItem();
+                    // [3] View Items
+                    printPlayerItems();
                     break;
                 case 4:
-                    // [4] Location Items
-                    player.getCurrentLocation().getLocationItems().toString();
-                    Misc.continueKey();
+                    // [4] Drop Items
+                    playerDropItem();
                     break;
                 case 5:
-                    // [5] View Potions
-                    printPlayerPotions();
+                    // [5] Pickup Item
+                    playerPickupItem();
                     break;
                 case 6:
                     // [6] Exit
@@ -395,6 +394,36 @@ public class Game {
             System.out.println("Buff: " + player.getPlayerPotions().get(i).getBuff());
         }
         Misc.continueKey();
+    }
+
+    /**
+     * Method to use potion in bag and heal player to full, printing amount restored
+     */
+    public static void playerUsePotion() {
+        while (true) {
+            if (player.getPlayerPotions().size() > 0) {
+                if (Game.player.getCurHp() < Game.player.getMaxHp()) {
+                    Misc.printHeading("Do you want to use a potion? [" + Game.player.getPlayerPotions().size() + "] left.");
+                    System.out.println("[1] Yes\n[2] No");
+                    int input = Misc.readInt();
+                    if (input == 1) {
+                        System.out.println("You used a potion and restored "+ (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
+                        Game.player.setCurHp(Game.player.getMaxHp());
+                        Game.player.getPlayerPotions().remove(Game.player.getPlayerPotions().get(0));
+                        Misc.continueKey();
+                        return;
+                    }
+                    if (input == 2) {
+                        return;
+                    }
+                }
+            }
+            else {
+                System.out.println("You can't do that right now.");
+                Misc.continueKey();
+                break;
+            }
+        }
     }
 
     /**
