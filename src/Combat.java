@@ -39,34 +39,26 @@ public class Combat {
             printBattle(enemy);
             // Getting player input
             int input = Misc.readInt();
+            // player chooses attack
             if (input == 1) {
-                // Attack
                 int dmgDealt;
                 int dmgTaken;
                 // Player damage dealt calculation
-                dmgDealt = Game.player.combatAtk() - enemy.combatDef();
                 if (Game.player.combatAtk() >= enemy.combatDef()) {
-                    dmgDealt = Game.player.combatAtk() * 2 - enemy.combatDef();
+                    dmgDealt = Game.player.combatAtk() + Game.player.combatAtk() - enemy.combatDef();
                 } else {
                     dmgDealt = Game.player.combatAtk() * Game.player.combatAtk() / enemy.combatDef();
                 }
-                if (dmgDealt < 0) {
-                    dmgDealt = 0;
-                }
-                // Player dmg taken calculation
-                dmgTaken = enemy.combatAtk() - Game.player.combatDef();
+                // Player damage taken calculation
                 if (enemy.combatAtk() <= Game.player.combatDef()) {
-                    dmgTaken = enemy.combatAtk() * 2 - enemy.combatDef();
+                    dmgTaken = enemy.combatAtk() + enemy.combatAtk() - enemy.combatDef();
                 } else {
                     dmgTaken = enemy.combatAtk() * enemy.combatAtk() / Game.player.combatDef();
                 }
-                if (dmgTaken < 0) {
-                    dmgTaken = 0;
-                }
-                // Calc dmg to both parties
+                // Calculate damage to both parties
                 Game.player.setCurHp(Game.player.getCurHp() - dmgTaken);
                 enemy.setCurHp(enemy.getCurHp() - dmgDealt);
-                // Print the info of this turn
+                // Print the results of this turn
                 Misc.clearConsole();
                 Misc.printHeading("BATTLE");
                 System.out.println("You dealt " + dmgDealt + " damage to the " + enemy.getName() + "!");
@@ -85,59 +77,60 @@ public class Combat {
                 System.out.println("You earned " + enemy.getXp() + "XP!");
                 Game.player.setXp(Game.player.getXp() + enemy.getXp());
                 // Calculate random drops
-                boolean addRest = (Math.random() * 5 + 1 <= 2.25);
+                boolean addRest = (Math.random() * 10 + 1 <= 2.5); // 25% chance
                 int goldEarnt = (int) (Math.random() * enemy.getXp());
                 // If player earned rest
                 if (addRest) {
                     Game.player.setRests(Game.player.getRests() + 1);
-                    System.out.println("You fought well and earned an additional rest.\nRests available: ["
-                            + Game.player.getRests() + "]!");
+                    System.out.println("You fought well and earned an additional rest.\nRests available: ["+ Game.player.getRests() + "]!");
                 }
-                // If player earned > 0 gold
+                // If player earned gold
                 if (goldEarnt > 0) {
                     Game.player.setGold(Game.player.getGold() + goldEarnt);
-                    System.out.println(
-                            "You collect " + goldEarnt + " gold from the " + enemy.getName() + "'s corpse.");
+                    System.out.println("You collect " + goldEarnt + " gold from the " + enemy.getName() + "'s corpse.");
                 }
                 Misc.continueKey();
                 victory = true;
                 break;
+            // Player chooses potion
             } else if (input == 2) {
-                // Use potion
                 Misc.clearConsole();
+                // Check if Player able to use a potion
                 if (Game.player.getPlayerPotions().size() > 0 && Game.player.getCurHp() < Game.player.getMaxHp()) {
-                    // Player able to use a potion
-                    Misc.printHeading(
-                            "Do you want to use a potion? [" + Game.player.getPlayerPotions().size() + "] left.");
                     // Confirm player wants to use a potion
+                    Misc.printHeading("Do you want to use a potion? [" + Game.player.getPlayerPotions().size() + "] left.");
                     System.out.println("[1] Yes\n[2] No");
                     input = Misc.readInt();
                 }
+                // Player uses potion
                 if (input == 1) {
-                    // Player takes potion
-                    System.out.println("You used a potion and restored "
-                            + (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
+                    System.out.println("You used a potion and restored "+ (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
                     Game.player.setCurHp(Game.player.getMaxHp());
                     Game.player.getPlayerPotions().remove(Game.player.getPlayerPotions().get(0));
                     Misc.continueKey();
+                // Player doesnt use potion
                 } else if (input == 2) {
                     System.out.println("You decided not to use a potion.");
                     Misc.continueKey();
-                } else {
-                    // Player unable to use a potion
+                } 
+                // Player unable to use a potion
+                else {
                     Misc.printHeading("You can't do that right now.");
                     Misc.continueKey();
                 }
-            } else if (input == 3) {
-                // Player chooses flee
-                // If enemy is not a boss and player wins 50/50
+            } 
+            // Player chooses flee
+            else if (input == 3) {
                 Misc.clearConsole();
+                // If enemy is not a boss and player wins 50% chance
                 if (!enemy.getType().equalsIgnoreCase("Boss") && Math.random() * 10 + 1 <= 5.0) {
                     Misc.printHeading("You managed to escape from the " + enemy.getName() + "!");
                     Misc.continueKey();
                     break;
-                } else {
-                    // If enemy is a boss or player loses 50/50
+                } 
+                // If enemy is a boss or player loses 50% chance
+                else {
+                    // calculating damage for failed escape
                     int failedEscape = (int) (Math.random() * 10) + 1;
                     Misc.printHeading("You failed to escape and took " + failedEscape + " damage.");
                     Misc.continueKey();

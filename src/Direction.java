@@ -13,11 +13,11 @@ public class Direction {
         Game.printLocationInfo();
         Misc.printHeading("TRAVEL");
         System.out.println("Which direction do you want to travel?");
-        System.out.println("[1] North");
-        System.out.println("[2] East");
-        System.out.println("[3] South");
-        System.out.println("[4] West");
-        System.out.println("[5] Exit");
+        System.out.println("[N] North");
+        System.out.println("[E] East");
+        System.out.println("[S] South");
+        System.out.println("[W] West");
+        System.out.println("[X] Exit");
     }
 
     /**
@@ -58,7 +58,7 @@ public class Direction {
     public static void travel() {
         while (true) {
             printTravelMenu();
-            int input = Misc.readInt();
+            int input = Misc.readTravel();
             switch (input) {
                 // Input == North
                 case 1:

@@ -117,7 +117,7 @@ public class EnemyList {
      * @return New instance of Count Eripmav
      */
     public static Enemy countEripmav() {
-        Enemy countEripmav = new Enemy("Count Eripmav", "BOSS", 100, 99, Story.beforeEripmavStory(), null, null);
+        Enemy countEripmav = new Enemy("Count Eripmav", "BOSS", 100, 80, Story.beforeEripmavStory(), null, null);
         return countEripmav;
     }
 }
