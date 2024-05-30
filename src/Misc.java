@@ -29,6 +29,20 @@ public class Misc {
     }
 
     /**
+     * Method to search player items by name and return item index
+     * @return
+     */
+    public static int indexItem(String string){
+        int index = 0;
+        for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
+            if (Game.player.getPlayerItems().get(i).getName().equalsIgnoreCase(string)) {
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    /**
      * Method to translate travel directions into numbers
      * @return
      */
