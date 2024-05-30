@@ -6,7 +6,7 @@ public class Map {
 
     public static String a1Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+  
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -37,7 +37,7 @@ public class Map {
 
     public static String a2Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+  
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -68,7 +68,7 @@ public class Map {
 
     public static String a3Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+  
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -99,7 +99,7 @@ public class Map {
 
     public static String a4Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+  
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -130,7 +130,7 @@ public class Map {
 
     public static String b1Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -161,7 +161,7 @@ public class Map {
 
     public static String b2Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -192,7 +192,7 @@ public class Map {
 
     public static String b3Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -223,7 +223,7 @@ public class Map {
 
     public static String b4Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -254,7 +254,7 @@ public class Map {
 
     public static String b5Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -284,7 +284,7 @@ public class Map {
     }
     public static String c1Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -315,7 +315,7 @@ public class Map {
 
     public static String c2Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -346,7 +346,7 @@ public class Map {
 
     public static String c3Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -377,7 +377,7 @@ public class Map {
 
     public static String c4Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -408,7 +408,7 @@ public class Map {
 
     public static String c5Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -439,7 +439,7 @@ public class Map {
 
     public static String d1Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -470,7 +470,7 @@ public class Map {
 
     public static String d2Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -501,7 +501,7 @@ public class Map {
 
     public static String d3Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -532,7 +532,7 @@ public class Map {
 
     public static String d4Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -563,7 +563,7 @@ public class Map {
 
     public static String d5Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -594,7 +594,7 @@ public class Map {
 
     public static String e1Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -625,7 +625,7 @@ public class Map {
 
     public static String e3Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -656,7 +656,7 @@ public class Map {
 
     public static String e4Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+  
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   
@@ -687,7 +687,7 @@ public class Map {
 
     public static String e5Map() {
         return
-        "\n                             Duskwood Forest Map                            "+  
+        "\n                             Hero's Map                                     "+   
         "\n|--------------|--------------|--------------|--------------|--------------|"+
         "\n|              |              |                             |              |"+      
         "\n|    Castle                  [X]   [The Counts Chamber]        The Throne  |"+   

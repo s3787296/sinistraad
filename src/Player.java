@@ -7,6 +7,8 @@ public class Player {
     private int maxHp;
     private int curHp;
     private int xp;
+    private int level = xp/10;
+
     private Location currentLocation;
     private ArrayList<Item> playerItems;
     private ArrayList<Item> playerPotions;
@@ -129,6 +131,16 @@ public class Player {
     // Setter method for player xp
     public void setXp(int xp) {
         this.xp = xp;
+    }
+
+    // Getter method for player level
+    public int getLevel() {
+        return this.level;
+    }
+
+    // Setter method for player level
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     // Getter method for player gold

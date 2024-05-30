@@ -67,7 +67,8 @@ public class Game {
                         int hpRestored = ((Game.player.getMaxHp() - Game.player.getCurHp()) / 2);
                         System.out.println("\nYou took a rest and restored " + hpRestored + " health.");
                         Game.player.setCurHp(Game.player.getCurHp() + hpRestored);
-                        System.out.println("You're now at " + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + " health.");
+                        System.out.println(
+                                "You're now at " + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + " health.");
                         Game.player.setRests(Game.player.getRests() - 1);
                         Misc.continueKey();
                         break;
@@ -104,7 +105,7 @@ public class Game {
         System.out.println("[2] Game Info");
         System.out.println("[3] Quit Game");
     }
-    
+
     // Transition method to start the game
     public static void gameStart() {
         // Creating map location objects
@@ -116,13 +117,11 @@ public class Game {
     }
 
     public static void gameInfo() {
-        // TODO about game info stuff (Amelia)
         Misc.clearConsole();
         Misc.printHeading("GAME INFO");
         Misc.InfoString();
         Misc.printSeperator(25);
         Misc.continueKey();
-
     }
 
     // Printing the ingame player menu
@@ -145,7 +144,7 @@ public class Game {
         Misc.printHeading("PLAYER INFO");
         System.out.println("Name: " + player.getName() + "\tHP: " + player.getCurHp() + "/" + player.getMaxHp());
         Misc.printSeperator(30);
-        System.out.println("XP: " + player.getXp() + "\tGold: " + player.getGold());
+        System.out.println("LVL: " + player.getLevel() + "\tGold: " + player.getGold());
         Misc.printSeperator(25);
         System.out.println("Potions: " + player.getPlayerPotions().size() + "\tRests: " + player.getRests());
         Misc.printSeperator(25);
@@ -156,8 +155,14 @@ public class Game {
     // Method called when player dies
     public static void playerDied() {
         Misc.clearConsole();
-        Misc.printHeading("You Died...");
-        Misc.printHeading("You earned " + player.getXp() + " XP on your Adventure.");
+        if (Game.player.getCurrentLocation().equals(LocationList.eList.get(5))) {
+            if (Game.player.getCurrentLocation().getEnemy().getCurHp() > 0) {
+                Misc.printHeading(Story.badEndingStory());
+            }
+        } else {
+            Misc.printHeading("You Died...");
+            Misc.printHeading("You earned " + player.getXp() + " XP on your Adventure.");
+        }
         Misc.continueKey();
         gameQuit();
     }
@@ -230,9 +235,9 @@ public class Game {
         Misc.printHeading("PLAYER BAG");
         System.out.println("Select option:");
         System.out.println("[1] View Items");
-        System.out.println("[2] Drop Item"); 
+        System.out.println("[2] Drop Item");
         System.out.println("[3] Pickup Item");
-        System.out.println("[4] Location items"); 
+        System.out.println("[4] Location items");
         System.out.println("[5] View Potions");
         System.out.println("[6] Exit");
     }

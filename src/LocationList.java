@@ -52,7 +52,7 @@ public class LocationList {
         Location b2Location = new Location("B2", Map.b2Map(), "CASTLE INTERIOR", Story.b2Story(), EnemyList.animatedGuard());
         bList.add(b2Location);
         //
-        Location b3Location = new Location("B3", Map.b3Map(), "CASTLE CHAMBERS", Story.b3Story());
+        Location b3Location = new Location("B3", Map.b3Map(), "CASTLE CELLAR", Story.b3Story());
         bList.add(b3Location);
         //
         Location b4lLocation = new Location("B4", Map.b4Map(), "DUSKWOOD FOREST", Story.b4Story(), EnemyList.feralDuskwolf());

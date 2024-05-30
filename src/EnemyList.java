@@ -8,7 +8,7 @@ public class EnemyList {
 
     // Creating new instance of boss Alpha Duskwolf
     public static Enemy alphaDuskwolf() {
-        Enemy alphaDuskwolf = new Enemy("Alpha Duskwolf", "BOSS", 50, 40, Story.beforeWerewolvesStory(),Story.afterWerewolvesStory(), ItemList.wolfhideArmour());
+        Enemy alphaDuskwolf = new Enemy("Alpha Duskwolf", "BOSS", 40, 30, Story.beforeWerewolvesStory(),Story.afterWerewolvesStory(), ItemList.wolfhideArmour());
         return alphaDuskwolf;
     }
 
