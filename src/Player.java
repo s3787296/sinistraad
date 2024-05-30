@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 /**
  * Player class contains all player attributes and constructors.
+ * 
  * @author Max
  */
 public class Player {
@@ -13,7 +14,7 @@ public class Player {
     private int maxHp;
     private int curHp;
     private int xp;
-    private int level = xp/10;
+    private int level = xp / 10;
 
     private Location currentLocation;
     private ArrayList<Item> playerItems;
@@ -35,6 +36,7 @@ public class Player {
 
     /**
      * Getter method for player potions
+     * 
      * @return
      */
     public ArrayList<Item> getPlayerPotions() {
@@ -43,6 +45,7 @@ public class Player {
 
     /**
      * Setter method for player potions
+     * 
      * @param playerPotions
      */
     public void setPlayerPotions(ArrayList<Item> playerPotions) {
@@ -51,6 +54,7 @@ public class Player {
 
     /**
      * Getter method for player items
+     * 
      * @return
      */
     public ArrayList<Item> getPlayerItems() {
@@ -59,6 +63,7 @@ public class Player {
 
     /**
      * Setter method for player items
+     * 
      * @param playerItems
      */
     public void setPlayerItems(ArrayList<Item> playerItems) {
@@ -67,6 +72,7 @@ public class Player {
 
     /**
      * Getter method for player current location
+     * 
      * @return
      */
     public Location getCurrentLocation() {
@@ -75,6 +81,7 @@ public class Player {
 
     /**
      * Setter method for player current location
+     * 
      * @param currentLocation
      */
     public void setCurrentLocation(Location currentLocation) {
@@ -83,6 +90,7 @@ public class Player {
 
     /**
      * Getter method for player weapon atk
+     * 
      * @return
      */
     public int getWeaponAtk() {
@@ -91,6 +99,7 @@ public class Player {
 
     /**
      * Setter method for player weapon atk
+     * 
      * @param weaponAtk
      */
     public void setWeaponAtk(int weaponAtk) {
@@ -99,6 +108,7 @@ public class Player {
 
     /**
      * Getter method for player armour def
+     * 
      * @return
      */
     public int getArmourDef() {
@@ -107,6 +117,7 @@ public class Player {
 
     /**
      * Setter method for player armour def
+     * 
      * @param armourDef
      */
     public void setArmourDef(int armourDef) {
@@ -115,6 +126,7 @@ public class Player {
 
     /**
      * Getter method for player bonus atk
+     * 
      * @return
      */
     public int getBonusAtk() {
@@ -123,6 +135,7 @@ public class Player {
 
     /**
      * Setter method for player bonus atk
+     * 
      * @param bonusAtk
      */
     public void setBonusAtk(int bonusAtk) {
@@ -131,6 +144,7 @@ public class Player {
 
     /**
      * Getter method for player bonus def
+     * 
      * @return
      */
     public int getBonusDef() {
@@ -139,6 +153,7 @@ public class Player {
 
     /**
      * Setter method for player bonusdef
+     * 
      * @param bonusDef
      */
     public void setBonusDef(int bonusDef) {
@@ -147,6 +162,7 @@ public class Player {
 
     /**
      * Getter method for player name
+     * 
      * @return
      */
     public String getName() {
@@ -155,6 +171,7 @@ public class Player {
 
     /**
      * Setter method for player name
+     * 
      * @param name
      */
     public void setName(String name) {
@@ -163,6 +180,7 @@ public class Player {
 
     /**
      * Getter method for player max hp
+     * 
      * @return
      */
     public int getMaxHp() {
@@ -171,6 +189,7 @@ public class Player {
 
     /**
      * Setter method for player max hp
+     * 
      * @param maxHp
      */
     public void setMaxHp(int maxHp) {
@@ -179,6 +198,7 @@ public class Player {
 
     /**
      * Getter method for player current hp
+     * 
      * @return
      */
     public int getCurHp() {
@@ -187,6 +207,7 @@ public class Player {
 
     /**
      * Setter method for player current hp
+     * 
      * @param curHp
      */
     public void setCurHp(int curHp) {
@@ -195,6 +216,7 @@ public class Player {
 
     /**
      * Getter method for player xp
+     * 
      * @return
      */
     public int getXp() {
@@ -203,6 +225,7 @@ public class Player {
 
     /**
      * Setter method for player xp
+     * 
      * @param xp
      */
     public void setXp(int xp) {
@@ -211,6 +234,7 @@ public class Player {
 
     /**
      * Getter method for player level
+     * 
      * @return
      */
     public int getLevel() {
@@ -219,6 +243,7 @@ public class Player {
 
     /**
      * Setter method for player level
+     * 
      * @param level
      */
     public void setLevel(int level) {
@@ -227,6 +252,7 @@ public class Player {
 
     /**
      * Getter method for player gold
+     * 
      * @return
      */
     public int getGold() {
@@ -235,6 +261,7 @@ public class Player {
 
     /**
      * Setter method for player gold
+     * 
      * @param gold
      */
     public void setGold(int gold) {
@@ -243,6 +270,7 @@ public class Player {
 
     /**
      * Getter method for player rests
+     * 
      * @return
      */
     public int getRests() {
@@ -251,6 +279,7 @@ public class Player {
 
     /**
      * Setter method for player rests
+     * 
      * @param rests
      */
     public void setRests(int rests) {
@@ -269,6 +298,7 @@ public class Player {
 
     /**
      * Player-specific constructor
+     * 
      * @param name
      */
     public Player(String name) {
@@ -286,22 +316,25 @@ public class Player {
 
     /**
      * Player-specific attack calculation
+     * 
      * @return
      */
     public int combatAtk() {
-        return (int) ((Math.random() * 5) + weaponAtk + bonusAtk);
+        return ((int) (Math.random() * 5) + (xp / 10) + armourDef + bonusDef);
     }
 
     /**
      * Player-specific defence calculation
+     * 
      * @return
      */
     public int combatDef() {
-        return (int) ((Math.random() * 5) + armourDef + bonusDef);
+        return ((int) (Math.random() * 5) + (xp / 10) + armourDef + bonusDef);
     }
 
     /**
      * Player-specific to remove items from bag and add to currentlocation
+     * 
      * @param item
      */
     public void dropItem(Item item) {
@@ -311,6 +344,7 @@ public class Player {
 
     /**
      * Player-specific pickup method to add items to bag from currentlocation
+     * 
      * @param item
      */
     public void pickupItem(Item item) {

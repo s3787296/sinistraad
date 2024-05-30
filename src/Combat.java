@@ -45,11 +45,21 @@ public class Combat {
                 int dmgTaken;
                 // Player damage dealt calculation
                 dmgDealt = Game.player.combatAtk() - enemy.combatDef();
+                if (Game.player.combatAtk() >= enemy.combatDef()) {
+                    dmgDealt = Game.player.combatAtk() * 2 - enemy.combatDef();
+                } else {
+                    dmgDealt = Game.player.combatAtk() * Game.player.combatAtk() / enemy.combatDef();
+                }
                 if (dmgDealt < 0) {
                     dmgDealt = 0;
                 }
                 // Player dmg taken calculation
                 dmgTaken = enemy.combatAtk() - Game.player.combatDef();
+                if (enemy.combatAtk() <= Game.player.combatDef()) {
+                    dmgTaken = enemy.combatAtk() * 2 - enemy.combatDef();
+                } else {
+                    dmgTaken = enemy.combatAtk() * enemy.combatAtk() / Game.player.combatDef();
+                }
                 if (dmgTaken < 0) {
                     dmgTaken = 0;
                 }
