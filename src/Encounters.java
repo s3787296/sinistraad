@@ -168,9 +168,7 @@ public class Encounters {
         // player bag
         if (Misc.containsItem("Forgemaster's Greatsword")) {
             Game.player.getPlayerItems().add(ItemList.cathedralKey());
-            System.out.println("You take the key from Forgemaster Fuego's belt.\n You can now unlock the door to the Cathedral."); // TODO
-                                                                                                                        // Description
-                                                                                                                        // glowup
+            System.out.println("You take the key from Forgemaster Fuego's belt.\n You can now unlock the door to the Cathedral.");
             Misc.continueKey();
         }
     }

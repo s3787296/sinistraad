@@ -1,26 +1,34 @@
 /**
  * This class runs the combat engine.
+ * 
  * @author Max
  */
 public class Combat {
 
     /**
-     * Method to print battle heading and options
+     * Method to print battle heading and options.
+     * This method is called from {@code Combat#battle(Enemy)}
+     * 
      * @param enemy
      */
     private static void printBattle(Enemy enemy) {
         Misc.clearConsole();
-        Misc.printHeading(enemy.getType() + ": " + enemy.getName() + "\nLVL: "+enemy.getLevel()+"\nHP: " + enemy.getCurHp() + "/"+ enemy.getMaxHp() + "\nATK: " + enemy.combatAtk() + "\nDEF: " + enemy.combatDef());
-        Misc.printHeading("PLAYER: " + Game.player.getName() + "\nLVL: "+Game.player.getLevel()+"\nHP: " + Game.player.getCurHp() + "/"+ Game.player.getMaxHp() + "\nATK: " + Game.player.combatAtk() + "\nDEF: " + Game.player.combatDef());
+        Misc.printHeading(
+                enemy.getType() + ": " + enemy.getName() + "\nLVL: " + enemy.getLevel() + "\nHP: " + enemy.getCurHp()
+                        + "/" + enemy.getMaxHp() + "\nATK: " + enemy.combatAtk() + "\nDEF: " + enemy.combatDef());
+        Misc.printHeading("PLAYER: " + Game.player.getName() + "\nLVL: " + Game.player.getLevel() + "\nHP: "
+                + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + "\nATK: " + Game.player.combatAtk()
+                + "\nDEF: " + Game.player.combatDef());
         Misc.printHeading("BATTLE");
         System.out.println("[1] Attack\n[2] Item\n[3] Flee");
     }
 
     /**
      * Main battle method
+     * 
      * @param enemy   The enemy the player is fighting.
      * @param victory Determines whether player has won battle
-     * @return        victory = true upon winning battle
+     * @return victory = true
      */
     public static boolean battle(Enemy enemy) {
         // Return variable for post battle use

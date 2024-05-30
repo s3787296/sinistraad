@@ -1,6 +1,5 @@
 /**
- * Game class contains all methods related to the main game cycle. // TODO More
- * info
+ * Game class contains all methods related to the main game cycle.
  * 
  * @author Max
  * @author Jude
@@ -9,13 +8,20 @@
 public class Game {
 
     /**
-     * Declaring class variables
+     * player creates object of Player class.
      */
     public static Player player;
+    /**
+     * isRunning is used to check whether the game is running.
+     */
     public static boolean isRunning;
 
     /**
-     * Method to start a new game.
+     * newGame method within {@code Game#} class.
+     * Calls methods to:
+     * 1. Start the game,
+     * 2. Set the player name,
+     * 3. Move to the game options menu.
      */
     public static void newGame() {
         // Print game title screen
@@ -112,7 +118,7 @@ public class Game {
     }
 
     /**
-     * Print title screen
+     * Print game title screen method
      */
     public static void printGameTitle() {
         Misc.clearConsole();
@@ -121,7 +127,7 @@ public class Game {
     }
 
     /**
-     * Printing the game menu
+     * Print game menu method.
      */
     public static void printGameMenu() {
         Misc.clearConsole();
@@ -145,7 +151,7 @@ public class Game {
     }
 
     /**
-     * Method to display game/help information.
+     * Method to display game info/help information.
      */
     public static void gameInfo() {
         Misc.clearConsole();
@@ -156,7 +162,7 @@ public class Game {
     }
 
     /**
-     * Printing the ingame player menu
+     * Method to print the ingame player menu
      */
     public static void printPlayerMenu() {
         Misc.clearConsole();
@@ -172,7 +178,7 @@ public class Game {
     }
 
     /**
-     * Printing character sheet info
+     * Method to print character sheet info
      */
     public static void playerInfo() {
         Misc.clearConsole();
@@ -188,7 +194,10 @@ public class Game {
     }
 
     /**
-     * Method called when player dies
+     * Method called when player dies.
+     * If the player was defeated by Count Eripmav, it calls the
+     * {@code Story#badEndingStory()} method.
+     * When the player dies, it displays an end screen message.
      */
     public static void playerDied() {
         Misc.clearConsole();
@@ -205,7 +214,9 @@ public class Game {
     }
 
     /**
-     * Game quit and close method
+     * This method quits and closes the game.
+     * This is called from {@code Game#gameOptions(3)} method, and
+     * is called from {@code Game#playerDied()} method when player dies
      */
     public static void gameQuit() {
         Misc.clearConsole();

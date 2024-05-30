@@ -1,5 +1,6 @@
 /**
  * ItemList class contains methods to create and return objects of item
+ * 
  * @author Max
  * @author Amelia
  * @author Jude
@@ -8,6 +9,7 @@ public class ItemList {
 
     /**
      * Method to create and return the Hero's Sword item
+     * 
      * @return
      */
     public static Item herosSword() {
@@ -18,8 +20,9 @@ public class ItemList {
         return herosSword;
     }
 
-     /**
+    /**
      * Method to create and return the Hero's Garb item
+     * 
      * @return
      */
     public static Item herosGarb() {
@@ -30,9 +33,9 @@ public class ItemList {
         return herosGarb;
     }
 
-
     /**
      * Method to create and return the Wolfhide Armour item
+     * 
      * @return
      */
     public static Item wolfhideArmour() {
@@ -45,6 +48,7 @@ public class ItemList {
 
     /**
      * Method to create and return the Hero's Map item
+     * 
      * @return
      */
     public static Item herosMap() {
@@ -56,6 +60,7 @@ public class ItemList {
 
     /**
      * Method to create and return the Matriarch's Blood item
+     * 
      * @return
      */
     public static Item matriarchsBlood() {
@@ -68,6 +73,7 @@ public class ItemList {
 
     /**
      * Method to create and return the Chamber Key item
+     * 
      * @return
      */
     public static Item cathedralKey() {
@@ -79,6 +85,7 @@ public class ItemList {
 
     /**
      * Method to create and return the Gate Key item
+     * 
      * @return
      */
     public static Item gateKey() {
@@ -90,6 +97,7 @@ public class ItemList {
 
     /**
      * Method to create and return the Maiden's Blessing item
+     * 
      * @return
      */
     public static Item maidensBlessing() {
@@ -102,6 +110,7 @@ public class ItemList {
 
     /**
      * Method to create and return the Healing Potion item
+     * 
      * @return
      */
     public static Item healingPotion() {
@@ -113,6 +122,7 @@ public class ItemList {
 
     /**
      * Method to create and return the Empty Goblet item
+     * 
      * @return
      */
     public static Item emptyGoblet() {
@@ -124,6 +134,7 @@ public class ItemList {
 
     /**
      * Method to create and return the Filled Goblet item
+     * 
      * @return
      */
     public static Item filledGoblet() {
@@ -135,6 +146,7 @@ public class ItemList {
 
     /**
      * Method to create and return the Forgemaster's Greatsword item
+     * 
      * @return
      */
     public static Item forgemastersGreatsword() {
@@ -147,6 +159,7 @@ public class ItemList {
 
     /**
      * Method to create and return the Blessed Goblet item
+     * 
      * @return
      */
     public static Item blessedGoblet() {
@@ -154,16 +167,5 @@ public class ItemList {
                 "The golden goblet now feels slightly warm as its gems glow with iridescent brilliance.\nHoly water swills inside.",
                 "?");
         return blessedGoblet;
-    }
-
-    /**
-     * Method to create and return the Count Eripmav Defeated item
-     * @return
-     */
-    public static Item eripmavDefeated() {
-        Item eripmavDefeated = new Item("Count Eripmav Defeated", "Quest",
-                "You have defeated the Count. Congratulations",
-                "?");
-        return eripmavDefeated;
     }
 }

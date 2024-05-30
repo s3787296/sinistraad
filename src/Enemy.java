@@ -1,5 +1,6 @@
 /**
  * This class handles the methods relating to player travel across the map.
+ * 
  * @author Max
  * @author Jude
  */
