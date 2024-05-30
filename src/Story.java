@@ -169,7 +169,7 @@ public class Story {
             + "\n" +
             "You see the maw of a cave in the distance to the east, and the trees here have large claw marks like a cats scratching pole. You try to ignore the bones."
             + "\n" +
-            "You could always go north to head away from the den and back on the main path if you wish.";
+            "You can go north to head away from the den and back to the main path, if you'd like.";
    }
 
    public static String c5Story() {
@@ -195,11 +195,11 @@ public class Story {
    }
 
    public static String a4Story() {
-      return "Walking further along the forest's winding paths, the path appears to neaten up to the west, slowly becoming well-maintained. You must be approaching the castle.";
+         return "Walking further again through the forest's winding paths, the path appears to neaten up to the west, becoming almost trimmed and maintained. You must be approaching the castle.";
    }
 
    public static String a3Story() {
-      return "Before you realise you're facing the entrance to the castle courtyard, a neat dirt path lined by tombstones crowded together, each significantly older than the last."
+      return "Before you realise, you're facing the entrance to the castle courtyard, a neat dirt path lined by tombstones crowded together, each significantly older than the last."
             + "\n" +
             "Perched upon the entrance of the Castle sits a gargoyle statue, unmoving. You see a large, rusty key fastened to a collar on the statue's neck. It looks like the key to the castle door will be a little more difficult to acquire.";
    }
@@ -219,13 +219,15 @@ public class Story {
             + "\n" +
             "GATEKEEPER SYEK: I beg of you, please don't kill me. I'll give you the key - please, just let me leave with my life."
             + "\n" +
-            "You decide to show him mercy - there's no reason to kill for pleasure, after all.";
+            "You decide to show him mercy - there's no reason to kill for pleasure, after all."
+            + "\n" +
+            "You take the key from the man and walk to the gate. You slide the key into the lock and turn it."
+            + "\n" +
+            "With a loud clunk, the key turns the old mechanism in the door, and the door grinds against the floor as it pushes open.";
    }
 
    public static String a2Story() {
-      return "With a loud clunk the key turns the century old mechanism in the door, and the door grinds against the floor as it pushes open."
-            + "\n" +
-            "The insides are pristine, floors swept and the candle holders stocked and lit. It's particularly warm for inside a castle."
+      return "The inside of the castle is pristine, the floors swept and the candle holders stocked and lit. It's particularly warm for inside a castle."
             + "\n" +
             "The intricate pattern of the marble floor winds deeper into the castle.";
    }
