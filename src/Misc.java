@@ -29,6 +29,33 @@ public class Misc {
     }
 
     /**
+     * Method to translate travel directions into numbers
+     * @return
+     */
+    public static int readTravel(){
+        String input = scanner.next();
+        if (input.equalsIgnoreCase("n")) {
+            return 1;
+        }
+        if (input.equalsIgnoreCase("e")) {
+            return 2;
+        }
+        if (input.equalsIgnoreCase("s")) {
+            return 3;
+        }
+        if (input.equalsIgnoreCase("w")) {
+            return 4;
+        }
+        if (input.equalsIgnoreCase("x")) {
+            return 5;
+        }
+        else{
+            return -1;
+        }
+    }
+
+
+    /**
      * Method to get only integer user input
      * @return
      */
