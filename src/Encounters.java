@@ -1,8 +1,11 @@
 /**
- * This class handles the methods relating to non-combat player encounters.
+ * Encounters class handles the methods relating to non-combat player
+ * encounters.
  * 
  * @author Max
  * @author Jude
+ * TODO (Pre-push: Update version)
+ * @version 0.19
  */
 public class Encounters {
 
@@ -105,7 +108,7 @@ public class Encounters {
                     Item item = ItemList.healingPotion();
                     int price = 10;
                     System.out.println(
-                            "\nAh yes, these are my specialty and a favourite of travellers such as yourself.\nThat'll be "
+                            "\nAh yes, these are my specialty and a favourite of travelers such as yourself.\nThat'll be "
                                     + price + "g.");
                     System.out.println("[1] Accept" + "\n[2] Decline");
                     apothecaryPurchase(price, item);
@@ -124,7 +127,7 @@ public class Encounters {
                     Item item = ItemList.healingPotion();
                     int price = 20;
                     System.out.println(
-                            "\nAh yes, these are my specialty and a favourite of travellers such as yourself.\nThat'll be "
+                            "\nAh yes, these are my specialty and a favourite of travelers such as yourself.\nThat'll be "
                                     + price + "g.");
                     System.out.println("[1] Accept" + "\n[2] Decline");
                     apothecaryPurchase(price, item);

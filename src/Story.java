@@ -1,13 +1,12 @@
 /**
- * Story class contains methods to return the story text for each location and
- * encounter.
- * Some of the methods are called from the LocationList class,
- * and others are called from the Encounters class.
- * Methods are ordered by the sequence they occur in the game.
+ * Story class contains all story methods returned from LocationList and
+ * Encounters classes.
  * 
  * @author Amelia
  * @author Jude
  * @author Max
+ * TODO (Pre-push: Update version)
+ * @version 0.32
  */
 public class Story {
 
@@ -109,7 +108,7 @@ public class Story {
     */
    public static String d4Story() {
       return String.join("\n",
-            "You're just outside the safety of the town's outer borders, stepping hestitantly through the forest lining, the sunlight blotted out by the dense canopy above you.",
+            "You're just outside the safety of the town's outer borders, stepping hesitantly through the forest lining, the sunlight blotted out by the dense canopy above you.",
             "The air surrounding you is heavy with damp and a sense of impending doom.",
             "The only direction that doesn’t seem to lead to more forest is east, back into the safety of the field, but you have a job to do.");
    }
@@ -298,7 +297,7 @@ public class Story {
     */
    public static String c5Story() {
       return String.join("\n",
-            "You decide to step into the cave, as soon as you do you see that there are the shadowed froms of werewolves, plucking at the corpse of some forest creature, stripping flesh from bone with ease.",
+            "You decide to step into the cave, as soon as you do you see that there are the shadowed forms of werewolves, plucking at the corpse of some forest creature, stripping flesh from bone with ease.",
             "You could probably get a sneak attack in if you really needed to fall these beasts, or escape the way you came.");
    }
 
@@ -453,7 +452,7 @@ public class Story {
    public static String beforeFuegoStory() {
       return String.join("\n",
             "You step around the dimly lit corners of the forge room, hoping not to draw attention as you attempt to step behind the smith to steal the key.",
-            "He glances up at the open door, eyes darting arount the room to land on you, the intruder.",
+            "He glances up at the open door, eyes darting around the room to land on you, the intruder.",
             "Forgemaster Fuego: Hey, wh- You aren't supposed to be here! he shouts before raising the red hot sword to your face.");
    }
 
@@ -480,7 +479,7 @@ public class Story {
    public static String c1Story() {
       return String.join("\n",
             "You slip the golden key into the slot, and hear the intricate mechanism in the gilded door whirr, then click.",
-            "You push the door open with ease, entering the next segement of the castle.",
+            "You push the door open with ease, entering the next segment of the castle.",
             "You realise that you entered some kind of prayer room, with an altar across from two small rows of pews, all built out of expensive materials.",
             "The pedestal almost glows on its own, the intricate patterns warping the light of the candles in the room.");
    }
@@ -494,7 +493,7 @@ public class Story {
    public static String altarSuccessStory() {
       return String.join("\n", "Walking up to the altar, you're reminded of the patterns on the goblet you bought.",
             "You reach into your bag and extract the matching goblet, brimming with the tears from the ghost of the Lost Maiden.",
-            "Gently placing the goblet into a lowered groove on the altar, it fits with a satisfying clunk, before exploding in a flourish of mutlicoloured light.",
+            "Gently placing the goblet into a lowered groove on the altar, it fits with a satisfying clunk, before exploding in a flourish of multicolored light.",
             "The tears almost boil off, leaving behind a couple drops of a potent elixir in the goblet. Holy water. You retrieve the goblet and stash it in your bag.");
    }
 

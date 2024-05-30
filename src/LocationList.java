@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 
 /**
- * Class to house location lists which contain location objects
- * @author Max
- * @author Jude
+ * LocationList class contains methods to create and store objects of Location.
+ * 
+ * @author  Max
+ * @author  Jude
+ * TODO (Pre-push: Update version)
+ * @version 0.26
  */
 public class LocationList {
 

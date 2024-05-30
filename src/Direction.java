@@ -1,7 +1,10 @@
 /**
- * This class handles the methods relating to player travel across the map.
+ * Direction class handles the methods relating to player travel across the map.
+ * 
  * @author Jude
  * @author Max
+ * TODO (Pre-push: Update version)
+ * @version 0.19
  */
 public class Direction {
 
@@ -31,6 +34,7 @@ public class Direction {
 
     /**
      * Method to print to set updated location.
+     * 
      * @param setLocation
      */
     private static void setDirection(Location setLocation) {
@@ -39,21 +43,23 @@ public class Direction {
 
     /**
      * Method to identify player's current location.
-     * @param   checklocation
-     * @param   validlocation
-     * @return  validlocation
+     * 
+     * @param checkLocation
+     * @param validLocation
+     * @return validLocation
      */
-    private static boolean checkDirection(Location checklocation) {
-        boolean validlocation = false;
-        if (Game.player.getCurrentLocation().equals(checklocation)) {
-            validlocation = true;
+    private static boolean checkDirection(Location checkLocation) {
+        boolean validLocation = false;
+        if (Game.player.getCurrentLocation().equals(checkLocation)) {
+            validLocation = true;
         }
-        return validlocation;
+        return validLocation;
     }
 
     /**
      * Travel method for player movement around map.
-     * @param input     Player input for direction to travel
+     * 
+     * @param input Player input for direction to travel
      */
     public static void travel() {
         while (true) {
@@ -104,7 +110,7 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
-                // Input == East
+                    // Input == East
                 case 2:
                     if (checkDirection(LocationList.aList.get(1))) {
                         setDirection(LocationList.bList.get(1));
@@ -148,7 +154,7 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
-                // Input == South
+                    // Input == South
                 case 3:
                     if (checkDirection(LocationList.bList.get(1))) {
                         setDirection(LocationList.bList.get(2));
@@ -187,7 +193,7 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
-                // Input == West
+                    // Input == West
                 case 4:
                     if (checkDirection(LocationList.bList.get(1))) {
                         setDirection(LocationList.aList.get(1));
@@ -231,7 +237,7 @@ public class Direction {
                         directionBlocked();
                         break;
                     }
-                // Send player back to player menu
+                    // Send player back to player menu
                 case 5:
                     Game.playerOptions();
                     break;

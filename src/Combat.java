@@ -1,7 +1,9 @@
 /**
- * This class runs the combat engine.
+ * Combat class runs the combat engine.
  * 
  * @author Max
+ * TODO (Pre-push: Update version)
+ * @version 0.22
  */
 public class Combat {
 
@@ -78,47 +80,51 @@ public class Combat {
                 Game.player.setXp(Game.player.getXp() + enemy.getXp());
                 // Calculate random drops
                 boolean addRest = (Math.random() * 10 + 1 <= 2.5); // 25% chance
-                int goldEarnt = (int) (Math.random() * enemy.getXp());
+                int goldEarned = (int) (Math.random() * enemy.getXp());
                 // If player earned rest
                 if (addRest) {
                     Game.player.setRests(Game.player.getRests() + 1);
-                    System.out.println("You fought well and earned an additional rest.\nRests available: ["+ Game.player.getRests() + "]!");
+                    System.out.println("You fought well and earned an additional rest.\nRests available: ["
+                            + Game.player.getRests() + "]!");
                 }
                 // If player earned gold
-                if (goldEarnt > 0) {
-                    Game.player.setGold(Game.player.getGold() + goldEarnt);
-                    System.out.println("You collect " + goldEarnt + " gold from the " + enemy.getName() + "'s corpse.");
+                if (goldEarned > 0) {
+                    Game.player.setGold(Game.player.getGold() + goldEarned);
+                    System.out
+                            .println("You collect " + goldEarned + " gold from the " + enemy.getName() + "'s corpse.");
                 }
                 Misc.continueKey();
                 victory = true;
                 break;
-            // Player chooses potion
+                // Player chooses potion
             } else if (input == 2) {
                 Misc.clearConsole();
                 // Check if Player able to use a potion
                 if (Game.player.getPlayerPotions().size() > 0 && Game.player.getCurHp() < Game.player.getMaxHp()) {
                     // Confirm player wants to use a potion
-                    Misc.printHeading("Do you want to use a potion? [" + Game.player.getPlayerPotions().size() + "] left.");
+                    Misc.printHeading(
+                            "Do you want to use a potion? [" + Game.player.getPlayerPotions().size() + "] left.");
                     System.out.println("[1] Yes\n[2] No");
                     input = Misc.readInt();
                 }
                 // Player uses potion
                 if (input == 1) {
-                    System.out.println("You used a potion and restored "+ (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
+                    System.out.println("You used a potion and restored "
+                            + (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
                     Game.player.setCurHp(Game.player.getMaxHp());
                     Game.player.getPlayerPotions().remove(Game.player.getPlayerPotions().get(0));
                     Misc.continueKey();
-                // Player doesnt use potion
+                    // Player doesn't use potion
                 } else if (input == 2) {
                     System.out.println("You decided not to use a potion.");
                     Misc.continueKey();
-                } 
+                }
                 // Player unable to use a potion
                 else {
                     Misc.printHeading("You can't do that right now.");
                     Misc.continueKey();
                 }
-            } 
+            }
             // Player chooses flee
             else if (input == 3) {
                 Misc.clearConsole();
@@ -127,7 +133,7 @@ public class Combat {
                     Misc.printHeading("You managed to escape from the " + enemy.getName() + "!");
                     Misc.continueKey();
                     break;
-                } 
+                }
                 // If enemy is a boss or player loses 50% chance
                 else {
                     // calculating damage for failed escape

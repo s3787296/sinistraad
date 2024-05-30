@@ -1,8 +1,10 @@
 /**
- * This class handles the details for each enemy and boss in the map.
+ * EnemyList class contains methods to create and return objects of Enemy.
  * 
  * @author Max
  * @author Jude
+ * TODO (Pre-push: Update version)
+ * @version 0.18
  */
 public class EnemyList {
 
@@ -28,7 +30,7 @@ public class EnemyList {
     }
 
     /**
-     * Creating new instance of enemy Archnid Spawn
+     * Creating new instance of enemy Arachnid Spawn
      * 
      * @return New instance of Arachnid Spawn
      */
@@ -117,7 +119,7 @@ public class EnemyList {
      * @return New instance of Count Eripmav
      */
     public static Enemy countEripmav() {
-        Enemy countEripmav = new Enemy("Count Eripmav", "BOSS", 100, 80, Story.beforeEripmavStory(), null, null);
+        Enemy countEripmav = new Enemy("Count Eripmav", "BOSS", 100, 99, Story.beforeEripmavStory(), null, null);
         return countEripmav;
     }
 }

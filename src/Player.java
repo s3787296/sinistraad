@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 
 /**
- * Player class contains all player attributes and constructors.
+ * Player class contains all Player methods, attributes and constructors.
  * 
- * @author Max
+ * @author  Max
+ * TODO (Pre-push: Update version)
+ * @version 0.25
  */
 public class Player {
 
@@ -302,12 +304,12 @@ public class Player {
      * @param name
      */
     public Player(String name) {
-        // Setting intial core player attributes
+        // Setting initial core player attributes
         this.name = name;
         this.maxHp = 100;
         this.xp = 0;
         this.curHp = maxHp;
-        // Settting additional player attributes
+        // Setting additional player attributes
         this.gold = 30;
         this.rests = 1;
         playerItems = new ArrayList<Item>();
@@ -324,7 +326,7 @@ public class Player {
     }
 
     /**
-     * Player-specific defence calculation
+     * Player-specific defense calculation
      * 
      * @return
      */
@@ -333,7 +335,7 @@ public class Player {
     }
 
     /**
-     * Player-specific to remove items from bag and add to currentlocation
+     * Player-specific drop method to remove items from bag and add to currentLocation
      * 
      * @param item
      */
@@ -343,7 +345,7 @@ public class Player {
     }
 
     /**
-     * Player-specific pickup method to add items to bag from currentlocation
+     * Player-specific pickup method to add items to bag from currentLocation
      * 
      * @param item
      */

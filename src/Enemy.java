@@ -1,10 +1,11 @@
 /**
- * This class handles the methods relating to player travel across the map.
+ * Enemy class handles Enemy methods, attributes and constructors.
  * 
  * @author Max
  * @author Jude
+ * TODO (Pre-push: Update version)
+ * @version 0.21
  */
-// TODO Javadoc.
 public class Enemy {
 
     // Core enemy attributes

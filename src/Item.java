@@ -1,6 +1,9 @@
 /**
- * Game class contains all item attributes and constructors.
+ * Item class contains all Item methods, attributes and constructors.
+ * 
  * @author Max
+ * TODO (Pre-push: Update version)
+ * @version 0.9
  */
 public class Item {
 
@@ -14,6 +17,7 @@ public class Item {
 
     /**
      * Getter method for item name
+     * 
      * @return
      */
     public String getName() {
@@ -22,6 +26,7 @@ public class Item {
 
     /**
      * Setter method for item name
+     * 
      * @param name
      */
     public void setName(String name) {
@@ -30,6 +35,7 @@ public class Item {
 
     /**
      * Getter method for item type
+     * 
      * @return
      */
     public String getType() {
@@ -38,6 +44,7 @@ public class Item {
 
     /**
      * Setter method for item type
+     * 
      * @param type
      */
     public void setType(String type) {
@@ -46,6 +53,7 @@ public class Item {
 
     /**
      * Getter method for item description
+     * 
      * @return
      */
     public String getDesc() {
@@ -54,6 +62,7 @@ public class Item {
 
     /**
      * Setter method for item description
+     * 
      * @param desc
      */
     public void setDesc(String desc) {
@@ -62,6 +71,7 @@ public class Item {
 
     /**
      * Getter method for item buff
+     * 
      * @return
      */
     public String getBuff() {
@@ -70,6 +80,7 @@ public class Item {
 
     /**
      * Setter method for item buff
+     * 
      * @param buff
      */
     public void setBuff(String buff) {
@@ -78,18 +89,19 @@ public class Item {
 
     /**
      * Constructor method for item object
+     * 
      * @param name
      * @param type
      * @param desc
      * @param buff
      */
-    public Item (String name, String type, String desc, String buff){
+    public Item(String name, String type, String desc, String buff) {
         this.name = name;
         this.type = type;
         this.desc = desc;
         this.buff = buff;
-    }  
-    
+    }
+
     /**
      * toString() method for printing item details
      */

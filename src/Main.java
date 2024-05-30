@@ -1,10 +1,10 @@
 /**
- * This is the Main class.
- * This class contains the {@code Main#main(String[])} method which allows the
- * game to run.
+ * Main class contains the main method which allows the game to run.
  * 
  * @author Max
  * @author Jude
+ * TODO (Pre-push: Update version)
+ * @version 0.11
  */
 public class Main {
     /**
@@ -12,7 +12,7 @@ public class Main {
      * It calls the {@code Game.newGame()} method to begin the game.
      * 
      * @param args Command line arguments
-     * @throws Exception If an exception occured
+     * @throws Exception If an exception occurred
      */
     public static void main(String[] args) throws Exception {
         Game.newGame();

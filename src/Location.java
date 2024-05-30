@@ -1,11 +1,14 @@
 import java.util.ArrayList;
 
 /**
- * Location class contains all location attributes and constructors.
+ * Location class contains all Location attributes and constructors.
+ * 
  * @author Max
+ * TODO (Pre-push: Update version)
+ * @version 0.27
  */
 public class Location {
-    
+
     /**
      * Core location attributes
      */
@@ -16,12 +19,14 @@ public class Location {
     private Item item;
     private Enemy enemy;
     /**
-     * Location specific arraylist which will be modified when items are dropped or picked up by the player.
+     * Location specific arraylist which will be modified when items are dropped or
+     * picked up by the player.
      */
     private ArrayList<Item> locationItems;
 
     /**
      * Getter method for location area
+     * 
      * @return
      */
     public String getArea() {
@@ -30,6 +35,7 @@ public class Location {
 
     /**
      * Setter method for location area
+     * 
      * @param area
      */
     public void setArea(String area) {
@@ -38,6 +44,7 @@ public class Location {
 
     /**
      * Getter method for location name
+     * 
      * @return
      */
     public String getName() {
@@ -46,6 +53,7 @@ public class Location {
 
     /**
      * Setter method for location name
+     * 
      * @param name
      */
     public void setName(String name) {
@@ -54,6 +62,7 @@ public class Location {
 
     /**
      * Getter method for location story
+     * 
      * @return
      */
     public String getStory() {
@@ -62,6 +71,7 @@ public class Location {
 
     /**
      * Setter method for location story
+     * 
      * @param story
      */
     public void setStory(String story) {
@@ -69,7 +79,8 @@ public class Location {
     }
 
     /**
-     * Getter method for location's spawnable enemies 
+     * Getter method for location's spawnable enemies
+     * 
      * @return
      */
     public Enemy getEnemy() {
@@ -77,7 +88,8 @@ public class Location {
     }
 
     /**
-     * Setter method for location's spawnable enemies 
+     * Setter method for location's spawnable enemies
+     * 
      * @param enemy
      */
     public void setEnemy(Enemy enemy) {
@@ -86,6 +98,7 @@ public class Location {
 
     /**
      * Getter method for locations map
+     * 
      * @return
      */
     public String getMap() {
@@ -94,6 +107,7 @@ public class Location {
 
     /**
      * Setter method for locations map
+     * 
      * @param map
      */
     public void setMap(String map) {
@@ -101,7 +115,8 @@ public class Location {
     }
 
     /**
-     * Getter method for location items 
+     * Getter method for location items
+     * 
      * @return
      */
     public Item getItem() {
@@ -110,6 +125,7 @@ public class Location {
 
     /**
      * Setter method for location items
+     * 
      * @param item
      */
     public void setItem(Item item) {
@@ -118,6 +134,7 @@ public class Location {
 
     /**
      * Getter method for location arraylist
+     * 
      * @return
      */
     public ArrayList<Item> getLocationItems() {
@@ -126,6 +143,7 @@ public class Location {
 
     /**
      * Setter method for location arraylist
+     * 
      * @param itemList
      */
     public void setLocationItems(ArrayList<Item> itemList) {
@@ -134,6 +152,7 @@ public class Location {
 
     /**
      * Primary constructor for location object
+     * 
      * @param name
      * @param map
      * @param area
@@ -149,6 +168,7 @@ public class Location {
 
     /**
      * Secondary constructor for location object
+     * 
      * @param name
      * @param map
      * @param area

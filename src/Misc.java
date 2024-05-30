@@ -1,10 +1,13 @@
 import java.util.Scanner;
 
 /**
- * Class for misc helper methods
+ * Misc class contains helper methods to improve game functionality.
+ * 
  * @author Max
  * @author Jude
  * @author Amelia
+ * TODO (Pre-push: Update version)
+ * @version 0.21
  */
 public class Misc {
 
@@ -15,6 +18,7 @@ public class Misc {
 
     /**
      * Method to see whether the player bag contains an item
+     * 
      * @param string
      * @return
      */
@@ -44,9 +48,10 @@ public class Misc {
 
     /**
      * Method to translate travel directions into numbers
+     * 
      * @return
      */
-    public static int readTravel(){
+    public static int readTravel() {
         String input = scanner.next();
         if (input.equalsIgnoreCase("n")) {
             return 1;
@@ -62,15 +67,14 @@ public class Misc {
         }
         if (input.equalsIgnoreCase("x")) {
             return 5;
-        }
-        else{
+        } else {
             return -1;
         }
     }
 
-
     /**
      * Method to get only integer user input
+     * 
      * @return
      */
     public static int readInt() {
@@ -84,10 +88,11 @@ public class Misc {
     }
 
     /**
-     * Method to print a seperator with length n
+     * Method to print a separator with length n
+     * 
      * @param n
      */
-    public static void printSeperator(int n) {
+    public static void printSeparator(int n) {
         for (int i = 0; i < n; i++) {
             System.out.print("-");
         }
@@ -104,12 +109,13 @@ public class Misc {
 
     /**
      * Method to print a title
+     * 
      * @param heading
      */
     public static void printHeading(String heading) {
-        printSeperator(40);
+        printSeparator(40);
         System.out.println(heading);
-        printSeperator(40);
+        printSeparator(40);
     }
 
     /**
@@ -122,6 +128,7 @@ public class Misc {
 
     /**
      * Method to create delay effect
+     * 
      * @param millisec
      */
     public static void sleep(int millisec) {
@@ -136,7 +143,7 @@ public class Misc {
      * Method to print title screen art
      */
     public static void titleArt() {
-        Misc.printSeperator(75);
+        Misc.printSeparator(75);
         System.out.println("" +
                 "  _____\n" +
                 " / ____|\n" +
@@ -147,7 +154,7 @@ public class Misc {
                 "                        ---------------------------                               \n");
         Misc.sleep(300);
         Misc.clearConsole();
-        Misc.printSeperator(75);
+        Misc.printSeparator(75);
         System.out.println("" +
                 "  _____ _____\n" +
                 " / ____|_   _|\n" +
@@ -158,7 +165,7 @@ public class Misc {
                 "                        ---------------------------                               \n");
         Misc.sleep(300);
         Misc.clearConsole();
-        Misc.printSeperator(75);
+        Misc.printSeparator(75);
         System.out.println("" +
                 "  _____ _____ _   _ \n" +
                 " / ____|_   _| \\ | |\n" +
@@ -169,7 +176,7 @@ public class Misc {
                 "                        ---------------------------                               \n");
         Misc.sleep(300);
         Misc.clearConsole();
-        Misc.printSeperator(75);
+        Misc.printSeparator(75);
         System.out.println("" +
                 "  _____ _____ _   _ _____ \n" +
                 " / ____|_   _| \\ | |_   _|\n" +
@@ -180,7 +187,7 @@ public class Misc {
                 "                        ---------------------------                               \n");
         Misc.sleep(300);
         Misc.clearConsole();
-        Misc.printSeperator(75);
+        Misc.printSeparator(75);
         System.out.println("" +
                 "  _____ _____ _   _ _____  _____\n" +
                 " / ____|_   _| \\ | |_   _|/ ____|\n" +
@@ -191,7 +198,7 @@ public class Misc {
                 "                        ---------------------------                               \n");
         Misc.sleep(300);
         Misc.clearConsole();
-        Misc.printSeperator(75);
+        Misc.printSeparator(75);
         System.out.println("" +
                 "  _____ _____ _   _ _____  _____ _______\n" +
                 " / ____|_   _| \\ | |_   _|/ ____|__   __|\n" +
@@ -202,7 +209,7 @@ public class Misc {
                 "                        ---------------------------                               \n");
         Misc.sleep(300);
         Misc.clearConsole();
-        Misc.printSeperator(75);
+        Misc.printSeparator(75);
         System.out.println("" +
                 "  _____ _____ _   _ _____  _____ _______ _____\n" +
                 " / ____|_   _| \\ | |_   _|/ ____|__   __|  __ \\ \n" +
@@ -213,7 +220,7 @@ public class Misc {
                 "                        ---------------------------                               \n");
         Misc.sleep(300);
         Misc.clearConsole();
-        Misc.printSeperator(75);
+        Misc.printSeparator(75);
         System.out.println("" +
                 "  _____ _____ _   _ _____  _____ _______ _____          \n" +
                 " / ____|_   _| \\ | |_   _|/ ____|__   __|  __ \\     /\\ \n" +
@@ -224,7 +231,7 @@ public class Misc {
                 "                        ---------------------------                               \n");
         Misc.sleep(300);
         Misc.clearConsole();
-        Misc.printSeperator(75);
+        Misc.printSeparator(75);
         System.out.println("" +
                 "  _____ _____ _   _ _____  _____ _______ _____                      \n" +
                 " / ____|_   _| \\ | |_   _|/ ____|__   __|  __ \\     /\\        /\\ \n" +
@@ -235,7 +242,7 @@ public class Misc {
                 "                        ---------------------------                               \n");
         Misc.sleep(300);
         Misc.clearConsole();
-        Misc.printSeperator(75);
+        Misc.printSeparator(75);
         System.out.println("" +
                 "  _____ _____ _   _ _____  _____ _______ _____                      _____  \n" +
                 " / ____|_   _| \\ | |_   _|/ ____|__   __|  __ \\     /\\        /\\   |  __ \\ \n" +
@@ -256,14 +263,14 @@ public class Misc {
      */
     public static void InfoString() {
         System.out.println("Welcome to Sinistraad, a thrilling text based adventure!\n"
-        + "Your mission is to set out on a perilous journey into the Duskwood Forest to slay the evil Count Eripmav and free your town from his influence.\n\n"
-        + "While playing you have multiple options that allow you to do different things:\n"
-        + "Explore: Allows you to move in the four cardinal directions, however if you have nowhere to go, you wont be allowed, check the map to see your options!\n"
-        + "Player:  Displays the players stats! Check your health, damage, XP, fols, how many potions and rests you have, and your damage and defense stats!\n"
-        + "Map:     Displays the Map of your journey! Lost your way or not sure where to go? Check the map for a refresher!\n"
-        + "Bag:     Allows you to view items and potions in your bag, with a short description of each, allows you to drop and pick up items, and check the items in an area.\n"
-        + "Rest:    Out of potions but low on health? Take a short rest to recover some  health in a pinch! helps prevent your death from coming too early.\n"
-        + "Exit:    If you feel like quitting, exit brings you back to the start menu so you can run away with your tail between your legs.\n\n"
-        + "To truly succeed on your journey, make sure to explore and try all options! Also remember to have fun and have fun on your journey!\n");
+                + "Your mission is to set out on a perilous journey into the Duskwood Forest to slay the evil Count Eripmav and free your town from his influence.\n\n"
+                + "While playing you have multiple options that allow you to do different things:\n"
+                + "Explore: Allows you to move in the four cardinal directions, however if you have nowhere to go, you wont be allowed, check the map to see your options!\n"
+                + "Player:  Displays the players stats! Check your health, damage, XP, gold, how many potions and rests you have, and your damage and defense stats!\n"
+                + "Map:     Displays the Map of your journey! Lost your way or not sure where to go? Check the map for a refresher!\n"
+                + "Bag:     Allows you to view items and potions in your bag, with a short description of each, allows you to drop and pick up items, and check the items in an area.\n"
+                + "Rest:    Out of potions but low on health? Take a short rest to recover some  health in a pinch! helps prevent your death from coming too early.\n"
+                + "Exit:    If you feel like quitting, exit brings you back to the start menu so you can run away with your tail between your legs.\n\n"
+                + "To truly succeed on your journey, make sure to explore and try all options! Also remember to have fun and have fun on your journey!\n");
     }
 }

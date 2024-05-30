@@ -1,9 +1,11 @@
 /**
  * Game class contains all methods related to the main game cycle.
  * 
- * @author Max
- * @author Jude
- * @author Amelia
+ * @author  Max
+ * @author  Jude
+ * @author  Amelia
+ * TODO (Pre-push: Update version)
+ * @version 0.37
  */
 public class Game {
 
@@ -35,7 +37,7 @@ public class Game {
     /**
      * Method to get and confirm player name and create new player.
      * 
-     * @param name    Plauer name
+     * @param name    player name
      * @param nameSet Whether player has confirmed their name
      * @param player  New instance of Player(name)
      */
@@ -157,7 +159,7 @@ public class Game {
         Misc.clearConsole();
         Misc.printHeading("GAME INFO");
         Misc.InfoString();
-        Misc.printSeperator(25);
+        Misc.printSeparator(25);
         Misc.continueKey();
     }
 
@@ -184,12 +186,12 @@ public class Game {
         Misc.clearConsole();
         Misc.printHeading("PLAYER INFO");
         System.out.println("Name: " + player.getName() + "\tHP: " + player.getCurHp() + "/" + player.getMaxHp());
-        Misc.printSeperator(30);
+        Misc.printSeparator(30);
         System.out.println("LVL: " + player.getLevel() + "\tGold: " + player.getGold());
-        Misc.printSeperator(25);
+        Misc.printSeparator(25);
         System.out.println("Potions: " + player.getPlayerPotions().size() + "\tRests: " + player.getRests());
-        Misc.printSeperator(25);
-        System.out.println("Weapon Damage: " + player.getWeaponAtk() + "\tArmour Defence: " + player.getArmourDef());
+        Misc.printSeparator(25);
+        System.out.println("Weapon Damage: " + player.getWeaponAtk() + "\tArmour Defense: " + player.getArmourDef());
         Misc.continueKey();
     }
 
@@ -338,7 +340,7 @@ public class Game {
     }
 
     /**
-     * Player pickup item hander method
+     * Player pickup item handler method
      */
     public static void playerPickupItem() {
         if (player.getCurrentLocation().getLocationItems().size() > 0) {
@@ -352,7 +354,7 @@ public class Game {
     }
 
     /**
-     * Player drop item hander method
+     * Player drop item handler method
      */
     public static void playerDropItem() {
         if (player.getPlayerItems().size() > 0) {
@@ -430,7 +432,7 @@ public class Game {
      * Print general location information.
      */
     public static void printLocationInfo() {
-        Misc.printSeperator(100);
+        Misc.printSeparator(100);
         System.out.println(Game.player.getCurrentLocation().getArea());
         System.out.println(Game.player.getCurrentLocation().getStory());
     }

@@ -1,9 +1,11 @@
 /**
- * ItemList class contains methods to create and return objects of item
+ * ItemList class contains methods to create and return objects of Item.
  * 
  * @author Max
  * @author Amelia
  * @author Jude
+ * TODO (Pre-push: Update version)
+ * @version 0.18
  */
 public class ItemList {
 
@@ -40,8 +42,8 @@ public class ItemList {
      */
     public static Item wolfhideArmour() {
         Item wolfhideArmour = new Item("Wolfhide Armour", "Armour",
-                "Crudely stripped wolfskin tied around ones torso like a tunic.\nThe dense matted fur and sinewy skin of the Duskwood werewolf makes for excellent protection.",
-                "+20 Defence");
+                "Crudely stripped werewolf hide tied around ones torso like a tunic.\nThe dense matted fur and sinewy skin of the Duskwood werewolf makes for excellent protection.",
+                "+20 Defense");
         Game.player.setArmourDef(20);
         return wolfhideArmour;
     }
@@ -103,7 +105,7 @@ public class ItemList {
     public static Item maidensBlessing() {
         Item maidensBlessing = new Item("Maiden's Blessing", "Bonus",
                 "Upon defeating the Lost Maiden, the fresh air of the clearing fills your lungs.\nYou you feel your muscles revitalize, becoming stronger.",
-                "+10 Defence");
+                "+10 Defense");
         Game.player.setBonusDef(10);
         return maidensBlessing;
     }
