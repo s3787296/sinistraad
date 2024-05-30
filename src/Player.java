@@ -278,7 +278,7 @@ public class Player {
         this.xp = 0;
         this.curHp = maxHp;
         // Settting additional player attributes
-        this.gold = 10;
+        this.gold = 30;
         this.rests = 1;
         playerItems = new ArrayList<Item>();
         playerPotions = new ArrayList<Item>();

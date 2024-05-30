@@ -116,7 +116,7 @@ public class Game {
      */
     public static void printGameTitle() {
         Misc.clearConsole();
-        Misc.titleArt();
+        // Misc.titleArt();
         Misc.continueKey();
     }
 
