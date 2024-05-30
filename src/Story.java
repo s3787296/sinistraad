@@ -81,7 +81,7 @@ public class Story {
    public static String d3Story() {
       return "You continue further into the forest. To the north you can see the forest start to thin out, beyond which lies a sandy shore."
             + "\n" +
-            "To the east lies more forest."
+            "To the west lies more forest."
             + "\n" +
             "To the south also lies more forest.";
    }
@@ -127,7 +127,9 @@ public class Story {
    public static String c2Story() {
       return "As you emerge from the darkness of the forest, you feel the warmth of the sun on your skin and look around the clearing."
             + "\n" +
-            "It's a dead end, but it's still full of life - a wrinkled figure draped in all manner of fabrics wanders around the clearing, humming to themself. They glance over at you through their goggles, excitement gleaming in their bug-like eyes."
+            "It's a dead end, but it's still full of life - a wrinkled figure draped in all manner of fabrics wanders around the clearing, humming to themself."
+            + "\n" +
+            "They glance over at you through their goggles, excitement gleaming in their bug-like eyes."
             + "\n" +
             "You have no clue how long they've been posted at this spot, but you feel like they could probably use a chat.";
    }
@@ -141,7 +143,7 @@ public class Story {
    public static String nostramusGobletStory() {
       return "After handing your money over, Nostramus hands you the goblet."
             + "\n" +
-            "The goblet feels dense and almost commands attention when in view. You quickly stuff it into your bag, you could probably use it to hold drinks or other liquids.";
+            "The goblet feels dense and almost commands attention when in view. You quickly stuff it into your bag, you could use it to hold any liquid you might need.";
    }
 
    public static String c4Story() {
@@ -167,7 +169,7 @@ public class Story {
             + "\n" +
             "You see the maw of a cave in the distance to the east, and the trees here have large claw marks like a cats scratching pole. You try to ignore the bones."
             + "\n" +
-            "You could always go north to head away from the den and back on the main path if you wish.";
+            "You can go north to head away from the den and back to the main path, if you'd like.";
    }
 
    public static String c5Story() {
@@ -193,11 +195,11 @@ public class Story {
    }
 
    public static String a4Story() {
-      return "Walking further along the forest's winding paths, the path appears to neaten up to the west, slowly becoming well-maintained. You must be approaching the castle.";
+         return "Walking further again through the forest's winding paths, the path appears to neaten up to the west, becoming almost trimmed and maintained. You must be approaching the castle.";
    }
 
    public static String a3Story() {
-      return "Before you realise you're facing the entrance to the castle courtyard, a neat dirt path lined by tombstones crowded together, each significantly older than the last."
+      return "Before you realise, you're facing the entrance to the castle courtyard, a neat dirt path lined by tombstones crowded together, each significantly older than the last."
             + "\n" +
             "Perched upon the entrance of the Castle sits a gargoyle statue, unmoving. You see a large, rusty key fastened to a collar on the statue's neck. It looks like the key to the castle door will be a little more difficult to acquire.";
    }
@@ -217,13 +219,15 @@ public class Story {
             + "\n" +
             "GATEKEEPER SYEK: I beg of you, please don't kill me. I'll give you the key - please, just let me leave with my life."
             + "\n" +
-            "You decide to show him mercy - there's no reason to kill for pleasure, after all.";
+            "You decide to show him mercy - there's no reason to kill for pleasure, after all."
+            + "\n" +
+            "You take the key from the man and walk to the gate. You slide the key into the lock and turn it."
+            + "\n" +
+            "With a loud clunk, the key turns the old mechanism in the door, and the door grinds against the floor as it pushes open.";
    }
 
    public static String a2Story() {
-      return "With a loud clunk the key turns the century old mechanism in the door, and the door grinds against the floor as it pushes open."
-            + "\n" +
-            "The insides are pristine, floors swept and the candle holders stocked and lit. It's particularly warm for inside a castle."
+      return "The inside of the castle is pristine, the floors swept and the candle holders stocked and lit. It's particularly warm for inside a castle."
             + "\n" +
             "The intricate pattern of the marble floor winds deeper into the castle.";
    }
@@ -269,7 +273,7 @@ public class Story {
    public static String afterFuegoStory() {
       return "You manage to get the upper hand and plunge your sword through the chest of the Forgemaster, his last strained breath seeps out of his body as he falls back into the pile of coals."
             + "\n" +
-            "You pluck the key off his person and stash it on you. The sword that would normally have dropped back to normal temperature somehow still glows red-hot, smoldering on the floor."
+            "You pluck the key off his person and stash it on you. The silver patterns on the sword glow, as the red-hot blade smolders on the floor."
             + "\n" +
             "Hesitantly, you pick up the sword - the handle is surprisingly cool to the touch while the blade radiates intense heat."
             + "\n" +
@@ -308,48 +312,49 @@ public class Story {
       return "You continue deeper into the castle. The air is thick with candle soot and the empty halls beckon you to the end of the hall. A humble wooden door lies before you.";
    }
 
-   // TODO Count Eripmav Text for Explore.explore() here & below
    public static String e1Story() {
-      return "You slam the door open, brandishing your sword as you are met with a man, dressed in an all black suit, with slicked back hair and pale, translucent skin and gaunt eyes, lounging in an open casket.";
+      return "You slam the door open, sword brandished in front of you. Somehow, this isn't the sight you expected to see."
+      + "\n" +
+      "A tall, thin man with translucent skin and gaunt eyes lounges in an open casket. He is dressed in an expensive black suit and a cape.";
    }
 
    public static String beforeEripmavStory() {
-      return "The man raises his eyes from the tomb to meet your gaze, his cat-like eyes piercing your soul."
+      return "The man raises his eyes to meet your gaze, his cat-like eyes piercing your soul. He grins, mouth contorting to reveal long, sharp fangs."
             + "\n" +
-            "COUNT ERIPMAV: Finally! Someone else has come to meet their demise. I could use another feed..."
+            "COUNT ERIPMAV: Finally! Another creature has come to meet their demise. I could use another feed..."
             + "\n" +
-            "The Count scoffs as he rises to his feet, patting the dust off his suit."
+            "The Count scoffs as he rises to his feet, smoothing his hands over his suit."
             + "\n" +
             "You finally have your chance to defeat him. Better not blow it.";
    }
 
    public static String goodEndingStory() {
-      return "The clashing of claws and teeth on metal finally ends as you deliver the killing bow, as you strike the count across the chest."
+      return "The clashing of claws and teeth on metal finally ends as you deliver the killing blow, striking the Count across the chest."
             + "\n" +
-            "He falls to the ground pathetically. you really are stronger than I remember humans to be, I wont let this be my end! the count hisses before evaporating into a cloud of smoke. You wildly slash at the cloud but your strikes just pass through the smoke, before it rises up and out of the fireplace chimney. You beat him for today. Who knows how long you’ve defeated him for.\r\n"
-            + //
-            "Great Ending\r\n";
+            "He falls to the ground pathetically. you really are stronger than I remember humans to be, I wont let this be my end! the count hisses before evaporating into a cloud of smoke. You wildly slash at the cloud but your strikes just pass through the smoke, before it rises up and out of the fireplace chimney. You beat him for today. Who knows how long you’ve defeated him for.";
    }
 
    public static String greatEndingStory() {
       return "The clashing of claws and teeth on metal finally ends as you deliver the killing blow, as you strike the count across the chest he falls to the ground pathetically."
             + "\n" +
-            "COUNT ERIPMAV: You really are stronger than I remember humans to be, I wont let this be my end!" + "\n" +
             "The count hisses, turning into a cloud of smoke. The goblet of holy water in your pocket almost sings to you, and you quickly pull out the goblet and flick it towards the cloud of smoke."
             + "\n" +
             "The droplets of holy water force the Count out of his smoke form and he slumps to the ground screeching and writhing."
             + "\n" +
-            "The spots of holy water you continue to flick on him burning holes through his clothes and skin." + "\n" +
-            "COUNT ERIPMAV: NO! THIS CANT BE! I CANT DIE LIKE THIS he shouts as you hold the goblet upside down over his melting body, the last drop of holy water falls on his head and the body of the count turns to ash on the ground."
+            "The spots of holy water you continue to flick on him burning holes through his clothes and skin."
+            + "\n" +
+            "COUNT ERIPMAV: NO, THIS CANT BE! I CAN'T BE KILLED!"
+            + "\n" +
+            "You tip the goblet upside down over his melting body, the last drop of holy water falls on his head and the body of the Count turns to ash on the ground."
             + "\n" +
             "Dead. You did it! You finally beat the count for good!";
    }
 
    public static String badEndingStory() {
-      return "You swing wildly at the count, as you try to vanquish the foe, but one wrong step has his claws slash at your chest, spilling too much blood for a mere mortal."
+      return "You swing wildly at the count, as you try to vanquish the foe, but one wrong step has his claws slash at your chest, spilling too much blood for a human to survive."
             + "\n" +
-            "Despite all your efforts, you lost. You collapse face down on the floor of the counts room as he laughs maniacally."
+            "Despite all your efforts, you lost. You collapse face down on the floor of the counts room as he laughs coldly."
             + "\n" +
-            "COUNT ERIPMAV: Your pathetic town will be gone by years end, humans will always be weak.";
+            "COUNT ERIPMAV: Your pathetic town will be gone by years end. Nobody has managed to get rid of me - I'm here to stay.";
    }
 }

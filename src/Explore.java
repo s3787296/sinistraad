@@ -7,14 +7,14 @@ public class Explore {
         if (Game.player.getCurrentLocation().getEnemy() != null) {
             if (Game.player.getCurrentLocation().getEnemy().getCurHp() <= 0) {
                 if (Game.player.getCurrentLocation().getEnemy().getAfter() != null) {
-                    System.out.println(Game.player.getCurrentLocation().getEnemy().getAfter());
+                    Misc.printHeading(Game.player.getCurrentLocation().getEnemy().getAfter());
                 }
                 Encounters.playerEncounters(Game.player.getCurrentLocation());
                 Misc.continueKey();
                 Direction.travel();
             } else if (Game.player.getCurrentLocation().getEnemy().getCurHp() > 0) {
                 if (Game.player.getCurrentLocation().getEnemy().getBefore() != null) {
-                    System.out.println(Game.player.getCurrentLocation().getEnemy().getBefore());
+                    Misc.printHeading(Game.player.getCurrentLocation().getEnemy().getBefore());
                 }
                 Misc.continueKey();
                 if (Game.player.getCurrentLocation().getEnemy() != null) {
@@ -26,7 +26,7 @@ public class Explore {
                 Misc.clearConsole();
                 Game.printLocationInfo();
                 if (Game.player.getCurrentLocation().getEnemy().getAfter() != null) {
-                    System.out.println(Game.player.getCurrentLocation().getEnemy().getAfter());
+                    Misc.printHeading(Game.player.getCurrentLocation().getEnemy().getAfter());
                 }
                 Misc.continueKey();
                 Direction.travel();

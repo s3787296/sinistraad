@@ -41,7 +41,6 @@ public class Misc {
         System.out.println("\nEnter c to continue");
         scanner.next();
     }
-    
 
     // Method to print a title
     public static void printHeading(String heading) {
@@ -56,14 +55,14 @@ public class Misc {
         System.out.flush();
     }
 
-    // Method to sleep so text doesn't pop up all at once with user input for the amount of time
-    // Created this method to ensure consistency as it falls under the helper/misc category
+    // Method to create delay effect
     public static void sleep(int millisec) {
         try {
             Thread.sleep(millisec);
         } catch (InterruptedException e) {};
     }
 
+    // method to print title screen art
     public static void titleArt() {
         Misc.printSeperator(75);
         System.out.println("" +

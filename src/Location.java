@@ -83,7 +83,7 @@ public class Location {
         this.locationItems = itemList;
     }
 
-    // Constructor for location object with no item or enemy
+    // Secondary constructor for location object
     public Location(String name, String map, String area, String story) {
         this.name = name;
         this.map = map;
@@ -92,32 +92,13 @@ public class Location {
         this.locationItems = new ArrayList<Item>();
     }
 
-    // Constructor for location object with no item
+    // Primary constructor for location object
     public Location(String name, String map, String area, String story, Enemy enemy) {
         this.name = name;
         this.map = map;
         this.area = area;
         this.story = story;
         this.enemy = enemy;
-        this.locationItems = new ArrayList<Item>();
-    }
-
-    // Constructor for location object with no enemy // TODO check if still needed
-    public Location(String name, String area, String story, Item item) {
-        this.name = name;
-        this.area = area;
-        this.story = story;
-        this.item = item;
-        this.locationItems = new ArrayList<Item>();
-    }
-
-    // Constructor for location object with enemy and item // TODO check if still needed
-    public Location(String name, String area, String story, Enemy enemy, Item item) {
-        this.name = name;
-        this.area = area;
-        this.story = story;
-        this.enemy = enemy;
-        this.item = item;
         this.locationItems = new ArrayList<Item>();
     }
 }

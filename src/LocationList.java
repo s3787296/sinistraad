@@ -34,10 +34,10 @@ public class LocationList {
         Location a2Location = new Location("A2", Map.a2Map(), "CASTLE INTERIOR", Story.a2Story(), EnemyList.stoneskinGargoyle());
         aList.add(a2Location);
         //
-        Location a3Location = new Location("A3", Map.a3Map(), "CASTLE COURTYARD", Story.a3Story(), EnemyList.gatekeeperSyek());
+        Location a3Location = new Location("A3", Map.a3Map(), "CASTLE INTERIOR", Story.a3Story(),EnemyList.stoneskinGargoyle() );
         aList.add(a3Location);
         //
-        Location a4Location = new Location("A4", Map.a4Map(), "DUSKWOOD FOREST", Story.a4Story(), EnemyList.feralDuskwolf());
+        Location a4Location = new Location("A4", Map.a4Map(), "CASTLE COURTYARD", Story.a4Story(), EnemyList.gatekeeperSyek());
         aList.add(a4Location);
         //
         Location a5Location = new Location("A5", "NULL", "ENDLESS FOG - LOCATION NOT ACCESSIBLE", "Something has gone seriously wrong.");
@@ -46,13 +46,13 @@ public class LocationList {
         // Column B
         bList.add(nullLocation);
         //
-        Location b1Location = new Location("B1", Map.b1Map(), "CASTLE INTERIOR", Story.b1Story(), EnemyList.stoneskinGargoyle());
+        Location b1Location = new Location("B1", Map.b1Map(), "CASTLE INTERIOR", Story.b1Story(), EnemyList.animatedGuard());
         bList.add(b1Location);
         //
-        Location b2Location = new Location("B2", Map.b2Map(), "CASTLE INTERIOR", Story.b2Story(), EnemyList.stoneskinGargoyle());
+        Location b2Location = new Location("B2", Map.b2Map(), "CASTLE INTERIOR", Story.b2Story(), EnemyList.animatedGuard());
         bList.add(b2Location);
         //
-        Location b3Location = new Location("B3", Map.b3Map(), "CASTLE INTERIOR", Story.b3Story(), EnemyList.animatedGuard());
+        Location b3Location = new Location("B3", Map.b3Map(), "CASTLE CHAMBERS", Story.b3Story());
         bList.add(b3Location);
         //
         Location b4lLocation = new Location("B4", Map.b4Map(), "DUSKWOOD FOREST", Story.b4Story(), EnemyList.feralDuskwolf());
@@ -64,7 +64,7 @@ public class LocationList {
         // Column C
         cList.add(nullLocation);
         //
-        Location c1Location = new Location("C1", Map.c1Map(), "CASTLE CATHEDRAL", Story.c1Story());
+        Location c1Location = new Location("C1", Map.c1Map(), "COUNTS CHAMBERS", Story.c1Story());
         cList.add(c1Location);
         //
         Location c2Location = new Location("C2", Map.c2Map(), "DUSKWOOD CLEARING", Story.c2Story());
@@ -82,7 +82,7 @@ public class LocationList {
         // Column D
         dList.add(nullLocation);
         //
-        Location d1Location = new Location("D1", Map.d1Map(), "CASTLE CHAMBERS", Story.d1Story(), EnemyList.animatedGuard());
+        Location d1Location = new Location("D1", Map.d1Map(), "COUNTS CHAMBERS", Story.d1Story(), EnemyList.animatedGuard());
         dList.add(d1Location);
         //
         Location d2Location = new Location("D2", Map.d2Map(), "MYSTIC LAKE", Story.d2Story(), EnemyList.lostMaiden());

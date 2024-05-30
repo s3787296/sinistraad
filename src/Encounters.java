@@ -21,49 +21,60 @@ public class Encounters {
     private static void farmerEncounter(){
         // If player bag contains Matriarch's Blood, call relevant story method
         if (Misc.containsItem("Matriarch's Blood")) {
-            System.out.println(Story.farmerReturnStory());
+            Misc.printHeading(Story.farmerReturnStory());
+            // if player bag does not contain Hero's Map, add Hero's Map
             if (!Misc.containsItem("Hero's Map")) {
-                // If player bag doesn't already contain the Hero's Map, give it to player
                 Game.player.getPlayerItems().add(ItemList.herosMap()); 
             }
-         } else {}
-            // If bag doesn't contain Matriarch's Blood, call relevant story method
-            System.out.println(Story.farmerStory());
+        // If bag doesn't contain Matriarch's Blood, call relevant story method
+         } else if (!Misc.containsItem("Matriarch's Blood")) {
+            Misc.printHeading(Story.farmerStory());
+            // if player bag does not contain heros sword, add heros sword
+            if (!Misc.containsItem("Hero's Sword")) {
+                Game.player.getPlayerItems().add(ItemList.herosSword());
+            }
+         }
     }
 
     // Method to let player make a purchase when they are within the apothecaryEncounter() method
     private static void apothecaryPurchase(int gold, Item item) {
         int option = Misc.readInt();
+        // If player selects "[1] Accept"
         if (option == 1) {
-            // If player selects "[1] Accept"
+            // If player has exactly or more than the amount of gold the item costs, add the healing potion to their bag
             if (Game.player.getGold() >= gold) {
-                // If player has exactly or more than the amount of gold the item costs, add the healing potion to their bag
                 System.out.println("\nA most splendid choice, dear friend. Do stop by again, won't you?");
-                Game.player.getPlayerPotions().add(item);
+                // Add Empty Goblet to player inventory
+                if (item == ItemList.emptyGoblet()) {
+                    Game.player.getPlayerItems().add(item);
+                // Add Healing Potion to player potion list
+                } else if (item == ItemList.healingPotion()) {
+                    Game.player.getPlayerPotions().add(item);
+                }
                 // Take the appropriate amount of gold from player's gold
                 Game.player.setGold(Game.player.getGold() - gold);
                 Misc.continueKey();
+            // If player does not have enough gold, print failure message
             } else {
-                // Print failure message
-                System.out.println(
-                        "\nOh, how unfortunate - it seems you do not have the coin to match... Perhaps another time.");
+                System.out.println("\nOh, how unfortunate - it seems you do not have the coin to match... Perhaps another time.");
                 Misc.continueKey();
             }
+        // If player selects "[2] Decline"
         } else if (option == 2) {
-            // If player selects "[2] Decline"
             System.out.println("\nOh... Very well... Make sure to stop by again!");
             Misc.continueKey();
         }
     }
 
+    // method to start the apocathery nostramus encounter
     private static void apothecaryEncounter() {
         boolean purchase = true;
         while (purchase) {
-            Story.nostramusStartStory();
+            Misc.printHeading(Story.nostramusStartStory());
             Misc.continueKey();
             Misc.clearConsole();
-            Misc.printHeading("APOTHECARY");
-            System.out.println("NOSTRAMUS: Well hello there, weary traveller! Welcome to my apothecary. We aim to heal all things - well, all things except a broken heart. There are some things a potion just can't fix.");
+            Misc.printHeading("APOTHECARY"); // TODO Add to the location story? Well hello there, weary traveller! We aim to heal all things - well, all things except a broken heart. There are some things a potion just can't fix.
+            System.out.println("NOSTRAMUS: Welcome to my apothecary.");
             System.out.println("See anything you like?");
             // If player has any of the Goblet items, display the following menu
             if (Misc.containsItem("Empty Goblet") || Misc.containsItem("Filled Goblet") || Misc.containsItem("Blessed Goblet")) {
@@ -96,7 +107,7 @@ public class Encounters {
                     System.out.println( "\nOh, this old thing? Well... I suppose I could give it to you - for a price.\nI think 30g is fair.");
                     System.out.println("[1] Accept" + "\n[2] Decline");
                     apothecaryPurchase(30, ItemList.emptyGoblet()); 
-                    Story.nostramusGobletStory();
+                    Misc.printHeading(Story.nostramusGobletStory());
                 }
                 if (input == 3) {
                     // Menu option selected: [3] Exit
@@ -111,14 +122,14 @@ public class Encounters {
     private static void maidenTearsEncounter() {
         // If player bag contains Empty Goblet item, call appropriate story method
         if (Misc.containsItem("Empty Goblet")) {
-            System.out.println(Story.tearsSucceedStory());
+            Misc.printHeading(Story.tearsSucceedStory());
             Misc.continueKey();
             // Remove the Empty Goblet from player's bag and add a Filled Goblet
             Game.player.getPlayerItems().remove(ItemList.emptyGoblet());
             Game.player.getPlayerItems().add(ItemList.filledGoblet());
          } else {
             // If player bag does not contain Empty Goblet item, call appropriate story method
-            System.out.println(Story.tearsFailStory());
+            Misc.printHeading(Story.tearsFailStory());
             Misc.continueKey();
          }
     }
@@ -137,19 +148,28 @@ public class Encounters {
     private static void altarEncounter() {
         // If player bag contains Filled Goblet, call appropriate story method
         if (Misc.containsItem("Filled Goblet")) {
-            System.out.println(Story.altarSuccessStory());
+            Misc.printHeading(Story.altarSuccessStory());
             Misc.continueKey();
             // Remove Filled Goblet from player's bag and add a Blessed Goblet
             Game.player.getPlayerItems().remove(ItemList.filledGoblet());
             Game.player.getPlayerItems().add(ItemList.blessedGoblet());
         } else {
             // If player bag does not contain Filled Goblet, call appropriate story method
-            System.out.println(Story.altarFailStory());
+            Misc.printHeading(Story.altarFailStory());
             Misc.continueKey();
         }
     }
 
     private static void eripmavEncounter() {
-        // TODO Eripmav Encounter
+        // TODO Fix the logic here.
+        if (Misc.containsItem("Count Eripmav Defeated")) {
+            if (Misc.containsItem("Blessed Goblet")) {
+                Misc.printHeading(Story.greatEndingStory());
+            } else {
+                Misc.printHeading(Story.greatEndingStory());
+            }
+        } else {
+            Misc.printHeading(Story.badEndingStory()); // TODO Fix this logic - if playerlocation is E1, call the story right before they receive the "You've died" message.
+        }
     }
 }

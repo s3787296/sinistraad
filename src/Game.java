@@ -27,10 +27,10 @@ public class Game {
             do {
                 Misc.clearConsole();
                 Misc.printHeading("Your name is " + name + ".\n");
-                Misc.sleep(600);
+                // Misc.sleep(600);
                 Misc.clearConsole();
                 Misc.printHeading("Your name is " + name + ".\nIs that correct?");
-                Misc.sleep(400);
+                // Misc.sleep(400);
                 System.out.println("[1] Yes!\n[2] No, let me change it.");
                 int input = Misc.readInt();
                 if (input == 1) {
@@ -110,6 +110,7 @@ public class Game {
         // Creating map location objects
         LocationList.createLocations();
         player.setCurrentLocation(LocationList.eList.get(5));
+        player.neuter();
         isRunning = true;
         playerOptions();
     }
@@ -242,7 +243,6 @@ public class Game {
         while (viewbag) {
             printBagMenu();
             int input = Misc.readInt();
-            Misc.continueKey();
             switch (input) {
                 case 1:
                     // [1] View Items
