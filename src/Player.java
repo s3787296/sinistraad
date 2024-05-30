@@ -187,12 +187,12 @@ public class Player {
 
     // Player-specific attack calculation
     public int combatAtk() {
-        return (int) (((Math.random() * 10) + 1) + weaponAtk + bonusAtk);
+        return (int) ((Math.random() * 5) + weaponAtk + bonusAtk);
     }
 
     // Player-specific defence calculation
     public int combatDef() {
-        return (int) (((Math.random() * 10) + 1) + armourDef + bonusDef);
+        return (int) ((Math.random() * 5) + armourDef + bonusDef);
     }
 
     // Player-specific to remove items from bag and add to currentlocation
