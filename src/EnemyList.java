@@ -85,7 +85,7 @@ public class EnemyList {
      * @return New instance of Gatekeeper Syek
      */
     public static Enemy gatekeeperSyek() {
-        Enemy gatekeeperSyek = new Enemy("Gatekeeper Syek", "BOSS", 80, 60, Story.beforeGatekeeperSyek(),
+        Enemy gatekeeperSyek = new Enemy("Gatekeeper Syek", "BOSS", 60, 50, Story.beforeGatekeeperSyek(),
                 Story.afterGatekeeperSyek(), ItemList.gateKey());
         return gatekeeperSyek;
     }
@@ -96,7 +96,7 @@ public class EnemyList {
      * @return New instance of Animated Guard
      */
     public static Enemy animatedGuard() {
-        Enemy animatedGuard = new Enemy("Animated Guard", "ENEMY", 40, Game.player.getXp());
+        Enemy animatedGuard = new Enemy("Animated Guard", "ENEMY", 50, Game.player.getXp());
         return animatedGuard;
     }
 
@@ -106,7 +106,7 @@ public class EnemyList {
      * @return New instance of Forgemaster Fuego
      */
     public static Enemy forgemasterFuego() {
-        Enemy forgemasterFuego = new Enemy("Forgemaster Fuego", "BOSS", 100, 80, Story.beforeFuegoStory(),
+        Enemy forgemasterFuego = new Enemy("Forgemaster Fuego", "BOSS", 80, 60, Story.beforeFuegoStory(),
                 Story.afterFuegoStory(), ItemList.forgemastersGreatsword());
         return forgemasterFuego;
     }
@@ -117,7 +117,7 @@ public class EnemyList {
      * @return New instance of Count Eripmav
      */
     public static Enemy countEripmav() {
-        Enemy countEripmav = new Enemy("Count Eripmav", "BOSS", 200, 100, Story.beforeEripmavStory(), null, null);
+        Enemy countEripmav = new Enemy("Count Eripmav", "BOSS", 100, 99, Story.beforeEripmavStory(), null, null);
         return countEripmav;
     }
 }
