@@ -1,15 +1,18 @@
+/**
+ * This class contains methods to return the descriptions for each location.
+ * Some methods contain logic to determine whether items need to be added to a
+ * player's bag after defeating a boss.
+ * @author Amelia
+ * @author Jude
+ * @author Max
+ */
 public class Story {
 
-   // This class contains methods to return the descriptions for each location.
-   // Some methods contain logic to determine whether items need to be added to a
-   // player's bag after defeating a boss.
-
    public static String e5Story() {
-      return "You stand in the barren town square of your village."
-            + "\n" +
-            "It's no longer the same joy-filled place where you and your closest friends grew up, surrounded by family who loved you."
-            + "\n" +
-            "His reign of terror over the land ends with you, as you set out on your journey to Castle Sinistraad to finally slay whatever evil lurks inside.";
+      return String.join("\n"
+      , "You stand in the barren town square of your village."
+      , "It's no longer the same joy-filled place where you and your closest friends grew up, surrounded by family who loved you."
+      , "His reign of terror over the land ends with you, as you set out on your journey to Castle Sinistraad to finally slay whatever evil lurks inside.");
    }
 
    public static String e4Story() {

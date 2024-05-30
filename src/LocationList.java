@@ -1,28 +1,44 @@
 import java.util.ArrayList;
 
-// Class to house location lists which contain location objects
+/**
+ * Class to house location lists which contain location objects
+ * @author Max
+ * @author Jude
+ */
 public class LocationList {
 
-    // Arraylist to store location objects a1...a5 at corresponding index
+    /**
+     * Arraylist to store location objects a1...a5 at corresponding index
+     */
     public static ArrayList<Location> aList = new ArrayList<Location>();
 
-    // Arraylist to store location objects b1...b5 at corresponding index
+    /**
+     * Arraylist to store location objects b1...b5 at corresponding index
+     */
     public static ArrayList<Location> bList = new ArrayList<Location>();
 
-    // Arraylist to store location objects c1...c5 at corresponding index
+    /**
+     * Arraylist to store location objects c1...c5 at corresponding index
+     */
     public static ArrayList<Location> cList = new ArrayList<Location>();
 
-    // Arraylist to store location objects c1...c5 at corresponding index
+    /**
+     * Arraylist to store location objects c1...c5 at corresponding index
+     */
     public static ArrayList<Location> dList = new ArrayList<Location>();
 
-    // Arraylist to store location objects e1...e5 at corresponding index
+    /**
+     * Arraylist to store location objects e1...e5 at corresponding index
+     */
     public static ArrayList<Location> eList = new ArrayList<Location>();
 
-    // Method to generate location objects, and store in corresponding arraylist
+    /**
+     * Method to generate location objects, and store in corresponding arraylist.
+     * It creates and sets location objects at corresponding index values.
+     * nullLocation() is used as a placeholder for index 0 in each ArrayList as it
+     * makes the other indexes in each list easier to work with.
+     */
     public static void createLocations() {
-        // Creating and setting location objects at corresponding index value
-        // nullLocation is used as a placeholder for index 0 in each ArrayList - makes
-        // the other ArrayLists easier to work with
         Location nullLocation = new Location("NULL", "NULL", "NULL", "NULL");
         //
         // Column A

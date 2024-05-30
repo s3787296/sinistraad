@@ -75,7 +75,10 @@ public class ItemList {
         return gateKey;
     }
 
-    // Method to create and return the Maiden's Blessing item
+    /**
+     * Method to create and return the Maiden's Blessing item
+     * @return
+     */
     public static Item maidensBlessing() {
         Item maidensBlessing = new Item("Maiden's Blessing", "Bonus",
                 "Upon defeating the Lost Maiden, the fresh air of the clearing fills your lungs.\nYou you feel your muscles revitalize, becoming stronger.",
@@ -84,7 +87,10 @@ public class ItemList {
         return maidensBlessing;
     }
 
-    // Method to create and return the healing potion item
+    /**
+     * Method to create and return the Healing Potion item
+     * @return
+     */
     public static Item healingPotion() {
         Item healingPotion = new Item("Healing Potion", "Consumable",
                 "A small round flask filled with a bright red, syrupy elixir.\nThe crafting of a health potion is a closely guarded secret by the apothecary's guild,\nwho fund their research by selling such potent tinctures.",
@@ -92,7 +98,10 @@ public class ItemList {
         return healingPotion;
     }
 
-    // Method to create and return the Empty Goblet item
+    /**
+     * Method to create and return the Empty Goblet item
+     * @return
+     */
     public static Item emptyGoblet() {
         Item emptyGoblet = new Item("Empty Goblet", "Quest",
                 "A golden goblet engraved with intricate patterns, reminiscent of royalty.",
@@ -100,7 +109,10 @@ public class ItemList {
         return emptyGoblet;
     }
 
-    // Method to create and return the Filled Goblet item
+    /**
+     * Method to create and return the Filled Goblet item
+     * @return
+     */
     public static Item filledGoblet() {
         Item filledGoblet = new Item("Filled Goblet", "Quest",
                 "A golden goblet engraved with intricate patterns, reminiscent of royalty. It is filled with the tears of the Lost Maiden.",
@@ -108,7 +120,10 @@ public class ItemList {
         return filledGoblet;
     }
 
-    // Method to create and return the Forgemaster's Greatsword item
+    /**
+     * Method to create and return the Forgemaster's Greatsword item
+     * @return
+     */
     public static Item forgemastersGreatsword() {
         Item forgemastersGreatsword = new Item("Forgemaster's Greatsword", "Weapon",
                 "A perfectly balanced sword that glows with the heat of the forge, the silver patterns shining brightly.\nOnly the hands of a master forger could even dream of such a weapon.",
@@ -117,7 +132,10 @@ public class ItemList {
         return forgemastersGreatsword;
     }
 
-    // Method to create and return the Blessed Goblet item
+    /**
+     * Method to create and return the Blessed Goblet item
+     * @return
+     */
     public static Item blessedGoblet() {
         Item blessedGoblet = new Item("Blessed Goblet", "Quest",
                 "The golden goblet now feels slightly warm as its gems glow with iridescent brilliance.\nHoly water swills inside.",
@@ -125,7 +143,10 @@ public class ItemList {
         return blessedGoblet;
     }
 
-    // Method to create and return the Count Eripmav Defeated item
+    /**
+     * Method to create and return the Count Eripmav Defeated item
+     * @return
+     */
     public static Item eripmavDefeated() {
         Item eripmavDefeated = new Item("Count Eripmav Defeated", "Quest",
                 "You have defeated the Count. Congratulations",

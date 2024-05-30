@@ -1,12 +1,23 @@
 import java.util.Scanner;
 
-// Class for misc helper methods
+/**
+ * Class for misc helper methods
+ * @author Max
+ * @author Jude
+ * @author Amelia
+ */
 public class Misc {
 
-    // Declaring new instance of scanner
+    /**
+     * Declaring new instance of scanner
+     */
     static Scanner scanner = new Scanner(System.in);
 
-    // Method to see whether the player bag contains an item
+    /**
+     * Method to see whether the player bag contains an item
+     * @param string
+     * @return
+     */
     public static boolean containsItem(String string) {
         boolean found = false;
         for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
@@ -17,7 +28,10 @@ public class Misc {
         return found;
     }
 
-    // Method to get only integer user input
+    /**
+     * Method to get only integer user input
+     * @return
+     */
     public static int readInt() {
         int readInput;
         try {
@@ -28,7 +42,10 @@ public class Misc {
         return readInput;
     }
 
-    // Method to print a seperator with length n
+    /**
+     * Method to print a seperator with length n
+     * @param n
+     */
     public static void printSeperator(int n) {
         for (int i = 0; i < n; i++) {
             System.out.print("-");
@@ -36,26 +53,36 @@ public class Misc {
         System.out.println();
     }
 
-    // Method to pause for user input
+    /**
+     * Method to pause for user input
+     */
     public static void continueKey() {
         System.out.println("\nEnter any key to continue");
         scanner.next();
     }
 
-    // Method to print a title
+    /**
+     * Method to print a title
+     * @param heading
+     */
     public static void printHeading(String heading) {
         printSeperator(40);
         System.out.println(heading);
         printSeperator(40);
     }
 
-    // Method to clear the console
+    /**
+     * Method to clear the console
+     */
     public static void clearConsole() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
-    // Method to create delay effect
+    /**
+     * Method to create delay effect
+     * @param millisec
+     */
     public static void sleep(int millisec) {
         try {
             Thread.sleep(millisec);
@@ -64,7 +91,9 @@ public class Misc {
         ;
     }
 
-    // Mthod to print title screen art
+    /**
+     * Method to print title screen art
+     */
     public static void titleArt() {
         Misc.printSeperator(75);
         System.out.println("" +
@@ -181,45 +210,19 @@ public class Misc {
         Misc.sleep(1100);
     }
 
+    /**
+     * Method to print the game information text
+     */
     public static void InfoString() {
-        System.out.println("Wlecome to Sinistraad, A thrilling text based adventure!"
-                + "\n" +
-                " "
-                + "\n" +
-                "You have to set on a perilous journey into the duskwood forest to slay the evil Count Eripmav and free your town from his influence!"
-                + "\n" +
-                "While playing you have multiple options that allow you to do different things:"
-                + "\n" +
-                " "
-                + "\n" +
-                " "
-                + "\n" +
-                "Explore: Allows you to move in the four cardinal directions, however if you have nowhere to go, you wont be allowed, check the map to see your options!"
-                + "\n" +
-                " "
-                + "\n" +
-                "Player:  Displays the players stats! Check your health, damage, XP, fols, how many potions and rests you have, and your damage and defense stats!"
-                + "\n" +
-                " "
-                + "\n" +
-                "Map:     Displays the Map of your journey! Lost your way or not sure where to go? Check the map for a refresher! "
-                + "\n" +
-                " "
-                + "\n" +
-                "Bag:     Allows you to view items and potions in your bag, with a short description of each, allows you to drop and pick up items, and check the items in an area."
-                + "\n" +
-                " "
-                + "\n" +
-                "Rest:    Out of potions but low on health? Take a short rest to recover some  health in a pinch! helps prevent your death from coming too early."
-                + "\n" +
-                " "
-                + "\n" +
-                "Exit:    If you feel like quitting, exit brings you back to the start menu so you can run away with your tail between your legs."
-                + "\n" +
-                " "
-                + "\n" +
-                "To truly succeed on your journey, make sure to explore and try all options! Also remember to have fun and have fun on your journey!"
-                + "\n" +
-                " ");
+        System.out.println("Welcome to Sinistraad, a thrilling text based adventure!\n"
+        + "Your mission is to set out on a perilous journey into the Duskwood Forest to slay the evil Count Eripmav and free your town from his influence.\n\n"
+        + "While playing you have multiple options that allow you to do different things:\n"
+        + "Explore: Allows you to move in the four cardinal directions, however if you have nowhere to go, you wont be allowed, check the map to see your options!\n"
+        + "Player:  Displays the players stats! Check your health, damage, XP, fols, how many potions and rests you have, and your damage and defense stats!\n"
+        + "Map:     Displays the Map of your journey! Lost your way or not sure where to go? Check the map for a refresher!\n"
+        + "Bag:     Allows you to view items and potions in your bag, with a short description of each, allows you to drop and pick up items, and check the items in an area.\n"
+        + "Rest:    Out of potions but low on health? Take a short rest to recover some  health in a pinch! helps prevent your death from coming too early.\n"
+        + "Exit:    If you feel like quitting, exit brings you back to the start menu so you can run away with your tail between your legs.\n\n"
+        + "To truly succeed on your journey, make sure to explore and try all options! Also remember to have fun and have fun on your journey!\n");
     }
 }
