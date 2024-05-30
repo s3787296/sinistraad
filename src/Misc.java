@@ -179,4 +179,47 @@ public class Misc {
         System.out.println("                      DESIGNED BY JUDE, AMELIA & MAX\n\n");
         Misc.sleep(1100);
     }
+
+    public static void InfoString(){
+System.out.println( "Wlecome to Sinistraad, A thrilling text based adventure!"
++ "\n" +
+" "
++ "\n" +
+"You have to set on a perilous journey into the duskwood forest to slay the evil Count Eripmav and free your town from his influence!"
++ "\n" +
+"While playing you have multiple options that allow you to do different things:"
++ "\n" +
+" "
++ "\n" +
+" "
++ "\n" +
+"Explore: Allows you to move in the four cardinal directions, however if you have nowhere to go, you wont be allowed, check the map to see your options!"
++ "\n" +
+" "
++ "\n" +
+"Player:  Displays the players stats! Check your health, damage, XP, fols, how many potions and rests you have, and your damage and defense stats!"
++ "\n" +
+" "
++ "\n" +
+"Map:     Displays the Map of your journey! Lost your way or not sure where to go? Check the map for a refresher! "
++ "\n" +
+" "
++ "\n" +
+"Bag:     Allows you to view items and potions in your bag, with a short description of each, allows you to drop and pick up items, and check the items in an area."
++ "\n" +
+" "
++ "\n" +
+"Rest:    Out of potions but low on health? Take a short rest to recover some  health in a pinch! helps prevent your death from coming too early."
++ "\n" +
+" "
++ "\n" +
+"Exit:    If you feel like quitting, exit brings you back to the start menu so you can run away with your tail between your legs."
++ "\n" +
+" "
++ "\n"+
+"To truly succeed on your journey, make sure to explore and try all options! Also remember to have fun and have fun on your journey!"
++ "\n" +
+" "
+);
+}
 }

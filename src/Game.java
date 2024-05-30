@@ -116,6 +116,12 @@ public class Game {
 
     public static void gameInfo() {
         // TODO about game info stuff (Amelia)
+        Misc.clearConsole();
+        Misc.printHeading("GAME INFO");
+        Misc.InfoString();
+        Misc.printSeperator(25);
+        Misc.continueKey();
+
     }
 
     // Printing the ingame player menu
