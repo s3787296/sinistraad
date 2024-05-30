@@ -1,10 +1,20 @@
+/**
+ * Game class contains all methods related to the main game cycle. // TODO More info
+ * @author Max
+ * @author Jude
+ * @author Amelia
+ */
 public class Game {
 
-    // Declaring class variables
+    /**
+     * Declaring class variables
+     */
     public static Player player;
     public static boolean isRunning;
 
-    // Method to start the game
+    /**
+     * Method to start a new game.
+     */
     public static void newGame() {
         // Print game title screen
         printGameTitle();
@@ -14,7 +24,12 @@ public class Game {
         gameOptions();
     }
 
-    // Method to get player name
+    /**
+     * Method to get and confirm player name and create new player.
+     * @param   name        Plauer name
+     * @param   nameSet     Whether player has confirmed their name
+     * @param   player      New instance of Player(name)
+     */
     public static void playerNameSet() {
         String name;
         Boolean nameSet = false;
@@ -46,7 +61,9 @@ public class Game {
         player = new Player(name);
     }
 
-    // Print rest menu
+    /**
+     * Print rest menu.
+     */
     public static void printRestMenu() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER RESTS");
@@ -54,7 +71,9 @@ public class Game {
         System.out.println("[1] Yes\n[2] No, not now.");
     }
 
-    // Rest options loop
+    /**
+     * Rest options loop
+     */
     public static void restOptions() {
         while (true) {
             if (Game.player.getRests() > 0) {
@@ -89,14 +108,18 @@ public class Game {
         }
     }
 
-    // Print title screen
+    /**
+     * Print title screen
+     */
     public static void printGameTitle() {
         Misc.clearConsole();
         Misc.titleArt();
         Misc.continueKey();
     }
 
-    // Printing the game menu
+    /**
+     * Printing the game menu
+     */
     public static void printGameMenu() {
         Misc.clearConsole();
         Misc.printHeading("GAME MENU");
@@ -105,10 +128,11 @@ public class Game {
         System.out.println("[2] Game Info");
         System.out.println("[3] Quit Game");
     }
-
-    // Transition method to start the game
+    
+    /**
+     * Transition method to start the game and create objects of the map locations.
+     */
     public static void gameStart() {
-        // Creating map location objects
         LocationList.createLocations();
         player.setCurrentLocation(LocationList.eList.get(5));
         player.neuter();
@@ -116,6 +140,9 @@ public class Game {
         playerOptions();
     }
 
+    /**
+     * Method to display game/help information.
+     */
     public static void gameInfo() {
         Misc.clearConsole();
         Misc.printHeading("GAME INFO");
@@ -124,7 +151,9 @@ public class Game {
         Misc.continueKey();
     }
 
-    // Printing the ingame player menu
+    /**
+     * Printing the ingame player menu
+     */
     public static void printPlayerMenu() {
         Misc.clearConsole();
         printLocationInfo();
@@ -138,7 +167,9 @@ public class Game {
         System.out.println("[6] Exit");
     }
 
-    // Printing character sheet info
+    /**
+     * Printing character sheet info
+     */
     public static void playerInfo() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER INFO");
@@ -152,7 +183,9 @@ public class Game {
         Misc.continueKey();
     }
 
-    // Method called when player dies
+    /**
+     * Method called when player dies
+     */
     public static void playerDied() {
         Misc.clearConsole();
         if (Game.player.getCurrentLocation().equals(LocationList.eList.get(5))) {
@@ -167,7 +200,9 @@ public class Game {
         gameQuit();
     }
 
-    // Game quit and close method
+    /**
+     * Game quit and close method
+     */
     public static void gameQuit() {
         Misc.clearConsole();
         System.out.println("\nThank you for playing!");
@@ -175,7 +210,9 @@ public class Game {
         System.exit(0);
     }
 
-    // Game menu loop
+    /**
+     * Game menu loop
+     */
     public static void gameOptions() {
         while (true) {
             printGameMenu();
@@ -194,7 +231,9 @@ public class Game {
         }
     }
 
-    // Player menu loop
+    /**
+     * Player menu loop
+     */
     public static void playerOptions() {
         while (isRunning) {
             printPlayerMenu();
@@ -229,7 +268,9 @@ public class Game {
         }
     }
 
-    // Method to print the player's bag menu
+    /**
+     * Method to print the player's bag menu
+     */
     public static void printBagMenu() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER BAG");
@@ -242,10 +283,13 @@ public class Game {
         System.out.println("[6] Exit");
     }
 
-    // Method to display bag menu loop
+    /**
+     * Method to display bag menu loop.
+     * @param   viewBag       While player is viewing their bag
+     */
     public static void bagOptions() {
-        boolean viewbag = true;
-        while (viewbag) {
+        boolean viewBag = true;
+        while (viewBag) {
             printBagMenu();
             int input = Misc.readInt();
             switch (input) {
@@ -278,7 +322,9 @@ public class Game {
         }
     }
 
-    // [1] View items in bag
+    /**
+     * View items in bag
+     */
     public static void printPlayerItems() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER ITEMS");
@@ -292,7 +338,9 @@ public class Game {
         Misc.continueKey();
     }
 
-    // [5] View potions in bag
+    /**
+     * View potions in bag
+     */
     public static void printPlayerPotions() {
         Misc.clearConsole();
         Misc.printHeading("PLAYER POTIONS");
@@ -306,7 +354,9 @@ public class Game {
         Misc.continueKey();
     }
 
-    // Printing general location info
+    /**
+     * Print general location information.
+     */
     public static void printLocationInfo() {
         Misc.printSeperator(100);
         System.out.println(Game.player.getCurrentLocation().getArea());

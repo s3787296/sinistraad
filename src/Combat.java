@@ -1,6 +1,13 @@
+/**
+ * This class runs the combat engine.
+ * @author Max
+ */
 public class Combat {
 
-    // Method to print battle heading and options
+    /**
+     * Method to print battle heading and options
+     * @param enemy
+     */
     private static void printBattle(Enemy enemy) {
         Misc.clearConsole();
         Misc.printHeading(enemy.getType() + ": " + enemy.getName() + "\nLVL: "+enemy.getLevel()+"\nHP: " + enemy.getCurHp() + "/"+ enemy.getMaxHp() + "\nATK: " + enemy.combatAtk() + "\nDEF: " + enemy.combatDef());
@@ -9,7 +16,12 @@ public class Combat {
         System.out.println("[1] Attack\n[2] Item\n[3] Flee");
     }
 
-    // Main battle method
+    /**
+     * Main battle method
+     * @param enemy   The enemy the player is fighting.
+     * @param victory Determines whether player has won battle
+     * @return        victory = true upon winning battle
+     */
     public static boolean battle(Enemy enemy) {
         // Return variable for post battle use
         boolean victory = false;

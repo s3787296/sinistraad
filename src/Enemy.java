@@ -1,6 +1,15 @@
+/**
+ * This class handles the methods relating to player travel across the map.
+ * @author Max
+ * @author Jude
+ */
+// TODO Javadoc.
 public class Enemy {
 
     // Core enemy attributes
+    /**
+     * Core enemy attributes
+     */
     private String name;
     private String type;
     private String before;

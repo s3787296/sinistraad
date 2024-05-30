@@ -1,7 +1,15 @@
+/**
+ * This class handles the methods relating to non-combat player encounters.
+ * @author Max
+ * @author Jude
+ */
 public class Encounters {
 
-    // Checking if the player location matches a non-combat player encounter
-    public static void playerEncounters(Location location) {
+    /**
+     * Checking if the player location matches a non-combat player encounter.
+     * @param   location
+     */
+    public static void playerEncounters(Location location){
         if (location.equals(LocationList.cList.get(2))) {
             apothecaryEncounter();
         } else if (location.equals(LocationList.eList.get(4))) {
@@ -17,8 +25,10 @@ public class Encounters {
         }
     }
 
-    // Method to run the encounter with Old Remraf, the farmer at the Tilled Plains.
-    private static void farmerEncounter() {
+    /**
+     * Method to run the encounter with Old Remraf, the farmer at the Tilled Plains.
+     */
+    private static void farmerEncounter(){
         // If player bag contains Matriarch's Blood, call relevant story method
         if (Misc.containsItem("Matriarch's Blood")) {
             Misc.printHeading(Story.farmerReturnStory());
@@ -36,8 +46,11 @@ public class Encounters {
         }
     }
 
-    // Method to let player make a purchase when they are within the
-    // apothecaryEncounter() method
+    /**
+     * Method to let player make a purchase when they are within the {@code apothecaryEncounter()} method
+     * @param   gold
+     * @param   item
+     */
     private static void apothecaryPurchase(int gold, Item item) {
         int option = Misc.readInt();
         // If player selects "[1] Accept"
@@ -69,7 +82,10 @@ public class Encounters {
         }
     }
 
-    // method to start the apocathery nostramus encounter
+    /**
+     * Method to start the encounter with Nostramus at the Apothecary
+     * @param   purchase      Whether player is making a purchase or not.
+     */
     private static void apothecaryEncounter() {
         boolean purchase = true;
         while (purchase) {
@@ -86,16 +102,15 @@ public class Encounters {
                     || Misc.containsItem("Blessed Goblet")) {
                 System.out.println("[1] Healing Potion" + "\n[2] Exit");
                 int input = Misc.readInt();
+                // Menu option selected: [1] Healing Potion
                 if (input == 1) {
-                    // Menu option selected: [1] Healing Potion
-                    System.out.println(
-                            "\nAh yes, these are my specialty and a favourite of travellers such as yourself.\nThat'll be 10g.");
+                    System.out.println("\nAh yes, these are my specialty and a favourite of travellers such as yourself.\nThat'll be 10g.");
                     System.out.println("[1] Accept" + "\n[2] Decline");
                     // Call the purchase method
                     apothecaryPurchase(10, ItemList.healingPotion());
                 }
+                // Menu option selected: [2] Exit
                 if (input == 2) {
-                    // Menu option selected: [2] Exit
                     purchase = false;
                     return;
                 }
@@ -103,32 +118,31 @@ public class Encounters {
                 // If the player doesn't have any goblets, display the following menu
                 System.out.println("[1] Healing Potion" + "\n[2] Empty Goblet" + "\n[3] Exit");
                 int input = Misc.readInt();
+                // Menu option selected: [1] Healing Potion
                 if (input == 1) {
-                    // Menu option selected: [1] Healing Potion
-                    System.out.println(
-                            "\nAh yes, these are my specialty and a favourite of travellers such as yourself.\nThat'll be 10g.");
+                    System.out.println("\nAh yes, these are my specialty and a favourite of travellers such as yourself.\nThat'll be 10g.");
                     System.out.println("[1] Accept" + "\n[2] Decline");
                     apothecaryPurchase(10, ItemList.healingPotion());
                 }
+                // Menu option selected: [2] Empty Goblet
                 if (input == 2) {
-                    // Menu option selected: [2] Empty Goblet
-                    System.out.println(
-                            "\nOh, this old thing? Well... I suppose I could give it to you - for a price.\nI think 30g is fair.");
+                    System.out.println( "\nOh, this old thing? Well... I suppose I could give it to you - for a price.\nI think 30g is fair.");
                     System.out.println("[1] Accept" + "\n[2] Decline");
                     apothecaryPurchase(30, ItemList.emptyGoblet());
                     Misc.printHeading(Story.nostramusGobletStory());
                 }
+                // Menu option selected: [3] Exit
                 if (input == 3) {
-                    // Menu option selected: [3] Exit
                     purchase = false;
                     break;
                 }
             }
         }
     }
-
-    // Method for player encounter to fill the Empty Goblet with the Lost Maiden's
-    // tears
+    
+    /**
+     * Method for player encounter to fill the Empty Goblet with the Lost Maiden's tears
+     */
     private static void maidenTearsEncounter() {
         // If player bag contains Empty Goblet item, call appropriate story method
         if (Misc.containsItem("Empty Goblet")) {
@@ -142,26 +156,24 @@ public class Encounters {
             // method
             Misc.printHeading(Story.tearsFailStory());
             Misc.continueKey();
-        }
+         }
     }
 
-    // Method for player encounter to receive Cathedral Key after Forgemaster Fuego
-    // battle
+    /**
+     * Method for player encounter to receive Cathedral Key after Forgemaster Fuego battle
+     */
     private static void cathedralKeyEncounter() {
-        // If player bag contains Forgemaster's Greatsword, add a Cathedral Key to
-        // player bag
+        // If player bag contains Forgemaster's Greatsword, add a Cathedral Key to player bag
         if (Misc.containsItem("Forgemaster's Greatsword")) {
             Game.player.getPlayerItems().add(ItemList.cathedralKey());
-            System.out.println(
-                    "You take the key from Forgemaster Fuego's belt.\n You can now unlock the door to the Cathedral."); // TODO
-                                                                                                                        // Description
-                                                                                                                        // glowup
+            System.out.println("You take the key from Forgemaster Fuego's belt.\n You can now unlock the door to the Cathedral."); // TODO Description glowup
             Misc.continueKey();
         }
     }
 
-    // Method for player encounter to enchant the filled goblet at the altar in the
-    // cathedral
+    /**
+     * Method for player encounter to enchant the filled goblet at the altar in the cathedral
+     */
     private static void altarEncounter() {
         // If player bag contains Filled Goblet, call appropriate story method
         if (Misc.containsItem("Filled Goblet")) {
@@ -177,6 +189,9 @@ public class Encounters {
         }
     }
 
+    /**
+     * Method for player encounter after they have battled Count Eripmav
+     */
     private static void eripmavEncounter() {
         if (Game.player.getCurrentLocation().getEnemy().getCurHp() <= 0) {
             if (Misc.containsItem("Blessed Goblet")) {

@@ -1,6 +1,12 @@
+/**
+ * This class automates the process of location traversal, combat and adding items.
+ * @author Max
+ */
 public class Explore {
 
-    // Method to automate the process of location traversal, combat and adding items
+    /**
+     * Method to automate the process of location traversal, combat and adding items.
+     */
     public static void exploreLocation() {
         Misc.clearConsole();
         Game.printLocationInfo();

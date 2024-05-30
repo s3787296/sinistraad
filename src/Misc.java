@@ -38,7 +38,7 @@ public class Misc {
 
     // Method to pause for user input
     public static void continueKey() {
-        System.out.println("\nEnter c to continue");
+        System.out.println("\nEnter any key to continue");
         scanner.next();
     }
 

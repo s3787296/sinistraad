@@ -1,6 +1,13 @@
+/**
+ * This class handles the methods relating to player travel across the map.
+ * @author Jude
+ * @author Max
+ */
 public class Direction {
 
-    // Method to print the travel menu
+    /**
+     * Method to print the travel menu
+     */
     public static void printTravelMenu() {
         Misc.clearConsole();
         Game.printLocationInfo();
@@ -13,19 +20,29 @@ public class Direction {
         System.out.println("[5] Exit");
     }
 
-    // Method to print for invalid direction
+    /**
+     * Method to invalid direction message if player can't travel that way.
+     */
     private static void directionBlocked() {
         System.out.println("\nYou can't go that way. Select another direction.");
         Misc.continueKey();
         ;
     }
 
-    // Method to print to set updated location
+    /**
+     * Method to print to set updated location.
+     * @param setLocation
+     */
     private static void setDirection(Location setLocation) {
         Game.player.setCurrentLocation(setLocation);
     }
 
-    // Method to identify player's current location
+    /**
+     * Method to identify player's current location.
+     * @param   checklocation
+     * @param   validlocation
+     * @return  validlocation
+     */
     private static boolean checkDirection(Location checklocation) {
         boolean validlocation = false;
         if (Game.player.getCurrentLocation().equals(checklocation)) {
@@ -34,7 +51,10 @@ public class Direction {
         return validlocation;
     }
 
-    // Travel method for player movement around map
+    /**
+     * Travel method for player movement around map.
+     * @param input     Player input for direction to travel
+     */
     public static void travel() {
         while (true) {
             printTravelMenu();

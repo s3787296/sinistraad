@@ -1,6 +1,15 @@
+/**
+ * ItemList class contains methods to create and return objects of item
+ * @author Max
+ * @author Amelia
+ * @author Jude
+ */
 public class ItemList {
 
-    // Method to create and return the Hero's Sword item
+    /**
+     * Method to create and return the Hero's Sword item
+     * @return
+     */
     public static Item herosSword() {
         Item herosSword = new Item("Hero's Sword", "Weapon",
                 "Old Remraf had this sword laying around. It's worn with age, and feels good in your hand.",
