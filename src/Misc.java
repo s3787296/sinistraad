@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author Max
  * @author Jude
  * @author Amelia
- * @version 0.24
+ * @version 0.25
  */
 public class Misc {
 
@@ -18,7 +18,8 @@ public class Misc {
     /**
      * Method to see whether the player bag contains an item.
      * <p>
-     * For loop runs until the item is found, or the loop reads all of the items in the bag.
+     * For loop runs until the item is found, or the loop reads all of the items in
+     * the bag.
      * <p>
      * If bag contains the item, found = true, otherwise found = false.
      * 
@@ -43,7 +44,7 @@ public class Misc {
      * 
      * @return index
      */
-    public static int indexItem(String string){
+    public static int indexItem(String string) {
         int index = 0;
         for (int i = 0; i < Game.player.getPlayerItems().size(); i++) {
             if (Game.player.getPlayerItems().get(i).getName().equalsIgnoreCase(string)) {
@@ -282,16 +283,37 @@ public class Misc {
      * Method to print the game information text.
      */
     public static void InfoString() {
-        System.out.println("Welcome to Sinistraad, a thrilling text based adventure!\n"
-                + "Your mission is to set out on a perilous journey into the Duskwood Forest to slay the evil Count Eripmav and free your town from his influence.\n\n"
-                +"while adventuring, make sure to exit the movement menu and \"explore \"your locatoion so you dont miss any key interactions!\n\n"
-                + "While playing you have multiple options that allow you to do different things:\n"
-                + "Explore: Allows you to move in the four cardinal directions, however if you have nowhere to go, you wont be allowed, check the map to see your options!\n"
-                + "Player:  Displays the player's stats! Check your health, damage, XP, gold, how many potions and rests you have, and your damage and defense stats!\n"
-                + "Map:     Displays the Map of your journey! Lost your way or not sure where to go? Check the map for a refresher!\n"
-                + "Bag:     Allows you to view items and potions in your bag, with a short description of each, allows you to drop and pick up items, and check the items in an area.\n"
-                + "Rest:    Out of potions but low on health? Take a short rest to recover some  health in a pinch! helps prevent your death from coming too early.\n"
-                + "Exit:    If you feel like quitting, exit brings you back to the start menu so you can run away with your tail between your legs.\n\n"
+        System.out.println("------------------------------------------------------------------------\n"
+                + "                            About the game\n"
+                + "------------------------------------------------------------------------\n"
+                + "Sinistraad is a fantasy adventure game where you, the player, set out on a journey into the Duskwood Forest to slay the evil vampire who has been terrorising the town for decades.\n\n"
+                + "Throughout your journey you will interact with various non player characters, including Old Remraf, the farmer who gives you his blessing for the journey and some useful items.\n"
+                + "You might also find Nostramus in their apothecary, where they sell beneficial potions and other trinkets to help you on your journey.\n"
+                + "It’s up to you to explore the map and travel to the castle to finally slay the evil vampire count and save their town!\n\n"
+                + "The main objective is to reach the castle and defeat Count Eripmav in battle.\n"
+                + "To progress in the game, you must battle enemies to collect gold and battle boss enemies to collect quest items.\n\n"
+                + "------------------------------------------------------------------------\n"
+                + "                        What are the controls?\n"
+                + "------------------------------------------------------------------------\n"
+                + "You control this game by entering either a number or a letter into the terminal, then pressing enter to confirm your selection.\n\n"
+                + "The travel menu lets you input both letters and numbers:\n"
+                + "-	North is [1] or [N] or [n]\n"
+                + "-	East is [2] or [E] or [e]\n"
+                + "-	South is [3] or [S] or [s]\n"
+                + "-	West is [4] or [W] or [w]\n\n"
+                + "All the other menus only let you input letters.\n\n"
+                + "------------------------------------------------------------------------\n"
+                + "                     What do the menu options do?\n"
+                + "------------------------------------------------------------------------\n"
+                + "While playing you have multiple options that allow you to do different things:\n\n"
+                + "-	Explore: Sometimes you end up battling an enemy if there is one available.\n"
+                + "    If there’s an NPC or a boss in your current location, choosing to explore will launch that encounter.\n"
+                + "    After your encounter, you will be prompted to travel to a new location.\n"
+                + "-	Player: Displays all the players information, including your name, health, XP, gold, potions, rests and damage and defense stats!\n"
+                + "-	Map: Displays the Map of your journey! Lost your way or not sure where to go? Check the map for a refresher!\n"
+                + "-	Bag: Allows you to view items and potions in your bag, with a short description of each, allows you to drop and pick up items, and check the items in an area.\n"
+                + "-	Rest: Out of potions but low on health? Take a short rest to recover some health in a pinch! helps prevent your death from coming too early.\n"
+                + "-	Exit: If you feel like quitting, exit brings you back to the start menu so you can run away with your tail between your legs.\n\n"
                 + "To truly succeed on your journey, make sure to explore and try all options! Also remember to have fun and have fun on your journey!\n");
     }
 }
