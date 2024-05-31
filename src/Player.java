@@ -321,14 +321,29 @@ public class Player {
         this.rests = rests;
     }
 
+
     /**
-     * Method to reset player bonuses
+     * Method to check for player bonuses
      */
-    public void neuter() {
-        weaponAtk = 0;
-        armourDef = 0;
-        bonusAtk = 0;
-        bonusDef = 0;
+    public void checkBonus(){
+        if (Misc.containsItem("Hero's Sword")) {
+            Game.player.setWeaponAtk(10);
+        }
+        if (Misc.containsItem("Hero's Garb")) {
+            Game.player.setArmourDef(10);
+        }
+        if (Misc.containsItem("Wolfhide Armour")) {
+            Game.player.setArmourDef(20);
+        }
+        if (Misc.containsItem("Matriarch's Blood")) {
+            Game.player.setBonusAtk(10);
+        }
+        if (Misc.containsItem("Maiden's Blessing")) {
+            Game.player.setBonusDef(10);
+        }
+        if (Misc.containsItem("Forgemaster's Greatsword")) {
+            Game.player.setWeaponAtk(50);
+        }
     }
 
     /**

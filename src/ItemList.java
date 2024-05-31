@@ -15,10 +15,7 @@ public class ItemList {
      * @return
      */
     public static Item herosSword() {
-        Item herosSword = new Item("Hero's Sword", "Weapon",
-                "Old Remraf had this sword laying around. It's worn with age, and feels good in your hand.",
-                "+10 Attack");
-        Game.player.setWeaponAtk(10);
+        Item herosSword = new Item("Hero's Sword", "Weapon", "Old Remraf had this sword laying around. It's worn with age, and feels good in your hand.", "+10 Attack");
         return herosSword;
     }
 
@@ -31,7 +28,6 @@ public class ItemList {
         Item herosGarb = new Item("Hero's Garb", "Armour",
                 "Practical and tactical, the garments of a true hero.",
                 "+10 Armour");
-        Game.player.setArmourDef(10);
         return herosGarb;
     }
 
@@ -44,10 +40,8 @@ public class ItemList {
         Item wolfhideArmour = new Item("Wolfhide Armour", "Armour",
                 "Crudely stripped werewolf hide tied around ones torso like a tunic.\nThe dense matted fur and sinewy skin of the Duskwood werewolf makes for excellent protection.",
                 "+20 Defense");
-        Game.player.setArmourDef(20);
         return wolfhideArmour;
     }
-
     /**
      * Method to create and return the Hero's Map item
      * 
@@ -69,7 +63,6 @@ public class ItemList {
         Item matriarchsBlood = new Item("Matriarch's Blood", "Bonus",
                 "The sickly green blood from this unholy arachnid stains your hands.\nYou you feel the immense strength of a spider fuel your each and every movement.",
                 "+10 Attack");
-        Game.player.setBonusAtk(10);
         return matriarchsBlood;
     }
 
@@ -106,7 +99,6 @@ public class ItemList {
         Item maidensBlessing = new Item("Maiden's Blessing", "Bonus",
                 "Upon defeating the Lost Maiden, the fresh air of the clearing fills your lungs.\nYou you feel your muscles revitalize, becoming stronger.",
                 "+10 Defense");
-        Game.player.setBonusDef(10);
         return maidensBlessing;
     }
 
@@ -155,7 +147,6 @@ public class ItemList {
         Item forgemastersGreatsword = new Item("Forgemaster's Greatsword", "Weapon",
                 "A perfectly balanced sword that glows with the heat of the forge, the silver patterns shining brightly.\nOnly the hands of a master forger could even dream of such a weapon.",
                 "+50 Attack");
-        Game.player.setWeaponAtk(50);
         return forgemastersGreatsword;
     }
 

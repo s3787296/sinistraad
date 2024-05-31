@@ -83,7 +83,7 @@ public class LocationList {
         // Column C
         cList.add(nullLocation);
         //
-        Location c1Location = new Location("C1", Map.c1Map(), "COUNTS CHAMBERS", Story.c1Story());
+        Location c1Location = new Location("C1", Map.c1Map(), "CASTLE CATHEDRAL", Story.c1Story());
         cList.add(c1Location);
         //
         Location c2Location = new Location("C2", Map.c2Map(), "DUSKWOOD CLEARING", Story.c2Story());
@@ -101,7 +101,7 @@ public class LocationList {
         // Column D
         dList.add(nullLocation);
         //
-        Location d1Location = new Location("D1", Map.d1Map(), "COUNTS CHAMBERS", Story.d1Story(), EnemyList.animatedGuard());
+        Location d1Location = new Location("D1", Map.d1Map(), "CASTLE CATHEDRAL", Story.d1Story(), EnemyList.animatedGuard());
         dList.add(d1Location);
         //
         Location d2Location = new Location("D2", Map.d2Map(), "MYSTIC LAKE", Story.d2Story(), EnemyList.lostMaiden());

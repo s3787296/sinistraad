@@ -116,7 +116,7 @@ public class Direction {
                         setDirection(LocationList.bList.get(1));
                         return;
                     } else if (checkDirection(LocationList.bList.get(1))) {
-                        if (Misc.containsItem("Chamber Key")) {
+                        if (Misc.containsItem("Cathedral Key")) {
                             setDirection(LocationList.cList.get(1));
                             return;
                         } else {

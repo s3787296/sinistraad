@@ -5,7 +5,7 @@
  * @author  Jude
  * @author  Amelia
  * TODO (Pre-push: Update version)
- * @version 0.37
+ * @version 0.38
  */
 public class Game {
 
@@ -115,6 +115,7 @@ public class Game {
                 printLocationInfo();
                 System.out.println("\nYou cannot do that right now.");
                 Misc.continueKey();
+                break;
             }
         }
     }
@@ -146,7 +147,6 @@ public class Game {
     public static void gameStart() {
         LocationList.createLocations();
         player.setCurrentLocation(LocationList.eList.get(5));
-        player.neuter();
         player.getPlayerItems().add(ItemList.herosGarb());
         isRunning = true;
         playerOptions();
@@ -161,58 +161,6 @@ public class Game {
         Misc.InfoString();
         Misc.printSeparator(25);
         Misc.continueKey();
-    }
-
-    /**
-     * Method to print the ingame player menu
-     */
-    public static void printPlayerMenu() {
-        Misc.clearConsole();
-        printLocationInfo();
-        Misc.printHeading("PLAYER MENU");
-        System.out.println("Choose an Option:");
-        System.out.println("[1] Explore");
-        System.out.println("[2] Player");
-        System.out.println("[3] Map");
-        System.out.println("[4] Bag");
-        System.out.println("[5] Rest");
-        System.out.println("[6] Exit");
-    }
-
-    /**
-     * Method to print character sheet info
-     */
-    public static void playerInfo() {
-        Misc.clearConsole();
-        Misc.printHeading("PLAYER INFO");
-        System.out.println("Name: " + player.getName() + "\tHP: " + player.getCurHp() + "/" + player.getMaxHp());
-        Misc.printSeparator(30);
-        System.out.println("LVL: " + player.getLevel() + "\tGold: " + player.getGold());
-        Misc.printSeparator(25);
-        System.out.println("Potions: " + player.getPlayerPotions().size() + "\tRests: " + player.getRests());
-        Misc.printSeparator(25);
-        System.out.println("Weapon Damage: " + player.getWeaponAtk() + "\tArmour Defense: " + player.getArmourDef());
-        Misc.continueKey();
-    }
-
-    /**
-     * Method called when player dies.
-     * If the player was defeated by Count Eripmav, it calls the
-     * {@code Story#badEndingStory()} method.
-     * When the player dies, it displays an end screen message.
-     */
-    public static void playerDied() {
-        Misc.clearConsole();
-        if (Game.player.getCurrentLocation().equals(LocationList.eList.get(5))) {
-            if (Game.player.getCurrentLocation().getEnemy().getCurHp() > 0) {
-                Misc.printHeading(Story.badEndingStory());
-            }
-        } else {
-            Misc.printHeading("You Died...");
-            Misc.printHeading("You earned " + player.getXp() + " XP on your Adventure.");
-        }
-        Misc.continueKey();
-        gameQuit();
     }
 
     /**
@@ -248,6 +196,22 @@ public class Game {
         }
     }
 
+/**
+     * Method to print the ingame player menu
+     */
+    public static void printPlayerMenu() {
+        Misc.clearConsole();
+        printLocationInfo();
+        Misc.printHeading("PLAYER MENU");
+        System.out.println("Choose an Option:");
+        System.out.println("[1] Explore");
+        System.out.println("[2] Player");
+        System.out.println("[3] Map");
+        System.out.println("[4] Bag");
+        System.out.println("[5] Rest");
+        System.out.println("[6] Exit");
+    }
+
     /**
      * Player menu loop
      */
@@ -258,7 +222,7 @@ public class Game {
             switch (input) {
                 case 1:
                     // [1] Explore
-                    Explore.exploreLocation();
+                    playerExplore();
                     break;
                 case 2:
                     // [2] Player
@@ -266,8 +230,7 @@ public class Game {
                     break;
                 case 3:
                     // [3] Map
-                    System.out.println(Game.player.getCurrentLocation().getMap());
-                    Misc.continueKey();
+                    printMapInfo();
                     break;
                 case 4:
                     // [4] Bag
@@ -283,6 +246,45 @@ public class Game {
                     break;
             }
         }
+    }
+
+    /**
+     * Method to call exploreLocation method using player currentLocation variable
+     */
+    public static void playerExplore(){
+        Misc.clearConsole();
+        Game.printLocationInfo();
+        Game.player.checkBonus();
+        Explore.exploreLocation(Game.player.getCurrentLocation());
+    }
+
+    /**
+     * Method to print character sheet info
+     */
+    public static void playerInfo() {
+        Misc.clearConsole();
+        Misc.printHeading("PLAYER INFO");
+        System.out.println("Name: " + player.getName() + "\tHP: " + player.getCurHp() + "/" + player.getMaxHp());
+        Misc.printSeparator(30);
+        System.out.println("LVL: " + player.getLevel() + "\tGold: " + player.getGold());
+        Misc.printSeparator(25);
+        System.out.println("Potions: " + player.getPlayerPotions().size() + "\tRests: " + player.getRests());
+        Misc.printSeparator(25);
+        System.out.println("Weapon Damage: " + player.getWeaponAtk() + "\tArmour Defense: " + player.getArmourDef());
+        Misc.continueKey();
+    }
+
+    /**
+     * Print current location map information.
+     */
+    public static void printMapInfo(){
+        if (!Misc.containsItem("Hero's Map")) {
+            System.out.println("You can't do that without a map.");
+        }
+        else{
+            System.out.println(Game.player.getCurrentLocation().getMap());
+        }
+        Misc.continueKey();
     }
 
     /**
@@ -435,5 +437,25 @@ public class Game {
         Misc.printSeparator(100);
         System.out.println(Game.player.getCurrentLocation().getArea());
         System.out.println(Game.player.getCurrentLocation().getStory());
+    }
+
+    /**
+     * Method called when player dies.
+     * If the player was defeated by Count Eripmav, it calls the
+     * {@code Story#badEndingStory()} method.
+     * When the player dies, it displays an end screen message.
+     */
+    public static void playerDied() {
+        Misc.clearConsole();
+        if (Game.player.getCurrentLocation().equals(LocationList.eList.get(5))) {
+            if (Game.player.getCurrentLocation().getEnemy().getCurHp() > 0) {
+                Misc.printHeading(Story.badEndingStory());
+            }
+        } else {
+            Misc.printHeading("You Died...");
+            Misc.printHeading("You earned " + player.getXp() + " XP on your Adventure.");
+        }
+        Misc.continueKey();
+        gameQuit();
     }
 }
