@@ -4,8 +4,7 @@ import java.util.ArrayList;
  * Player class contains all Player methods, attributes and constructors.
  * 
  * @author Max
- *         TODO (Pre-push: Update version)
- * @version 0.25
+ * @version 0.28
  */
 public class Player {
 
@@ -72,7 +71,7 @@ public class Player {
     /**
      * Getter method for player potions
      * 
-     * @return
+     * @return this.playerPotions
      */
     public ArrayList<Item> getPlayerPotions() {
         return this.playerPotions;
@@ -81,7 +80,7 @@ public class Player {
     /**
      * Setter method for player potions
      * 
-     * @param playerPotions
+     * @param playerPotions Player's potions in bag
      */
     public void setPlayerPotions(ArrayList<Item> playerPotions) {
         this.playerPotions = playerPotions;
@@ -90,7 +89,7 @@ public class Player {
     /**
      * Getter method for player items
      * 
-     * @return
+     * @return this.playerItems
      */
     public ArrayList<Item> getPlayerItems() {
         return this.playerItems;
@@ -99,7 +98,7 @@ public class Player {
     /**
      * Setter method for player items
      * 
-     * @param playerItems
+     * @param playerItems Player's items in bag
      */
     public void setPlayerItems(ArrayList<Item> playerItems) {
         this.playerItems = playerItems;
@@ -108,7 +107,7 @@ public class Player {
     /**
      * Getter method for player current location
      * 
-     * @return
+     * @return this.currentLocation
      */
     public Location getCurrentLocation() {
         return this.currentLocation;
@@ -117,7 +116,7 @@ public class Player {
     /**
      * Setter method for player current location
      * 
-     * @param currentLocation
+     * @param currentLocation Player's current location
      */
     public void setCurrentLocation(Location currentLocation) {
         this.currentLocation = currentLocation;
@@ -126,7 +125,7 @@ public class Player {
     /**
      * Getter method for player weapon atk
      * 
-     * @return
+     * @return this.weaponAtk
      */
     public int getWeaponAtk() {
         return this.weaponAtk;
@@ -135,7 +134,7 @@ public class Player {
     /**
      * Setter method for player weapon atk
      * 
-     * @param weaponAtk
+     * @param weaponAtk Weapon item attack
      */
     public void setWeaponAtk(int weaponAtk) {
         this.weaponAtk = weaponAtk;
@@ -144,52 +143,52 @@ public class Player {
     /**
      * Getter method for player armour def
      * 
-     * @return
+     * @return this.armourDef
      */
     public int getArmourDef() {
         return this.armourDef;
     }
 
     /**
-     * Setter method for player armour def
+     * Setter method for player armour def.
      * 
-     * @param armourDef
+     * @param armourDef Armour item defense
      */
     public void setArmourDef(int armourDef) {
         this.armourDef = armourDef;
     }
 
     /**
-     * Getter method for player bonus atk
+     * Getter method for player bonus atk.
      * 
-     * @return
+     * @return this.bonusAtk
      */
     public int getBonusAtk() {
         return this.bonusAtk;
     }
 
     /**
-     * Setter method for player bonus atk
+     * Setter method for player bonus atk.
      * 
-     * @param bonusAtk
+     * @param bonusAtk Bonus attack buff
      */
     public void setBonusAtk(int bonusAtk) {
         this.bonusAtk = bonusAtk;
     }
 
     /**
-     * Getter method for player bonus def
+     * Getter method for player bonus def.
      * 
-     * @return
+     * @return this.bonusDef
      */
     public int getBonusDef() {
         return this.bonusDef;
     }
 
     /**
-     * Setter method for player bonusdef
+     * Setter method for player bonusdef.
      * 
-     * @param bonusDef
+     * @param bonusDef Bonus defense buff
      */
     public void setBonusDef(int bonusDef) {
         this.bonusDef = bonusDef;
@@ -198,128 +197,129 @@ public class Player {
     /**
      * Getter method for player name
      * 
-     * @return
+     * @return this.name
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter method for player name
+     * Setter method for player name.
      * 
-     * @param name
+     * @param name Name of player
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Getter method for player max hp
+     * Getter method for player max hp.
      * 
-     * @return
+     * @return this.maxHp
      */
     public int getMaxHp() {
         return this.maxHp;
     }
 
     /**
-     * Setter method for player max hp
+     * Setter method for player max hp.
      * 
-     * @param maxHp
+     * @param maxHp Player's max hp
      */
     public void setMaxHp(int maxHp) {
         this.maxHp = maxHp;
     }
 
     /**
-     * Getter method for player current hp
+     * Getter method for player current hp.
      * 
-     * @return
+     * @return this.curHp
      */
     public int getCurHp() {
         return this.curHp;
     }
 
     /**
-     * Setter method for player current hp
+     * Setter method for player current hp.
      * 
-     * @param curHp
+     * @param curHp Player's current hp
      */
     public void setCurHp(int curHp) {
         this.curHp = curHp;
     }
 
     /**
-     * Getter method for player xp
+     * Getter method for player xp.
      * 
-     * @return
+     * @return this.xp
      */
     public int getXp() {
         return this.xp;
     }
 
     /**
-     * Setter method for player xp
+     * Setter method for player xp.
      * 
-     * @param xp
+     * @param xp Player xp
      */
     public void setXp(int xp) {
         this.xp = xp;
     }
 
     /**
-     * Getter method for player level
+     * Getter method for player level.
      * 
-     * @return
+     * @return this.level
      */
     public int getLevel() {
         return this.level;
     }
 
     /**
-     * Setter method for player level
+     * Setter method for player level.
      * 
-     * @param level
+     * @param level Player level
      */
     public void setLevel(int level) {
         this.level = level;
     }
 
     /**
-     * Getter method for player gold
+     * Getter method for player gold.
      * 
-     * @return
+     * @return this.gold
      */
     public int getGold() {
         return this.gold;
     }
 
     /**
-     * Setter method for player gold
+     * Setter method for player gold.
      * 
-     * @param gold
+     * @param gold Gold player has
      */
     public void setGold(int gold) {
         this.gold = gold;
     }
 
     /**
-     * Getter method for player rests
+     * Getter method for player rests.
      * 
-     * @return
+     * @return this.rests Rests player has
      */
     public int getRests() {
         return this.rests;
     }
 
     /**
-     * Setter method for player rests
+     * Setter method for player rests.
      * 
-     * @param rests
+     * @param rests Rests player has
      */
     public void setRests(int rests) {
         this.rests = rests;
     }
+
 
 
     /**
@@ -347,9 +347,12 @@ public class Player {
     }
 
     /**
-     * Player-specific constructor
+     * Player-specific constructor.
+     * <p>
+     * Creates a player with all attributes and a list of items and potions in
+     * player bag.
      * 
-     * @param name
+     * @param name Player name
      */
     public Player(String name) {
         // Setting initial core player attributes
@@ -365,18 +368,18 @@ public class Player {
     }
 
     /**
-     * Player-specific attack calculation
+     * Player-specific attack calculation.
      * 
-     * @return
+     * @return Attack amount
      */
     public int combatAtk() {
         return ((int) (Math.random() * 5) + (xp / 10) + armourDef + bonusDef);
     }
 
     /**
-     * Player-specific defense calculation
+     * Player-specific defense calculation.
      * 
-     * @return
+     * @return Defense amount
      */
     public int combatDef() {
         return ((int) (Math.random() * 5) + (xp / 10) + armourDef + bonusDef);
@@ -384,9 +387,9 @@ public class Player {
 
     /**
      * Player-specific drop method to remove items from bag and add to
-     * currentLocation
+     * currentLocation.
      * 
-     * @param item
+     * @param item Item in player bag
      */
     public void dropItem(Item item) {
         Game.player.currentLocation.getLocationItems().add(item);
@@ -394,9 +397,9 @@ public class Player {
     }
 
     /**
-     * Player-specific pickup method to add items to bag from currentLocation
+     * Player-specific pickup method to add items to bag from currentLocation.
      * 
-     * @param item
+     * @param item Item in current location
      */
     public void pickupItem(Item item) {
         Game.player.getPlayerItems().add(item);

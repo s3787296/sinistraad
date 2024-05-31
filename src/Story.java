@@ -5,13 +5,13 @@
  * @author Amelia
  * @author Jude
  * @author Max
- * TODO (Pre-push: Update version)
- * @version 0.32
+ * @version 0.33
  */
 public class Story {
 
    /**
     * e5Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location E5
@@ -24,6 +24,7 @@ public class Story {
 
    /**
     * e4Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location E4
@@ -63,6 +64,7 @@ public class Story {
 
    /**
     * e3Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location E3
@@ -102,6 +104,7 @@ public class Story {
 
    /**
     * d4Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location D4
@@ -115,6 +118,7 @@ public class Story {
 
    /**
     * d5Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location d5
@@ -128,6 +132,7 @@ public class Story {
 
    /**
     * d3Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location D3
@@ -140,6 +145,7 @@ public class Story {
 
    /**
     * d2Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location D2
@@ -199,6 +205,7 @@ public class Story {
 
    /**
     * c3Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location C3
@@ -212,6 +219,7 @@ public class Story {
 
    /**
     * c2Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location C2
@@ -251,6 +259,7 @@ public class Story {
 
    /**
     * c4Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location c4
@@ -264,6 +273,7 @@ public class Story {
 
    /**
     * b4Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location B4
@@ -278,6 +288,7 @@ public class Story {
 
    /**
     * b5Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location B5
@@ -291,6 +302,7 @@ public class Story {
 
    /**
     * c5Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location C5
@@ -329,6 +341,7 @@ public class Story {
 
    /**
     * a4Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location A4
@@ -342,6 +355,7 @@ public class Story {
 
    /**
     * a3Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location A3
@@ -384,6 +398,7 @@ public class Story {
 
    /**
     * a2Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location A2
@@ -396,6 +411,7 @@ public class Story {
 
    /**
     * b2Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location B2
@@ -408,6 +424,7 @@ public class Story {
 
    /**
     * b3Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location B3
@@ -421,6 +438,7 @@ public class Story {
 
    /**
     * b1Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location B1
@@ -433,6 +451,7 @@ public class Story {
 
    /**
     * a1Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location A1
@@ -472,6 +491,7 @@ public class Story {
 
    /**
     * c1Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location C1
@@ -510,6 +530,7 @@ public class Story {
 
    /**
     * d1Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location D1
@@ -521,6 +542,7 @@ public class Story {
 
    /**
     * e1Story method is displayed when the Direction.travel method is called.
+    * <p>
     * This method is called from the LocationList.createLocations method.
     * 
     * @return Story text for location E1

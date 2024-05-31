@@ -1,11 +1,10 @@
 /**
  * Game class contains all methods related to the main game cycle.
  * 
- * @author  Max
- * @author  Jude
- * @author  Amelia
- * TODO (Pre-push: Update version)
- * @version 0.38
+ * @author Max
+ * @author Jude
+ * @author Amelia
+ * @version 0.40
  */
 public class Game {
 
@@ -20,10 +19,13 @@ public class Game {
 
     /**
      * newGame method within {@code Game#} class.
+     * <p>
      * Calls methods to:
-     * 1. Start the game,
-     * 2. Set the player name,
-     * 3. Move to the game options menu.
+     * <ol>
+     * <li>Start the game</li>
+     * <li>Set the player name</li>
+     * <li>Move to the game options menu</li>
+     * </ol>
      */
     public static void newGame() {
         // Print game title screen
@@ -36,13 +38,15 @@ public class Game {
 
     /**
      * Method to get and confirm player name and create new player.
-     * 
-     * @param name    player name
-     * @param nameSet Whether player has confirmed their name
-     * @param player  New instance of Player(name)
      */
     public static void playerNameSet() {
+        /**
+         * Player name.
+         */
         String name;
+        /**
+         * Whether player has confirmed their name.
+         */
         Boolean nameSet = false;
         // Loop to get player name
         do {
@@ -53,11 +57,12 @@ public class Game {
             do {
                 Misc.clearConsole();
                 Misc.printHeading("Your name is " + name + ".\n");
-                // Misc.sleep(600);
                 Misc.clearConsole();
                 Misc.printHeading("Your name is " + name + ".\nIs that correct?");
-                // Misc.sleep(400);
                 System.out.println("[1] Yes!\n[2] No, let me change it.");
+                /**
+                 * Getting player input.
+                 */
                 int input = Misc.readInt();
                 if (input == 1) {
                     nameSet = true;
@@ -68,12 +73,16 @@ public class Game {
                 }
             } while (!nameSet);
         } while (!nameSet);
-        // Create new player object with name input
+        /**
+         * Create new instance of player object with name input.
+         */
         player = new Player(name);
     }
 
     /**
-     * Print rest menu.
+     * Prints rest options menu.
+     * <p>
+     * Called from {@code Game#restOptions()}.
      */
     public static void printRestMenu() {
         Misc.clearConsole();
@@ -83,17 +92,27 @@ public class Game {
     }
 
     /**
-     * Rest options loop
+     * Runs the restOptions loop.
+     * <p>
+     * If player has at least 1 rest, they can successfully rest.
+     * 
+     * @param input Player input
      */
     public static void restOptions() {
         while (true) {
             if (Game.player.getRests() > 0) {
                 printRestMenu();
+                /**
+                 * Player input from rest option menu.
+                 */
                 int input = Misc.readInt();
                 if (input == 1) {
                     // Player takes rest
                     if (Game.player.getCurHp() < Game.player.getMaxHp()) {
                         Misc.clearConsole();
+                        /**
+                         * Calculates how much player hp is restored by resting.
+                         */
                         int hpRestored = ((Game.player.getMaxHp() - Game.player.getCurHp()) / 2);
                         System.out.println("\nYou took a rest and restored " + hpRestored + " health.");
                         Game.player.setCurHp(Game.player.getCurHp() + hpRestored);
@@ -121,7 +140,7 @@ public class Game {
     }
 
     /**
-     * Print game title screen method
+     * Print game title screen method.
      */
     public static void printGameTitle() {
         Misc.clearConsole();
@@ -165,8 +184,9 @@ public class Game {
 
     /**
      * This method quits and closes the game.
+     * <p>
      * This is called from {@code Game#gameOptions(3)} method, and
-     * is called from {@code Game#playerDied()} method when player dies
+     * is called from {@code Game#playerDied()} method when player dies.
      */
     public static void gameQuit() {
         Misc.clearConsole();
@@ -176,11 +196,14 @@ public class Game {
     }
 
     /**
-     * Game menu loop
+     * Game menu loop.
      */
     public static void gameOptions() {
         while (true) {
             printGameMenu();
+            /**
+             * Option selected from game menu.
+             */
             int input = Misc.readInt();
             switch (input) {
                 case 1:
@@ -196,28 +219,15 @@ public class Game {
         }
     }
 
-/**
-     * Method to print the ingame player menu
-     */
-    public static void printPlayerMenu() {
-        Misc.clearConsole();
-        printLocationInfo();
-        Misc.printHeading("PLAYER MENU");
-        System.out.println("Choose an Option:");
-        System.out.println("[1] Explore");
-        System.out.println("[2] Player");
-        System.out.println("[3] Map");
-        System.out.println("[4] Bag");
-        System.out.println("[5] Rest");
-        System.out.println("[6] Exit");
-    }
-
     /**
-     * Player menu loop
+     * Player menu loop.
      */
     public static void playerOptions() {
         while (isRunning) {
             printPlayerMenu();
+            /**
+             * Option selected from player menu.
+             */
             int input = Misc.readInt();
             switch (input) {
                 case 1:
@@ -288,7 +298,7 @@ public class Game {
     }
 
     /**
-     * Method to print the player's bag menu
+     * Method to print the player's bag menu.
      */
     public static void printBagMenu() {
         Misc.clearConsole();
@@ -304,13 +314,17 @@ public class Game {
 
     /**
      * Method to display bag menu loop.
-     * 
-     * @param viewBag While player is viewing their bag
      */
     public static void bagOptions() {
+        /**
+         * Boolean for whether player is currently viewing their bag.
+         */
         boolean viewBag = true;
         while (viewBag) {
             printBagMenu();
+            /**
+             * Option selected from the bag menu.
+             */
             int input = Misc.readInt();
             switch (input) {
                 case 1:
@@ -342,10 +356,15 @@ public class Game {
     }
 
     /**
-     * Player pickup item handler method
+     * Player pickup item handler method.
+     * <p>
+     * Lets the player pick up location items and add to bag.
      */
     public static void playerPickupItem() {
         if (player.getCurrentLocation().getLocationItems().size() > 0) {
+            /**
+             * Items available to pick up are those in the current location.
+             */
             Item pickupItem = player.getCurrentLocation().getLocationItems().get(0);
             player.pickupItem(pickupItem);
             System.out.println("\nYou picked up the " + pickupItem.getName() + ".");
@@ -356,10 +375,15 @@ public class Game {
     }
 
     /**
-     * Player drop item handler method
+     * Player drop item handler method.
+     * <p>
+     * Lets player drop items from their bag to the current location.
      */
     public static void playerDropItem() {
         if (player.getPlayerItems().size() > 0) {
+            /**
+             * Item to drop from player bag.
+             */
             Item dropItem = player.getPlayerItems().get(0);
             player.dropItem(dropItem);
             System.out.println("\nYou dropped the " + dropItem.getName() + ".");
@@ -370,7 +394,9 @@ public class Game {
     }
 
     /**
-     * View items in bag
+     * View items in player bag.
+     * <p>
+     * Loop runs until it reaches the end of the list of items.
      */
     public static void printPlayerItems() {
         Misc.printHeading("PLAYER ITEMS");
@@ -385,7 +411,9 @@ public class Game {
     }
 
     /**
-     * View potions in bag
+     * View potions in bag.
+     * <p>
+     * Loop runs until it reaches the end of the list of potions.
      */
     public static void printPlayerPotions() {
         Misc.clearConsole();
@@ -401,17 +429,25 @@ public class Game {
     }
 
     /**
-     * Method to use potion in bag and heal player to full, printing amount restored
+     * Method to use potion in bag and heal player to full and print amount of hp
+     * restored.
+     * <p>
+     * Player must have at least 1 potion in bag to use it.
      */
     public static void playerUsePotion() {
         while (true) {
             if (player.getPlayerPotions().size() > 0) {
                 if (Game.player.getCurHp() < Game.player.getMaxHp()) {
-                    Misc.printHeading("Do you want to use a potion? [" + Game.player.getPlayerPotions().size() + "] left.");
+                    Misc.printHeading(
+                            "Do you want to use a potion? [" + Game.player.getPlayerPotions().size() + "] left.");
                     System.out.println("[1] Yes\n[2] No");
+                    /**
+                     * Whether player wants to use potion or not.
+                     */
                     int input = Misc.readInt();
                     if (input == 1) {
-                        System.out.println("You used a potion and restored "+ (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
+                        System.out.println("You used a potion and restored "
+                                + (Game.player.getMaxHp() - Game.player.getCurHp()) + " health.");
                         Game.player.setCurHp(Game.player.getMaxHp());
                         Game.player.getPlayerPotions().remove(Game.player.getPlayerPotions().get(0));
                         Misc.continueKey();
@@ -421,8 +457,7 @@ public class Game {
                         return;
                     }
                 }
-            }
-            else {
+            } else {
                 System.out.println("You can't do that right now.");
                 Misc.continueKey();
                 break;

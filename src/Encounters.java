@@ -4,15 +4,14 @@
  * 
  * @author Max
  * @author Jude
- * TODO (Pre-push: Update version)
- * @version 0.19
+ * @version 0.21
  */
 public class Encounters {
 
     /**
-     * Checking if the player location matches a non-combat player encounter.
+     * Checking if the player location matches any non-combat player encounter.
      * 
-     * @param location
+     * @param location  Player's current location.
      */
     public static void playerEncounters(Location location) {
         if (location.equals(LocationList.cList.get(2))) {
@@ -32,6 +31,9 @@ public class Encounters {
 
     /**
      * Method to run the encounter with Old Remraf, the farmer at the Tilled Plains.
+     * <p>
+     * Adds Hero's Map and Hero's Sword items to player bag depending on current contents of bag.
+     * Different story text called depending on whether player has defeated the Arachnid Matriarch.
      */
     private static void farmerEncounter() {
         // If player bag contains Matriarch's Blood, call relevant story method
@@ -53,10 +55,10 @@ public class Encounters {
 
     /**
      * Method to let player make a purchase when they are within the
-     * {@code apothecaryEncounter()} method
+     * {@code apothecaryEncounter()} method.
      * 
-     * @param gold
-     * @param item
+     * @param gold  Cost of item
+     * @param item  Item selected to purchase
      */
     private static void apothecaryPurchase(int gold, Item item) {
         int option = Misc.readInt();
@@ -87,13 +89,16 @@ public class Encounters {
     }
 
     /**
-     * Method to start the encounter with Nostramus at the Apothecary
+     * Method to run the encounter with Nostramus at the Apothecary.
+     * <p>
      * 
-     * @param purchase Whether player is making a purchase or not.
      */
     private static void apothecaryEncounter() {
         Misc.printHeading(Story.nostramusStartStory());
         Misc.continueKey();
+        /**
+         * Boolean for running the purchase while loop.
+         */
         boolean purchase = true;
         while (purchase) {
             Misc.clearConsole();
@@ -103,9 +108,18 @@ public class Encounters {
             if (Misc.containsItem("Empty Goblet") || Misc.containsItem("Filled Goblet")
                     || Misc.containsItem("Blessed Goblet")) {
                 System.out.println("[1] Healing Potion" + "\n[2] Exit");
+                /**
+                 * Player input from apothecary menu with no goblet.
+                 */
                 int input = Misc.readInt();
                 if (input == 1) {
+                    /**
+                     * Item to purchase is Healing Potion.
+                     */
                     Item item = ItemList.healingPotion();
+                    /**
+                     * Healing potion costs 10 gold.
+                     */
                     int price = 10;
                     System.out.println(
                             "\nAh yes, these are my specialty and a favourite of travelers such as yourself.\nThat'll be "
@@ -121,10 +135,19 @@ public class Encounters {
                     || Misc.containsItem("Blessed Goblet")) {
                 // If the player doesn't have any goblets, display the following menu
                 System.out.println("[1] Healing Potion" + "\n[2] Empty Goblet" + "\n[3] Exit");
+                /**
+                 * Menu option selected if player does not have any goblet items.
+                 */
                 int input = Misc.readInt();
                 // Menu option selected: [1] Healing Potion
                 if (input == 1) {
+                    /**
+                     * Item to purchase is Healing Potion.
+                     */
                     Item item = ItemList.healingPotion();
+                    /**
+                     * Healing potion costs 10 gold.
+                     */
                     int price = 10;
                     System.out.println(
                             "\nAh yes, these are my specialty and a favourite of travelers such as yourself.\nThat'll be "
@@ -134,7 +157,13 @@ public class Encounters {
                 }
                 // Menu option selected: [2] Empty Goblet
                 if (input == 2) {
+                    /**
+                     * Item to purchase is Empty Goblet.
+                     */
                     Item item = ItemList.emptyGoblet();
+                    /**
+                     * Empty Goblet costs 20 gold.
+                     */
                     int price = 20;
                     System.out.println(
                             "\nOh, this old thing? Well... I suppose I could give it to you - for a price.\nI think "
@@ -153,14 +182,18 @@ public class Encounters {
 
     /**
      * Method for player encounter to fill the Empty Goblet with the Lost Maiden's
-     * tears
+     * tears.
+     * <p>
+     * Player's bag must contain the Empty Goblet Item for the encounter to succeed.
      */
     private static void maidenTearsEncounter() {
         // If player bag contains Empty Goblet item, call appropriate story method
         if (Misc.containsItem("Empty Goblet")) {
             Misc.printHeading(Story.tearsSucceedStory());
             Misc.continueKey();
-            // Remove the Empty Goblet from player's bag and add a Filled Goblet
+            /**
+             * Goblet we want to remove is the Empty Goblet.
+             */
             int goblet = Misc.indexItem("Empty Goblet");
             Game.player.getPlayerItems().remove(goblet);
             Game.player.getPlayerItems().add(ItemList.filledGoblet());
@@ -174,7 +207,9 @@ public class Encounters {
 
     /**
      * Method for player encounter to receive Cathedral Key after Forgemaster Fuego
-     * battle
+     * battle.
+     * <p>
+     * Player bag must contain Forgemaster's Greatsword Item for interaction to succeed.
      */
     private static void cathedralKeyEncounter() {
         // If player bag contains Forgemaster's Greatsword, add a Cathedral Key to
@@ -188,8 +223,10 @@ public class Encounters {
     }
 
     /**
-     * Method for player encounter to enchant the filled goblet at the altar in the
-     * cathedral
+     * Method for player encounter to receive the Blessed Goblet Item at the altar in the
+     * cathedral.
+     * <p>
+     * Player bag must contain Filled Goblet Item for encounter to succeed.
      */
     private static void altarEncounter() {
         // If player bag contains Filled Goblet, call appropriate story method
@@ -207,7 +244,11 @@ public class Encounters {
     }
 
     /**
-     * Method for player encounter after they have battled Count Eripmav
+     * Method for player encounter after they have battled Count Eripmav.
+     * <p>
+     * If player bag contains Blessed Goblet Item, they get the great ending.
+     * <p>
+     * If player bag doesn't contain Blessed Goblet Item, they get the good ending.
      */
     private static void eripmavEncounter() {
         if (Game.player.getCurrentLocation().getEnemy().getCurHp() <= 0) {

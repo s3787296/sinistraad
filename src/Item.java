@@ -2,8 +2,7 @@
  * Item class contains all Item methods, attributes and constructors.
  * 
  * @author Max
- *         TODO (Pre-push: Update version)
- * @version 0.9
+ * @version 0.12
  */
 public class Item {
 
@@ -12,7 +11,7 @@ public class Item {
      */
     private String name;
     /**
-     * Type of item, e.g. "Quest" or "Weapon"
+     * Type of item, e.g. "Quest" or "Weapon".
      */
     private String type;
     /**
@@ -26,72 +25,72 @@ public class Item {
     private String buff;
 
     /**
-     * Getter method for item name
+     * Getter method for item name.
      * 
-     * @return
+     * @return this.name
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter method for item name
+     * Setter method for item name.
      * 
-     * @param name
+     * @param name Item display name
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Getter method for item type
+     * Getter method for item type.
      * 
-     * @return
+     * @return this.type
      */
     public String getType() {
         return this.type;
     }
 
     /**
-     * Setter method for item type
+     * Setter method for item type.
      * 
-     * @param type
+     * @param type Type of item
      */
     public void setType(String type) {
         this.type = type;
     }
 
     /**
-     * Getter method for item description
+     * Getter method for item description.
      * 
-     * @return
+     * @return this.desc
      */
     public String getDesc() {
         return this.desc;
     }
 
     /**
-     * Setter method for item description
+     * Setter method for item description.
      * 
-     * @param desc
+     * @param desc Item description
      */
     public void setDesc(String desc) {
         this.desc = desc;
     }
 
     /**
-     * Getter method for item buff
+     * Getter method for item buff.
      * 
-     * @return
+     * @return this.buff
      */
     public String getBuff() {
         return this.buff;
     }
 
     /**
-     * Setter method for item buff
+     * Setter method for item buff.
      * 
-     * @param buff
+     * @param buff Item buff
      */
     public void setBuff(String buff) {
         this.buff = buff;
@@ -100,10 +99,10 @@ public class Item {
     /**
      * Constructor method for item object
      * 
-     * @param name
-     * @param type
-     * @param desc
-     * @param buff
+     * @param name Item name
+     * @param type Type of item
+     * @param desc Item description
+     * @param buff Item buff
      */
     public Item(String name, String type, String desc, String buff) {
         this.name = name;

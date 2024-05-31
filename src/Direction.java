@@ -3,13 +3,12 @@
  * 
  * @author Jude
  * @author Max
- * TODO (Pre-push: Update version)
- * @version 0.19
+ * @version 0.21
  */
 public class Direction {
 
     /**
-     * Method to print the travel menu
+     * Method to print the travel menu.
      */
     public static void printTravelMenu() {
         Misc.clearConsole();
@@ -24,18 +23,17 @@ public class Direction {
     }
 
     /**
-     * Method to invalid direction message if player can't travel that way.
+     * Method to print invalid direction message if player can't travel that way.
      */
     private static void directionBlocked() {
         System.out.println("\nYou can't go that way. Select another direction.");
         Misc.continueKey();
-        ;
     }
 
     /**
      * Method to print to set updated location.
      * 
-     * @param setLocation
+     * @param setLocation Player's current location.
      */
     private static void setDirection(Location setLocation) {
         Game.player.setCurrentLocation(setLocation);
@@ -44,8 +42,8 @@ public class Direction {
     /**
      * Method to identify player's current location.
      * 
-     * @param checkLocation
-     * @param validLocation
+     * @param checkLocation Player's current location
+     * @param validLocation Check for whether player location is valid
      * @return validLocation
      */
     private static boolean checkDirection(Location checkLocation) {
@@ -58,12 +56,17 @@ public class Direction {
 
     /**
      * Travel method for player movement around map.
-     * 
-     * @param input Player input for direction to travel
+     * <p>
+     * Method reads travel menu option selected by player, then checks to see
+     * whether input matches north, south, east, or west. Then checks current player
+     * location and then sets new location.
      */
     public static void travel() {
         while (true) {
             printTravelMenu();
+            /**
+             * Store player input from travel menu options.
+             */
             int input = Misc.readTravel();
             switch (input) {
                 // Input == North
