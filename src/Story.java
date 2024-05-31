@@ -335,8 +335,9 @@ public class Story {
     */
    public static String a4Story() {
       return String.join("\n",
-            "Walking further again through the forest's winding paths, the path appears to neaten up to the west, becoming more well-maintained.",
-            "You must be approaching the castle.");
+            "Before you realise, you're facing the entrance to the castle courtyard, a neat dirt path lined by tombstones crowded together, each significantly older than the last.",
+            "Perched upon the entrance of the Castle sits a gargoyle statue, unmoving. You see a large, rusty key fastened to a collar on the statue's neck.",
+            "It looks like the key to the castle door will be a little more difficult to acquire.");
    }
 
    /**
@@ -347,9 +348,7 @@ public class Story {
     */
    public static String a3Story() {
       return String.join("\n",
-            "Before you realise, you're facing the entrance to the castle courtyard, a neat dirt path lined by tombstones crowded together, each significantly older than the last.",
-            "Perched upon the entrance of the Castle sits a gargoyle statue, unmoving. You see a large, rusty key fastened to a collar on the statue's neck.",
-            "It looks like the key to the castle door will be a little more difficult to acquire.");
+            "The door opens with a resounding THUNK. You look onward, your eyes dancing around the inside of the castle as the tingle of anticipation walks your spine. ");
    }
 
    /**
