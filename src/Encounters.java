@@ -125,7 +125,7 @@ public class Encounters {
                 // Menu option selected: [1] Healing Potion
                 if (input == 1) {
                     Item item = ItemList.healingPotion();
-                    int price = 20;
+                    int price = 10;
                     System.out.println(
                             "\nAh yes, these are my specialty and a favourite of travelers such as yourself.\nThat'll be "
                                     + price + "g.");
@@ -212,9 +212,25 @@ public class Encounters {
     private static void eripmavEncounter() {
         if (Game.player.getCurrentLocation().getEnemy().getCurHp() <= 0) {
             if (Misc.containsItem("Blessed Goblet")) {
+                Misc.clearConsole();
+                Misc.titleArt();
+                Misc.sleep(300);
                 Misc.printHeading(Story.greatEndingStory());
+                Misc.sleep(300);
+                Misc.printHeading("Congratulations on defeating the evil Count Eripmav and saving the town!");
+                Game.isRunning=false;
+                System. exit(0);
+
             } else {
+                Misc.clearConsole();
+                Misc.titleArt();
+                Misc.sleep(300);
                 Misc.printHeading(Story.goodEndingStory());
+                Misc.sleep(300);
+                Misc.printHeading("You won the battle! But did you really defeat the Count? Replay and try all your options!");
+                Game.isRunning=false;
+                System. exit(0);
+
             }
         }
     }

@@ -264,6 +264,7 @@ public class Misc {
     public static void InfoString() {
         System.out.println("Welcome to Sinistraad, a thrilling text based adventure!\n"
                 + "Your mission is to set out on a perilous journey into the Duskwood Forest to slay the evil Count Eripmav and free your town from his influence.\n\n"
+                +"while adventuring, make sure to exit the movement menu and \"explore \"your locatoion so you dont miss any key interactions!\n\n"
                 + "While playing you have multiple options that allow you to do different things:\n"
                 + "Explore: Allows you to move in the four cardinal directions, however if you have nowhere to go, you wont be allowed, check the map to see your options!\n"
                 + "Player:  Displays the players stats! Check your health, damage, XP, gold, how many potions and rests you have, and your damage and defense stats!\n"
