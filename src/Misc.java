@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Misc {
 
     /**
-     * Declaring new instance of scanner
+     * New instance of Scanner for player input.
      */
     static Scanner scanner = new Scanner(System.in);
 

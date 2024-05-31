@@ -2,17 +2,27 @@
  * Item class contains all Item methods, attributes and constructors.
  * 
  * @author Max
- * TODO (Pre-push: Update version)
+ *         TODO (Pre-push: Update version)
  * @version 0.9
  */
 public class Item {
 
     /**
-     * Attributes for item object
+     * Item display name, e.g. "Empty Goblet".
      */
     private String name;
+    /**
+     * Type of item, e.g. "Quest" or "Weapon"
+     */
     private String type;
+    /**
+     * Item description for player to read.
+     */
     private String desc;
+    /**
+     * Item buff, used to modify player attack and damage stats, and use in loops to
+     * grant player access to locked locations.
+     */
     private String buff;
 
     /**

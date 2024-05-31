@@ -8,18 +8,41 @@
  */
 public class Enemy {
 
-    // Core enemy attributes
     /**
-     * Core enemy attributes
+     * Name variable for enemy's display name, e.g. "Lost Maiden".
      */
     private String name;
+    /**
+     * The type of enemy, e.g. "Boss"
+     */
     private String type;
+    /**
+     * The enemy's pre-battle story.
+     */
     private String before;
+    /**
+     * The enemy's post-battle story.
+     */
     private String after;
+    /**
+     * Enemy's max HP.
+     */
     private int maxHp;
+    /**
+     * Enemy's current HP.
+     */
     private int curHp;
+    /**
+     * Amount of XP for combat calculations.
+     */
     private int xp;
+    /**
+     * Enemy level for combat calculations.
+     */
     private int level;
+    /**
+     * Any items the Enemy drops upon defeat.
+     */
     private Item item;
 
     // Getter method for enemy's name

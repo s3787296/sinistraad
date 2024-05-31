@@ -14,7 +14,7 @@ public class Game {
      */
     public static Player player;
     /**
-     * isRunning is used to check whether the game is running.
+     * isRunning is used to store the game state.
      */
     public static boolean isRunning;
 

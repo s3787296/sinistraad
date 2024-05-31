@@ -3,37 +3,70 @@ import java.util.ArrayList;
 /**
  * Player class contains all Player methods, attributes and constructors.
  * 
- * @author  Max
- * TODO (Pre-push: Update version)
+ * @author Max
+ *         TODO (Pre-push: Update version)
  * @version 0.25
  */
 public class Player {
 
     /**
-     * Core player attributes
+     * Name of current player.
      */
     private String name;
+    /**
+     * Player's max HP.
+     */
     private int maxHp;
+    /**
+     * Player's current HP.
+     */
     private int curHp;
+    /**
+     * Experience points player has, used in combat loop.
+     */
     private int xp;
+    /**
+     * Player level, used in combat loop.
+     */
     private int level = xp / 10;
-
+    /**
+     * Player's current map location, used in logic while travelling and exploring.
+     */
     private Location currentLocation;
+    /**
+     * playerItems ArrayList stores the items that the player has in their bag.
+     */
     private ArrayList<Item> playerItems;
+    /**
+     * playerPotions ArrayList stores the potions that the player has in their bag.
+     */
     private ArrayList<Item> playerPotions;
 
     /**
-     * Additional player attributes
+     * Amount of gold the player has, used to buy the Empty Goblet and the Healing
+     * Potion from the Apothecary.
      */
     private int gold;
+    /**
+     * The number of rests the player has.
+     */
     private int rests;
 
     /**
-     * Player weapon, armour and buff bonuses
+     * Attack points of Weapon Items in player's bag.
      */
     private int weaponAtk;
+    /**
+     * Defense points of Armour Items in player's bag.
+     */
     private int armourDef;
+    /**
+     * Bonus player attack from Item Buff.
+     */
     private int bonusAtk;
+    /**
+     * Bonus player defense from Item Buff.
+     */
     private int bonusDef;
 
     /**
@@ -335,7 +368,8 @@ public class Player {
     }
 
     /**
-     * Player-specific drop method to remove items from bag and add to currentLocation
+     * Player-specific drop method to remove items from bag and add to
+     * currentLocation
      * 
      * @param item
      */

@@ -4,19 +4,35 @@ import java.util.ArrayList;
  * Location class contains all Location attributes and constructors.
  * 
  * @author Max
- * TODO (Pre-push: Update version)
+ *         TODO (Pre-push: Update version)
  * @version 0.27
  */
 public class Location {
 
     /**
-     * Core location attributes
+     * Location coordinates, e.g. "A3".
      */
     private String name;
+    /**
+     * Story text for the map location.
+     */
     private String story;
+    /**
+     * Location area used as title to display, e.g. "DUSKWOOD FOREST".
+     */
     private String area;
+    /**
+     * The map for current location.
+     */
     private String map;
+    /**
+     * Any items that are contained within the location. Used in the locationItems
+     * arrayList.
+     */
     private Item item;
+    /**
+     * Any enemies that spawn in the map location.
+     */
     private Enemy enemy;
     /**
      * Location specific arraylist which will be modified when items are dropped or

@@ -11,27 +11,27 @@ import java.util.ArrayList;
 public class LocationList {
 
     /**
-     * Arraylist to store location objects a1...a5 at corresponding index
+     * Arraylist to store location objects a1...a5 at corresponding index.
      */
     public static ArrayList<Location> aList = new ArrayList<Location>();
 
     /**
-     * Arraylist to store location objects b1...b5 at corresponding index
+     * Arraylist to store location objects b1...b5 at corresponding index.
      */
     public static ArrayList<Location> bList = new ArrayList<Location>();
 
     /**
-     * Arraylist to store location objects c1...c5 at corresponding index
+     * Arraylist to store location objects c1...c5 at corresponding index.
      */
     public static ArrayList<Location> cList = new ArrayList<Location>();
 
     /**
-     * Arraylist to store location objects c1...c5 at corresponding index
+     * Arraylist to store location objects c1...c5 at corresponding index.
      */
     public static ArrayList<Location> dList = new ArrayList<Location>();
 
     /**
-     * Arraylist to store location objects e1...e5 at corresponding index
+     * Arraylist to store location objects e1...e5 at corresponding index.
      */
     public static ArrayList<Location> eList = new ArrayList<Location>();
 
