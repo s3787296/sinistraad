@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * 
  * @author  Max
  * @author  Jude
- * @version 0.29
+ * @version 1.0
  */
 public class LocationList {
 

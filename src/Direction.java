@@ -3,7 +3,7 @@
  * 
  * @author Jude
  * @author Max
- * @version 0.21
+ * @version 1.0
  */
 public class Direction {
 

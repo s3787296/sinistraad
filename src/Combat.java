@@ -2,7 +2,7 @@
  * Combat class runs the combat engine.
  * 
  * @author Max
- * @version 0.25
+ * @version 1.0
  */
 public class Combat {
 

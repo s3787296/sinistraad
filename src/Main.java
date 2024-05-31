@@ -3,8 +3,7 @@
  * 
  * @author Max
  * @author Jude
- * TODO (Pre-push: Update version)
- * @version 0.11
+ * @version 1.0
  */
 public class Main {
     /**

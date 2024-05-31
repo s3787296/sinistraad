@@ -2,7 +2,7 @@
  * Item class contains all Item methods, attributes and constructors.
  * 
  * @author Max
- * @version 0.12
+ * @version 1.0
  */
 public class Item {
 

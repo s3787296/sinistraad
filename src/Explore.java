@@ -3,7 +3,7 @@
  * items.
  * 
  * @author Max
- * @version 0.18
+ * @version 1.0
  */
 public class Explore {
 

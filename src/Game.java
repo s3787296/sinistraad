@@ -4,7 +4,7 @@
  * @author Max
  * @author Jude
  * @author Amelia
- * @version 0.40
+ * @version 1.0
  */
 public class Game {
 

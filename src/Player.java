@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Player class contains all Player methods, attributes and constructors.
  * 
  * @author Max
- * @version 0.28
+ * @version 1.0
  */
 public class Player {
 

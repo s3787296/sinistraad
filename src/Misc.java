@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author Max
  * @author Jude
  * @author Amelia
- * @version 0.25
+ * @version 1.0
  */
 public class Misc {
 

@@ -3,7 +3,7 @@
  * 
  * @author Max
  * @author Jude
- * @version 0.24
+ * @version 1.0
  */
 public class Enemy {
 
