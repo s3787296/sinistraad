@@ -362,7 +362,8 @@ public class Story {
     */
    public static String a3Story() {
       return String.join("\n",
-            "The door opens with a resounding THUNK. You look onward, your eyes dancing around the inside of the castle as the tingle of anticipation walks your spine. ");
+            "The door opens with a resounding THUNK. You look onward, your eyes dancing around the inside of the castle as the tingle of anticipation walks your spine."+
+           "\n"+"the pristine interior of the building starkly contrasting against the aged decaying exterior of the castle as the well lit torch sconces dance with light ");
    }
 
    /**
