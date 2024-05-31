@@ -245,7 +245,7 @@ public class Enemy {
         this.type = type;
         this.maxHp = maxHp;
         this.curHp = maxHp;
-        this.xp = (int) ((Math.random() * 5) + 5 +(level / 10) + (maxHp / 10));
+        this.xp = (int) ((Math.random() * 5) + (level / 10) + (maxHp / 10));
         this.level = level;
         this.before = before;
         this.after = after;
@@ -258,7 +258,7 @@ public class Enemy {
      * @return The amount of damage the enemy does.
      */
     public int combatAtk() {
-        return (int) ((Math.random() * 5) + 5 + (level / 10) + (maxHp / 10));
+        return (int) ((Math.random() * 5) + (level / 10) + (maxHp / 10));
     }
 
     /**
@@ -267,6 +267,6 @@ public class Enemy {
      * @return The amount of defense the enemy has.
      */
     public int combatDef() {
-        return (int) ((Math.random() * 5) + 5 +(level / 10) + (maxHp / 10));
+        return (int) ((Math.random() * 5) + (level / 10) + (maxHp / 10));
     }
 }
