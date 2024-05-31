@@ -292,7 +292,7 @@ public class Game {
         Misc.printHeading("PLAYER INFO");
         System.out.println("Name: " + player.getName() + "\tHP: " + player.getCurHp() + "/" + player.getMaxHp());
         Misc.printSeparator(30);
-        System.out.println("LVL: " + player.getLevel() + "\tGold: " + player.getGold());
+        System.out.println("XP: " + player.getXp() + "\tGold: " + player.getGold());
         Misc.printSeparator(25);
         System.out.println("Potions: " + player.getPlayerPotions().size() + "\tRests: " + player.getRests());
         Misc.printSeparator(25);

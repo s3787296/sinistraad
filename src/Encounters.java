@@ -84,6 +84,7 @@ public class Encounters {
         } else if (option == 2) {
             System.out.println("\nOh... Very well... Make sure to stop by again!");
             Misc.continueKey();
+            return;
 
         }
     }
@@ -190,7 +191,6 @@ public class Encounters {
         // If player bag contains Empty Goblet item, call appropriate story method
         if (Misc.containsItem("Empty Goblet")) {
             Misc.printHeading(Story.tearsSucceedStory());
-            Misc.continueKey();
             /**
              * Goblet we want to remove is the Empty Goblet.
              */
@@ -201,7 +201,6 @@ public class Encounters {
             // If player bag does not contain Empty Goblet item, call appropriate story
             // method
             Misc.printHeading(Story.tearsFailStory());
-            Misc.continueKey();
         }
     }
 
@@ -218,7 +217,6 @@ public class Encounters {
             Game.player.getPlayerItems().add(ItemList.cathedralKey());
             System.out.println(
                     "You take the key from Forgemaster Fuego's belt.\n You can now unlock the door to the Cathedral.");
-            Misc.continueKey();
         }
     }
 
@@ -232,14 +230,12 @@ public class Encounters {
         // If player bag contains Filled Goblet, call appropriate story method
         if (Misc.containsItem("Filled Goblet")) {
             Misc.printHeading(Story.altarSuccessStory());
-            Misc.continueKey();
             // Remove Filled Goblet from player's bag and add a Blessed Goblet
             Game.player.getPlayerItems().remove(ItemList.filledGoblet());
             Game.player.getPlayerItems().add(ItemList.blessedGoblet());
         } else {
             // If player bag does not contain Filled Goblet, call appropriate story method
             Misc.printHeading(Story.altarFailStory());
-            Misc.continueKey();
         }
     }
 
@@ -271,7 +267,6 @@ public class Encounters {
                 Misc.printHeading("You won the battle! But did you really defeat the Count? Replay and try all your options!");
                 Game.isRunning=false;
                 System. exit(0);
-
             }
         }
     }
