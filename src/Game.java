@@ -220,6 +220,22 @@ public class Game {
     }
 
     /**
+     * Method to print the ingame player menu.
+     */
+    public static void printPlayerMenu() {
+        Misc.clearConsole();
+        printLocationInfo();
+        Misc.printHeading("PLAYER MENU");
+        System.out.println("Choose an Option:");
+        System.out.println("[1] Explore");
+        System.out.println("[2] Player");
+        System.out.println("[3] Map");
+        System.out.println("[4] Bag");
+        System.out.println("[5] Rest");
+        System.out.println("[6] Exit");
+    }
+
+    /**
      * Player menu loop.
      */
     public static void playerOptions() {
