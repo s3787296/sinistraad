@@ -3,14 +3,15 @@
  * items.
  * 
  * @author Max
- *         TODO (Pre-push: Update version)
- * @version 0.16
+ * @version 0.18
  */
 public class Explore {
 
     /**
-     * Method to automate the process of location traversal, combat and adding
-     * items.
+     * Explore method deals with player exploration.
+     * <p>
+     * Method to automate the process of location traversal, combat, non-combat
+     * player encounters, and adding items.
      */
     public static void exploreLocation(Location location) {
         if (location.getEnemy() != null) {

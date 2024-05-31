@@ -4,15 +4,14 @@
  * @author Max
  * @author Amelia
  * @author Jude
- * TODO (Pre-push: Update version)
- * @version 0.18
+ * @version 0.21
  */
 public class ItemList {
 
     /**
-     * Method to create and return the Hero's Sword item
+     * Method to create and return the Hero's Sword item.
      * 
-     * @return
+     * @return New instance of Hero's Sword
      */
     public static Item herosSword() {
         Item herosSword = new Item("Hero's Sword", "Weapon", "Old Remraf had this sword laying around. It's worn with age, and feels good in your hand.", "+10 Attack");
@@ -20,9 +19,9 @@ public class ItemList {
     }
 
     /**
-     * Method to create and return the Hero's Garb item
+     * Method to create and return the Hero's Garb item.
      * 
-     * @return
+     * @return New instance of Hero's Garb
      */
     public static Item herosGarb() {
         Item herosGarb = new Item("Hero's Garb", "Armour",
@@ -32,9 +31,9 @@ public class ItemList {
     }
 
     /**
-     * Method to create and return the Wolfhide Armour item
+     * Method to create and return the Wolfhide Armour item.
      * 
-     * @return
+     * @return New instance of Wolfhide Armour
      */
     public static Item wolfhideArmour() {
         Item wolfhideArmour = new Item("Wolfhide Armour", "Armour",
@@ -43,9 +42,9 @@ public class ItemList {
         return wolfhideArmour;
     }
     /**
-     * Method to create and return the Hero's Map item
+     * Method to create and return the Hero's Map item.
      * 
-     * @return
+     * @return New instance of Hero's Map
      */
     public static Item herosMap() {
         Item herosMap = new Item("Hero's Map", "Quest",
@@ -55,9 +54,9 @@ public class ItemList {
     }
 
     /**
-     * Method to create and return the Matriarch's Blood item
+     * Method to create and return the Matriarch's Blood item.
      * 
-     * @return
+     * @return New instance of Matriarch's Blood
      */
     public static Item matriarchsBlood() {
         Item matriarchsBlood = new Item("Matriarch's Blood", "Bonus",
@@ -67,9 +66,9 @@ public class ItemList {
     }
 
     /**
-     * Method to create and return the Chamber Key item
+     * Method to create and return the Chamber Key item.
      * 
-     * @return
+     * @return New instance of Cathedral Key
      */
     public static Item cathedralKey() {
         Item cathedralKey = new Item("Cathedral Key", "Quest",
@@ -79,9 +78,9 @@ public class ItemList {
     }
 
     /**
-     * Method to create and return the Gate Key item
+     * Method to create and return the Gate Key item.
      * 
-     * @return
+     * @return New instance of Gate Key
      */
     public static Item gateKey() {
         Item gateKey = new Item("Gate Key", "Quest",
@@ -91,9 +90,9 @@ public class ItemList {
     }
 
     /**
-     * Method to create and return the Maiden's Blessing item
+     * Method to create and return the Maiden's Blessing item.
      * 
-     * @return
+     * @return New instance of Maiden's Blessing
      */
     public static Item maidensBlessing() {
         Item maidensBlessing = new Item("Maiden's Blessing", "Bonus",
@@ -103,9 +102,9 @@ public class ItemList {
     }
 
     /**
-     * Method to create and return the Healing Potion item
+     * Method to create and return the Healing Potion item.
      * 
-     * @return
+     * @return New instance of Healing Potion
      */
     public static Item healingPotion() {
         Item healingPotion = new Item("Healing Potion", "Consumable",
@@ -115,9 +114,9 @@ public class ItemList {
     }
 
     /**
-     * Method to create and return the Empty Goblet item
+     * Method to create and return the Empty Goblet item.
      * 
-     * @return
+     * @return New instance of Empty Goblet
      */
     public static Item emptyGoblet() {
         Item emptyGoblet = new Item("Empty Goblet", "Quest",
@@ -127,9 +126,9 @@ public class ItemList {
     }
 
     /**
-     * Method to create and return the Filled Goblet item
+     * Method to create and return the Filled Goblet item.
      * 
-     * @return
+     * @return New instance of Filled Goblet
      */
     public static Item filledGoblet() {
         Item filledGoblet = new Item("Filled Goblet", "Quest",
@@ -139,9 +138,9 @@ public class ItemList {
     }
 
     /**
-     * Method to create and return the Forgemaster's Greatsword item
+     * Method to create and return the Forgemaster's Greatsword item.
      * 
-     * @return
+     * @return New instance of Forgemaster's Greatsword
      */
     public static Item forgemastersGreatsword() {
         Item forgemastersGreatsword = new Item("Forgemaster's Greatsword", "Weapon",
@@ -151,9 +150,9 @@ public class ItemList {
     }
 
     /**
-     * Method to create and return the Blessed Goblet item
+     * Method to create and return the Blessed Goblet item.
      * 
-     * @return
+     * @return New instance of Blessed Goblet
      */
     public static Item blessedGoblet() {
         Item blessedGoblet = new Item("Blessed Goblet", "Quest",

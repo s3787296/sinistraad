@@ -2,8 +2,7 @@
  * Combat class runs the combat engine.
  * 
  * @author Max
- * TODO (Pre-push: Update version)
- * @version 0.22
+ * @version 0.25
  */
 public class Combat {
 
@@ -26,24 +25,34 @@ public class Combat {
     }
 
     /**
-     * Main battle method
+     * Main battle method.
      * 
-     * @param enemy   The enemy the player is fighting.
+     * @param enemy   The enemy the player is fighting
      * @param victory Determines whether player has won battle
-     * @return victory = true
+     * @return victory
      */
     public static boolean battle(Enemy enemy) {
-        // Return variable for post battle use
+        /**
+         * Boolean variable to store victory status.
+         */
         boolean victory = false;
         // Main battle loop
         while (true) {
             // Battle heading and options
             printBattle(enemy);
-            // Getting player input
+            /**
+             * Getting player input for battle option.
+             */
             int input = Misc.readInt();
-            // player chooses attack
+            // Player chooses attack
             if (input == 1) {
+                /**
+                 * Variable for damage dealt to enemy.
+                 */
                 int dmgDealt;
+                /**
+                 * Variable for player damage taken.
+                 */
                 int dmgTaken;
                 // Player damage dealt calculation
                 if (Game.player.combatAtk() >= enemy.combatDef()) {
@@ -78,10 +87,14 @@ public class Combat {
                 Misc.printHeading("You defeated the " + enemy.getName() + "!");
                 System.out.println("You earned " + enemy.getXp() + "XP!");
                 Game.player.setXp(Game.player.getXp() + enemy.getXp());
-                // Calculate random drops
-                boolean addRest = (Math.random() * 10 + 1 <= 2.5); // 25% chance
+                /**
+                 * Calculates random drops from combat.
+                 */
                 int goldEarned = (int) (Math.random() * enemy.getXp());
-                // If player earned rest
+                /**
+                 * Calculates whether player earned a rest (25% chance).
+                 */
+                boolean addRest = (Math.random() * 10 + 1 <= 2.5); // 25% chance
                 if (addRest) {
                     Game.player.setRests(Game.player.getRests() + 1);
                     System.out.println("You fought well and earned an additional rest.\nRests available: ["
@@ -136,7 +149,9 @@ public class Combat {
                 }
                 // If enemy is a boss or player loses 50% chance
                 else {
-                    // calculating damage for failed escape
+                    /**
+                     * Calculating damage for failed escape.
+                     */
                     int failedEscape = (int) (Math.random() * 10) + 1;
                     Misc.printHeading("You failed to escape and took " + failedEscape + " damage.");
                     Misc.continueKey();

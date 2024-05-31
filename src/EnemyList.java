@@ -3,13 +3,12 @@
  * 
  * @author Max
  * @author Jude
- * TODO (Pre-push: Update version)
- * @version 0.18
+ * @version 0.21
  */
 public class EnemyList {
 
     /**
-     * Creating new instance of enemy Feral Duskwolf
+     * Creating new instance of enemy Feral Duskwolf.
      * 
      * @return New instance of Feral Duskwolf
      */
@@ -19,7 +18,7 @@ public class EnemyList {
     }
 
     /**
-     * Creating new instance of boss Alpha Duskwolf
+     * Creating new instance of boss Alpha Duskwolf.
      * 
      * @return New instance of Alpha Duskwolf
      */
@@ -30,7 +29,7 @@ public class EnemyList {
     }
 
     /**
-     * Creating new instance of enemy Arachnid Spawn
+     * Creating new instance of enemy Arachnid Spawn.
      * 
      * @return New instance of Arachnid Spawn
      */
@@ -40,7 +39,7 @@ public class EnemyList {
     }
 
     /**
-     * Creating new instance of boss Arachnid Matriarch
+     * Creating new instance of boss Arachnid Matriarch.
      * 
      * @return New instance of Arachnid Matriarch
      */
@@ -51,7 +50,7 @@ public class EnemyList {
     }
 
     /**
-     * Creating new instance of enemy Lost Spirit
+     * Creating new instance of enemy Lost Spirit.
      * 
      * @return New instance of Lost Spirit
      */
@@ -61,7 +60,7 @@ public class EnemyList {
     }
 
     /**
-     * Creating new instance of boss Lost Maiden
+     * Creating new instance of boss Lost Maiden.
      * 
      * @return New instance of Lost Maiden
      */
@@ -72,7 +71,7 @@ public class EnemyList {
     }
 
     /**
-     * Creating new instance of enemy Stoneskin Gargoyle
+     * Creating new instance of enemy Stoneskin Gargoyle.
      * 
      * @return New instance of Stoneskin Gargoyle
      */
@@ -82,7 +81,7 @@ public class EnemyList {
     }
 
     /**
-     * Creating new instance of boss Gatekeeper Syek
+     * Creating new instance of boss Gatekeeper Syek.
      * 
      * @return New instance of Gatekeeper Syek
      */
@@ -93,7 +92,7 @@ public class EnemyList {
     }
 
     /**
-     * Creating new instance of enemy Animated Guard
+     * Creating new instance of enemy Animated Guard.
      * 
      * @return New instance of Animated Guard
      */
@@ -103,7 +102,7 @@ public class EnemyList {
     }
 
     /**
-     * Creating new instance of boss Forgemaster Fuego
+     * Creating new instance of boss Forgemaster Fuego.
      * 
      * @return New instance of Forgemaster Fuego
      */
@@ -114,7 +113,7 @@ public class EnemyList {
     }
 
     /**
-     * Creating new instance of boss Count Eripmav
+     * Creating new instance of boss Count Eripmav.
      * 
      * @return New instance of Count Eripmav
      */

@@ -4,8 +4,7 @@ import java.util.ArrayList;
  * Location class contains all Location attributes and constructors.
  * 
  * @author Max
- *         TODO (Pre-push: Update version)
- * @version 0.27
+ * @version 0.30
  */
 public class Location {
 
@@ -41,138 +40,138 @@ public class Location {
     private ArrayList<Item> locationItems;
 
     /**
-     * Getter method for location area
+     * Getter method for location area.
      * 
-     * @return
+     * @return this.area
      */
     public String getArea() {
         return this.area;
     }
 
     /**
-     * Setter method for location area
+     * Setter method for location area.
      * 
-     * @param area
+     * @param area Map coordinates
      */
     public void setArea(String area) {
         this.area = area;
     }
 
     /**
-     * Getter method for location name
+     * Getter method for location name.
      * 
-     * @return
+     * @return this.name
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter method for location name
+     * Setter method for location name.
      * 
-     * @param name
+     * @param name Location coordinates
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Getter method for location story
+     * Getter method for location story.
      * 
-     * @return
+     * @return this.story
      */
     public String getStory() {
         return this.story;
     }
 
     /**
-     * Setter method for location story
+     * Setter method for location story.
      * 
-     * @param story
+     * @param story Location story text
      */
     public void setStory(String story) {
         this.story = story;
     }
 
     /**
-     * Getter method for location's spawnable enemies
+     * Getter method for location's spawnable enemies.
      * 
-     * @return
+     * @return this.enemy
      */
     public Enemy getEnemy() {
         return this.enemy;
     }
 
     /**
-     * Setter method for location's spawnable enemies
+     * Setter method for location's spawnable enemies.
      * 
-     * @param enemy
+     * @param enemy Enemies in location
      */
     public void setEnemy(Enemy enemy) {
         this.enemy = enemy;
     }
 
     /**
-     * Getter method for locations map
+     * Getter method for locations map.
      * 
-     * @return
+     * @return this.map
      */
     public String getMap() {
         return this.map;
     }
 
     /**
-     * Setter method for locations map
+     * Setter method for location map.
      * 
-     * @param map
+     * @param map Location map
      */
     public void setMap(String map) {
         this.map = map;
     }
 
     /**
-     * Getter method for location items
+     * Getter method for location items.
      * 
-     * @return
+     * @return this.item
      */
     public Item getItem() {
         return this.item;
     }
 
     /**
-     * Setter method for location items
+     * Setter method for location items.
      * 
-     * @param item
+     * @param item Location items
      */
     public void setItem(Item item) {
         this.item = item;
     }
 
     /**
-     * Getter method for location arraylist
+     * Getter method for locationItems arraylist.
      * 
-     * @return
+     * @return this.locationItems
      */
     public ArrayList<Item> getLocationItems() {
         return this.locationItems;
     }
 
     /**
-     * Setter method for location arraylist
+     * Setter method for location arraylist.
      * 
-     * @param itemList
+     * @param itemList Items in current location
      */
     public void setLocationItems(ArrayList<Item> itemList) {
         this.locationItems = itemList;
     }
 
     /**
-     * Primary constructor for location object
+     * Primary constructor for location object which contains no enemy.
      * 
-     * @param name
-     * @param map
-     * @param area
-     * @param story
+     * @param name  Location coordinates
+     * @param map   Location map
+     * @param area  Location area name
+     * @param story Location story text
      */
     public Location(String name, String map, String area, String story) {
         this.name = name;
@@ -183,13 +182,13 @@ public class Location {
     }
 
     /**
-     * Secondary constructor for location object
+     * Secondary constructor for location object which contains an enemy.
      * 
-     * @param name
-     * @param map
-     * @param area
-     * @param story
-     * @param enemy
+     * @param name  Location coordinates
+     * @param map   Location map
+     * @param area  Location area name
+     * @param story Location story text
+     * @param enemy Spawnable enemies in location
      */
     public Location(String name, String map, String area, String story, Enemy enemy) {
         this.name = name;
