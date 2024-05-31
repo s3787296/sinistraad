@@ -25,10 +25,6 @@ public class Player {
      */
     private int xp;
     /**
-     * Player level, used in combat loop.
-     */
-    private int level = xp / 10;
-    /**
      * Player's current map location, used in logic while travelling and exploring.
      */
     private Location currentLocation;
@@ -267,24 +263,6 @@ public class Player {
     }
 
     /**
-     * Getter method for player level.
-     * 
-     * @return this.level
-     */
-    public int getLevel() {
-        return this.level;
-    }
-
-    /**
-     * Setter method for player level.
-     * 
-     * @param level Player level
-     */
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    /**
      * Getter method for player gold.
      * 
      * @return this.gold
@@ -327,13 +305,13 @@ public class Player {
      */
     public void checkBonus(){
         if (Misc.containsItem("Hero's Sword")) {
-            Game.player.setWeaponAtk(10);
+            Game.player.setWeaponAtk(5);
         }
         if (Misc.containsItem("Hero's Garb")) {
-            Game.player.setArmourDef(10);
+            Game.player.setArmourDef(5);
         }
         if (Misc.containsItem("Wolfhide Armour")) {
-            Game.player.setArmourDef(20);
+            Game.player.setArmourDef(15);
         }
         if (Misc.containsItem("Matriarch's Blood")) {
             Game.player.setBonusAtk(10);
@@ -342,7 +320,7 @@ public class Player {
             Game.player.setBonusDef(10);
         }
         if (Misc.containsItem("Forgemaster's Greatsword")) {
-            Game.player.setWeaponAtk(50);
+            Game.player.setWeaponAtk(15);
         }
     }
 

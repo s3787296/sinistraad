@@ -17,7 +17,7 @@ public class Combat {
         Misc.printHeading(
                 enemy.getType() + ": " + enemy.getName() + "\nLVL: " + enemy.getLevel() + "\nHP: " + enemy.getCurHp()
                         + "/" + enemy.getMaxHp() + "\nATK: " + enemy.combatAtk() + "\nDEF: " + enemy.combatDef());
-        Misc.printHeading("PLAYER: " + Game.player.getName() + "\nLVL: " + Game.player.getLevel() + "\nHP: "
+        Misc.printHeading("PLAYER: " + Game.player.getName() + "\nHP: "
                 + Game.player.getCurHp() + "/" + Game.player.getMaxHp() + "\nATK: " + Game.player.combatAtk()
                 + "\nDEF: " + Game.player.combatDef());
         Misc.printHeading("BATTLE");

@@ -14,7 +14,7 @@ public class ItemList {
      * @return New instance of Hero's Sword
      */
     public static Item herosSword() {
-        Item herosSword = new Item("Hero's Sword", "Weapon", "Old Remraf had this sword laying around. It's worn with age, and feels good in your hand.", "+10 Attack");
+        Item herosSword = new Item("Hero's Sword", "Weapon", "Old Remraf had this sword laying around. It's worn with age, and feels good in your hand.", "+5 Attack");
         return herosSword;
     }
 
@@ -26,7 +26,7 @@ public class ItemList {
     public static Item herosGarb() {
         Item herosGarb = new Item("Hero's Garb", "Armour",
                 "Practical and tactical, the garments of a true hero.",
-                "+10 Armour");
+                "+5 Armour");
         return herosGarb;
     }
 
@@ -38,7 +38,7 @@ public class ItemList {
     public static Item wolfhideArmour() {
         Item wolfhideArmour = new Item("Wolfhide Armour", "Armour",
                 "Crudely stripped werewolf hide tied around ones torso like a tunic.\nThe dense matted fur and sinewy skin of the Duskwood werewolf makes for excellent protection.",
-                "+20 Defense");
+                "+15 Defense");
         return wolfhideArmour;
     }
     /**
@@ -145,7 +145,7 @@ public class ItemList {
     public static Item forgemastersGreatsword() {
         Item forgemastersGreatsword = new Item("Forgemaster's Greatsword", "Weapon",
                 "A perfectly balanced sword that glows with the heat of the forge, the silver patterns shining brightly.\nOnly the hands of a master forger could even dream of such a weapon.",
-                "+50 Attack");
+                "+15 Attack");
         return forgemastersGreatsword;
     }
 
